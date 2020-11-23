@@ -1,0 +1,45 @@
+#include <cstdio>
+#include <stack>
+
+struct TreeNode {
+  int val;
+  TreeNode *left;
+  TreeNode *right;
+  explicit TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+  explicit TreeNode(int x, TreeNode* l, TreeNode* r) :
+      val(x), left(l), right(r) {}
+};
+
+class Solution {
+ public:
+  void preorder(TreeNode* u) {
+    std::stack<TreeNode*> stck;
+    stck.push(u);
+    // loop
+    while (stck.size()) {
+      TreeNode* u = stck.top(); stck.pop();
+      printf("%d ", u->val);
+      if (u->right)
+        stck.push(u->right);
+      if (u->left)
+        stck.push(u->left);
+    }    
+  }
+};
+
+ //     4
+ //    / \
+ //   2   5
+ //  / \
+ // 1   3
+
+int main() {
+  TreeNode* u = new TreeNode(4,
+                             new TreeNode(2,
+                                          new TreeNode(1),
+                                          new TreeNode(3)),
+                             new TreeNode(5));
+  Solution sln;
+  sln.preorder(u);
+  return 0;
+}

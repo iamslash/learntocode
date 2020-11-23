@@ -1,0 +1,10 @@
+1
+10 7
+a b c d e f g h i j
+6 a c d h i j
+3 a d i
+7 a c f g h i j
+3 b d g
+5 b c f h i
+4 b e g j
+5 b c g h i 

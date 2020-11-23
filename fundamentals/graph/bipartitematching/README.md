@@ -1,0 +1,55 @@
+# Abstract
+
+- matching
+  - 그래프에서 끝점을 공유하지 않는 간선의 집합
+- maximum matching problem
+  - 가장 큰 matching 을 찾는 문제. 흔히 매칭 문제라고 한다.
+- Edmonds' matching algorithm
+  - 모든 그래프에서 maximum matching 을 찾는 알고리즘
+  - 복잡하고 까다롭다.
+- bipartite graph
+  - 정점을 두 그룹으로 나눠서 모든 간선이 서로 다른 그룹의 정점들을
+    연결할 수 있는 그래프들을 이분 그래프라고 한다.
+
+    ![](bipartitegraph.png)
+
+- bipartite matching problem
+  - bipartite graph 에서 maxium matching 을 찾는 문제
+  - bipartite graph 에서 왼쪽 그룹의 왼쪽에 source 를 두고 오른쪽 그룹의 오른쪽에 sink 를 두면 ford fulkerson algorithm 을 이용해서 해결할 수 있다. 이때 DFS 를 이용하여 좀 더 단순하게 구현할 수 있다.
+
+# References
+
+- [maximum bipartite matching in geeksforgeeks](http://www.geeksforgeeks.org/maximum-bipartite-matching/)
+
+# Problem
+
+이분 그래프 `adj[][]` 가 주어지면 최대 매칭의 크기를 구하는 문제이다.
+
+# Keyword
+
+```cpp
+bool adj[][], vector<int> amatch, vector<int> bmatch, vector<bool>visited, dfs, bipartite_match
+```
+
+# Idea
+
+![](bipartitegraph2.png)
+
+- bipartite graph 에서 왼쪽에 있는 정점들을 그룹 A,
+  오른쪽에 있는 정점들을 그룹 B 라고 하자.
+- 그룹 A 의 왼쪽에 source 를 추가하고, 그룹 B 의 오른쪽에 sink 를 추가한다.
+- source 에서 A 의 모든 정점으로 간선을 연결하고, B 의 모든 정점에서 sink 로
+  간선을 연결하면 flow network 를 만들 수 있다.
+  모든 간선은 capacity 가 1 이다.
+- maximum flow 를 구한뒤 유량이 흐르는 간선들을 모으면
+  maximum matching 이 된다.  
+
+# Implementation
+
+* [c++11](a.cpp)
+
+# complexity
+
+```
+O(|V||E|)
+```

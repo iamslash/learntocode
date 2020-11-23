@@ -1,0 +1,78 @@
+// https://leetcode.com/problems/frog-jump/description/
+
+// A frog is crossing a river. The river is divided into x units and
+// at each unit there may or may not exist a stone. The frog can jump
+// on a stone, but it must not jump into the water.
+
+// Given a list of stones' positions (in units) in sorted ascending
+// order, determine if the frog is able to cross the river by landing
+// on the last stone. Initially, the frog is on the first stone and
+// assume the first jump must be 1 unit.
+
+// If the frog's last jump was k units, then its next jump must be
+// either k - 1, k, or k + 1 units. Note that the frog can only jump
+// in the forward direction.
+
+// Note:
+
+// The number of stones is ≥ 2 and is < 1,100.
+// Each stone's position will be a non-negative integer < 2^31.
+// The first stone's position is always 0.
+
+// Example 1:
+
+// [0,1,3,5,6,8,12,17]
+
+// There are a total of 8 stones.
+// The first stone at the 0th unit, second stone at the 1st unit,
+// third stone at the 3rd unit, and so on...
+// The last stone at the 17th unit.
+
+// Return true. The frog can jump to the last stone by jumping 
+// 1 unit to the 2nd stone, then 2 units to the 3rd stone, then 
+// 2 units to the 4th stone, then 3 units to the 6th stone, 
+// 4 units to the 7th stone, and 5 units to the 8th stone.
+
+// Example 2:
+
+// [0,1,2,3,4,8,9,11]
+
+// Return false. There is no way to jump to the last stone as 
+// the gap between the 5th and 6th stone is too large.
+
+char CACHE[1101][1101];
+bool is_stone(const vector<int>& v, int n) {
+  if (n < 0 || n >= v.size())
+    return false;
+  for (int i = 0; i < v.size(); ++i) {
+    if (v[i] == n)
+      return true;
+    else if (v[i] > n)
+      return false;
+  }
+}
+bool solve(const vector<int>& v, int here, int k) {
+  // base condition
+  if (is_stone(v, here) == false)
+    return false;
+  else if (here == v.back())
+    return true;
+  // memoization
+  char& r = CACHE[here][k];
+  if (r != -1)
+    return r > 0;
+  // recursion
+  r = 0;
+  for (int i = -1; i < 2; ++i) {
+    int next = v[here] + i;
+    if (next > here && solve(next, k + i)) {
+      r = 1;
+      break;
+    }
+  }
+  return r;
+}
+
+int main() {
+  solve(v, 1, 1);
+}

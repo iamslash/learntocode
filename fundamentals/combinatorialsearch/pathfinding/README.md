@@ -1,0 +1,18 @@
+# Abstract
+
+* 길 찾기 문제를 해결할 수 있는 전략들에 대해 적는다.
+
+# one src to one dst
+
+* [A* @ learntocode](/fundamentals/combinatorialsearch/astar/README.md)
+
+# one src to all dst
+
+* [bfs shortest path @ learntocode](fundamentals/graph/bfsshortestpath/README.md) (unweighted graphs)
+* [Dijkstra algorithm @ learntocode](/fundamentals/graph/dijkstra/README.md) (non-negative weighted graphs)
+* [Bellman-Ford algorithm @ learntocode](/fundamentals/graph/bellmanford/README.md) (negative weighted graphs)
+
+# all src to all dst
+
+* [Floyd algorithm @ learntocode](/fundamentals/graph/floyd/README.md)
+* Johnson’s algorithm
