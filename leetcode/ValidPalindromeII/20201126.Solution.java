@@ -1,28 +1,26 @@
 // Copyright (C) 2020 by iamslash
 
-// 6,s 74.54% 39.8MB 31.70%
+// 6ms 74.72% 39.5MB 59.01%
 // brute force
 // O(N) O(1)
 class Solution {
 	private boolean palindrome(String s, int l, int r) {
 		while (l < r) {
-			if (s.charAt(l) != s.charAt(r)) {
+			if (s.charAt(l) != s.charAt(r))
 				return false;
-			}
 			l++;
 			r--;
 		}
 		return true;
 	}
 	public boolean validPalindrome(String s) {
-		int l = 0, r = s.length() - 1;
-		while (l < r) {
-			if (s.charAt(l) != s.charAt(r)) {
-				return palindrome(s, l+1, r) ||
-						palindrome(s, l, r-1);
-			}
-			l++;
-			r--;
+		int i = 0, j = s.length()-1;
+		while (i < j) {
+			if (s.charAt(i) != s.charAt(j))
+				return palindrome(s, i+1, j) ||
+						palindrome(s, i, j-1);
+			i++;
+			j--;
 		}
 		return true;
 	}
