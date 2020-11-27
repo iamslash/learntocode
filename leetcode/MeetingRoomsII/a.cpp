@@ -1,69 +1,43 @@
-/* Copyright (C) 2019 by iamslash */
+/* Copyright (C) 2020 by iamslash */
 
 #include <cstdio>
 #include <vector>
 #include <map>
+#include <algorithm>
 
-struct Interval {
-  int start;
-  int end;
-  Interval() : start(0), end(0) {}
-  Interval(int s, int e) : start(s), end(e) {}
-};
+using namespace std;
 
-// // 20ms 38.60% 11.5MB 14.15%
-// // O(N) O(N)
-// class Solution {
-//  public:
-//   int minMeetingRooms(std::vector<Interval>& V) {
-//     std::map<int, int> smp;
-//     for (auto& i : V) {
-//       smp[i.start]++;
-//       smp[i.end]--;
-//     }
-//     int maxs = 0;
-//     int sums = 0;
-//     for (auto& pr : smp) {
-//       sums += pr.second;
-//       maxs = std::max(maxs, sums);
-//     }
-//     return maxs;
-//   }
-// };
+// 0,30 5,10 15,20
+// 0 5 10 15 20 30
+// + +  -  +  -  -
 
-// 12ms 99.60% 9.9MB 89.80%
+// 9,10 4,9 4,17
+// 4 4 9 9 10 17 
+// + + - +  -  -
+
+// 36ms 69.02% 12.7MB 52.19%
+// sort
 // O(NlgN) O(N)
 class Solution {
  public:
-  int minMeetingRooms(std::vector<Interval>& V) {
-    if (V.empty())
-      return 0;
-    std::sort(V.begin(), V.end(), [](const Interval& a,
-                                     const Interval& b) {
-                return a.start < b.start;
-              });
-    std::vector<int> rooms;
-    for (int i = 0; i < V.size(); ++i) {
-      bool bfind = false;
-      for (int j = 0; j < rooms.size(); ++j) {
-        if (rooms[j] <= V[i].start) {
-          rooms[j] = V[i].end;
-          bfind = true;
-          break;
-        }
-      }
-      if (!bfind)
-        rooms.push_back(V[i].end);
+  int minMeetingRooms(vector<vector<int>>& intervals) {
+    int dup = 0, ans = 0;
+    vector<pair<int, int>> times;
+    for (auto& intv : intervals) {
+      times.emplace_back(intv[0], 1);
+      times.emplace_back(intv[1], -1);
     }
-    return rooms.size();
+    sort(times.begin(), times.end(), [](const pair<int, int>& a,
+                                        const pair<int, int>& b) {
+                                       if (a.first == b.first) {
+                                         return a.second > b.second;
+                                       }
+                                       return a.first < b.first;
+                                     });
+    for (auto& pr : times) {
+      dup += pr.second;
+      ans = max(ans, dup);
+    }
+    return ans;
   }
 };
-
-int main() {
-
-  // std::vector<Interval> V = {{0, 30}, {5, 10}, {15, 20}};
-  std::vector<Interval> V = {{7, 10}, {2, 4}};
-  Solution sln;
-  printf("%d\n", sln.minMeetingRooms(V));
-  return 0;
-}
