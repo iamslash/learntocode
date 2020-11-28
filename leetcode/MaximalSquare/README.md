@@ -41,9 +41,6 @@ M:         C:
 C[2][2] = min(C[1][1], C[2][1], C[1][2]) + 1
 ```
 
-`M[y][x]` 는 int 가 아니고 char 임을 유의하자. 또한 `C[][]` 를
-선언하는 대신 `M[][]` 를 사용하면 space complexity 를 줄일 수 있다.
-
 # Implementation
 
 * [c++11](a.cpp)
@@ -54,5 +51,5 @@ C[2][2] = min(C[1][1], C[2][1], C[1][2]) + 1
 # Complexity
 
 ```
-O(HW) O(1)
+O(HW) O(HW)
 ```
