@@ -1,52 +1,45 @@
-/* Copyright (C) 2019 by iamslash */
+/* Copyright (C) 2020 by iamslash */
 
 #include <cstdio>
 #include <vector>
+#include <climits>
+#include <cmath>
 
-// 0ms 100.00% 11.3MB 50.00%
-// DFS with dynamic programming
-// O(WB) O(W)
+using namespace std;
+
+// 0ms 100.00% 11.3MB 4.72%
+// back tracking, recursive dynamic programming
+// O(WB) O(WB)
 class Solution {
  private:
-  std::vector<std::vector<int>> m_C =
-      std::vector<std::vector<int>>(
-          10, std::vector<int>(1024, -1));
-  int dfs(std::vector<std::vector<int>> &W,
-          std::vector<std::vector<int>> &B,
-          int i, int bused) {
-    int m = W.size(), n = B.size();
-      //printf("m:%d, n:%d, i:%d, bused:%d\n", m, n, i, bused);
-
+  int dfs(vector<vector<int>>& W,
+          vector<vector<int>>& B,
+          vector<vector<int>>& C,
+          int i, int usedBikes) {
     // base
-    if (i >= m)
+    if (i >= W.size())
       return 0;
-
     // memo
-    int &r = m_C[i][bused];
+    int& r = C[i][usedBikes];
     if (r >= 0)
       return r;
-    r = INT_MAX;
-
     // recursion
-    for (int j = 0; j < n; ++j) {
-      int bm = 1 << j;
-      if (bused & bm)
+    r = INT_MAX;
+    for (int j = 0; j < B.size(); ++j) {
+      int nextBike = 1 << j;
+      if (usedBikes & nextBike)
         continue;
-      int dist = std::abs(W[i][0]-B[j][0]) +
-          std::abs(W[i][1]-B[j][1]);
-      dist += dfs(W, B, i+1, bused | bm);
-      r = std::min(r, dist);
+      int dist = abs(W[i][0] - B[j][0]) +
+          abs(W[i][1] - B[j][1]);
+      r = min(r, dist + dfs(W, B, C, i+1, usedBikes | nextBike));
     }
-
     return r;
   }
  public:
-  int assignBikes(std::vector<std::vector<int>> &W,
-                  std::vector<std::vector<int>> &B) {
-    return dfs(W, B, 0, 0);
+  int assignBikes(vector<vector<int>>& W,
+                  vector<vector<int>>& B) {
+    vector<vector<int>> C(10, vector<int>(1024, -1));
+    int usedBikes = 0;
+    return dfs(W, B, C, 0, usedBikes);
   }
 };
-
-int main() {
-  return 0;
-}
