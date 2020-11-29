@@ -2,29 +2,28 @@
 
 #include <cstdio>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-//            i
-//       A: 1 3 5 4
-//       B: 1 2 3 7
-// swapCnt: 1 2
-// notsCnt: 0 
+// A: 1 3 5 4
+// B: 1 2 3 7
 
-// 20ms 52.59% 14.5% 60.56%
-// iterative dynamic programming
+// A: 4 5
+// B: 1 2
+// 12ms 99.56% 14.5MB 16.50%
+// dynamic programming
 // O(N) O(1)
 class Solution {
  public:
   int minSwap(vector<int>& A, vector<int>& B) {
-    int n = A.size(), swapCnt = 1, notsCnt = 0;
+    int swapCnt = 1, notsCnt = 0, n = A.size();
     for (int i = 1; i < n; ++i) {
       if (A[i-1] >= B[i] || B[i-1] >= A[i]) {
-        swapCnt += 1;
+        swapCnt++;
       } else if (A[i-1] >= A[i] || B[i-1] >= B[i]) {
-        int t = swapCnt;
-        swapCnt = notsCnt + 1;
-        notsCnt = t;
+        swap(swapCnt, notsCnt);
+        swapCnt++;
       } else {
         int minCnt = min(swapCnt, notsCnt);
         swapCnt = minCnt + 1;
