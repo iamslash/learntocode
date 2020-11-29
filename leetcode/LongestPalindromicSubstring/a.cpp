@@ -2,45 +2,41 @@
 
 #include <cstdio>
 #include <string>
-#include <vector>
 
 using namespace std;
 
-// l
-//     r
-//   a 
+//    l     r
+// s: k b b a d
 
-// 20ms 91.06% 7.3MB 5.58%
+// 28ms 82.16% 7.4MB 89.04%
 // linear traversal
 // O(N^2) O(1)
 class Solution {
  private:
-  int lo, maxLen;
-  void maxPal(string& s, int l, int r) {
-    int n = s.size();
-    while (l >= 0 && r < n && s[l] == s[r]) {
-      l--;
-      r++;
+  int maxLo = 0, maxLen = 1;
+  void maxPalindrome(string& s, int l, int r) {    
+    while (l >= 0 && r < s.size() && s[l] == s[r]) {
+      l--, r++;
     }
-    int len = r - l - 1;
-    if (maxLen < len) {
-      lo = l + 1;
+    int len = r - l -1;
+    if (len > maxLen) {
+      maxLo = l+1;
       maxLen = len;
     }
   }
  public:
   string longestPalindrome(string s) {
-    int n = s.size(), ans = 0;
-    for (int i = 0; i < n; ++i) {
-      maxPal(s, i, i);
-      maxPal(s, i, i+1);
+    int ans = 1;
+    for (int i = 1; i < s.size(); ++i) {
+      maxPalindrome(s, i-1, i);
+      maxPalindrome(s, i, i);
     }
-    return s.substr(lo, maxLen);
+    return s.substr(maxLo, maxLen);
   }
 };
 
-// 1932ms 5.05% 47.8MB 5.58%
-// dynamic programming
+// Time Limit Exceed
+// iterative dynamic programming
 // O(N^2) O(N^2)
 class Solution {
  public:
@@ -48,11 +44,11 @@ class Solution {
     int n = s.size();
     string ans;
     vector<vector<bool>> C(n, vector<bool>(n));
-    for (int i = n - 1; i >= 0; --i) {
+    for (int i = n-1; i >= 0; --i) {
       for (int j = i; j < n; ++j) {
-        C[i][j] = s[i] == s[j] && (j - i < 3 || C[i+1][j-1]);
-        if (C[i][j] && (ans.empty() || j - i + 1 > ans.size()))
-          ans = s.substr(i, j - i + 1);
+        C[i][j] = s[i] == s[j] && (j-i<3 || C[i+1][j-1]);
+        if (C[i][j] && (ans.empty() || j-i+1 > ans.size()))
+          ans = s.substr(i, j-i+1);
       }
     }
     return ans;
