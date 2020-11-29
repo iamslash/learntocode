@@ -27,6 +27,11 @@ int dfs(int widx, int bused)
 return: minimum sum of distances from widx wokers
 ```
 
+다음은 ` workers = [[0,0],[1,1],[2,0]], bikes = [[1,0],[2,2],[2,1]]` 에 대한
+recursion tree 이다.
+
+![](recursiontree.png)
+
 # Implementation
 
 * [c++11](a.cpp)
