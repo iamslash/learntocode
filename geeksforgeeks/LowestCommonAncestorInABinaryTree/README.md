@@ -3,9 +3,13 @@
 * [Lowest Common Ancestor in a Binary Tree @ geeksforgeeks](https://practice.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-binary-tree/1)
 * [Lowest Common Ancestor of a Binary Tree @ leetcode](https://leetcode.com/explore/interview/card/top-interview-questions-hard/118/trees-and-graphs/844/)
 
+트리의 루트노드와 자손 노드가 주어진다. LCA (Lowest Common Ancestor) 를 구하라.
+
 # Strategy with single traversal
 
 ## Idea
+
+LCA (Lowest Common Ancestor) 는 주로 DFS 로 해결한다. 현재 방문 노드가 `u` 라고 해보자. 그리고 `u` 를 root 로 하는 subtree 를 생각해 보자. LCA 의 후보는 `NULL, u, u->left, u->right` 중 하나이다. 어떤 것이 LCA 인지 결정하는 조건을 고민하면서 접근해 보자.
 
 ![](lca.png)
 
