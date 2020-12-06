@@ -402,9 +402,11 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 * Find rules with examples and make questions
 * Design a algorithm
   * brute force, dynamic programming, divide and conquer, greedy
-  * backtracking, binary search, quick sort, merge sort, BFS, DFS,
-    merge-find, sliding window, monotone increasing, monotone
-    decreasing
+  * quick sort, merge sort
+  * binary search, two pointers, sliding window
+  * merge-find
+  * backtracking, BFS, DFS, in-order, pre-order, post-order
+  * monotone increasing, monotone decreasing
   * trie, suffix array
 * Validate a algorithm with examples
 * Think about exceptions
