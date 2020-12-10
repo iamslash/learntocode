@@ -2,20 +2,19 @@
 
 import java.util.*;
 
-// 36ms 40.99% 47.5MB 64.09%
-// hash table
-// O(N) O(N)
+// 27ms 73.98% 46.9MB 70.38%
+// hash map
+// O(1) O(N)
 class Logger {
 	private Map<String, Integer> history = new HashMap<>();
-
-	public Logger() {
-        
+	public Logger() {		
 	}
-    
-	public boolean shouldPrintMessage(int ts, String s) {
-		if (history.containsKey(s) && ts - history.get(s) < 10)
+	public boolean shouldPrintMessage(int ts, String msg) {
+		if (history.containsKey(msg) && ts - history.get(msg) < 10) {
 			return false;
-		history.put(s, ts);
+		}
+		history.put(msg, ts);
 		return true;
 	}
 }
+
