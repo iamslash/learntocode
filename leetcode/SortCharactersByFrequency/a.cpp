@@ -1,40 +1,58 @@
-/* Copyright (C) 2018 by iamslash */
+/* Copyright (C) 2020 by iamslash */
 
 #include <cstdio>
 #include <string>
-#include <unordered_map>
 #include <algorithm>
 
-// 20ms 30.67%
+using namespace std;
+
+// 80ms 17.14% 8.3MB 95.55%
+// sort, hash map
+// O(NlgN) O(N)
 class Solution {
  public:
-  std::string frequencySort(std::string s) {
-    std::string rslt;
-    std::unordered_map<char, int> mp;
+  string frequencySort(string s) {
+    int freqs[256] = {0,};
     for (char c : s) {
-      mp[c]++;
+      ++freqs[c];
     }
-    std::vector<std::pair<char, int>> V;
-    for (auto it = mp.begin(); it != mp.end(); ++it) {
-      V.push_back({it->first, it->second});
-    }
-    std::sort(V.begin(), V.end(), [](const std::pair<char, int>& lhs,
-                                     const std::pair<char, int>& rhs){
-                return lhs.second > rhs.second;
-      });
-    for (auto it = V.begin(); it != V.end(); ++it) {
-      for (int i = 0; i < it->second; ++i)
-        rslt += it->first;
-    }
-    return rslt;
+    sort(s.begin(), s.end(), [&](char a, char b) {
+                               if (freqs[a] == freqs[b])
+                                 return a < b;
+                               return freqs[a] > freqs[b];
+                            });
+    return s;
   }
 };
 
-int main() {
-  Solution sln;
-  // printf("%s\n", sln.frequencySort("tree").c_str());
-  // printf("%s\n", sln.frequencySort("cccaaa").c_str());
-  printf("%s\n", sln.frequencySort("Aabb").c_str());
-  
-  return 0;
-}
+//
+// 12ms 95.59% 8.8MB 71.89%
+class Solution {
+ public:  
+  string frequencySort(string s) {
+    string ans;
+    vector<int> freqs(256);
+    for (char c : s) {
+      ++freqs[c];
+    }
+    int maxidx = 0, maxval = INT_MIN;
+    for (int i = 0; i < s.length(); ++i) {
+      for (int j = 0; j < 256; ++j) {
+        if (maxval < freqs[j]) {
+          maxval = freqs[j];
+          maxidx = j;
+        }
+      }
+      if (maxval == 0) {
+        return ans;
+      } else {
+        for (int k = 0; k < maxval; ++k) {
+          ans.push_back(char(maxidx));
+        }
+        freqs[maxidx] = 0;
+        maxval = INT_MIN;
+      }
+    }
+    return ans;
+  }
+};
