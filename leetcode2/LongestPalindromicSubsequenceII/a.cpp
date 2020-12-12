@@ -16,38 +16,38 @@ using namespace std;
 //    a           1 
 //    b             1
 
-// recursive dynamic programming, top to bottom dynamic programming
+// 800ms 22.73% 258.8MB 22.73%
+// recursive dynamic programming
+// top down  dynamic programming
 // O(N^2) o(N^2)
 class Solution {
  private:
-  int dfs(vector<vector<int>>& C, string& s,
-          int i, int j) {
+  int dfs(vector<vector<vector<int>>>& C, string& s,
+          int i, int j, int x) {
     // base
-    if (i > j) {
+    if (i >= j) {
       return 0;
     }
-    if (i == j) {
-      return 1;
-    }
     // memo
-    int& r = C[i][j];
+    int& r = C[i][j][x];
     if (r >= 0) {
       return r;
     }
     // recursion
-    if (s[i] == s[j]) {
-      r = dfs(C, s, i+1, j-1) + 2;
-    } else {
-      r = max(dfs(C, s, i+1, j),
-              dfs(C, s, i, j-1));
-    }
+    r = max(dfs(C, s, i+1, j, x),
+            dfs(C, s, i, j-1, x));
+    if (s[i] == s[j] && s[i] - 'a' != x) {
+      r = max(r, 2 + dfs(C, s, i+1, j-1, s[i] - 'a'));
+    }    
     return r;
   }
  public:
   int longestPalindromeSubseq(string s) {
     int n = s.length();
-    vector<vector<int>> C(n, vector<int>(n, -1));
-    return dfs(C, s, 0, n-1);
+    vector<vector<vector<int>>> C(
+        n, vector<vector<int>>(
+            n, vector<int>(27, -1)));
+        return dfs(C, s, 0, n-1, 26);
   }
 };
 
@@ -60,24 +60,33 @@ class Solution {
 //    a         1 1
 //    b           1
 
+// 136ms 72.73% 13.7MB 31.82%
 // iterative dynamic programming
 // bottom up dynamic programming
-// O(N) O(N^2)
+// O(N^2) O(N^2)
 class Solution {
  public:
   int longestPalindromeSubseq(string s) {
     int n = s.length();
-    vector<vector<int>> C(n, vector<int>(n, -1));
-    for (int i = n - 1; i >= 0; --i) {
-      C[i][j] = 1;
+    int C[250][250][26] = {0,};
+    for (int i = n - 2; i >= 0; --i) {
       for (int j = i + 1; j < n; ++j) {
-        if (s[i] == s[j]) {
-          C[i][j] = C[i+1][j-1] + 2;
-        } else {
-          C[i][j] = max(C[i+1][j], C[i][j-1]);
+        for (int k = 0; k < 26; ++k) {
+          if (s[i] == s[j] && k != s[i]-'a') {
+            C[i][j][s[i]-'a'] = max(C[i][j][s[i]-'a'],
+                                    C[i+1][j-1][k]+2);
+          } else {
+            C[i][j][k] = max(C[i][j][k],
+                             max(C[i+1][j][k],
+                                 C[i][j-1][k]));
+          }
         }
       }
     }
-    return C[0][n-1];
+    int ans = 0;
+    for (int k = 0; k < 26; ++k) {
+      ans = max(ans, C[0][n-1][k]);
+    }
+    return ans;
   }
 };
