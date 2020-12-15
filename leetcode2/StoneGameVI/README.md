@@ -23,6 +23,8 @@ idx(200)` 을 선언한다. `idx[sum]` 에 Alice, Bob 점수합에 해당하는
 # Implementation
 
 * [c++11](a.cpp)
+* [java8](Solution.java)
+* [py3](a.py)
 
 # Complexity
 

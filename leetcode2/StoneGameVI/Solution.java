@@ -2,6 +2,29 @@
 
 import java.util.*;
 
+// 74ms 91.11% 54.4MB 60.00%
+// greedy algorithm, sort
+// O(NlgN) O(N)
+class Solution {
+	public int stoneGameVI(int[] A, int[] B) {
+		int n = A.length;
+		int[][] sums = new int[n][];
+		for (int i = 0; i < n; ++i) {
+			sums[i] = new int[]{A[i] + B[i], A[i], B[i]};
+		}
+		Arrays.sort(sums, (a, b) -> Integer.compare(b[0], a[0]));
+		int alicePt = 0, bobPt = 0;
+		for (int i = 0; i < n; ++i) {
+			if (i % 2 == 0) {
+				alicePt += sums[i][1];
+			} else {
+				bobPt += sums[i][2];
+			}
+		}
+		return Integer.compare(alicePt, bobPt);
+	}			
+};
+
 // 15ms 99.79% 5.3MB 61.20%
 // greedy algorithm
 // O(N) O(N)
