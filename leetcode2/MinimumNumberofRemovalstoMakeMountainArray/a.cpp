@@ -11,50 +11,38 @@ using namespace std;
 // stck: 4 3 1
 // stck: 1 
 
+// 40ms 82.61% 12.8MB 15.52%
 class Solution {
- private:
-  int lisAscCnt(vector<int>& nums, int topIdx) {
-    vector<int> lis;
-    for (int i = 0; i < topIdx; ++i) {
-      if (nums[i] >= nums[topIdx]) {
-        continue;
-      }
-      auto it = lower_bound(nums.begin(), nums.begin() + topIdx, nums[i]);
-      if (it == lis.end()) {
-        lis.push_back(nums[i]);
-      } else {
-        *it = nums[i];
-      }
-    }
-    return lis.size();
-  }
-  int lisDscCnt(vector<int>& nums, int topIdx) {
-    int n = nums.size();
-    vector<int> lis;
-    for (int i = n-1; i > topIdx; --i) {
-      if (nums[i] >= nums[topIdx]) {
-        continue;
-      }
-      auto it = lower_bound(nums.rbegin(), nums.rbegin() + (n - topIdx), nums[i]);
-      if (it == lis.rend()) {
-        lis.push_back(nums[i]);
-      } else {
-        *it = nums[i];
-      }
-    }
-    return lis.size();
-  }
  public:
   int minimumMountainRemovals(vector<int>& nums) {
-    int n = nums.size(), ans = INT_MAX;
-    for (int i = 1; i < n-1; ++i) {
-      int mountainCnt = 1 +
-          lisAscCnt(nums, i) +
-          lisDscCnt(nums, i);
-      ans = min(ans, n - mountainCnt);
+    int n = nums.size(), ans = n;
+    vector<int> lis(n), lds(n), V;
+    for (int i = 0; i < n; ++i) {
+      int x = nums[i];
+      auto it = lower_bound(V.begin(), V.end(), x);
+      lis[i] = it - V.begin();
+      if (it != V.end()) {
+        *it = x;
+      } else {
+        V.push_back(x);
+      }
     }
-    if (ans == INT_MAX)
-      return 0;
+    V.clear();
+    for (int i = n-1; i >= 0; --i) {
+      int x = nums[i];
+      auto it = lower_bound(V.begin(), V.end(), x);
+      lds[i] = it - V.begin();
+      if (it != V.end()) {
+        *it = x;
+      } else {
+        V.push_back(x);
+      }
+    }
+    for (int i = 1; i < n; ++i) {
+      if (lis[i] && lds[i]) {
+        ans = min(ans, n - (lis[i] + lds[i] + 1));
+      }
+    }
     return ans;
   }
 };
