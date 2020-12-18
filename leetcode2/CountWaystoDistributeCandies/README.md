@@ -37,7 +37,7 @@ C[n][k] = k * C[n-1][k] + C[n-1][k-1]
 
 이때 `C[i][i] == 1` 이고 `C[i][1] == 1` 임은 자명하다.
 
-`vector<int> C(k+1, 1)` 를 선언하여 space complexity 를
+`vector<int> C(k+1, 1)` 를 사용하면 space complexity 를
 개선할 수 있다.
 
 ```
