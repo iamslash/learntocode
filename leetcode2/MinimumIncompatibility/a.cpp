@@ -2,6 +2,7 @@
 
 #include <cstdio>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -36,6 +37,7 @@ class Solution {
     for (int bm = 1; bm < (1 << n); ++bm) {
       for (int subBm = bm; subBm; subBm = (subBm - 1) & bm) {
         if (__builtin_popcount(subBm) == groupCnt) {
+          C[bm] = min(C[bm], range[subBm] + C[bm ^ subBm]);
         }
       }
     }
