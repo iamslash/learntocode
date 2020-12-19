@@ -42,6 +42,8 @@
 * [c++11](a.cpp)
 * [java8](Solution.java)
 * [py3](a.py)
+* [go](a.go)
+* [js](a.js)
 
 # Complexity
 
