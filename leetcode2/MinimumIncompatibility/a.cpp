@@ -6,6 +6,9 @@
 
 using namespace std;
 
+// 1148ms 24.72% 15.2MB 28.73%
+// iterative dynamic programming
+// O(2^N) O(2^N)
 #define MAXVAL 1000000009
 class Solution {
  public:
