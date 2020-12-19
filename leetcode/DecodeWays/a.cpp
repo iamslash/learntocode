@@ -8,6 +8,8 @@
 // JKLMNOPQRSTUVWXYZ
 //   i
 // 001
+// iterative dynamic programming
+// O(N) O(1)
 class Solution {
  public:
   int numDecodings(std::string s) {
