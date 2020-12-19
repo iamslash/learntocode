@@ -46,6 +46,7 @@ C[y][x] = C[y-1][x] + C[y][x-1]
 * [py3](a.py)
 * [go](a.go)
 * [js](a.js)
+* [ruby](a.rb)
 
 ## complexity
 
