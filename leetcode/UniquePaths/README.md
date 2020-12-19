@@ -41,7 +41,9 @@ C[y][x] = C[y-1][x] + C[y][x-1]
 
 ## Implementation
 
-* [py3](math.py)
+* [c++11](a.cpp)
+* [java8](Solution.java)
+* [py3](a.py)
 
 ## complexity
 
