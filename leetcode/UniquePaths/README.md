@@ -44,6 +44,8 @@ C[y][x] = C[y-1][x] + C[y][x-1]
 * [c++11](a.cpp)
 * [java8](Solution.java)
 * [py3](a.py)
+* [go](a.go)
+* [js](a.js)
 
 ## complexity
 
