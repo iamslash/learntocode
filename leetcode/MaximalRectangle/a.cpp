@@ -3,6 +3,13 @@
 #include <cstdio>
 #include <vector>
 
+//              i
+//    0 0 0 1 0 0 0 height: 0 1 2 3 4 1 0 
+//    0 0 1 1 1 0 0   left: 0 1 2 3 2 1 0 
+// -> 0 1 1 1 1 1 0  right: 7 6 5 4 5 6 7
+//                    curL: 0
+//                    curR: 6
+
 // 20ms 100.00% 10.8MB 100.00%
 // O(HW) O(W)
 class Solution {
