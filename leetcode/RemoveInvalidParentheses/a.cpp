@@ -13,7 +13,7 @@ class Solution {
   std::unordered_set<std::string> m_rslt; // result
   // cntl : count of left parentheses
   // cntr : count of right parentheses
-  // cntp : count of parentheses paris
+  // cntp : count of parentheses pairs
   // comb : combination of characters
   void _solve(std::string s, int i, int cntl, int cntr, int cntp,
               std::string comb) {

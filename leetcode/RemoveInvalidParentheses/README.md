@@ -27,7 +27,10 @@ s: ( ) ( ) ) ( )
 만나는 `)` 를 제거한다.
 
 `stck > 0` 인 경우는 `s` 를 거꾸로 뒤집어서 앞서 언급한 알고리즘을
-적용한다.
+적용한다. `int stck = 0` 을 선언한다. `)` 를 만나면 `stck` 를 하나 
+증가하고 `(` 를 만나면 `stck` 를 하나 감소한다. `(` 를 제거하자. 이때 
+`(` 가 여러개일 수도 있다. 그러나 답이 겹치는 걸 막기 위해 가장 먼저
+만나는 `(` 를 제거한다. 
 
 다음과 같은 부분문제 `dfs` 를 선언한다.
 
@@ -42,6 +45,8 @@ return:
   par0: parenthese which increase stck
   par1: parenthese which decrease stck  
 ```
+
+![](recursiontree.png)
 
 # Implementation
 
