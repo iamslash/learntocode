@@ -8,7 +8,7 @@
 
 # Idea
 
-two pointers 로 해결할 만 하다.
+sliding window 로 해결할 만 하다.
 
 `unordered_set<int> freqSet` 을 선언하여 숫자의 중복여부를 판단한다.
 `sum` 을 선언하여 substring 의 합을 저장한다. `ans` 를 선언하여

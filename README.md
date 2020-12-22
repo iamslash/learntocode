@@ -957,8 +957,9 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## Sliding Window
 
-  - F | [sliding window nestedloop](/fundamentals/slidingwindow/nestedloop/README.md)
-  - [L](/leetcode/SubarraySumsDivisiblebyK/) | [Subarray Sums Divisible by K](https://leetcode.com/problems/subarray-sums-divisible-by-k/)
+* F | [sliding window nestedloop](/fundamentals/slidingwindow/nestedloop/README.md)
+* [L](/leetcode/SubarraySumsDivisiblebyK/) | [Subarray Sums Divisible by K](https://leetcode.com/problems/subarray-sums-divisible-by-k/)
+* [L](/leetcode2/MaximumErasureValue/README.md) | [Maximum Erasure Value](https://leetcode.com/problems/maximum-erasure-value/)
 
 ## Min 1st, 2nd
 

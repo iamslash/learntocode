@@ -21,7 +21,7 @@ using namespace std;
 //     ans: 8  
 
 // 804ms 51.68% 127.7MB 35.92%
-// two pointers
+// sliding window
 // O(N) O(N)
 class Solution {
  public:
