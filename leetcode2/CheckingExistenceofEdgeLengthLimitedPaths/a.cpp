@@ -7,8 +7,9 @@
 
 using namespace std;
 
+// 1008ms 75.64% 110.2MB 73.94%
 // Disjoint Set
-// O(N) O(N)
+// O(ElgE) O(N)
 class DisjointSet {
  private:  
   vector<int> parent;
