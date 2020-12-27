@@ -31,6 +31,20 @@ return: max score of Player-1 for i, j
     int b = P[j] + min(dfs(P, C, i, j-2), dfs(P, C, i+1, j-1));
 ```
 
+* Player-1 이 P[i] 를 선택한 경우 Player-2 는 다음과 같이 선택할 수 있다. 
+  * Player-2 가 P[i+1] 를 선택한 경우
+    * Player-1 이 획득할 수 있는 점수는 dfs(C, P, i+2, j) 이다.    -- 1
+  * Player-2 가 P[j] 를 선택한 경우
+    * Player-1 이 획득할 수 있는 점수는 dfs(C, P, i+1, j-1) 이다.  -- 2
+* Player-2 역시 최대점수를 획득해야 하기 때문에 Player-1 이 획득할 수 있는 최대 점수는 min(1, 2) 임을 유의하자. dfs 안에서 Player-1, Player-2 구분을 하지 않기 때문에 최소값을 취해야 한다.
+
+* Player-1 이 P[j] 를 선택한 경우 Player-2 는 다음과 같이 선택할 수 있다. 
+  * Player-2 가 P[i] 를 선택한 경우
+    * Player-1 이 획득할 수 있는 점수는 dfs(C, P, i+1, j-1) 이다.    -- 1
+  * Player-2 가 P[j-1] 를 선택한 경우
+    * Player-1 이 획득할 수 있는 점수는 dfs(C, P, i, j-2) 이다.  -- 2
+* Player-2 역시 최대점수를 획득해야 하기 때문에 Player-1 이 획득할 수 있는 최대 점수는 min(1, 2) 임을 유의하자. dfs 안에서 Player-1, Player-2 구분을 하지 않기 때문에 최소값을 취해야 한다.
+
 모든 반복을 마치면 Player-1 의 점수합을 2 배했을 때 점수의 총합보다
 크거나 같으면 true 이다.
 
