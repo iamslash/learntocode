@@ -3,28 +3,23 @@
 #include <cstdio>
 #include <vector>
 
-//              i
-//   A: 6 1 5 3 4
-// ans: 1 3 4
+using namespace std;
 
-// 0ms 100.00% 6.4MB 100.00%
-// LIS
+// 20ms 70.02% 1-/8MB 25.64%
+// binary search
 // O(NlgN) O(N)
 class Solution {
  public:
-  int lengthOfLIS(const std::vector<int> &A) {
-    std::vector<int> ans;
-    for (int i = 0; i < A.size(); i++) {
-      auto it = std::lower_bound(ans.begin(), ans.end(), A[i]);
-      if (it == ans.end())
-        ans.push_back(A[i]);
-      else
-        *it = A[i];
+  int lengthOfLIS(vector<int>& nums) {
+    vector<int> lis;
+    for (int i = 0; i < nums.size(); ++i) {      
+      auto it = lower_bound(lis.begin(), lis.end(), nums[i]);
+      if (it == lis.end()) {
+        lis.push_back(nums[i]);
+      } else {
+        *it = nums[i];
+      }
     }
-    return ans.size();
+    return lis.size();
   }
 };
-
-int main() {
-  return 0;
-}

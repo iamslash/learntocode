@@ -1,16 +1,17 @@
 # Problem
 
-[LIS @ leetcode](https://leetcode.com/problems/longest-increasing-subsequence/description/)
-
-# Iterative Solution
-
-## Idea
+[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
 
 수열 `A` 가 주어진다. longest increasing subsequence 의 개수를 구하는
 문제이다.
 
+# Iterative Dynamic Programming
+
+## Idea
+
 먼저 `vector<int> lis` 를 선언하여 Longest Increasing Subsequence 를
-저장한다. 인덱스 `i` 를 이용하여 `A` 를 처음부터 끝까지 순회하며 다음을 반복한다.
+저장한다. 인덱스 `i` 를 이용하여 `A` 를 처음부터 끝까지 순회하며
+다음을 반복한다.
 
 * `auto it = lower_bound(lis.begin(), lis.end(), A[i])` 를 수행한다.
   `it` 가 없다면 `lis.push_back(A[i])` 를 수행한다.
@@ -22,6 +23,8 @@
 ## Implementation
 
 * [c++11](a.cpp)
+* [java8](Solution.java)
+* [python3](a.py)
 
 ## Complexity
 

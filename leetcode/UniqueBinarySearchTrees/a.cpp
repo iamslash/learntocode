@@ -30,7 +30,7 @@ class Solution {
 
 // 0ms 100.00% 6.4MB 42.98%
 // recursive dynamic programming
-// O(2^N) O(N)
+// O(N) O(N)
 class Solution {
  private:
   int dfs(vector<int>& C, int n) {

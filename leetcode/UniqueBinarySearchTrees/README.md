@@ -63,7 +63,7 @@ T[n] = T[0]   * T[n-1] +
 ## Complexity
 
 ```
-O(2^N) O(N)
+O(N) O(N)
 ```
 
 # Iterative Dynamic Programming
