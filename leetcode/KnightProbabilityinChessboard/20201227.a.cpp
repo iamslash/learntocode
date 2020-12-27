@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// 8ms 81.92% 8.6MB 35.35%
+// 12ms 69.08% 8.6MB 5.54%
 // recursive dynamic programming
 // O(KN^2) O(KN^2)
 class Solution {
@@ -13,12 +13,14 @@ class Solution {
   double dfs(vector<vector<vector<double>>>& C,
              int n, int k, int y, int x) {
     // base
-    if (k == 0)
+    if (k == 0) {
       return 1;
+    }
     // memo
     double& r = C[k][y][x];
-    if (r >= 0.0)
-      return r;
+    if (r > 0)
+      return r;      
+
     // recursion
     r = 0.0;
     int dy[8] = {-2, -1, 1, 2, 2,  1, -1, -2};
@@ -39,5 +41,5 @@ class Solution {
         K+1, vector<vector<double>>(
             N, vector<double>(N, -1.0)));
     return dfs(C, N, K, r, c);                                                        
-  }  
+  }
 };

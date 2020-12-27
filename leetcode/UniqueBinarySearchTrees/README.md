@@ -40,8 +40,7 @@ T[3] = T[0] * T[2] +
 T[n] = T[0]   * T[n-1] + 
        T[1]   * T[n-2] +
        ...             +
-       T[n-1] * T[1]   +
-       T[n]   * T[0]
+       T[n-1] * T[1]   
 ```
 
 # Recursive Dynamic Programming
@@ -64,7 +63,7 @@ T[n] = T[0]   * T[n-1] +
 ## Complexity
 
 ```
-O(N) O(N)
+O(2^N) O(N)
 ```
 
 # Iterative Dynamic Programming
