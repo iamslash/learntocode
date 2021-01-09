@@ -1,74 +1,87 @@
 #include <cstdio>
-#include <cstdlib>
 #include <vector>
 
-void printv(const std::vector<int>& v) {
-  for (int a : v)
-    printf("%d ", a);
-  printf("\n");    
-}
+using namespace std;
 
-void qsort_h(int step, std::vector<int>& v, int l, int r) {
-  int i = l, j = r;
-  int pv = v[(l+r)/2];
+//       i
+// 1 2 3 5 4
+//     p
+//   j
+//
 
-  // partition
-  while (i <= j) {
-    while (v[i] < pv)
-      ++i;
-    while (v[j] > pv)
-      --j;
-    if (i <= j)
-      std::swap(v[i++], v[j--]);
+class Solution {
+ public:
+  void sortHoare(vector<int>& A, int l, int r) {
+    int i = l, j = r;
+    int v = A[(l+r)/2];
+    // base, conquer, partitioning
+    while (i <= j) {
+      while (A[i] < v) {
+        ++i;
+      }
+      while (A[j] > v) {
+        --j;
+      }
+      if (i <= j) {
+        swap(A[i++], A[j--]);
+      }
+    }
+    // recursion, divide
+    if (l < j) {
+      sortHoare(A, l, j);
+    }
+    if (i < r) {
+      sortHoare(A, i, r);
+    }
   }
 
-  // for (int k = 0; k < step; ++k)
-  //   printf("_");
-  // printf("l:%d, r: %d, i: %d, j: %d | ", l, r, i, j);
-  // for (int k = l; k <= r; ++k)
-  //   printf("%d ", v[k]);
-  // printf("\n");
+//            i
+// A: 2 1 3 4 5
+//        p 
+//   
+//
 
-  if (l < j)
-    qsort_h(step+1, v, l, j);
-  if (i < r)
-    qsort_h(step+1, v, i, r);
+  int partLomuto(vector<int>& A, int l, int r) {
+    int partVal = A[r];
+    int partIdx = l;
 
-}
+    for (int i = l; i < r; ++i) {
+      if (A[i] < partVal) {
+        swap(A[i], A[partIdx++]);
+      }
+    }
+    swap(A[partIdx], A[r]);
 
-int part_l(std::vector<int>& v, int l, int r) {
-  int pv = v[r];
-  int rr = l;
+    return partIdx;
+  }
 
-  for (int i = l; i < r; ++i)
-    if (v[i] < pv)
-      std::swap(v[i], v[rr++]);
-  std::swap(v[rr], v[r]);
-  
-  return rr;
-}
+  void sortLomuto(vector<int>& A, int l, int r) {
+    // base
+    if (l >= r) {
+      return;
+    }
+    // recursion
+    int p = partLomuto(A, l, r);
+    sortLomuto(A, l, p-1);
+    sortLomuto(A, p+1, r);
+  }
+};
 
-void qsort_l(std::vector<int>& v, int l, int r) {
-  // base condition
-  if (l >= r)
-    return;
-  // recursion
-  int p = part_l(v, l, r);
-  qsort_l(v, l, p-1);
-  qsort_l(v, p+1, r);
+void printV(const vector<int>& A) {
+  for (int a : A) {
+    printf("%d ", a);
+  }
+  printf("\n");
 }
 
 int main() {
-  // std::vector<int> V = {1, 1, 0, 3, 4, 5, 1, 0, 5, 5, 3, 1, 2, 2, 2, 2};
-  std::vector<int> V = {5, 3, 7, 6, 2, 1, 4};
-  
-  qsort_h(0, V, 0, V.size()-1);
-  printv(V);
+  Solution sln;
+  vector<int> A = {5, 4, 3, 2, 1};
+  printV(A);
+  sln.sortHoare(A, 0, A.size()-1);
+  printV(A);
+  sln.sortLomuto(A, 0, A.size()-1);
+  printV(A);
 
-  // V = {1, 1, 0, 3, 4, 5, 1, 0, 5, 5, 3, 1, 2, 2, 2, 2};
-
-  // qsort_l(V, 0, V.size()-1);
-  // printv(V);
-  
   return 0;
 }

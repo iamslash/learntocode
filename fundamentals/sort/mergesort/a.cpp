@@ -1,88 +1,74 @@
 #include <cstdio>
-#include <cstdlib>
 #include <vector>
 
-void printv(const std::vector<int>& v) {
-  for (int a : v)
+using namespace std;
+
+//    l       m         r
+//              i
+// A: 0 1 4 7 9 2 4 4 8 8
+//                        j                    
+//                        k
+// W: 0 1 2 4 4 4 7 8 8 9
+//    
+// 
+
+class Solution {
+ private:
+  void merge(vector<int>& A, vector<int>& W, 
+              int l, int m, int r) {
+    int i = l, j = m + 1, k = l;
+    while (i <= m && j <= r) {
+      if (A[i] <= A[j]) {
+        W[k++] = A[i++];
+      } else {
+        W[k++] = A[j++];
+      }
+    }
+    if (i > m) {
+      for (int o = j; o <= r; ++o) {
+        W[k++] = A[o];
+      }
+    } else {
+      for (int o = i; o <= m; ++o) {
+        W[k++] = A[o];
+      }
+    }
+    copy(W.begin()+l, W.begin()+r+1, A.begin()+l);
+  }
+  void _sort(vector<int>& A, vector<int>& W, 
+              int l, int r) {
+    // base
+    if (l >= r) {
+      return;
+    }
+    // recursion
+    int m = (l + r) / 2;
+    _sort(A, W, l, m);
+    _sort(A, W, m+1, r);
+    merge(A, W, l, m, r);
+  }
+ public:
+  void sort(vector<int>& A) {
+    vector<int> W = A;
+    _sort(A, W, 0, A.size()-1);
+  }
+};
+
+void printV(const vector<int>& A) {
+  for (int a : A) {
     printf("%d ", a);
-  printf("\n");    
-}
-
-//
-// l
-//       r
-//   m
-// 1 3 4 5
-//         i
-//     j
-//         k
-void merge(int step, std::vector<int>& V, std::vector<int>& W,
-           int l, int m, int r) {
-  int i = l, j = m+1, k = l;
-  while (i <= m && j <= r) {
-    if (V[i] <= V[j])
-      W[k++] = V[i++];
-    else
-      W[k++] = V[j++];
   }
-  if (i > m) {
-    for (int n = j; n <= r; ++n)
-      W[k++] = V[n];
-  } else {
-    for (int n = i; n <= m; ++n)
-      W[k++] = V[n];
-  }
-  std::copy(W.begin()+l, W.begin()+r+1, V.begin()+l);
-
-  // for (int i = 0; i < step; ++i)
-  //   printf("=");
-  // printf("%d %d | ", l, r);
-  // for (int i = l; i <= r; ++i)
-  //   printf("%d ", W[i]);
-  // printf("\n");
-  
-}
-
-//         r
-//     m
-// l
-// 1 4 7 0 9
-//       i
-//         j
-
-//         k
-// 0 1 4 7 
-void msort(int step, std::vector<int>& V, std::vector<int>& W,
-           int l, int r) {
-  // for (int i = 0; i < step; ++i)
-  //   printf("_");
-  // printf("%d %d | ", l, r);
-  // for (int i = l; i <= r; ++i)
-  //   printf("%d ", V[i]);
-  // printf("\n");
-
-  // base condition
-  if (l >= r)
-    return;
-
-  // recursion
-  int m = (l+r)/2;
-  msort(step+1, V, W, l, m);
-  msort(step+1, V, W, m+1, r);
-  merge(step, V, W, l, m, r);
-}
-
-void merge_sort(std::vector<int>& V) {
-  std::vector<int> W = V;
-  msort(0, V, W, 0, V.size()-1);
+  printf("\n");
 }
 
 int main() {
-  std::vector<int> V = {1, 1, 0, 3, 4, 5, 1, 0, 5, 5, 3, 1, 2, 2, 2, 2};
+  Solution sln;
+  std::vector<int> A = {1, 1, 0, 3, 4, 5, 1, 0, 5, 5, 3, 1, 2, 2, 2, 2};
   
-  merge_sort(V);
+  printV(A);
   
-  printv(V);
-  
+  sln.sort(A);
+  printV(A);
+
   return 0;
 }
