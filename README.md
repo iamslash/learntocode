@@ -37,6 +37,7 @@
   - [String](#string)
   - [Suffix Array](#suffix-array)
   - [Tree](#tree)
+  - [Balance Tree](#balance-tree)
   - [Binary Search Tree](#binary-search-tree)
   - [Binary Indexed Tree](#binary-indexed-tree)
   - [Segment Tree](#segment-tree)
@@ -213,6 +214,7 @@
 - [codesignal](https://codesignal.com/)
   - uber, dropbox
 - [hackerrank](https://www.hackerrank.com/)
+  - rivian, linkedin
 - [codeshare](https://codeshare.io/)
 - [coding.sh](http://coding.sh/)
 - [pramp](https://www.pramp.com/)
@@ -236,13 +238,13 @@
 ```
 float와 double로 표현할 수 있는 정수 범위
 
-float = 1 sign bit + 8 exponent bit + 23 fraction bit (-2^23 ~ 2^23)
+float  = 1 sign bit +  8 exponent bit + 23 fraction bit (-2^23 ~ 2^23)
 double = 1 sign bit + 11 exponent bit + 52 fraction bit (-2^52 ~ 2^52)
 
 2^23 = 8,388,608
 2^52 = 4,503,599,627,370,496
 
-float 의 경우 소수점 이하 유효자리수는 이진수로 23 자리이므로 십진수로 약 7자리이다.
+ float 의 경우 소수점 이하 유효자리수는 이진수로 23 자리이므로 십진수로 약  7자리이다.
 double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이므로 십진수로 약 16자리이다.
 ```
 
@@ -590,11 +592,6 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
   - F | [overview](/doc/tree.md)
   - F | [inorder, preorder, postorder traversals](/fundamentals/tree/traversal/README.md)
-  - F | [B Tree](/fundamentals/tree/b-tree/README.md)
-  - F | [B+Tree](/fundamentals/tree/b+tree/README.md)
-  - F | [red black tree (balanced binary search tree)★](/fundamentals/tree/redblacktree/README.md)
-  - F | [avl tree (balanced binary search tree)](/fundamentals/tree/avltree/README.md)★
-  - F | [treap (balanced binary search tree)](fundamentals/tree/treap/README.md)★
   - F | [get kth element](/fundamentals/tree/getkthelement/README.md)
   - F | [get largest subtree with same value](/fundamentals/tree/largestsubtreewithsamevalue/README.md)
   - F | [get count of elements which are lesser than X](fundamentals/tree/getcountlessthan/README.md)
@@ -623,6 +620,14 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
   - [알](/algospot.com/EDITORWARS/) | [EDITORWARS](http://algospot.com/judge/problem/read/EDITORWARS)
   - [알](/algospot.com/SOLONG/) | [SOLONG](http://algospot.com/judge/problem/read/SOLONG)
   - [알](/algospot.com/NH/) | [NH](http://algospot.com/judge/problem/read/NH)
+
+## Balance Tree
+
+* F | [B-Tree](/fundamentals/tree/b-tree/README.md)
+* F | [B+-Tree](/fundamentals/tree/b+tree/README.md)
+* F | [red black tree (balanced binary search tree)★](/fundamentals/tree/redblacktree/README.md)
+* F | [avl tree (balanced binary search tree)](/fundamentals/tree/avltree/README.md)★
+* F | [treap (balanced binary search tree)](fundamentals/tree/treap/README.md)★
 
 ## Binary Search Tree
 
