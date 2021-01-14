@@ -45,6 +45,7 @@ class Solution {
 			int num = src[i];
 			int root = ds.find(i);
 			numMap.putIfAbsent(root, new HashMap<>());
+			// {root : {num : cnt}}
 			Map<Integer, Integer> childMap = numMap.get(root);
 			childMap.put(num, childMap.getOrDefault(num, 0) + 1);			
 		}
