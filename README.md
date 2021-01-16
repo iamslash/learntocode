@@ -63,6 +63,7 @@
   - [Memoization](#memoization)
   - [Greedy](#greedy)
   - [Combinatorial Search](#combinatorial-search)
+  - [Backtracking](#backtracking)
   - [Shortest Path](#shortest-path)
   - [Optimization Problems To Decision Problems](#optimization-problems-to-decision-problems)
   - [Game theory](#game-theory)
@@ -936,6 +937,11 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
   - [알](/algospot/ALLERGY) | [ALLERGY](https://algospot.com/judge/problem/read/ALLERGY)
   - [알](/algospot/KAKURO2/README.md) | [KAKURO2](https://algospot.com/judge/problem/read/KAKURO2)
   - [알](/algospot/NQUEEN/README.md) | [NQUEEN](https://algospot.com/judge/problem/read/NQUEEN)
+
+## Backtracking
+
+* F | [backtracking](/doc/backtracking.md)
+* [L](/leetcode2/ConstructtheLexicographicallyLargestValidSequence/README.md) | [Construct the Lexicographically Largest Valid Sequence](https://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence/)
 
 ## Shortest Path
 
