@@ -18,7 +18,20 @@ M:       heights: sortedHeights:
 1 0 1    2 0 3    0 2 3
 ```
 
-`sortedHeights` 는 높이의 오름차순으로 정렬되어 있다.
+`sortedHeights` 는 높이의 오름차순으로 정렬되어 있다.  예를 들어
+다음과 같이 다양한 `sortedHeights` 에 대한 rectangle 을 생각해 보자.
+
+```
+sortedHeights: 0 1 2
+max rectangle: 2
+
+sortedHeights: 1 1 3
+max rectangle: 3
+
+sortedHeights: 2 2 3
+max rectangle: 6
+```
+
 다음과 같은 loop 을 이용하면 최대 넓이를 구할 수 있다.
 
 ```
