@@ -52,3 +52,7 @@ prodMap = new HashMap<>()` 을 선언하여 두수의 곱을 저장한다.
 ```
 O(N^2) O(N)
 ```
+
+# Similar Questions
+
+* [Two Sum](https://leetcode.com/problems/two-sum/)
