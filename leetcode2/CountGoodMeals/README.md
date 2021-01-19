@@ -48,3 +48,8 @@ sum(deilciousness[i]+deliciousness[j]) <= 2^21` 이다.
 ```
 O(N) O(N)
 ```
+
+# Similar Questions
+
+* [Two Sum](https://leetcode.com/problems/two-sum/)
+* [Max Number of K-Sum Pairs](https://leetcode.com/problems/max-number-of-k-sum-pairs/)
