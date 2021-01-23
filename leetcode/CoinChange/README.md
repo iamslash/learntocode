@@ -65,6 +65,7 @@ C[a] = min(C[a], C[a - coins[i]] + 1)
 ## Implementation
 
 * [c++11](iterative.cpp)
+* [java8](Solution.java)
 
 ## Time Complexity
 
