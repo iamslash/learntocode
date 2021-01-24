@@ -12,10 +12,12 @@
 ## Implementation
 
 * [c++11](recursive.cpp)
+* [java8](Solution.java)
 
 ## Complexity
 
 ```
+O(N^2) O(N)
 ```
 
 # Iterative Dynamic Programming
@@ -35,6 +37,7 @@ C[sum] = max(C[sum], max((sum-i)*i, C[sum-i]*i))
 ## Implementation
 
 * [c++11](iterative.cpp)
+* [java8](Solution.java)
 
 ## Complexity
 
