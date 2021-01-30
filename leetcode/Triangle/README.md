@@ -10,13 +10,19 @@
 
 ## Idea
 
+```
+T[i-1][j] = min(T[i][j], T[i][j+1])
+```
+
 ## Implementation
 
 * [c++11](recursive.cpp)
+* [java8](Solution.java)
 
 ## Complexity
 
 ```
+O(N^2) O(N^2)
 ```
 
 # Recusive Dynamic Programming
@@ -29,7 +35,9 @@
 
 * [c++11](iterative.cpp)
 
+
 ## Complexity
 
 ```
+O(N^2) O(N^2)
 ```
