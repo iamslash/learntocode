@@ -44,6 +44,8 @@ return: max count when i, M, left
 모두 더한 것을 저장한다. `dfs(P, C, 0, 1, sum)` 가 곧 
 답이다.
 
+![](recursiontree.png)
+
 # Implementation
 
 * [c++11](a.cpp)

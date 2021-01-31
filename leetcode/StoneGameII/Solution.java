@@ -7,6 +7,9 @@ import java.util.*;
 class Solution {
 	private int dfs(int[] piles, int[][]C, int i, int M, int left) {
 		int n = piles.length;
+		// base
+		if (i >= n)
+			return 0;
 		// memo
 		if (C[i][M] >= 0)
 			return C[i][M];
