@@ -47,6 +47,7 @@ return: max count when i, M, left
 # Implementation
 
 * [c++11](a.cpp)
+* [java8](Solution.java)
 
 # Complexity
 
