@@ -6,21 +6,24 @@
 
 //
 // adjPairs: [2,1],[3,4],[3,2]]
-//   adjMap: 3 4 1 2 
-//           2 3 2 1 
-//           4     3
+//   adjMap: 1 2 3 4 
+//           2 1 2 3
+//             3 4
 //      ans: 1 2 3 4
-//             p t
+//               p t
 
 using namespace std;
 
+// 516ms 86.13% 105.6MB 85.49%
+// greedy
+// O(E) O(E)
 class Solution {
  public:
-  vector<int> restoreArray(vector<vector<int>>& adjPairs) {
+  vector<int> restoreArray(vector<vector<int>>& E) {
     unordered_map<int, vector<int>> adjMap;
-    for (auto& u : adjPairs) {
-      adjMap[u[0]].push_back(u[1]);
-      adjMap[u[1]].push_back(u[0]);
+    for (auto& e : E) {
+      adjMap[e[0]].push_back(e[1]);
+      adjMap[e[1]].push_back(e[0]);
     }
     vector<int> ans;
     for (auto& u : adjMap) {
@@ -30,7 +33,7 @@ class Solution {
         break;
       }
     }
-    while (ans.size() <= adjPairs.size()) {
+    while (ans.size() <= E.size()) {
       int tail = ans.back();
       int prev = ans[ans.size() - 2];
       auto& next = adjMap[tail];
