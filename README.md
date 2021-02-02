@@ -469,6 +469,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
   - F | [priority queue with O(1)](fundamentals/bitmask/priorityqueue/README.md)
   - F | [maximal stable set](fundamentals/bitmask/maximalstableset/README.md)★
   - F | [Bit Twiddling Hacks](http://graphics.stanford.edu/~seander/bithacks.html)
+  - [L](/leetcode2/DecodeXORedPermutation/README.md) | [Decode XORed Permutation](https://leetcode.com/problems/decode-xored-permutation/)
   - [알](/algospot/GRADUATION/) | [GRADUATION](https://algospot.com/judge/problem/read/GRADUATION)
   - [H](hackerrank/algorithms/TheGreatXor/) | [The Great XOR](https://www.hackerrank.com/challenges/the-great-xor)
 
