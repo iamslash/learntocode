@@ -944,6 +944,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 * F | [backtracking](/doc/backtracking.md)
 * [L](/leetcode/Subsets/) | [Subsets](https://leetcode.com/problems/subsets)
+* [L](/leetcode/GenerateParentheses/) | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
 * [L](/leetcode2/ConstructtheLexicographicallyLargestValidSequence/README.md) | [Construct the Lexicographically Largest Valid Sequence](https://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence/)
 
 ## Shortest Path
