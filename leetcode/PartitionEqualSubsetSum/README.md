@@ -7,7 +7,9 @@
 
 # Idea 
 
-[0/1 knapsack](/fundamentals/dynamicprog/knapsack01/README.md) 과 비슷하다. 
+[0/1 knapsack](/fundamentals/dynamicprog/knapsack01/README.md) 과
+비슷하다. 하나의 동전을 여러번 사용할 수는 없다. 하나의 동전을 한번만
+사용할 수 있다는 점을 주의하자.
 
 `int half` 를 선언하여 `A[]` 의 합을 구하고 그것의 절반을 저장한다.
 만약 `A[]` 의 합이 홀수 이면 2 개의 subsequence 로 나눌 수 있는 방법은

@@ -1,36 +1,30 @@
-// Copyright (C) 2020 by iamslash
+// Copyright (C) 2021 by iamslash
 
-//        i
-// A: 5 2 1
-// C: t t t t f 
-//      a
+//         i
+// nums: 2 2 1 1
+//           a
+//    C: t f t f  
 //
-// A: 5 4 1
-//
-//        i
-// A: 3 3 3 4 5
-// C: t f f t f f t f f t
-//                      a
 
-// 21ms 59.90% 38.8MB 5.07%
+// 12ms 87.34% 38.2MB 94.47%
 // iterative dynamic programming
 // O(HN) O(H)
 class Solution {
-	public boolean canPartition(int[] A) {
-		int half = 0;
-		for (int a : A) {
-			half += a;
+	public boolean canPartition(int[] nums) {
+		int sum = 0, n = nums.length;
+		for (int i = 0; i < n; ++i) {
+			sum += nums[i];
 		}
-		if (half % 2 == 1) {
+		if (sum % 2 != 0) {
 			return false;
 		}
-		half /= 2;
+		int half = sum / 2;
 		boolean[] C = new boolean[half+1];
 		C[0] = true;
-		for (int i = 0; i < A.length; ++i) {
-			for (int amount = half; amount > 0; --amount) {
-				if (amount >= A[i]) {
-					C[amount] = C[amount] || C[amount - A[i]];
+		for (int num : nums) {
+			for (int amt = half; amt >= num; --amt) {
+				if (!C[amt]) {
+					C[amt] = C[amt - num];
 				}
 			}
 		}
