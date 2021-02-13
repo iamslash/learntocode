@@ -1,28 +1,31 @@
-// Copyright (C) 2020 by iamslash
+// Copyright (C) 2021 by iamslash
 
 import java.util.*;
 
-//            i
-//    A: 2 3 -2 4
-//    m: 2 3-12 
-//    M: 2 6
-// gMax: 2 6
+//   
+//   nums: 2 3 -2  4
+//                 i
+// tmpMin: 2 6-12-48 
+// tmpMax: 2 6 -6 -8
+// locMin: 2 3-12-48 
+// locMax: 2 6 -2  4
+// glbMax: 2 6  6  6
 
-// 1ms 91.05% 38.8MB 33.40%
-// dynamic programming
+// 1ms 93.81% 39.1MB 30.86%
+// iterative dynamic programming
 // O(N) O(1)
 class Solution {
-	public int maxProduct(int[] A) {
-		int gMax = A[0];
-		int lastMax = A[0];
-		int lastMin = A[0];
-		for (int i = 1; i < A.length; ++i) {
-			int tMin = Math.min(lastMin * A[i], lastMax * A[i]);
-			int tMax = Math.max(lastMin * A[i], lastMax * A[i]);
-			lastMin = Math.min(A[i], tMin);
-			lastMax = Math.max(A[i], tMax);
-			gMax = Math.max(gMax, lastMax);
+	public int maxProduct(int[] nums) {
+		int glbMax = Integer.MIN_VALUE, n = nums.length;
+		int locMin = 1;
+		int locMax = 1;
+		for (int num : nums) {
+			int tmpMin = Math.min(locMin * num, locMax * num);
+			int tmpMax = Math.max(locMin * num, locMax * num);
+			locMin = Math.min(tmpMin, num);
+			locMax = Math.max(tmpMax, num);
+			glbMax = Math.max(glbMax, locMax);
 		}
-		return gMax;
+		return glbMax;
 	}
 }
