@@ -35,22 +35,24 @@ candiesCount: 7 4 5 3 8
   queries[2]: 1 1 1 1 1 1 1 1 1 1  1 1 1 
 ```
 
-`queries[0] = [0,2,2]` 의 경우를 살펴보자. 하루에 최대 `2`
-개까지 먹을 수 있다. `0` 타입의 캔디를 `2` 번째 날에 먹을
-수 있는지 따져보자. 날짜 순서대로 `2, 2` 만큼 먹으면 `2` 번째 날에
-`0` 번 타입의 캔디를 먹을 수 있다.
+`queries[0] = [0,2,2]` 의 경우를 살펴보자. 하루에 최대 `2` 개까지 먹을
+수 있다. `0` 타입의 캔디를 `2` 번째 날에 먹을 수 있는지 따져보자. 날짜
+순서대로 `2, 2` 만큼 먹으면 `2` 번째 날에 `0` 번 타입의 캔디를 먹을 수
+있다.
 
-`ps[]` 를 선언하여 `candiesCount[]` 의 부분합을 저장한다. 즉, 
-`ps[3]` 은 `3` 타입 캔디까지의 합을 의미한다.
+`ps[]` 를 선언하여 `candiesCount[]` 의 부분합을 저장한다. 즉, `ps[3]`
+은 `3` 타입 캔디까지의 합을 의미한다.
 
-`queries[i] == [type, day, cap]` 이라고 해보자. `day` 동안
-`cap` 개씩 먹은 캔디의 수를 `mostCnt` 라고 하자. `day` 동안
-`1` 개씩 먹은 캔디의 수를 `leastCnt` 라고 하자.
+`queries[i] == [type, day, cap]` 이라고 해보자. `day` 동안 `cap` 개씩
+먹은 캔디의 수를 `mostCnt` 라고 하자. `day` 동안 `1` 개씩 먹은 캔디의
+수를 `leastCnt` 라고 하자.
 
-`mostCnt = (day + 1) * cap` 이다. `leastCnt = (day + 1) * 1` 이다.
+`day` 동안 최대로 먹을 수 있는 캔디수는 `mostCnt = (day + 1) * cap`
+이다.  `day` 동안 최소로 먹을 수 있는 캔디수는 `leastCnt = (day + 1) *
+1` 이다.
 
-`ps[type - 1] < mostCnt` 이고 `ps[type] >= leastCnt` 이면 `ans[i]`
-는 `true` 이다.
+`ps[type - 1] < mostCnt` 이고 `ps[type] >= leastCnt` 이면 `ans[i]` 는
+`true` 이다.
 
 # Implementation
 
