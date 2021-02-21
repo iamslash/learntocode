@@ -19,10 +19,10 @@
 `amount` 인 것을 만들 수 있는지 여부를 저장한다. `C[]` 를 모두 채우면
 `C[half]` 가 답이다. seed 를 위해 `C[0] = true` 를 수행한다.
 
-인덱스 `i` 를 `[0..n)` 을 순회하며 다음을 반복한다.
+`int num` 으로 `A[]` 을 순회하며 다음을 반복한다.
 
 * 인덱스 `amount` 를 선언하여 `[half..0)` 를 순회하며 다음을 반복한다.
-  * `amount >= A[i]` 이면 `C[amount] = C[amount] || C[amount - A[i]]`
+  * `amount >= num` 이면 `C[amount] = C[amount] || C[amount - A[i]]`
     를 수행한다.
   
 모든 반복을 마치면 `C[half]` 가 곧 답이다.
@@ -47,6 +47,7 @@ C: t f t t f   t t t t f
 
 * [c++11](a.cpp)
 * [java8](Solution.java)
+* [py3](a.py)
 
 # Complexity
 
