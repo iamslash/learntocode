@@ -4,20 +4,8 @@
 from collections import Counter
 from typing import List
 
-# class Solution:
-#     def popularity(self, s):
-#         cnt = 0
-#         for res_set in self.res_sets:
-#             if s in res_set:
-#                 cnt += 1
-#         return cnt
-    
-#     def sortFeatures(self, features: List[str], responses: List[str]) -> List[str]:
-#         self.res_sets = []
-#         for res in responses:
-#             self.res_sets.append(set(res.split(' ')))
-#         return sorted(features, key = lambda s: self.popularity(s))
-
+# bucket sort
+# O(NlgN) O(N)
 class Solution:
     def sortFeatures(self, features: List[str], responses: List[str]) -> List[str]:
         counter = Counter(features)
