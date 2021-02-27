@@ -4,11 +4,13 @@
 #include <vector>
 #include <cstdlib>
 
-// pos: 1 3 2
+//      k: 1
+//    pos: 1 3 2
 
-//      l   r
-// day: 0 2 1
-//          i
+//             l   r
+//    day: 1 3 2
+//               i
+// minday: 2
 
 // 196ms 87.79% 19.6MB 80.75%
 // O(N) O(N)
