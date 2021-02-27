@@ -2,12 +2,12 @@
 
 [Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
 
-# Idea
-
 과일의 종류를 의미하는 숫자의 모음 `A[]` 가 주어진다. 바구니는 두개
 있다. 각 바구니에는 한 종류의 과일만 무한히 넣을 수 있다. 연속된
 나무들 중 가장 많은 과일을 두개의 바구니에 담을 수 있는 경우 그
 나무들의 개수를 구하는 문제이다.
+
+# Idea
 
 전형적인 two pointers 문제이다. `unordered_map<int, int> cnts` 를
 선언하고 `과일종류: 과일개수` 를 저장한다. 인덱스 `i, j` 를 이용하여

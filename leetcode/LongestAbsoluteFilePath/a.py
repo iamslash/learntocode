@@ -9,15 +9,18 @@
 #    name: dir    subdir1    subdir2      file.ext
 #     lvl:   0          1          1             2
 #
-#  maxlen: 0
+#  maxlen: 20
 # pathlen: 0 1 2 
 #          0 4 12
 
+# 28ms 80.68% 14.3MB 38.45%
+# hash map
+# O(N) O(N)
 class Solution:
     def lengthLongestPath(self, input: str) -> int:
         maxlen = 0
         # {lvl: len}
-        pthlen = {0: 0}
+        pathlen = {0: 0}
         for line in input.splitlines():
             name = line.lstrip('\t')
             lvl  = len(line) - len(name)
