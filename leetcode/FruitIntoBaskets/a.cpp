@@ -4,11 +4,11 @@
 #include <vector>
 #include <unordered_map>
 
-//                 i       
+//                     i       
 //    A: 3 3 3 1 2 1 1 2 3 3 4
-//                         j
-// cnts: 1 2 3
-//       2 2 2
+//                             j
+// cnts: 2 3 4
+//       1 2 1
 
 // 176ms 51.39% 19.9MB 50.41%
 // O(N) O(N)
