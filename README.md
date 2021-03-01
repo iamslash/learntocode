@@ -723,6 +723,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
   - F | [BFS (breadth first search)](fundamentals/graph/bfs/README.md)
   - F | [BFS shortest path](fundamentals/graph/bfsshortestpath/README.md)
+  - [L](/leetcode2/MapofHighestPeak/README.md) | [Map of Highest Peak](https://leetcode.com/problems/map-of-highest-peak/)
 
 ## Double BFS
 
