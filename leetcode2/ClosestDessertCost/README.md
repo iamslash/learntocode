@@ -49,7 +49,6 @@ toppingCosts: input toppingCosts
 # Implementation
 
 * [c++11](a.cpp)
-* [python3](a.py)
 
 # Complexity
 
