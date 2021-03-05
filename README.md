@@ -46,6 +46,7 @@
   - [DFS (Depth First Search)](#dfs-depth-first-search)
   - [BFS (Breadth First Search)](#bfs-breadth-first-search)
   - [Double BFS](#double-bfs)
+  - [DFS, BFS](#dfs-bfs)
   - [Topological Sort](#topological-sort)
   - [Trie](#trie)
   - [Network Flow](#network-flow)
@@ -728,6 +729,10 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 ## Double BFS
 
 * [L](/leetcode2/MinimumMovestoMoveaBoxtoTheirTargetLocation/README.md) | [Minimum Moves to Move a Box to Their Target Location](https://leetcode.com/problems/minimum-moves-to-move-a-box-to-their-target-location/)
+
+## DFS, BFS
+
+* [L](/leetcode2/ShortestPathinaHiddenGrid/) | [Shortest Path in a Hidden Grid](https://leetcode.com/problems/shortest-path-in-a-hidden-grid/)
 
 ## Topological Sort
 
