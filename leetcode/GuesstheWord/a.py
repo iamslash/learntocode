@@ -10,6 +10,7 @@
 
 # >>> from collections import Counter
 # >>> wordlist = ["acckzz","ccbazz","eiowzz","abcczz"]
+# >>> w[0] for w in wordlist
 # >>> freqlist = [Counter(w[i] for w in wordlist) for i in range(6)]
 # >>> pprint.pprint(freqlist)
 # [Counter({'a': 2, 'c': 1, 'e': 1}),
@@ -30,6 +31,7 @@ class Solution:
             return sum(a == b for a, b in zip(w1, w2))
         n = 0
         while n < 6:
+            # freqmaplist[i][c]: the count of c character and i-th of word[*]
             freqmaplist = [collections.Counter(w[i] for w in wordlist) for i in range(6)]
             guess = max(wordlist, key = lambda w: sum(freqmaplist[i][c] for i, c in enumerate(w)))
             n = master.guess(guess)
