@@ -22,6 +22,12 @@
 # >>> max(wordlist, key = lambda w: sum(freqlist[i][c] for i, c in enumerate(w))) 
 # 'acckzz'
 
+# wordlist: aaabbb aaaccc
+# freqlist: a a a b b b
+#           2 2 2 1 1 1
+#                 c c c
+#                 1 1 1
+
 from typing import List
 
 # 32ms 76.01% 14.4MB 36.14
@@ -38,4 +44,12 @@ class Solution:
             wordlist = [w for w in wordlist if match(w, guess) == n]
 
 if __name__ == "__main__":
-    main()
+    from collections import Counter
+    from pprint import pprint
+    wordlist = ["aaabbb","aaaccc","aaaddd","aaaeee"]
+    while True:
+        input()
+        freqmaplist = [Counter(w[i] for w in wordlist) for i in range(6)]
+        pprint(freqmaplist)
+        guess = max(wordlist, key = lambda w: sum(freqmaplist[i][c] for i, c in enumerate(w)))
+        print(guess)
