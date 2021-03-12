@@ -13,6 +13,13 @@ class Solution:
         for i in range(firstlen, n, K):
             ans += S[i:i+K].upper() + "-"
         return ans[:-1]
+
+# 36ms 90.66% 14.7MB 78.85%
+# O(N) O(N)
+class Solution:
+    def licenseKeyFormatting(self, S: str, K: int) -> str:
+        S = S.replace("-", "").upper()[::-1]
+        return '-'.join(S[i:i+K] for i in range(0, len(S), K))[::-1]
         
 if __name__ == "__main__":
     sln = Solution()
