@@ -9,6 +9,7 @@
 
 from typing import List
 
+# 128ms 91.05% 16.9MB 32.38%
 # partial sum
 # sumRegion: O(W)
 #    update: O(W)
@@ -24,7 +25,7 @@ class NumMatrix:
         w = len(self.matrix[0])
         org = self.matrix[row][col]
         if col > 0:
-            org = self.matrix[row][col-1]
+            org -= self.matrix[row][col-1]
         diff = org - val
         for y in range(col, w):
             self.matrix[row][y] -= diff
@@ -34,7 +35,7 @@ class NumMatrix:
         for x in range(row1, row2+1):
             sum += self.matrix[x][col2]
             if col1 > 0:
-                sum - self.matrix[x][col1-1]
+                sum -= self.matrix[x][col1-1]
         return sum
         
 if __name__ == "__main__":
@@ -44,7 +45,9 @@ if __name__ == "__main__":
         [1, 2, 0, 1, 5],
         [4, 1, 0, 1, 7],
         [1, 0, 3, 0, 5]])
+    # 8
     print(nm.sumRegion(2, 1, 4, 3))
     nm.update(3, 2, 2)
+    # 10
     print(nm.sumRegion(2, 1, 4, 3))
     
