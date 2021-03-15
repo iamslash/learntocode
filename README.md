@@ -528,6 +528,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 ## Heap
 
   - [L](/leetcode/MergekSortedLists/) | [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists)
+  - [L](/leetcode2/MaximumAveragePassRatio/README.md) | [Maximum Average Pass Ratio](https://leetcode.com/problems/maximum-average-pass-ratio/)
 
 ## Two Heap
   
