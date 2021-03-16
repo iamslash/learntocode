@@ -4,6 +4,7 @@
 from typing import List
 from collections import defaultdict
 
+# 1992ms 100.00% 62.2MB 100.00%
 # dijkstra, dfs
 # O(E*lgV) O(E+N)
 class Solution:
