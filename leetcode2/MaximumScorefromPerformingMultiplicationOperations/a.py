@@ -2,25 +2,25 @@
 # Copyright (C) 2021 by iamslash
 
 from typing import List
-
 #   l
 # 0 1 2 3 4
 #       r
 #     i 
 # a b c d
 
+# 9376ms 33.33% 176.1MB 66.67%
 # dynamic programming
-# O(N^2) O(M^2)
+# O(M^2) O(M^2)
 class Solution:
     def maximumScore(self, nums: List[int], mults: List[int]) -> int:
-        C = [[0 for x in range(len(mults))] for y in range(len(mults))]
+        C = [[None for x in range(len(mults))] for y in range(len(mults))]
         def dfs(l: int, i: int) -> int:
             # print(f'{l}, {i}')
             # base
             if i >= len(mults):
                 return 0;
             # memo
-            if C[l][i] > 0:
+            if not C[l][i]:
                 return C[l][i]
             # recursion
             r = len(nums) - 1 - (i - l)
