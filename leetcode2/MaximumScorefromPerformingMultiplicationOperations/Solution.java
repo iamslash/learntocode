@@ -63,9 +63,9 @@ class Solution {
 
 
 //   1 2 3
-// 3       0
-// 2     0
-// 1   0
+// 3       
+// 2     
+// 1     
 // 52ms 100.00% 49MB 100.00%
 // iterative dynamic programming
 // O(M^2) O(M^2)
