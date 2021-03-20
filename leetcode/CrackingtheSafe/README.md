@@ -1,8 +1,8 @@
 # Problem
 
-암호의 자릿수 `N` 과 숫자 `K` 가 주어진다. 암호의 한 자릿수는 `0..K-1` 만큼 가능하다. `N` 과 `K` 조건을 만족하는 어떠한 암호도 풀 수 있는 가장 작은 길이의 문자열을 구하는 문제이다.
+> [Cracking the Safe @ leetcode](https://leetcode.com/problems/cracking-the-safe/)
 
-* [Cracking the Safe @ leetcode](https://leetcode.com/problems/cracking-the-safe/)
+암호의 자릿수 `N` 과 숫자 `K` 가 주어진다. 암호의 한 자릿수는 `0..K-1` 만큼 가능하다. `N` 과 `K` 조건을 만족하는 어떠한 암호도 풀 수 있는 가장 작은 길이의 문자열을 구하는 문제이다.
 
 # References
 
