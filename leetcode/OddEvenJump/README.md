@@ -1,14 +1,14 @@
 # Problem
 
-[Odd Even Jump](https://leetcode.com/problems/odd-even-jump/)
-
-# Idea
+> [Odd Even Jump](https://leetcode.com/problems/odd-even-jump/)
 
 수열 `A[]` 가 주어진다. `A[i]` 에서 홀수 번째 점프할 때는 `A[i] <=
 A[j]` 인 가장 작은 `A[j]` 로 간다. 이것을 higher first 라고
 하자. `A[i]` 에서 짝수 번째 점프할 때는 `A[i] >= A[j]` 인 가장 큰
 `A[j]` 로 간다. 이것을 lower first 라고 하자. `n = A.size()` 이다.
 `A[]` 의 끝까지 도착할 수 있는 출발지의 개수를 구하는 문제이다.
+
+# Idea
 
 먼저 벡터 `vector<int> hier(n), loer(n)` 를 선언한다.  `A[i]` 에서
 higer first 점프 할 때 끝까지 도착할 수 있으면 `hier[A[i]] = 1` 을
@@ -43,6 +43,7 @@ higer first 점프 할 때 끝까지 도착할 수 있으면 `hier[A[i]] = 1` �
 # Implementation
 
 * [c++11](a.cpp)
+* [java8](Solution.java)
 
 # Complexity
 
