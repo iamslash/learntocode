@@ -5,6 +5,9 @@ import java.util.*;
 // abc
 //  bccdab
 
+// 8ms 100.00% 40.8MB 100.00%
+// brute force
+// O(N) O(1)
 class Solution {
 	public int countQuadruples(String s1, String s2) {
 		int min = Integer.MAX_VALUE;
@@ -16,7 +19,8 @@ class Solution {
 				continue;
 			}
 			if (j - a < min) {
-				min = j - a + (cnt = 0);
+				min = j - a;
+				cnt = 0;
 			}
 			if (j - a == min) {
 				cnt++;
