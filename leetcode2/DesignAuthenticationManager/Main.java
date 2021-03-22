@@ -10,33 +10,22 @@ class AuthenticationManager {
 	private int ttl;
 	private Map<String, Integer> tokenMap = new HashMap<>();
 
-	private void expire(int ts) {
-		List<String> tokenList = new ArrayList<>();
-		tokenMap.forEach((key, val) -> {
-				if (val <= ts) {
-					tokenList.add(key);
-				}		
-			});
-		for (String token : tokenList) {
-			tokenMap.remove(token);
-		}
-	}
-
 	public AuthenticationManager(int timeToLive) {
 		ttl = timeToLive;
 	}
     
 	public void generate(String tokenId, int currentTime) {
-		tokenMap.put(tokenId, currentTime);
+		tokenMap.put(tokenId, currentTime + ttl);
 	}
     
 	public void renew(String tokenId, int currentTime) {
-		expire(currentTime);
-		tokenMap.put(tokenId, currentTime);
+		if (tokenMap.containsKey(tokenId) && tokenMap.get(tokenId) > currentTime) {
+			tokenMap.put(tokenId, currentTime + ttl);
+		}
 	}
     
 	public int countUnexpiredTokens(int currentTime) {
-		expire(currentTime);
+		tokenMap.entrySet().removeIf(e -> e.getValue() <= currentTime);
 		return tokenMap.size();
 	}
 }
