@@ -6,6 +6,7 @@ import java.util.*;
 // E 0 W E
 // 0 E 0 0
 
+// 4ms 99.05% 42.8MB 67.42%
 // brute force
 // O(HW) O(W)
 class Solution {
@@ -26,7 +27,7 @@ class Solution {
 						}
 					}
 				}
-				if (y == 0 || G[y-1][x] == 'E') {
+				if (y == 0 || G[y-1][x] == 'W') {
 					killCols[x] = 0;
 					for (int k = y; k < h && G[k][x] != 'W'; ++k) {
 						if (G[k][x] == 'E') {
