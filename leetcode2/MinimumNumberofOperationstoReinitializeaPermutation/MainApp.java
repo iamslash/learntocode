@@ -10,20 +10,29 @@
 // O(N) O(1)
 class Solution {
 	public int reinitializePermutation(int n) {
-		int ans = 0, idx = 1;
-		do {
-			if (idx < n/2) {
-				idx *= 2;
+		int[] arr = new int[n];
+		for (int i = 0; i < n; ++i) {
+			if (i % 2 == 0) {
+				arr[i] = i / 2;
 			} else {
-				idx = (idx - n/2) * 2 + 1;
+				arr[i] = n / 2 + (i - 1) / 2;
 			}
+		}
+		int ans = 1, i = arr[1];
+		while (i != 1) {
+			i = arr[i];
 			ans++;
-		} while (idx != 1);
-		return cnt;
+		}
+		return ans;
 	}
 }
 
 public class MainApp {
   public static void main(String[] args) {
+		Solution sln = new Solution();
+		// 2
+		System.out.println(sln.reinitializePermutation(4));
+		// 4
+		System.out.println(sln.reinitializePermutation(6));
   }
 }
