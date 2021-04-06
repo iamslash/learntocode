@@ -4,11 +4,11 @@
 
 # one src to one dst
 
-* [A* @ learntocode](/fundamentals/combinatorialsearch/astar/README.md)
 * [Dijkstra algorithm @ learntocode](/fundamentals/graph/dijkstra/README.md) (non-negative weighted graphs)
-  * `dist[]` 대신 `src` 에서 `dst` 까지의 거리만 저장하면 최소 비용을 구할 수 있다.
-  * [Minimum Path Cost in a Hidden Grid @ leetcode](https://leetcode.com/problems/minimum-path-cost-in-a-hidden-grid/)
-
+  * `dist[]` 를 보관할 필요는 없다. `src` 에서 `dst` 까지의 거리만 필요하다.
+  * [Minimum Path Cost in a Hidden Grid](/leetcode2/MinimumPathCostinaHiddenGrid/README.md)
+* [A* @ learntocode](/fundamentals/combinatorialsearch/astar/README.md)
+  
 # one src to all dst
 
 * [bfs shortest path @ learntocode](/fundamentals/graph/bfsshortestpath/README.md) (unweighted graphs)

@@ -10,4 +10,4 @@
 assign 하고 탐색를 종료한다.
 
 [backtracking on TSP](/algospot/TSP2/README.md#backtracking) 은 Traveling sales
-person 문제를 backtracking 을 사용하여 해결하는 방법에 관해 설명한다.
+person 문제를 backtracking 을 사용하여 해결한다.

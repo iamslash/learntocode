@@ -47,6 +47,7 @@
   - [BFS (Breadth First Search)](#bfs-breadth-first-search)
   - [Double BFS](#double-bfs)
   - [DFS, BFS](#dfs-bfs)
+  - [DFS, dijkstra](#dfs-dijkstra)
   - [Topological Sort](#topological-sort)
   - [Trie](#trie)
   - [Network Flow](#network-flow)
@@ -736,6 +737,11 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 ## DFS, BFS
 
 * [L](/leetcode2/ShortestPathinaHiddenGrid/) | [Shortest Path in a Hidden Grid](https://leetcode.com/problems/shortest-path-in-a-hidden-grid/)
+
+## DFS, dijkstra
+
+* [L](/leetcode/RobotRoomCleaner/README.md) | [Robot Room Cleaner](https://leetcode.com/problems/robot-room-cleaner/)
+* [L](/leetcode2/MinimumPathCostinaHiddenGrid/README.md) | [Minimum Path Cost in a Hidden Grid](https://leetcode.com/problems/minimum-path-cost-in-a-hidden-grid/)
 
 ## Topological Sort
 
