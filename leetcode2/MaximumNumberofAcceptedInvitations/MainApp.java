@@ -3,14 +3,14 @@
 import java.util.*;
 
 class Solution {
-	private boolean dfs(int u, int[][] G, int[] match, boolean[] visit) {
+	private boolean dfs(int[][] G, int[] match, boolean[] visit, int u) {
 		int w = G[0].length;
 		for (int v = 0; v < w; ++v) {
 			if (G[u][v] == 0 || visit[v]) {
 				continue;
 			}
 			visit[v] = true;
-			if (match[v] == -1 || dfs(match[v], G, match, visit)) {
+			if (match[v] == -1 || dfs(G, match, visit, match[v])) {
 				match[v] = u;
 				return true;
 			}
@@ -23,9 +23,9 @@ class Solution {
 		int[] match = new int[w];
 		Arrays.fill(match, -1);
 		int ans = 0;
-		for (int i = 0; i < h; ++i) {
+		for (int u = 0; u < h; ++u) {
 			boolean[] visit = new boolean[w];
-			if (dfs(i, G, match, visit)) {
+			if (dfs(G, match, visit, u)) {
 				ans++;
 			}
 		}
