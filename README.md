@@ -679,9 +679,9 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
   - F | [Ford-Fulkerson algorithm with adjacency matrix](fundamentals/graph/fordfulkersonadjmatrix/README.md)
   - F | [Ford-Fulkerson algorithm with adjacency list](fundamentals/graph/fordfulkersonadjlist/README.md)
   - F | [bipartite matching](fundamentals/graph/bipartitematching/README.md)
-  - F | [dinic algorithm](fundamentals/graph/dinic/README.md)
+  - F | [dinic algorithm](/fundamentals/graph/dinic/README.md)
   - F | [successive shortest path](doc/graph_successive_shortest_path.md)
-  - F | Kuhn–Munkres algorithm (hungarian algorithm)
+  - F | [Kuhn–Munkres algorithm (hungarian algorithm)](/fundamentals/graph/kuhn-munkres/README.md)
   - F | vertex cover problem
     - Kőnig's theorem
   - F | Hopcroft-Karp algorithm 
