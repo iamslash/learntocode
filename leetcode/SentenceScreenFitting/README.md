@@ -27,13 +27,14 @@ a bcd e a bcd e a bcd e a bcd e ...
 ```
 
 무한대의 `s` 를 인덱스 `i` 를 이용하여 순회한다. `012345` 를
-모두 배치하고 나면 `i` 는 `16` 이다. 이것을 `16 (s.size())`
-으로 나누면 몫이 답이다.
+모두 배치하고 나면 `i` 는 `16` 이다. 이것을 `8 (s.size())`
+으로 나누면 몫이 답이다. 따라서 답은 2 이다.
 
 # Implementation
 
 * [c++11](a.cpp)
 * [go](a.go)
+* [java8](MainApp.java)
 
 # Complexity
 
