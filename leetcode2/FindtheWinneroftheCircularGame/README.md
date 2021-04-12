@@ -6,6 +6,10 @@
 만큼씩 시계방향으로 이동하면서 숫자를 삭제하자. 마지막에 남는 숫자를
 구하라.
 
+# References
+
+> * [Josephus problem](https://en.wikipedia.org/wiki/Josephus_problem)
+
 # Idea
 
 예를 들어 `n = 5, k = 2` 의 경우를 살펴보자.
@@ -59,3 +63,7 @@ j = [1..n]
 ```
 O(N) O(1)
 ```
+
+# Similar Questions
+
+* [Elimination Game](/leetcode/EliminationGame/a.cpp)
