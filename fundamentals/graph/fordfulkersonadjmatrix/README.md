@@ -1,8 +1,14 @@
 # Abstract
 
-각 간선에 capacity 가 존재한 weighted graph 를 flow network 라고 한다. flow network 에서 두 정점 사이의 max flow (최대 유량) 을 구하는 알고리즘이다. 포드와 풀커슨이 네트워크 유량 문제에 대해 쓴 논문은 구현을 포함하지 않는다. 그래서 알고리즘 보다는 방법 (method) 이라고 부른다. augmenting path 를 BFS 로 구현하는 알고리즘을 edmonds karp algorithm 이라고 한다. 
+각 간선에 capacity 가 존재한 weighted graph 를 flow network 라고 한다. flow
+network 에서 두 정점 사이의 max flow (최대 유량) 을 구하는 알고리즘이다. 포드와
+풀커슨이 네트워크 유량 문제에 대해 쓴 논문은 구현을 포함하지 않는다. 그래서
+알고리즘 보다는 방법 (method) 이라고 부른다. augmenting path 를 BFS 로 구현하는
+알고리즘을 edmonds karp algorithm 이라고 한다. 
 
-DFS 구하는 방법은 다음과 같은 비효율적인 경우가 발생한다. DFS 의 경우 1 씩 유량을 증가시키기 때문에 2000 번 증가경로를 탐색한다. BFS 는 2 번 증가경로를 탐색한다. 
+DFS 구하는 방법은 다음과 같은 비효율적인 경우가 발생한다. DFS 의 경우 1 씩
+유량을 증가시키기 때문에 2000 번 증가경로를 탐색한다. BFS 는 2 번 증가경로를
+탐색한다. 
 
   ![](graph_dfs.png)
 

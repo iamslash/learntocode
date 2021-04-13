@@ -30,11 +30,19 @@ class Solution {
 				ans++;
 			}
 		}
+		for (int v = 0; v < w; ++v) {
+			if (match[v] >= 0) {
+				System.out.printf("%d -> %d\n", match[v], v);
+			}
+		}
 		return ans;
 	}
 }
 
 public class MainApp {
   public static void main(String[] args) {
+		int[][] G = new int[][]{{1,1,1},{1,0,0},{1,0,0}};
+		Solution sln = new Solution();
+		System.out.println(sln.maximumInvitations(G));
   }
 }
