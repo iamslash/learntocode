@@ -15,7 +15,7 @@
 
 - bipartite matching problem
   - bipartite graph 에서 maximum matching 을 찾는 문제
-  - bipartite graph 에서 왼쪽 그룹의 왼쪽에 src 를 두고 오른쪽 그룹의 오른쪽에 sink 를 두면 [ford fulkerson algorithm](/fundamentals/graph/fordfulkersonadjmatrix/README.md) 을 이용해서 해결할 수 있다. 이때 DFS 를 이용하여 좀 더 단순하게 구현할 수 있다.
+  - bipartite graph 에서 왼쪽 그룹의 왼쪽에 src 를 두고 오른쪽 그룹의 오른쪽에 sink 를 두면 [ford fulkerson algorithm](/fundamentals/graph/fordfulkersonadjmatrix/README.md) 을 이용해서 해결할 수 있다. 그러나 이 방법은 구현이 어렵다. DFS 를 이용하여 좀 더 단순하게 구현할 수 있다.
 
 # References
 
@@ -38,9 +38,38 @@ bool G[][], vector<int> match, vector<bool> visit, dfs, bipartite_match
 ![](bipartitegraph.png)
 
 [ford fulkerson algorithm](/fundamentals/graph/fordfulkersonadjmatrix/README.md)
-를 이용하는 방법은 구현이 어렵다.
+를 이용하는 방법은 구현이 어렵다. dfs 를 이용해서 더욱 간단히 해결할 수 있다.
 
-dfs 를 이용해서 더욱 간단히 해결할 수 있다.
+예를 들어 다음과 같은 경우를 살펴보자.
+
+```
+G: 1 1 1
+   1 0 0
+   1 0 0
+```
+
+다음과 같은 부분문제 `dfs` 를 정의한다.
+
+```c
+bool dfs(G[][], match[], visit[], u)
+
+return: Is there a way to start from u, with maximum match
+ match: match[v]=u means pair of u -> v
+ visit: visit[v] is visited before?
+     u: this node
+```
+
+![](recursiontree.png)
+
+아래는 앞서 언급한 예의 dfs 호출 상황이다.
+
+```
+match: [-1,-1,-1,], visit: [f,f,f,], u: 0
+match: [0,-1,-1,], visit: [f,f,f,], u: 1
+ match: [0,-1,-1,], visit: [t,f,f,], u: 0
+match: [1,0,-1,], visit: [f,f,f,], u: 2
+ match: [1,0,-1,], visit: [t,f,f,], u: 1
+```
 
 # Implementation
 

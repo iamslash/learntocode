@@ -12,7 +12,7 @@
 
 # Idea
 
-[maximum bipartite matching problem](/fundamentals/graph/bipartitematching/README.md) 이다.
+[maximum bipartite matching](/fundamentals/graph/bipartitematching/README.md) 으로 해결할 만 하다.
 
 # Implementation
 

@@ -3,14 +3,30 @@
 import java.util.*;
 
 class Solution {
-	private boolean dfs(int[][] G, int[] match, boolean[] visit, int u) {
+	private void dump(int step, int[] match, boolean[] visit, int u) {
+		for (int i = 0; i < step; ++i) {
+			System.out.printf(" ");
+		}
+		System.out.printf("match: [");
+		for (int i = 0; i < match.length; ++i) {
+			System.out.printf("%d,", match[i]);
+		}
+		System.out.printf("], ");
+		System.out.printf("visit: [");
+		for (int i = 0; i < visit.length; ++i) {
+			System.out.printf("%s,", visit[i] ? "t" : "f");
+		}
+		System.out.printf("], u: %d\n", u);
+	}
+	private boolean dfs(int step, int[][] G, int[] match, boolean[] visit, int u) {
+		dump(step, match, visit, u);
 		int w = G[0].length;
 		for (int v = 0; v < w; ++v) {
 			if (G[u][v] == 0 || visit[v]) {
 				continue;
 			}
 			visit[v] = true;
-			if (match[v] == -1 || dfs(G, match, visit, match[v])) {
+			if (match[v] == -1 || dfs(step+1, G, match, visit, match[v])) {
 				match[v] = u;
 				return true;
 			}
@@ -25,7 +41,7 @@ class Solution {
 		int ans = 0;
 		for (int u = 0; u < h; ++u) {
 			boolean[] visit = new boolean[w];
-			if (dfs(G, match, visit, u)) {
+			if (dfs(0, G, match, visit, u)) {
 				ans++;
 			}
 		}
