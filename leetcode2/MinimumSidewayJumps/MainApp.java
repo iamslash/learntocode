@@ -38,14 +38,15 @@ class Solution {
 	}
 }
 
+// 35ms 76.00% 129.3MB 50.68%
 // iterative dynamic programming
 // O(N) O(1)
 class Solution {
 	private final int MAXVAL = 1000000;
-	public int minsideJumps(int[] obstacles) {
+	public int minSideJumps(int[] obstacles) {
 		// C[i]: minimum side jumps at i lane
-		int C = {1, 0, 1};
-		for (int obs in obstacles) {
+		int[] C = new int[]{1, 0, 1};
+		for (int obs : obstacles) {
 			if (obs > 0) {
 				C[obs-1] = MAXVAL;
 			}
