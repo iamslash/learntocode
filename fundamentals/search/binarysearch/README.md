@@ -2,7 +2,8 @@
 
 * [binary Search with array @ geeksforgeeks](https://practice.geeksforgeeks.org/problems/binary-search/1)
 
-수열 `V[]` 와 숫자 `K` 가 주어진다. `K` 를 `V[]` 에서 검색하는 문제이다.
+수열 `V[]` 와 숫자 `K` 가 주어진다. `K` 를 `V[]` 에서 검색하는 문제이다. right
+most, right most equal, left most, left most equal pattern 을 기억하자. 
 
 # Idea
 
