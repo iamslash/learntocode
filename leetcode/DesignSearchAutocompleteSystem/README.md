@@ -1,11 +1,11 @@
 # Problem
 
-[Design Search Autocomplete System](https://leetcode.com/problems/design-search-autocomplete-system/)
-
-# Idea
+> [Design Search Autocomplete System](https://leetcode.com/problems/design-search-autocomplete-system/)
 
 문자열들의 모음 `S[]` 와 출현횟수의 모음 `T[]` 가 주어진다.  한문자
 `c` 를 입력받았을 때 마다 자동완성하는 시스템을 구현하는 문제이다.
+
+# Idea
 
 Trie 를 구성하여 해결한다.
 
@@ -22,6 +22,7 @@ Trie 를 구성하여 해결한다.
 # Implementation
 
 * [c++11](a.cpp)
+* [java8](MainApp.java)
 
 # Complexity
 
