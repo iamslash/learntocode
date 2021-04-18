@@ -652,9 +652,10 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## Disjoint Set, Union Find, Merge Find
 
-  - F | [union-find (merge-find)](fundamentals/disjointset/unionfind/README.md)
-  - F | [check the connectivity of a graph](/fundamentals/disjointset/checkconnectivity/README.md)
-  - F | [track the largest set](/fundamentals/disjointset/traclargestset/README.md)  
+* F | [union-find (merge-find)](fundamentals/disjointset/unionfind/README.md)
+* F | [check the connectivity of a graph](/fundamentals/disjointset/checkconnectivity/README.md)
+* F | [track the largest set](/fundamentals/disjointset/traclargestset/README.md)  
+* [L](/leetcode/MostStonesRemovedwithSameRoworColumn/README.md) | [Most Stones Removed with Same Row or Column](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/)
 
 ## Graph
 
