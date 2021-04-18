@@ -1,12 +1,12 @@
 # Problem
 
-[Most Stones Removed with Same Row or Column](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/)
+> [Most Stones Removed with Same Row or Column](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/)
+
+2D 평면에 돌이 놓여진 좌표들의 모임 `S[][]` 가 주어진다. `S[i][0]` 는
+`x` 이고 `S[i][1]` 은 `y` 를 의미한다. `x` 혹은 `y` 가 같은 돌을
+제거할 수 있다. 최대로 제거할 수 있는 돌의 개수를 구하는 문제이다.
 
 # Idea
-
-2D 평면에 돌이 놓여진 좌표들의 모임 `S[][]` 가 주어진다. `x` 혹은 `y`
-가 같은 돌을 제거할 수 있다. 최대로 제거할 수 있는 돌의 개수를 구하는
-문제이다.
 
 예를 들어 `S = {{0,0},{0,1},{1,0},{1,2},{2,1},{2,2}}` 를
 살펴보자. 다음과 같이 `x` 혹은 `y` 를 공유하는 덩어리는 하나 존재하고
@@ -34,6 +34,7 @@
 # Implementation
 
 * [c++11](a.cpp)
+* [java8](MainApp.java)
 
 # Complexity
 
