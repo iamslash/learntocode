@@ -14,6 +14,7 @@
 - [Commandline By Programming Languages](#commandline-by-programming-languages)
 - [Collections By Programming Languages](#collections-by-programming-languages)
 - [How to practise](#how-to-practise)
+- [Problems by categories](#problems-by-categories)
 - [Focused on Basic](#focused-on-basic)
   - [Linear Traversal, How to loop](#linear-traversal-how-to-loop)
   - [Recursion](#recursion)
@@ -28,7 +29,7 @@
   - [Double Stack](#double-stack)
   - [Queue](#queue)
   - [Heap](#heap)
-  - [Two Heap](#two-heap)
+  - [Double Heap](#double-heap)
   - [Deque](#deque)
   - [Hash Map, Set](#hash-map-set)
   - [Ordered Map](#ordered-map)
@@ -424,93 +425,96 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 * If it exceeded 50 mins, watch the solution and write a description
   and try again.
 
+# Problems by categories
+
+* [leetcode by tags](https://github.com/iamslash/devinterview/wiki/Algorithm)
+
 # Focused on Basic
 
 ## Linear Traversal, How to loop
 
-  * [L](/leetcode2/MinimumNumberofDaystoMakemBouquets/a.go) | [Minimum Number of Days to Make m Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/)
-    * group count, member count
-  * [L](/leetcode2/MinimumNumberofTapstoOpentoWateraGarden/README.md) | [Minimum Number of Taps to Open to Water a Garden](https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) 
-    * covered count 
-  * [L](/leetcode2/BulbSwitcherIV/a.cpp) | [Bulb Switcher IV](https://leetcode.com/problems/bulb-switcher-iv/)
-    * continuous count
-  * [L](/leetcode2/FindtheWinnerofanArrayGame/a.go) | [Find the Winner of an Array Game](https://leetcode.com/problems/find-the-winner-of-an-array-game/)
-    * win count
-  * [L](/leetcode2/DetectPatternofLengthMRepeatedKorMoreTimes/a.js) | [Detect Pattern of Length M Repeated K or More Times](https://leetcode.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/)
+* [L](/leetcode2/MinimumNumberofDaystoMakemBouquets/a.go) | [Minimum Number of Days to Make m Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/)
+  * group count, member count
+* [L](/leetcode2/MinimumNumberofTapstoOpentoWateraGarden/README.md) | [Minimum Number of Taps to Open to Water a Garden](https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) 
+  * covered count 
+* [L](/leetcode2/BulbSwitcherIV/a.cpp) | [Bulb Switcher IV](https://leetcode.com/problems/bulb-switcher-iv/)
+  * continuous count
+* [L](/leetcode2/FindtheWinnerofanArrayGame/a.go) | [Find the Winner of an Array Game](https://leetcode.com/problems/find-the-winner-of-an-array-game/)
+  * win count
+* [L](/leetcode2/DetectPatternofLengthMRepeatedKorMoreTimes/a.js) | [Detect Pattern of Length M Repeated K or More Times](https://leetcode.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/)
 
 ## Recursion
 
-  - F | [fibonacci number](/fundamentals/recursion/fibonacci/README.md)
-  - F | [pick k numbers from n numbers](/fundamentals/recursion/pickKnumbers/README.md)
-  - F | [tower of hanoi](/fundamentals/recursion/towerofhanoi/README.md)
+* F | [fibonacci number](/fundamentals/recursion/fibonacci/README.md)
+* F | [pick k numbers from n numbers](/fundamentals/recursion/pickKnumbers/README.md)
+* F | [tower of hanoi](/fundamentals/recursion/towerofhanoi/README.md)
 
 # Focused on Data Structures
 
 ## Array
 
-  - F | [Boyer-Moore Majority Vote algorithm](fundamentals/array/boyermooremajority/README.md)
-  - F | [kadane's algorithm](/fundamentals/array/kadane/README.md)
-  - F | [Maximum Subarray No Less Than K](/fundamentals/array/MaximumSubarrayNoLessThanK/README.md)
-  - [L](/leetcode/MaximumSubarray/README.md) | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/submissions/)
-  - [L](/leetcode/MajorityElement/) | [MJRTY - A FAST MAJORITY VOTE ALGORITHM](https://leetcode.com/problems/majority-element/description/)
-  - [L](/leetcode/MajorityElementII/) | [Majority Element II](https://leetcode.com/problems/majority-element-ii/description/) 
-  - [G](geeksforgeeks/rotateby90degree/) | [rotate by 90 degree](http://practice.geeksforgeeks.org/problems/rotate-by-90-degree/0)
+* F | [Boyer-Moore Majority Vote algorithm](fundamentals/array/boyermooremajority/README.md)
+* F | [kadane's algorithm](/fundamentals/array/kadane/README.md)
+* F | [Maximum Subarray No Less Than K](/fundamentals/array/MaximumSubarrayNoLessThanK/README.md)
+* [L](/leetcode/MaximumSubarray/README.md) | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/submissions/)
+* [L](/leetcode/MajorityElement/) | [MJRTY - A FAST MAJORITY VOTE ALGORITHM](https://leetcode.com/problems/majority-element/description/)
+* [L](/leetcode/MajorityElementII/) | [Majority Element II](https://leetcode.com/problems/majority-element-ii/description/) 
+* [G](geeksforgeeks/rotateby90degree/) | [rotate by 90 degree](http://practice.geeksforgeeks.org/problems/rotate-by-90-degree/0)
 
 ## Matrix
 
-  - F | [diagonal, spiral traversal of matrix](/fundamentals/matrix/traversal/README.md)  
-  - F | [2D loop descencing, decreasing](/fundamentals/matrix/loopdescdec/README.md)  
+- F | [diagonal, spiral traversal of matrix](/fundamentals/matrix/traversal/README.md)  
+- F | [2D loop descencing, decreasing](/fundamentals/matrix/loopdescdec/README.md)  
 
 ## Bit Manipulation
 
-  - F | [bitmask set](fundamentals/bitmask/bitmaskset/README.md)
-  - F | [hamming weight](/fundamentals/bitmask/hammingweight/README.md)
-  - F | [Gray code](/fundamentals/bitmask/graycode/README.md)
-  - F | [sieve of eratosthenes](fundamentals/bitmask/sieveoferatosthenes/README.md)
-  - F | [15 puzzle](fundamentals/bitmask/15puzzle/README.md)
-  - F | [priority queue with O(1)](fundamentals/bitmask/priorityqueue/README.md)
-  - F | [maximal stable set](fundamentals/bitmask/maximalstableset/README.md)★
-  - F | [Bit Twiddling Hacks](http://graphics.stanford.edu/~seander/bithacks.html)
-  - [L](/leetcode/Subsets/) | [Subsets](https://leetcode.com/problems/subsets)
-  - [L](/leetcode2/DecodeXORedPermutation/README.md) | [Decode XORed Permutation](https://leetcode.com/problems/decode-xored-permutation/)
-  - [알](/algospot/GRADUATION/) | [GRADUATION](https://algospot.com/judge/problem/read/GRADUATION)
-  - [H](hackerrank/algorithms/TheGreatXor/) | [The Great XOR](https://www.hackerrank.com/challenges/the-great-xor)
+- F | [bitmask set](fundamentals/bitmask/bitmaskset/README.md)
+- F | [hamming weight](/fundamentals/bitmask/hammingweight/README.md)
+- F | [Gray code](/fundamentals/bitmask/graycode/README.md)
+- F | [sieve of eratosthenes](fundamentals/bitmask/sieveoferatosthenes/README.md)
+- F | [15 puzzle](fundamentals/bitmask/15puzzle/README.md)
+- F | [priority queue with O(1)](fundamentals/bitmask/priorityqueue/README.md)
+- F | [maximal stable set](fundamentals/bitmask/maximalstableset/README.md)★
+- F | [Bit Twiddling Hacks](http://graphics.stanford.edu/~seander/bithacks.html)
+- [L](/leetcode/Subsets/) | [Subsets](https://leetcode.com/problems/subsets)
+- [L](/leetcode2/DecodeXORedPermutation/README.md) | [Decode XORed Permutation](https://leetcode.com/problems/decode-xored-permutation/)
+- [알](/algospot/GRADUATION/) | [GRADUATION](https://algospot.com/judge/problem/read/GRADUATION)
+- [H](hackerrank/algorithms/TheGreatXor/) | [The Great XOR](https://www.hackerrank.com/challenges/the-great-xor)
 
 ## Partial Sum
 
-  - F | [overview](doc/partial_sum.md)
-  - F | [partial sum, range sum](fundamentals/partialsum/partialsum/README.md)
-  - F | [variance](fundamentals/partialsum/variance/README.md)
-  - F | [grid sum](fundamentals/partialsum/gridsum/README.md)
-  - F | [range which is close to zero](fundamentals/partialsum/rangewhichisclosetozero/README.md)
-  - [L](/leetcode/RangeSumQuery2D/README.md) | 
+- F | [overview](doc/partial_sum.md)
+- F | [partial sum, range sum](fundamentals/partialsum/partialsum/README.md)
+- F | [variance](fundamentals/partialsum/variance/README.md)
+- F | [grid sum](fundamentals/partialsum/gridsum/README.md)
+- F | [range which is close to zero](fundamentals/partialsum/rangewhichisclosetozero/README.md)
+- [L](/leetcode/RangeSumQuery2D/README.md) | 
 [Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/)
-
-  - [알](/algospot/CHRISTMAS/) | [CHRISTMAS](https://algospot.com/judge/problem/read/CHRISTMAS)
+- [알](/algospot/CHRISTMAS/) | [CHRISTMAS](https://algospot.com/judge/problem/read/CHRISTMAS)
 
 ## Partial Min
 
-  - F | [overview](doc/partial_min.md)
+- F | [overview](doc/partial_min.md)
 
 ## List, LinkedList
 
-  - F | [dynamic array](fundamentals/list/dynamicarray/README.md)
-  - F | [singly linked list](/fundamentals/list/singlylinkedlist/README.md)
-  - F | [doubly linked list](fundamentals/list/doublylinkedlist/README.md)
-  - L | [Find The Duplicate Number](/leetcode/FindTheDuplicateNumber)
-    - tortoise and the hare algorithm
-  - [알](/algospot/JOSEPHUS/) | [JOSEPHUS](https://algospot.com/judge/problem/read/JOSEPHUS)
-  - 알 | [Dancing Links](https://arxiv.org/abs/cs/0011047)
+- F | [dynamic array](fundamentals/list/dynamicarray/README.md)
+- F | [singly linked list](/fundamentals/list/singlylinkedlist/README.md)
+- F | [doubly linked list](fundamentals/list/doublylinkedlist/README.md)
+- L | [Find The Duplicate Number](/leetcode/FindTheDuplicateNumber)
+  - tortoise and the hare algorithm
+- [알](/algospot/JOSEPHUS/) | [JOSEPHUS](https://algospot.com/judge/problem/read/JOSEPHUS)
+- 알 | [Dancing Links](https://arxiv.org/abs/cs/0011047)
 
 ## Stack 
 
-  - F | [LIFO implementation](/fundamentals/stack/lifoimpl/README.md)
-  - [L](/leetcode/ValidParentheses/) | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
-  - [L](/leetcode/LongestValidParentheses/) | [Longest valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)
-  - [L](/leetcode/DecodeString/a.py) | [Decode String](https://leetcode.com/problems/decode-string/)
-  - [알](/algospot/FENCE/) | [FENCE](http://algospot.com/judge/problem/read/FENCE)
-  - [알](/algospot/BRACKETS2/) | [BRACKETS2](http://algospot.com/judge/problem/read/BRACKETS2)
-  - G | [Maximum of minimum for every window size](http://www.practice.geeksforgeeks.org/problem-page.php?pid=170)
+- F | [LIFO implementation](/fundamentals/stack/lifoimpl/README.md)
+- [L](/leetcode/ValidParentheses/) | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
+- [L](/leetcode/LongestValidParentheses/) | [Longest valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)
+- [L](/leetcode/DecodeString/a.py) | [Decode String](https://leetcode.com/problems/decode-string/)
+- [알](/algospot/FENCE/) | [FENCE](http://algospot.com/judge/problem/read/FENCE)
+- [알](/algospot/BRACKETS2/) | [BRACKETS2](http://algospot.com/judge/problem/read/BRACKETS2)
+- G | [Maximum of minimum for every window size](http://www.practice.geeksforgeeks.org/problem-page.php?pid=170)
 
 ## Double Stack
 
@@ -518,137 +522,137 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## Queue
 
-  - F | [FIFO implementation](/fundamentals/queue/fifoimpl/README.md)
-  - F | [Circular Queue](/fundamentals/queue/circularqueue/README.md)
-  - F | [heap for priority queue](fundamentals/tree/heap/README.md)
-  - [알](/algospot/JOSEPHUS/) | [JOSEPHUS](https://algospot.com/judge/problem/read/JOSEPHUS)
-  - [알](/algospot/ITES/) | [ITES](http://algospot.com/judge/problem/read/ITES)
-    - online algorithm
-    - offline algorithm
+- F | [FIFO implementation](/fundamentals/queue/fifoimpl/README.md)
+- F | [Circular Queue](/fundamentals/queue/circularqueue/README.md)
+- F | [heap for priority queue](fundamentals/tree/heap/README.md)
+- [알](/algospot/JOSEPHUS/) | [JOSEPHUS](https://algospot.com/judge/problem/read/JOSEPHUS)
+- [알](/algospot/ITES/) | [ITES](http://algospot.com/judge/problem/read/ITES)
+  - online algorithm
+  - offline algorithm
 
 ## Heap
 
-  - [L](/leetcode/MergekSortedLists/) | [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists)
-  - [L](/leetcode2/MaximumAveragePassRatio/README.md) | [Maximum Average Pass Ratio](https://leetcode.com/problems/maximum-average-pass-ratio/)
+- [L](/leetcode/MergekSortedLists/) | [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists)
+- [L](/leetcode2/MaximumAveragePassRatio/README.md) | [Maximum Average Pass Ratio](https://leetcode.com/problems/maximum-average-pass-ratio/)
 
-## Two Heap
+## Double Heap
   
-  - [L](/leetcode2/SlidingWindowMedian/README.md) | [Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
+- [L](/leetcode2/SlidingWindowMedian/README.md) | [Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
 
 ## Deque
 
-  - G | [Level order traversal in spiral form](http://www.practice.geeksforgeeks.org/problem-page.php?pid=700201)
-  - [L](/leetcode2/LongestContinuousSubarrayWithAbsoluteDiffLessThanorEqualtoLimit/a.cpp) | [Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/)
-  - [L](/leetcode2/ConstrainedSubsequenceSum/a.cpp) | [Constrained Subsequence Sum](https://leetcode.com/problems/constrained-subsequence-sum/)
-  - [L](/leetcode2/ShortestSubarraywithSumatLeastK/a.cpp) | [Shortest Subarray with Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/)
+- G | [Level order traversal in spiral form](http://www.practice.geeksforgeeks.org/problem-page.php?pid=700201)
+- [L](/leetcode2/LongestContinuousSubarrayWithAbsoluteDiffLessThanorEqualtoLimit/a.cpp) | [Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/)
+- [L](/leetcode2/ConstrainedSubsequenceSum/a.cpp) | [Constrained Subsequence Sum](https://leetcode.com/problems/constrained-subsequence-sum/)
+- [L](/leetcode2/ShortestSubarraywithSumatLeastK/a.cpp) | [Shortest Subarray with Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/)
 
 ## Hash Map, Set
 
-  - F | [separate chaining](/fundamentals/hash/separatechaining/README.md)
-  - F | [linear probing](/fundamentals/hash/linearprobing/README.md)
-  - F | [double hashing](/fundamentals/hash/doublehashing/README.md)
-  - F | [consistent hashing @ TIL](https://github.com/iamslash/TIL/blob/master/consistenthasing/README.md)
-  - F | [rolling hash](/fundamentals/hash/rollinghash/README.md)
-  - [L](/leetcode/DesignHashSet/MyHashSet.java) | [Design HashSet](https://leetcode.com/problems/design-hashset/)
-  - [L](/leetcode/DesignHashMap/MyHashMap.java) | [Design HashMap](https://leetcode.com/problems/design-hashmap/)
-  - [G](geeksforgeeks/asimplefraction/) | [A Simple Fraction](http://www.practice.geeksforgeeks.org/problem-page.php?pid=514)
+- F | [separate chaining](/fundamentals/hash/separatechaining/README.md)
+- F | [linear probing](/fundamentals/hash/linearprobing/README.md)
+- F | [double hashing](/fundamentals/hash/doublehashing/README.md)
+- F | [consistent hashing @ TIL](https://github.com/iamslash/TIL/blob/master/consistenthasing/README.md)
+- F | [rolling hash](/fundamentals/hash/rollinghash/README.md)
+- [L](/leetcode/DesignHashSet/MyHashSet.java) | [Design HashSet](https://leetcode.com/problems/design-hashset/)
+- [L](/leetcode/DesignHashMap/MyHashMap.java) | [Design HashMap](https://leetcode.com/problems/design-hashmap/)
+- [G](geeksforgeeks/asimplefraction/) | [A Simple Fraction](http://www.practice.geeksforgeeks.org/problem-page.php?pid=514)
 
 ## Ordered Map
 
-  - [L](/leetcode/ExamRoom/README.md) | [Exam Room](https://leetcode.com/problems/exam-room/)
+- [L](/leetcode/ExamRoom/README.md) | [Exam Room](https://leetcode.com/problems/exam-room/)
 
 ## Rolling Hash
 
-  - [L](/leetcode/LongestChunkedPalindromeDecomposition/README.md) | [Longest Chunked Palindrome Decomposition](https://leetcode.com/problems/longest-chunked-palindrome-decomposition/)
+- [L](/leetcode/LongestChunkedPalindromeDecomposition/README.md) | [Longest Chunked Palindrome Decomposition](https://leetcode.com/problems/longest-chunked-palindrome-decomposition/)
 
 ## Bidirectional Indexing
 
-  - [L](/leetcode2/AllOoneDataStructure/README.md) | [All O`one Data Structure](https://leetcode.com/problems/all-oone-data-structure/)
-  - [L](/leetcode/LRUCache/README.md) | [LRU Cache](https://leetcode.com/problems/lru-cache)
-  - [L](/leetcode2/LFUCache/README.md) | [LFU Cache](https://leetcode.com/problems/lfu-cache/)
+- [L](/leetcode2/AllOoneDataStructure/README.md) | [All O`one Data Structure](https://leetcode.com/problems/all-oone-data-structure/)
+- [L](/leetcode/LRUCache/README.md) | [LRU Cache](https://leetcode.com/problems/lru-cache)
+- [L](/leetcode2/LFUCache/README.md) | [LFU Cache](https://leetcode.com/problems/lfu-cache/)
 
 ## String
 
-  - F | [string searching algorithm](/fundamentals/string/stringsearchingalgorithm/README.md)
-  - F | [search with naive algorithm](/fundamentals/string/naivesearch/README.md)
-  - F | [search with kmp algorithm](/fundamentals/string/kmpsearch/README.md)★
-  - F | [make pi array with naive algorithm](/fundamentals/string/kmppinaive/README.md)
-  - F | [make pi array with kmp algorithm](/fundamentals/string/kmppikmp/README.md)★
-  - F | [longest common prefix array](/fundamentals/string/lcp/README.md)
-  - F | [circular string](/fundamentals/string/circularstring/README.md)
-  - F | [the number of different substrings](fundamentals/string/thenumberofdifferenctsubstring/README.md)
-  - F | [Boyer Moore algorithm](/fundamentals/string/boyermoore/README.md)★
-  - F | [Rabin-Karp algorithm](/fundamentals/string/rabinkarp/README.md)★
-  - F | [suffix tree](fundamentals/tree/suffixtree/README.md)★
-  - F | [Aho–Corasick algorithm](fundamentals/tree/ahocorasic/README.md)★
-  - F | [manacher's algorithm](fundamentals/string/manacher/README.md)★
-  - [L](leetcode/LongestSubstringwithAtLeastKRepeatingCharacters/) | [Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/description/)
-  - [알](/algospot/NAMING/) | [NAMING](http://algospot.com/judge/problem/read/NAMING)
-  - [알](/algospot/PALINDROMIZE/) | [PALINDROMIZE](http://algospot.com/judge/problem/read/PALINDROMIZE)
-  - [알](/algospot/JAEHASAFE/) | [JAEHASAFE](http://algospot.com/judge/problem/read/JAEHASAFE)  
-  - [알](/algospot/HABIT/) | [HABIT](http://algospot.com/judge/problem/read/HABIT)
+- F | [string searching algorithm](/fundamentals/string/stringsearchingalgorithm/README.md)
+- F | [search with naive algorithm](/fundamentals/string/naivesearch/README.md)
+- F | [search with kmp algorithm](/fundamentals/string/kmpsearch/README.md)★
+- F | [make pi array with naive algorithm](/fundamentals/string/kmppinaive/README.md)
+- F | [make pi array with kmp algorithm](/fundamentals/string/kmppikmp/README.md)★
+- F | [longest common prefix array](/fundamentals/string/lcp/README.md)
+- F | [circular string](/fundamentals/string/circularstring/README.md)
+- F | [the number of different substrings](fundamentals/string/thenumberofdifferenctsubstring/README.md)
+- F | [Boyer Moore algorithm](/fundamentals/string/boyermoore/README.md)★
+- F | [Rabin-Karp algorithm](/fundamentals/string/rabinkarp/README.md)★
+- F | [suffix tree](fundamentals/tree/suffixtree/README.md)★
+- F | [Aho–Corasick algorithm](fundamentals/tree/ahocorasic/README.md)★
+- F | [manacher's algorithm](fundamentals/string/manacher/README.md)★
+- [L](leetcode/LongestSubstringwithAtLeastKRepeatingCharacters/) | [Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/description/)
+- [알](/algospot/NAMING/) | [NAMING](http://algospot.com/judge/problem/read/NAMING)
+- [알](/algospot/PALINDROMIZE/) | [PALINDROMIZE](http://algospot.com/judge/problem/read/PALINDROMIZE)
+- [알](/algospot/JAEHASAFE/) | [JAEHASAFE](http://algospot.com/judge/problem/read/JAEHASAFE)  
+- [알](/algospot/HABIT/) | [HABIT](http://algospot.com/judge/problem/read/HABIT)
 
 ## Suffix Array
 
-  - F | [suffix array search](fundamentals/string/suffixarraysearch/README.md)
-  - F | [make suffix array with naive algorithm](fundamentals/string/suffixarraynaive/README.md)
-  - F | [make suffix array with manber myers algorithm](fundamentals/string/suffixarraymanber/README.md)★
+- F | [suffix array search](fundamentals/string/suffixarraysearch/README.md)
+- F | [make suffix array with naive algorithm](fundamentals/string/suffixarraynaive/README.md)
+- F | [make suffix array with manber myers algorithm](fundamentals/string/suffixarraymanber/README.md)★
 
 ## Tree
 
-  - F | [overview](/doc/tree.md)
-  - F | [inorder, preorder, postorder traversals](/fundamentals/tree/traversal/README.md)
-  - F | [get kth element](/fundamentals/tree/getkthelement/README.md)
-  - F | [get largest subtree with same value](/fundamentals/tree/largestsubtreewithsamevalue/README.md)
-  - F | [get count of elements which are lesser than X](fundamentals/tree/getcountlessthan/README.md)
-  - F | [trie](/fundamentals/tree/trie/README.md)
-  - F | triple array trie
-    - use less memory than trie
-  - F | [suffix trie](/fundamentals/tree/suffixtrie/README.md)
-  - F | [suffix tree](/fundamentals/tree/suffixtree/README.md)★
-  - F | [radix tree (patricia tree)](/fundamentals/tree/radixtree/README.md)★
-    - compress trie like suffix tree.
-  - F | [Aho–Corasick algorithm](/fundamentals/tree/ahocorasic/README.md)★
-  - F | [heap for priority queue](fundamentals/tree/heap/README.md)
-  - L | [Unique Binary Search Trees](/leetcode/UniqueBinarySearchTrees/README.md)
-  - L | [Validate Binary Search Tree](/leetcode/ValidateBinarySearchTree/README.md)
-  - G | [LCA](geeksforgeeks/LowestCommonAncestorInABinaryTree/README.md)
-  - [L](/leetcode/LowestCommonAncestorofaBinaryTree/a.cpp) | [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
-  - [L](/leetcode2/LowestCommonAncestorofaBinaryTreeII/README.md) | [Lowest Common Ancestor of a Binary Tree II](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-ii/)
-  - [알](/algospot/TRAVERSAL/) | [TRAVERSAL](http://algospot.com/judge/problem/read/TRAVERSAL)
-  - [알](/algospot/FORTRESS/) | [FORTRESS](http://algospot.com/judge/problem/read/FORTRESS)
-  - [알](/algospot/NERD2/) | [NERD2](http://algospot.com/judge/problem/read/NERD2)
-  - [알](/algospot/INSERTION/) | [INSERTION](http://algospot.com/judge/problem/read/INSERTION)
-  - [알](/algospot/RUNNINGMEDIAN/) | [RUNNINGMEDIAN](http://algospot.com/judge/problem/read/RUNNINGMEDIAN)
-  - [알](/algospot/MORDOR/README.md) | [MORDOR](http://algospot.com/judge/problem/read/MORDOR)
-  - [알](/algospot/FAMILYTREE/README.md) | [FAMILYTREE](http://algospot.com/judge/problem/read/FAMILYTREE)
-  - [알](/algospot/MEASURETIME/) | [MEASURETIME](http://algospot.com/judge/problem/read/MEASURETIME)★
-  - [알](/algospot.com/EDITORWARS/) | [EDITORWARS](http://algospot.com/judge/problem/read/EDITORWARS)
-  - [알](/algospot.com/SOLONG/) | [SOLONG](http://algospot.com/judge/problem/read/SOLONG)
-  - [알](/algospot.com/NH/) | [NH](http://algospot.com/judge/problem/read/NH)
+- F | [overview](/doc/tree.md)
+- F | [inorder, preorder, postorder traversals](/fundamentals/tree/traversal/README.md)
+- F | [get kth element](/fundamentals/tree/getkthelement/README.md)
+- F | [get largest subtree with same value](/fundamentals/tree/largestsubtreewithsamevalue/README.md)
+- F | [get count of elements which are lesser than X](fundamentals/tree/getcountlessthan/README.md)
+- F | [trie](/fundamentals/tree/trie/README.md)
+- F | triple array trie
+  - use less memory than trie
+- F | [suffix trie](/fundamentals/tree/suffixtrie/README.md)
+- F | [suffix tree](/fundamentals/tree/suffixtree/README.md)★
+- F | [radix tree (patricia tree)](/fundamentals/tree/radixtree/README.md)★
+  - compress trie like suffix tree.
+- F | [Aho–Corasick algorithm](/fundamentals/tree/ahocorasic/README.md)★
+- F | [heap for priority queue](fundamentals/tree/heap/README.md)
+- L | [Unique Binary Search Trees](/leetcode/UniqueBinarySearchTrees/README.md)
+- L | [Validate Binary Search Tree](/leetcode/ValidateBinarySearchTree/README.md)
+- G | [LCA](geeksforgeeks/LowestCommonAncestorInABinaryTree/README.md)
+- [L](/leetcode/LowestCommonAncestorofaBinaryTree/a.cpp) | [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+- [L](/leetcode2/LowestCommonAncestorofaBinaryTreeII/README.md) | [Lowest Common Ancestor of a Binary Tree II](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-ii/)
+- [알](/algospot/TRAVERSAL/) | [TRAVERSAL](http://algospot.com/judge/problem/read/TRAVERSAL)
+- [알](/algospot/FORTRESS/) | [FORTRESS](http://algospot.com/judge/problem/read/FORTRESS)
+- [알](/algospot/NERD2/) | [NERD2](http://algospot.com/judge/problem/read/NERD2)
+- [알](/algospot/INSERTION/) | [INSERTION](http://algospot.com/judge/problem/read/INSERTION)
+- [알](/algospot/RUNNINGMEDIAN/) | [RUNNINGMEDIAN](http://algospot.com/judge/problem/read/RUNNINGMEDIAN)
+- [알](/algospot/MORDOR/README.md) | [MORDOR](http://algospot.com/judge/problem/read/MORDOR)
+- [알](/algospot/FAMILYTREE/README.md) | [FAMILYTREE](http://algospot.com/judge/problem/read/FAMILYTREE)
+- [알](/algospot/MEASURETIME/) | [MEASURETIME](http://algospot.com/judge/problem/read/MEASURETIME)★
+- [알](/algospot.com/EDITORWARS/) | [EDITORWARS](http://algospot.com/judge/problem/read/EDITORWARS)
+- [알](/algospot.com/SOLONG/) | [SOLONG](http://algospot.com/judge/problem/read/SOLONG)
+- [알](/algospot.com/NH/) | [NH](http://algospot.com/judge/problem/read/NH)
 
 ## Balance Tree
 
-* F | [B-Tree](/fundamentals/tree/b-tree/README.md)
-* F | [B+-Tree](/fundamentals/tree/b+tree/README.md)
+* F | [B Tree](/fundamentals/tree/b-tree/README.md)
+* F | [B+Tree](/fundamentals/tree/b+tree/README.md)
 * F | [red black tree (balanced binary search tree)★](/fundamentals/tree/redblacktree/README.md)
 * F | [avl tree (balanced binary search tree)](/fundamentals/tree/avltree/README.md)★
 * F | [treap (balanced binary search tree)](fundamentals/tree/treap/README.md)★
 
 ## Binary Search Tree
 
-  - F | [binary search tree](/fundamentals/tree/binarysearchtree/README.md)
+- F | [binary search tree](/fundamentals/tree/binarysearchtree/README.md)
 
 ## Binary Indexed Tree
 
-  - F | [fenwick tree (binary indexed tree)](/fundamentals/tree/fenwick/README.md)
+- F | [fenwick tree (binary indexed tree)](/fundamentals/tree/fenwick/README.md)
 
 ## Segment Tree
 
-  - F | [segment tree](fundamentals/tree/segmenttree/README.md)★
-  - F | [RMQ (range minimum query)](fundamentals/tree/rmq/README.md)★
-  - F | [get two smallest in a range](fundamentals/tree/gettwosmallest/README.md)★
-  - F | [get the maximum frequency of occurrence in the range of ordered sequences](fundamentals/tree/getthemaxfreq/README.md)★
+- F | [segment tree](fundamentals/tree/segmenttree/README.md)★
+- F | [RMQ (range minimum query)](fundamentals/tree/rmq/README.md)★
+- F | [get two smallest in a range](fundamentals/tree/gettwosmallest/README.md)★
+- F | [get the maximum frequency of occurrence in the range of ordered sequences](fundamentals/tree/getthemaxfreq/README.md)★
 
 ## Disjoint Set, Union Find, Merge Find
 
@@ -659,77 +663,77 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## Graph
 
-  - F | [overview](doc/graph.md)
-  - F | [finding out two vertices are connected](/fundamentals/graph/findingouttwovertices/README.md)
-  - F | [counting the number of components](/fundamentals/graph/countingthenumber/README.md)
-  - F | [eulerian circuit](fundamentals/graph/euleriancircuit/README.md)
-  - F | [eulerian trail](fundamentals/graph/euleriantrail/README.md)
-  - F | [check the cycle](fundamentals/graph/checkthecycle/README.md)
-  - F | [cut vertex (articulation point)](/fundamentals/graph/cutvertex/README.md)
-  - F | [bridge](fundamentals/graph/bridge/README.md)
-  - F | [tarjan's algorithm](fundamentals/graph/tarjan/README.md)
-  - F | [15 puzzle - bfs](/fundamentals/graph/15puzzlebfs/README.md)
-  - F | [15 puzzle - bfs bidrectional search](fundamentals/graph/15puzzlebs/README.md)
-  - F | [15 puzzle - bfs ids (iteratively deep searching)](fundamentals/graph/15puzzleids/README.md)
-  - F | [Dijkstra algorithm](/fundamentals/graph/dijkstra/README.md)
-  - F | [Dijkstra algorithm without priority queue](/fundamentals/graph/dijkstrawithoutpq/README.md)
-  - F | [Bellman-Ford algorithm](/fundamentals/graph/bellmanford/README.md)
-  - F | [Kruskal's minimum spanning tree](/fundamentals/graph/kruskal/README.md)
-  - F | [Prim's minimum spanning tree](/fundamentals/graph/prim/README.md)
-  - F | [Floyd algorithm](/fundamentals/graph/floyd/README.md)
-  - F | [Ford-Fulkerson algorithm with adjacency matrix](fundamentals/graph/fordfulkersonadjmatrix/README.md)
-  - F | [Ford-Fulkerson algorithm with adjacency list](fundamentals/graph/fordfulkersonadjlist/README.md)
-  - F | [bipartite matching](/fundamentals/graph/bipartitematching/README.md)
-  - F | [dinic algorithm](/fundamentals/graph/dinic/README.md)
-  - F | [successive shortest path](doc/graph_successive_shortest_path.md)
-  - F | [Kuhn–Munkres algorithm (hungarian algorithm)](/fundamentals/graph/kuhn-munkres/README.md)
-  - F | vertex cover problem
-    - Kőnig's theorem
-  - F | Hopcroft-Karp algorithm 
-  - F | [de bruijn sequence](/leetcode/CrackingtheSafe/README.md)
-  - [알](/algospot/DICTIONARY/) | [DICTIONARY](http://algospot.com/judge/problem/read/DICTIONARY)
-  - [알](/algospot/WORDCHAIN/) | [WORDCHAIN](http://algospot.com/judge/problem/read/WORDCHAIN)
-  - [알](/algospot/GALLERY/) | [GALLERY](http://algospot.com/judge/problem/read/GALLERY)
-    - dominating set
-    - unrooted tree
-  - [알](/algospot/MEETINGROOM/) | [MEETINGROOM](doc/algospot_MEETINGROOM.md)★
-    - sat (SATisfiability, boolean satisfiability problem)
-    - conjunctive normal form
-    - 2-sat
-    - implication graph
-  - [알](/algospot/SORTGAME/) | [SORTGAME](http://algospot.com/judge/problem/read/SORTGAME)
-  - [알](/algospot/CHILDRENDAY/) | [CHILDRENDAY](doc/algospot_CHILDRENDAY.md)★
-  - [알](/algospot/HANOI4/) | [HANOI4](http://algospot.com/judge/problem/read/HANOI4)
-  - [알](/algospot/ROUTING/) | [ROUTING](http://algospot.com/judge/problem/read/ROUTING)
-  - [알](/algospot/FIRETRUCKS/) | [FIRETRUCKS](http://algospot.com/judge/problem/read/FIRETRUCKS)
-  - [알](/algospot/NTHLON/) | [NTHLON](http://algospot.com/judge/problem/read/NTHLON)★
-  - [알](/algospot/TIMETRIP/) | [TIMETRIP](http://algospot.com/judge/problem/read/TIMETRIP)
-  - [알](/algospot/DRUNKEN/) | [DRUNKEN](http://algospot.com/judge/problem/read/DRUNKEN)
-  - [알](/algospot/PROMISES/) | [PROMISES](http://algospot.com/judge/problem/read/PROMISES)
-  - [알](/algospot.com/LAN/) | [LAN](http://algospot.com/judge/problem/read/LAN)
-  - [알](/algospot.com/TPATH/) | [TPATH](http://algospot.com/judge/problem/read/TPATH)
-  - 알 | [MILEAGE](http://algospot.com/judge/problem/read/MILEAGE)
-  - 알 | [SAINTTAIL](http://algospot.com/judge/problem/read/SAINTTAIL)
-  - [알](/algospot/MATCHFIX/) | [MATCHFIX](http://algospot.com/judge/problem/read/MATCHFIX)
-  - [알](/algospot/PROJECTS/) | [PROJECTS](http://algospot.com/judge/problem/read/PROJECTS)★
-  - 알 | [TRAVELPICTURES](http://algospot.com/judge/problem/read/TRAVELPICTURES)
-  - 알 | [DOMINOS](http://algospot.com/judge/problem/read/DOMINOS)
-  - [알](/algospot/BISHOPS/) | [BISHOPS](http://algospot.com/judge/problem/read/BISHOPS)
-  - [알](/algospot/TRAPCARD/) | [TRAPCARD](http://algospot.com/judge/problem/read/TRAPCARD)★
-  - 알 | [maxium independent set problem](doc/graph_max_independent_set.md)
+- F | [overview](doc/graph.md)
+- F | [finding out two vertices are connected](/fundamentals/graph/findingouttwovertices/README.md)
+- F | [counting the number of components](/fundamentals/graph/countingthenumber/README.md)
+- F | [eulerian circuit](fundamentals/graph/euleriancircuit/README.md)
+- F | [eulerian trail](fundamentals/graph/euleriantrail/README.md)
+- F | [check the cycle](fundamentals/graph/checkthecycle/README.md)
+- F | [cut vertex (articulation point)](/fundamentals/graph/cutvertex/README.md)
+- F | [bridge](fundamentals/graph/bridge/README.md)
+- F | [tarjan's algorithm](fundamentals/graph/tarjan/README.md)
+- F | [15 puzzle - bfs](/fundamentals/graph/15puzzlebfs/README.md)
+- F | [15 puzzle - bfs bidrectional search](fundamentals/graph/15puzzlebs/README.md)
+- F | [15 puzzle - bfs ids (iteratively deep searching)](fundamentals/graph/15puzzleids/README.md)
+- F | [Dijkstra algorithm](/fundamentals/graph/dijkstra/README.md)
+- F | [Dijkstra algorithm without priority queue](/fundamentals/graph/dijkstrawithoutpq/README.md)
+- F | [Bellman-Ford algorithm](/fundamentals/graph/bellmanford/README.md)
+- F | [Kruskal's minimum spanning tree](/fundamentals/graph/kruskal/README.md)
+- F | [Prim's minimum spanning tree](/fundamentals/graph/prim/README.md)
+- F | [Floyd algorithm](/fundamentals/graph/floyd/README.md)
+- F | [Ford-Fulkerson algorithm with adjacency matrix](fundamentals/graph/fordfulkersonadjmatrix/README.md)
+- F | [Ford-Fulkerson algorithm with adjacency list](fundamentals/graph/fordfulkersonadjlist/README.md)
+- F | [bipartite matching](/fundamentals/graph/bipartitematching/README.md)
+- F | [dinic algorithm](/fundamentals/graph/dinic/README.md)
+- F | [successive shortest path](doc/graph_successive_shortest_path.md)
+- F | [Kuhn–Munkres algorithm (hungarian algorithm)](/fundamentals/graph/kuhn-munkres/README.md)
+- F | vertex cover problem
+  - Kőnig's theorem
+- F | Hopcroft-Karp algorithm 
+- F | [de bruijn sequence](/leetcode/CrackingtheSafe/README.md)
+- [알](/algospot/DICTIONARY/) | [DICTIONARY](http://algospot.com/judge/problem/read/DICTIONARY)
+- [알](/algospot/WORDCHAIN/) | [WORDCHAIN](http://algospot.com/judge/problem/read/WORDCHAIN)
+- [알](/algospot/GALLERY/) | [GALLERY](http://algospot.com/judge/problem/read/GALLERY)
+  - dominating set
+  - unrooted tree
+- [알](/algospot/MEETINGROOM/) | [MEETINGROOM](doc/algospot_MEETINGROOM.md)★
+  - sat (SATisfiability, boolean satisfiability problem)
+  - conjunctive normal form
+  - 2-sat
+  - implication graph
+- [알](/algospot/SORTGAME/) | [SORTGAME](http://algospot.com/judge/problem/read/SORTGAME)
+- [알](/algospot/CHILDRENDAY/) | [CHILDRENDAY](doc/algospot_CHILDRENDAY.md)★
+- [알](/algospot/HANOI4/) | [HANOI4](http://algospot.com/judge/problem/read/HANOI4)
+- [알](/algospot/ROUTING/) | [ROUTING](http://algospot.com/judge/problem/read/ROUTING)
+- [알](/algospot/FIRETRUCKS/) | [FIRETRUCKS](http://algospot.com/judge/problem/read/FIRETRUCKS)
+- [알](/algospot/NTHLON/) | [NTHLON](http://algospot.com/judge/problem/read/NTHLON)★
+- [알](/algospot/TIMETRIP/) | [TIMETRIP](http://algospot.com/judge/problem/read/TIMETRIP)
+- [알](/algospot/DRUNKEN/) | [DRUNKEN](http://algospot.com/judge/problem/read/DRUNKEN)
+- [알](/algospot/PROMISES/) | [PROMISES](http://algospot.com/judge/problem/read/PROMISES)
+- [알](/algospot.com/LAN/) | [LAN](http://algospot.com/judge/problem/read/LAN)
+- [알](/algospot.com/TPATH/) | [TPATH](http://algospot.com/judge/problem/read/TPATH)
+- 알 | [MILEAGE](http://algospot.com/judge/problem/read/MILEAGE)
+- 알 | [SAINTTAIL](http://algospot.com/judge/problem/read/SAINTTAIL)
+- [알](/algospot/MATCHFIX/) | [MATCHFIX](http://algospot.com/judge/problem/read/MATCHFIX)
+- [알](/algospot/PROJECTS/) | [PROJECTS](http://algospot.com/judge/problem/read/PROJECTS)★
+- 알 | [TRAVELPICTURES](http://algospot.com/judge/problem/read/TRAVELPICTURES)
+- 알 | [DOMINOS](http://algospot.com/judge/problem/read/DOMINOS)
+- [알](/algospot/BISHOPS/) | [BISHOPS](http://algospot.com/judge/problem/read/BISHOPS)
+- [알](/algospot/TRAPCARD/) | [TRAPCARD](http://algospot.com/judge/problem/read/TRAPCARD)★
+- 알 | [maxium independent set problem](doc/graph_max_independent_set.md)
 
 ## DFS (Depth First Search)
 
-  - F | [DFS (depth first search)](fundamentals/graph/dfs/README.md)
-  - F | [dfs spanning tree](fundamentals/graph/dfsspanningtree/README.md)
-  - [L](/leetcode/RobotRoomCleaner/README.md) | [Robot Room Cleaner](https://leetcode.com/problems/robot-room-cleaner/)
+- F | [DFS (depth first search)](fundamentals/graph/dfs/README.md)
+- F | [dfs spanning tree](fundamentals/graph/dfsspanningtree/README.md)
+- [L](/leetcode/RobotRoomCleaner/README.md) | [Robot Room Cleaner](https://leetcode.com/problems/robot-room-cleaner/)
 
 ## BFS (Breadth First Search)
 
-  - F | [BFS (breadth first search)](fundamentals/graph/bfs/README.md)
-  - F | [BFS shortest path](fundamentals/graph/bfsshortestpath/README.md)
-  - [L](/leetcode2/MapofHighestPeak/README.md) | [Map of Highest Peak](https://leetcode.com/problems/map-of-highest-peak/)
-  - [L](/leetcode/valuateDivision/README.md) | [valuate Division](https://leetcode.com/problems/evaluate-division/)
+- F | [BFS (breadth first search)](fundamentals/graph/bfs/README.md)
+- F | [BFS shortest path](fundamentals/graph/bfsshortestpath/README.md)
+- [L](/leetcode2/MapofHighestPeak/README.md) | [Map of Highest Peak](https://leetcode.com/problems/map-of-highest-peak/)
+- [L](/leetcode/valuateDivision/README.md) | [valuate Division](https://leetcode.com/problems/evaluate-division/)
 
 ## Double BFS
 
@@ -746,9 +750,9 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## Topological Sort
 
-  - F | [topological sort](fundamentals/graph/topologicalsort/README.md)
-  - F | proof of topological sort★  
-  - F | topological sort of scc★
+- F | [topological sort](fundamentals/graph/topologicalsort/README.md)
+- F | proof of topological sort★  
+- F | topological sort of scc★
 
 ## Trie
 
@@ -757,204 +761,204 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
   
 ## Network Flow
 
-  - F | [overview](doc/network_flow.md)
+- F | [overview](doc/network_flow.md)
 
 # Focused on Algorithms
 
 ## Sort
 
-  - F | [overview](/fundamentals/sort/overview/README.md)
-    - sort and stable
-  - F | [insertion sort](fundamentals/sort/insertionsort/README.md)
-  - F | [shell sort](/fundamentals/sort/shellsort/README.md)
-  - F | [bubble sort](/fundamentals/sort/bubblesort/README.md)
-  - F | [selection sort](fundamentals/sort/selectionsort/README.md)
-  - F | [merge sort](fundamentals/sort/mergesort/README.md)
-  - F | [quick sort](fundamentals/sort/quicksort/README.md)
-  - F | [heap sort](/fundamentals/sort/heapsort/README.md)
-  - F | [bucket sort](fundamentals/sort/bucketsort/README.md)
-  - F | [counting sort](fundamentals/sort/countingsort/README.md)
-  - F | [radix sort](/fundamentals/sort/radixsort/README.md)
+- F | [overview](/fundamentals/sort/overview/README.md)
+  - sort and stable
+- F | [insertion sort](fundamentals/sort/insertionsort/README.md)
+- F | [shell sort](/fundamentals/sort/shellsort/README.md)
+- F | [bubble sort](/fundamentals/sort/bubblesort/README.md)
+- F | [selection sort](fundamentals/sort/selectionsort/README.md)
+- F | [merge sort](fundamentals/sort/mergesort/README.md)
+- F | [quick sort](fundamentals/sort/quicksort/README.md)
+- F | [heap sort](/fundamentals/sort/heapsort/README.md)
+- F | [bucket sort](fundamentals/sort/bucketsort/README.md)
+- F | [counting sort](fundamentals/sort/countingsort/README.md)
+- F | [radix sort](/fundamentals/sort/radixsort/README.md)
 
 ## Search
 
-  - F | [upper_bound, lower_bound](/fundamentals/search/upperlowerbound/README.md)
-  - F | [Binary Search with array](/fundamentals/search/binarysearch/README.md)
-  - F | [Binary Search closest with array](/fundamentals/search/binarysearchclosest/README.md)
-  - [L](leetcode/SearchinRotatedSortedArrayII/) | [Binary Search with rotated array](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/)
-  - [L](/leetcode2/DivideChocolate/README.md) | [Divide Chocolate](https://leetcode.com/problems/divide-chocolate/) 
-  - [L](/leetcode/TheEarliestMomentWhenEveryoneBecomeFriends/a.cpp) | [The Earliest Moment When Everyone Become Friends](https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends/)
-  - [L](/leetcode/KokoEatingBananas/README.md) | [Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/)
-  - [L](/leetcode/CapacityToShipPackagesWithinDDays/README.md) | [Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)
-  - [L](/leetcode/MinimizeMaxDistancetoGasStation/README.md) | [Minimize Max Distance to Gas Station](https://leetcode.com/problems/minimize-max-distance-to-gas-station/)
-  - [L](/leetcode/SplitArrayLargestSum/README.md) | [Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/)
+- F | [upper_bound, lower_bound](/fundamentals/search/upperlowerbound/README.md)
+- F | [Binary Search with array](/fundamentals/search/binarysearch/README.md)
+- F | [Binary Search closest with array](/fundamentals/search/binarysearchclosest/README.md)
+- [L](leetcode/SearchinRotatedSortedArrayII/) | [Binary Search with rotated array](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/)
+- [L](/leetcode2/DivideChocolate/README.md) | [Divide Chocolate](https://leetcode.com/problems/divide-chocolate/) 
+- [L](/leetcode/TheEarliestMomentWhenEveryoneBecomeFriends/a.cpp) | [The Earliest Moment When Everyone Become Friends](https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends/)
+- [L](/leetcode/KokoEatingBananas/README.md) | [Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/)
+- [L](/leetcode/CapacityToShipPackagesWithinDDays/README.md) | [Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)
+- [L](/leetcode/MinimizeMaxDistancetoGasStation/README.md) | [Minimize Max Distance to Gas Station](https://leetcode.com/problems/minimize-max-distance-to-gas-station/)
+- [L](/leetcode/SplitArrayLargestSum/README.md) | [Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/)
 
 ## Binary Search
 
-  - [L](/leetcode2/FindtheIndexoftheLargeInteger/README.md) | [Find the Index of the Large Integer](https://leetcode.com/problems/find-the-index-of-the-large-integer/)
+- [L](/leetcode2/FindtheIndexoftheLargeInteger/README.md) | [Find the Index of the Large Integer](https://leetcode.com/problems/find-the-index-of-the-large-integer/)
 
 ## Numerical Analysis
 
-  - F | [bisection method](doc/numerical_anal_bisection.md)
-  - F | [ternary search](doc/numerical_anal_ternary.md)
-  - F | simpson's method  
-  - [알](/algospot/ROOTS/) | [ROOTS](https://algospot.com/judge/problem/read/ROOTS)
-  - [알](/algospot/LOAN/) | [LOAN](https://algospot.com/judge/problem/read/LOAN)
-  - [알](/algospot/RATIO/) | [RATIO](https://algospot.com/judge/problem/read/RATIO)
-  - 알 | [FOSSIL](https://algospot.com/judge/problem/read/FOSSIL)
-  - [U](uva/10385_Duathlon) | [Duathlon](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=15&page=show_problem&problem=1326)  
+- F | [bisection method](doc/numerical_anal_bisection.md)
+- F | [ternary search](doc/numerical_anal_ternary.md)
+- F | simpson's method  
+- [알](/algospot/ROOTS/) | [ROOTS](https://algospot.com/judge/problem/read/ROOTS)
+- [알](/algospot/LOAN/) | [LOAN](https://algospot.com/judge/problem/read/LOAN)
+- [알](/algospot/RATIO/) | [RATIO](https://algospot.com/judge/problem/read/RATIO)
+- 알 | [FOSSIL](https://algospot.com/judge/problem/read/FOSSIL)
+- [U](uva/10385_Duathlon) | [Duathlon](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=15&page=show_problem&problem=1326)  
 
 ## Number Theory, Math
 
-  - F | [overview](doc/number_theory.md)
-  - F | [math functions](/fundamentals/numbertheory/mathfunction/README.md)
-  - F | [prime number, composite number](fundamentals/numbertheory/primenumber/README.md)
-  - F | [prime factorization](fundamentals/numbertheory/primefactorization/README.md)
-  - F | [sieve of eratosthenes](fundamentals/numbertheory/sieveoferatosthenes/README.md)
-  - F | [prime factorization with sieve of eratosthenes](fundamentals/numbertheory/primefactorizationwithsieveoferatosthenes/README.md)
-  - F | [Euclidean algorithm, GCD](fundamentals/numbertheory/euclideanalgorithm/README.md)
-  - F | [modular arithmetic](fundamentals/numbertheory/modulararithmatic/README.md)
-  - F | [extended euclidean algorithm](fundamentals/numbertheory/exeuclideanalgorithm/README.md)
-  - F | [chinese remainder theorem](fundamentals/numbertheory/chineseremaindertheorem/README.md)
-  - F | [lucas' theorem](fundamentals/numbertheory/lucas/README.md)
-  - F | [binomial coefficient, combination](/doc/dynamic_binomial_coefficient.md)
-  - [L](/leetcode/UglyNumberIII/README.md) | [Ugly Number III](https://leetcode.com/problems/ugly-number-iii/)
-  - [알](/algospot/PASS486/) | [PASS486](https://algospot.com/judge/problem/read/PASS486)
-  - [알](/algospot/POTION/) | [POTION](https://algospot.com/judge/problem/read/POTION)
+- F | [overview](doc/number_theory.md)
+- F | [math functions](/fundamentals/numbertheory/mathfunction/README.md)
+- F | [prime number, composite number](fundamentals/numbertheory/primenumber/README.md)
+- F | [prime factorization](fundamentals/numbertheory/primefactorization/README.md)
+- F | [sieve of eratosthenes](fundamentals/numbertheory/sieveoferatosthenes/README.md)
+- F | [prime factorization with sieve of eratosthenes](fundamentals/numbertheory/primefactorizationwithsieveoferatosthenes/README.md)
+- F | [Euclidean algorithm, GCD](fundamentals/numbertheory/euclideanalgorithm/README.md)
+- F | [modular arithmetic](fundamentals/numbertheory/modulararithmatic/README.md)
+- F | [extended euclidean algorithm](fundamentals/numbertheory/exeuclideanalgorithm/README.md)
+- F | [chinese remainder theorem](fundamentals/numbertheory/chineseremaindertheorem/README.md)
+- F | [lucas' theorem](fundamentals/numbertheory/lucas/README.md)
+- F | [binomial coefficient, combination](/doc/dynamic_binomial_coefficient.md)
+- [L](/leetcode/UglyNumberIII/README.md) | [Ugly Number III](https://leetcode.com/problems/ugly-number-iii/)
+- [알](/algospot/PASS486/) | [PASS486](https://algospot.com/judge/problem/read/PASS486)
+- [알](/algospot/POTION/) | [POTION](https://algospot.com/judge/problem/read/POTION)
 
 ## Computational Geometry
 
-  - F | [vector class](/fundamentals/computationalgeometry/vector/README.md)
-    - normalize, dot product, cross product, polar, how much closer
-  - F | [intersection](/fundamentals/computationalgeometry/intersection/README.md)
-    - line intersection point, segment intersection point, segment intersection
-  - F | [point to line](/fundamentals/computationalgeometry/pointtoline/README.md)
-  - F | [polygon area](/fundamentals/computationalgeometry/polygonarea/README.md)
-  - F | [polygon inside](/fundamentals/computationalgeometry/polygoninside/README.md)
-  - F | [sutherland hodgman algorithm](/fundamentals/computationalgeometry/sutherland/README.md)
-  - F | [convex hull (Gift Wrapping aks Javis's March)](fundamentals/computationalgeometry/giftwrapping/README.md)
-  - F | [convex hull (Graham Scan)](/fundamentals/computationalgeometry/grahamscan/README.md)
-  - L | [convex hull (Monotone Chain)](/leetcode2/ErecttheFence/README.md)
-  - F | [union area](/fundamentals/computationalgeometry/unionarea/README.md) 
-  - F | [intersection area](/fundamentals/computationalgeometry/interarea/README.md) 
-  - F | [intersection lines](/fundamentals/computationalgeometry/interlines/README.md) 
-  - F | segment intersects (Shamos-Hoey)
-  - F | segment intersects (Bentley-Ottmann)
-  - F | [rotating calipers](/fundamentals/computationalgeometry/rotatingcalipers/README.md)
-  - F | spline (bezier spline)
-  - F | spline (hermite spline)
-  - F | spline (B-spline, Basis spline)
-  - F | [closest pair of points](/fundamentals/computationalgeometry/closestpair/README.md)
-  - F | voronoi diagrams
-  - F | [geometry algorithms](http://geomalgorithms.com/)
-  - [알](/algospot/PINBALL/) | [PINBALL](https://algospot.com/judge/problem/read/PINBALL)
-  - [알](/algospot/TREASURE/) | [TREASURE](https://algospot.com/judge/problem/read/TREASURE)
-  - [알](/algospot/NERDS/) | [NERDS](https://algospot.com/judge/problem/read/NERDS)
+- F | [vector class](/fundamentals/computationalgeometry/vector/README.md)
+  - normalize, dot product, cross product, polar, how much closer
+- F | [intersection](/fundamentals/computationalgeometry/intersection/README.md)
+  - line intersection point, segment intersection point, segment intersection
+- F | [point to line](/fundamentals/computationalgeometry/pointtoline/README.md)
+- F | [polygon area](/fundamentals/computationalgeometry/polygonarea/README.md)
+- F | [polygon inside](/fundamentals/computationalgeometry/polygoninside/README.md)
+- F | [sutherland hodgman algorithm](/fundamentals/computationalgeometry/sutherland/README.md)
+- F | [convex hull (Gift Wrapping aks Javis's March)](fundamentals/computationalgeometry/giftwrapping/README.md)
+- F | [convex hull (Graham Scan)](/fundamentals/computationalgeometry/grahamscan/README.md)
+- L | [convex hull (Monotone Chain)](/leetcode2/ErecttheFence/README.md)
+- F | [union area](/fundamentals/computationalgeometry/unionarea/README.md) 
+- F | [intersection area](/fundamentals/computationalgeometry/interarea/README.md) 
+- F | [intersection lines](/fundamentals/computationalgeometry/interlines/README.md) 
+- F | segment intersects (Shamos-Hoey)
+- F | segment intersects (Bentley-Ottmann)
+- F | [rotating calipers](/fundamentals/computationalgeometry/rotatingcalipers/README.md)
+- F | spline (bezier spline)
+- F | spline (hermite spline)
+- F | spline (B-spline, Basis spline)
+- F | [closest pair of points](/fundamentals/computationalgeometry/closestpair/README.md)
+- F | voronoi diagrams
+- F | [geometry algorithms](http://geomalgorithms.com/)
+- [알](/algospot/PINBALL/) | [PINBALL](https://algospot.com/judge/problem/read/PINBALL)
+- [알](/algospot/TREASURE/) | [TREASURE](https://algospot.com/judge/problem/read/TREASURE)
+- [알](/algospot/NERDS/) | [NERDS](https://algospot.com/judge/problem/read/NERDS)
 
 ## Line Sweep
 
-  - [L](/leetcode/TheSkylineProblem/) | [The Skyline Problem](https://leetcode.com/problems/the-skyline-problem)
+- [L](/leetcode/TheSkylineProblem/) | [The Skyline Problem](https://leetcode.com/problems/the-skyline-problem)
 
 ## Exhaustive Search
 
-  - F | [overview](doc/exhaustive_search.md)
-  - [알](/algospot/BOGGLE/) | [BOGGLE](https://algospot.com/judge/problem/read/BOGGLE)
-  - [알](/algospot/PICNIC/) | [PICNIC](https://algospot.com/judge/problem/read/PICNIC)
-  - [알](/algospot/BOARDCOVER/) | [BOARDCOVER](https://algospot.com/judge/problem/read/BOARDCOVER)
-  - [알](/algospot/CLOCKSYNC/) | [CLOCKSYNC](https://algospot.com/judge/problem/read/CLOCKSYNC)
+- F | [overview](doc/exhaustive_search.md)
+- [알](/algospot/BOGGLE/) | [BOGGLE](https://algospot.com/judge/problem/read/BOGGLE)
+- [알](/algospot/PICNIC/) | [PICNIC](https://algospot.com/judge/problem/read/PICNIC)
+- [알](/algospot/BOARDCOVER/) | [BOARDCOVER](https://algospot.com/judge/problem/read/BOARDCOVER)
+- [알](/algospot/CLOCKSYNC/) | [CLOCKSYNC](https://algospot.com/judge/problem/read/CLOCKSYNC)
 
 ## Divide And Conquer
 
-  - F | The fast sum of a sequence
-  - F | the fast square of a matrix
-  - F | Karatsuba  
-  - [L](/leetcode/DifferentWaystoAddParentheses/) | [Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/)
-  - 알 | [QUADTREE](https://algospot.com/judge/problem/read/QUADTREE)
-  - 알 | [FENCE](https://algospot.com/judge/problem/read/FENCE)★ 
-  - 알 | [FANMEETING](https://algospot.com/judge/problem/read/FANMEETING)★
+- F | The fast sum of a sequence
+- F | the fast square of a matrix
+- F | Karatsuba  
+- [L](/leetcode/DifferentWaystoAddParentheses/) | [Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/)
+- 알 | [QUADTREE](https://algospot.com/judge/problem/read/QUADTREE)
+- 알 | [FENCE](https://algospot.com/judge/problem/read/FENCE)★ 
+- 알 | [FANMEETING](https://algospot.com/judge/problem/read/FANMEETING)★
   
 ## Dynamic Programming
 
-  - F | [overview](/doc/dynamic_programming.md)
-  - F | [binomial coefficient, combination](/doc/dynamic_binomial_coefficient.md)
-  - F | [0/1 knapsack problem](/fundamentals/dynamicprog/knapsack01/README.md)
-  - F | Hidden Markov Model, HMM
-    - Viterbi algorithm
-  - F | [memoization with non-integer parameters](/doc/dynamic_memoization_with_non_integer.md)
-  - F | [combinatorial game](/doc/dynamic_combinatorial_game.md)
-  - F | [iterative vs recursive](/doc/dynamic_iterative_vs_recursive.md)
-  - F | [levenshtein distance](/leetcode/EditDistance/README.md)
-  - F | [LCS (Longest Common Substring)](/fundamentals/dynamicprog/lcsubstring/README.md)
-  - F | [LCS (Longest Common Subsequence)](/fundamentals/dynamicprog/lcsubsequence/README.md)
-  - [L](/leetcode/LongestIncreasingSubsequence/README.md) | [LIS (Longest Increasing Subsequence)](https://leetcode.com/problems/longest-increasing-subsequence/description/)
-  - [L](/leetcode/CoinChange/README.md) | [Coin Change](https://leetcode.com/problems/coin-change/description/)
-  - [L](/leetcode/CoinChange2/README.md) | [Coin Change 2](https://leetcode.com/problems/coin-change-2/)
-  - [L](/leetcode2/FindtheShortestSuperstring/README.md) | [Find the Shortest Superstring (TSP)](https://leetcode.com/problems/find-the-shortest-superstring/)
-  - [알](/algospot/JUMPGAME/) | [JUMPGAME](https://algospot.com/judge/problem/read/JUMPGAME)
-  - [알](/algospot/WILDCARD/) | [WILDCARD](https://algospot.com/judge/problem/read/WILDCARD)
-  - [알](/algospot/TRIANGLEPATH/) | [TRIANGLEPATH](https://algospot.com/judge/problem/read/TRIANGLEPATH)
-  - [알](algospot/LIS/) | [LIS](https://algospot.com/judge/problem/read/LIS)
-  - [알](algospot/JLIS/) | [JLIS](https://algospot.com/judge/problem/read/JLIS)
-  - [알](/algospot/PI/) | [PI](https://algospot.com/judge/problem/read/PI)
-  - [알](/algospot/QUANTIZE/) | [QUANTIZE](https://algospot.com/judge/problem/read/QUANTIZE)
-  - [알](/algospot/TILING2/) | [TILING2](https://algospot.com/judge/problem/read/TILING2)
-  - [알](/algospot/TRIPATHCNT/) | [TRIPATHCNT](https://algospot.com/judge/problem/read/TRIPATHCNT)
-  - [알](/algospot/SNAIL/) | [SNAIL](https://algospot.com/judge/problem/read/SNAIL)
-  - [알](/algospot/ASYMTILING/) | [ASYMTILING](https://algospot.com/judge/problem/read/ASYMTILING)
-  - [알](/algospot/POLY/) | [POLY](https://algospot.com/judge/problem/read/POLY)
-  - [알](/algospot/NUMB3RS/) | [NUMB3RS](https://algospot.com/judge/problem/read/NUMB3RS)★
-  - [알](/algospot/PACKING/) | [PACKING](https://algospot.com/judge/problem/read/PACKING)
-  - [알](/algospot/OCR/) | [OCR](https://algospot.com/judge/problem/read/OCR)★
-  - [알](/algospot/MORSE/) | [MORSE](https://algospot.com/judge/problem/read/MORSE)
-  - [알](/algospot/KLIS/) | [KLIS](https://algospot.com/judge/problem/read/KLIS)★
-  - [알](/algospot/DRAGON/) | [DRAGON](https://algospot.com/judge/problem/read/DRAGON)
-  - [알](/algospot/TSP/) | [TSP](https://algospot.com/judge/problem/read/TSP1)
-  - [알](/algospot/ZIMBABWE/) | [ZIMBABWE](https://algospot.com/judge/problem/read/ZIMBABWE)★
-  - [알](/algospot/RESTORE/) | [RESTORE](https://algospot.com/judge/problem/read/RESTORE)
-  - [알](/algospot/TICTACTOE/) | [TICTACTOE](https://algospot.com/judge/problem/read/TICTACTOE)
-  - [알](algospot/NUMBERGAME/) | [NUMBERGAME](https://algospot.com/judge/problem/read/NUMBERGAME)
-  - [알](algospot/BLOCKGAME/) | [BLOCKGAME](https://algospot.com/judge/problem/read/BLOCKGAME)
-  - [알](algospot/SUSHI/) | [SUSHI](https://algospot.com/judge/problem/read/SUSHI)
-  - [알](algospot/GENIUS/) | [GENIUS](https://algospot.com/judge/problem/read/GENIUS)
+- F | [overview](/doc/dynamic_programming.md)
+- F | [binomial coefficient, combination](/doc/dynamic_binomial_coefficient.md)
+- F | [0/1 knapsack problem](/fundamentals/dynamicprog/knapsack01/README.md)
+- F | Hidden Markov Model, HMM
+  - Viterbi algorithm
+- F | [memoization with non-integer parameters](/doc/dynamic_memoization_with_non_integer.md)
+- F | [combinatorial game](/doc/dynamic_combinatorial_game.md)
+- F | [iterative vs recursive](/doc/dynamic_iterative_vs_recursive.md)
+- F | [levenshtein distance](/leetcode/EditDistance/README.md)
+- F | [LCS (Longest Common Substring)](/fundamentals/dynamicprog/lcsubstring/README.md)
+- F | [LCS (Longest Common Subsequence)](/fundamentals/dynamicprog/lcsubsequence/README.md)
+- [L](/leetcode/LongestIncreasingSubsequence/README.md) | [LIS (Longest Increasing Subsequence)](https://leetcode.com/problems/longest-increasing-subsequence/description/)
+- [L](/leetcode/CoinChange/README.md) | [Coin Change](https://leetcode.com/problems/coin-change/description/)
+- [L](/leetcode/CoinChange2/README.md) | [Coin Change 2](https://leetcode.com/problems/coin-change-2/)
+- [L](/leetcode2/FindtheShortestSuperstring/README.md) | [Find the Shortest Superstring (TSP)](https://leetcode.com/problems/find-the-shortest-superstring/)
+- [알](/algospot/JUMPGAME/) | [JUMPGAME](https://algospot.com/judge/problem/read/JUMPGAME)
+- [알](/algospot/WILDCARD/) | [WILDCARD](https://algospot.com/judge/problem/read/WILDCARD)
+- [알](/algospot/TRIANGLEPATH/) | [TRIANGLEPATH](https://algospot.com/judge/problem/read/TRIANGLEPATH)
+- [알](algospot/LIS/) | [LIS](https://algospot.com/judge/problem/read/LIS)
+- [알](algospot/JLIS/) | [JLIS](https://algospot.com/judge/problem/read/JLIS)
+- [알](/algospot/PI/) | [PI](https://algospot.com/judge/problem/read/PI)
+- [알](/algospot/QUANTIZE/) | [QUANTIZE](https://algospot.com/judge/problem/read/QUANTIZE)
+- [알](/algospot/TILING2/) | [TILING2](https://algospot.com/judge/problem/read/TILING2)
+- [알](/algospot/TRIPATHCNT/) | [TRIPATHCNT](https://algospot.com/judge/problem/read/TRIPATHCNT)
+- [알](/algospot/SNAIL/) | [SNAIL](https://algospot.com/judge/problem/read/SNAIL)
+- [알](/algospot/ASYMTILING/) | [ASYMTILING](https://algospot.com/judge/problem/read/ASYMTILING)
+- [알](/algospot/POLY/) | [POLY](https://algospot.com/judge/problem/read/POLY)
+- [알](/algospot/NUMB3RS/) | [NUMB3RS](https://algospot.com/judge/problem/read/NUMB3RS)★
+- [알](/algospot/PACKING/) | [PACKING](https://algospot.com/judge/problem/read/PACKING)
+- [알](/algospot/OCR/) | [OCR](https://algospot.com/judge/problem/read/OCR)★
+- [알](/algospot/MORSE/) | [MORSE](https://algospot.com/judge/problem/read/MORSE)
+- [알](/algospot/KLIS/) | [KLIS](https://algospot.com/judge/problem/read/KLIS)★
+- [알](/algospot/DRAGON/) | [DRAGON](https://algospot.com/judge/problem/read/DRAGON)
+- [알](/algospot/TSP/) | [TSP](https://algospot.com/judge/problem/read/TSP1)
+- [알](/algospot/ZIMBABWE/) | [ZIMBABWE](https://algospot.com/judge/problem/read/ZIMBABWE)★
+- [알](/algospot/RESTORE/) | [RESTORE](https://algospot.com/judge/problem/read/RESTORE)
+- [알](/algospot/TICTACTOE/) | [TICTACTOE](https://algospot.com/judge/problem/read/TICTACTOE)
+- [알](algospot/NUMBERGAME/) | [NUMBERGAME](https://algospot.com/judge/problem/read/NUMBERGAME)
+- [알](algospot/BLOCKGAME/) | [BLOCKGAME](https://algospot.com/judge/problem/read/BLOCKGAME)
+- [알](algospot/SUSHI/) | [SUSHI](https://algospot.com/judge/problem/read/SUSHI)
+- [알](algospot/GENIUS/) | [GENIUS](https://algospot.com/judge/problem/read/GENIUS)
 
 ## Memoization
 
-  - [L](/leetcode/LongestIncreasingPathinaMatrix/) | [Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix)
+- [L](/leetcode/LongestIncreasingPathinaMatrix/) | [Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix)
   
 ## Greedy
 
-  - F | [fractional knapsack problem](/fundamentals/greedy/knapsackfractional/README.md)
-  - F | [greedy algorithm proof](doc/greedy_proof.md)
-  - F | [optimization problem](doc/greedy_optimization_problem.md)
-  - F | [activity selection problem](fundamentals/greedy/activityselection/README.md)
-  - F | [huffman code](doc/greedy_huffman_code.md)
-  - [알](/algospot/MATCHORDER/) | [MATCHORDER](https://algospot.com/judge/problem/read/MATCHORDER)
-  - [알](/algospot/LUNCHBOX/) | [LUNCHBOX](https://algospot.com/judge/problem/read/LUNCHBOX)
-  - [알](/algospot/STRJOIN/) | [STRJOIN](https://algospot.com/judge/problem/read/STRJOIN)
-  - [알](/algospot/MINASTIRITH/) | [MINASTIRITH](https://algospot.com/judge/problem/read/MINASTIRITH)★
+- F | [fractional knapsack problem](/fundamentals/greedy/knapsackfractional/README.md)
+- F | [greedy algorithm proof](doc/greedy_proof.md)
+- F | [optimization problem](doc/greedy_optimization_problem.md)
+- F | [activity selection problem](fundamentals/greedy/activityselection/README.md)
+- F | [huffman code](doc/greedy_huffman_code.md)
+- [알](/algospot/MATCHORDER/) | [MATCHORDER](https://algospot.com/judge/problem/read/MATCHORDER)
+- [알](/algospot/LUNCHBOX/) | [LUNCHBOX](https://algospot.com/judge/problem/read/LUNCHBOX)
+- [알](/algospot/STRJOIN/) | [STRJOIN](https://algospot.com/judge/problem/read/STRJOIN)
+- [알](/algospot/MINASTIRITH/) | [MINASTIRITH](https://algospot.com/judge/problem/read/MINASTIRITH)★
 
 ## Combinatorial Search
 
-  - F | [overview](doc/combinatorial_search.md)
-  - F | [permutation](/fundamentals/combinatorialsearch/permutation/README.md)
-  - F | [subset](/fundamentals/combinatorialsearch/subset/README.md)
-  - F | [sudoku](/fundamentals/combinatorialsearch/sudoku/README.md)
-  - F | [A*](/fundamentals/combinatorialsearch/astar/README.md)
-  - F | [pathfinding](/fundamentals/combinatorialsearch/pathfinding/README.md)
-  - [L](/leetcode/SubsetsII/README.md) | [Subsets With Duplicates](https://leetcode.com/problems/subsets-ii/description/)
-  - [L](/leetcode/N-Queens/README.md) | [N-Queens](https://leetcode.com/problems/n-queens/)
-  - [알](/algospot/TSP2/README.md) | [TSP2](https://algospot.com/judge/problem/read/TSP2)
-    - [backtracking](/algospot/TSP2/README.md#backtracking)
-    - [simple pruning](/algospot/TSP2/README.md#simple-pruning)
-    - [simple heuristic pruning](/algospot/TSP2/README.md#simple-heuristic-pruning)
-    - [greedy](/algospot/TSP2/README.md#greedy)
-    - [swapping past paths pruning](/algospot/TSP2/README.md#swapping-past-paths-pruning)
-    - [MST heuristic pruning](/algospot/TSP2/README.md#mst-heuristic-pruning)
-    - [partial dynamic programming](/algospot/TSP2/README.md#partial-dynamic-programming)
-  - [알](/algospot/BOARDCOVER2/README.md) | [BOARDCOVER2](https://algospot.com/judge/problem/read/BOARDCOVER2)
-  - [알](/algospot/ALLERGY) | [ALLERGY](https://algospot.com/judge/problem/read/ALLERGY)
-  - [알](/algospot/KAKURO2/README.md) | [KAKURO2](https://algospot.com/judge/problem/read/KAKURO2)
-  - [알](/algospot/NQUEEN/README.md) | [NQUEEN](https://algospot.com/judge/problem/read/NQUEEN)
+- F | [overview](doc/combinatorial_search.md)
+- F | [permutation](/fundamentals/combinatorialsearch/permutation/README.md)
+- F | [subset](/fundamentals/combinatorialsearch/subset/README.md)
+- F | [sudoku](/fundamentals/combinatorialsearch/sudoku/README.md)
+- F | [A*](/fundamentals/combinatorialsearch/astar/README.md)
+- F | [pathfinding](/fundamentals/combinatorialsearch/pathfinding/README.md)
+- [L](/leetcode/SubsetsII/README.md) | [Subsets With Duplicates](https://leetcode.com/problems/subsets-ii/description/)
+- [L](/leetcode/N-Queens/README.md) | [N-Queens](https://leetcode.com/problems/n-queens/)
+- [알](/algospot/TSP2/README.md) | [TSP2](https://algospot.com/judge/problem/read/TSP2)
+  - [backtracking](/algospot/TSP2/README.md#backtracking)
+  - [simple pruning](/algospot/TSP2/README.md#simple-pruning)
+  - [simple heuristic pruning](/algospot/TSP2/README.md#simple-heuristic-pruning)
+  - [greedy](/algospot/TSP2/README.md#greedy)
+  - [swapping past paths pruning](/algospot/TSP2/README.md#swapping-past-paths-pruning)
+  - [MST heuristic pruning](/algospot/TSP2/README.md#mst-heuristic-pruning)
+  - [partial dynamic programming](/algospot/TSP2/README.md#partial-dynamic-programming)
+- [알](/algospot/BOARDCOVER2/README.md) | [BOARDCOVER2](https://algospot.com/judge/problem/read/BOARDCOVER2)
+- [알](/algospot/ALLERGY) | [ALLERGY](https://algospot.com/judge/problem/read/ALLERGY)
+- [알](/algospot/KAKURO2/README.md) | [KAKURO2](https://algospot.com/judge/problem/read/KAKURO2)
+- [알](/algospot/NQUEEN/README.md) | [NQUEEN](https://algospot.com/judge/problem/read/NQUEEN)
 
 ## Backtracking
 
@@ -965,27 +969,27 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## Shortest Path
 
-  - F | [pathfinding](/fundamentals/combinatorialsearch/pathfinding/README.md)
-  - F | [bfs shortest path @ learntocode](/fundamentals/graph/bfsshortestpath/README.md) (unweighted graphs)
-  - F | [Dijkstra algorithm @ learntocode](/fundamentals/graph/dijkstra/README.md) (non-negative weighted graphs)
-  - F | [Bellman-Ford algorithm @ learntocode](/fundamentals/graph/bellmanford/README.md) (negative weighted graphs)
-  - F | [Floyd algorithm @ learntocode](/fundamentals/graph/floyd/README.md)
+- F | [pathfinding](/fundamentals/combinatorialsearch/pathfinding/README.md)
+- F | [bfs shortest path @ learntocode](/fundamentals/graph/bfsshortestpath/README.md) (unweighted graphs)
+- F | [Dijkstra algorithm @ learntocode](/fundamentals/graph/dijkstra/README.md) (non-negative weighted graphs)
+- F | [Bellman-Ford algorithm @ learntocode](/fundamentals/graph/bellmanford/README.md) (negative weighted graphs)
+- F | [Floyd algorithm @ learntocode](/fundamentals/graph/floyd/README.md)
   
 ## Optimization Problems To Decision Problems
 
-  - F | [overview](doc/optimization_to_decision.md)
-  - [알](/algospot/DARKPA/) | [DARPA](https://algospot.com/judge/problem/read/DARPA)
-  - [알](/algospot/ARCTIC/) | [ARCTIC](https://algospot.com/judge/problem/read/ARCTIC)
-  - [알](/algospot/CANADATRIP/) | [CANADATRIP](https://algospot.com/judge/problem/read/CANADATRIP)
-  - [알](/algospot/WITHDRAWAL/) | [WITHDRAWAL](https://algospot.com/judge/problem/read/WITHDRAWAL)
+- F | [overview](doc/optimization_to_decision.md)
+- [알](/algospot/DARKPA/) | [DARPA](https://algospot.com/judge/problem/read/DARPA)
+- [알](/algospot/ARCTIC/) | [ARCTIC](https://algospot.com/judge/problem/read/ARCTIC)
+- [알](/algospot/CANADATRIP/) | [CANADATRIP](https://algospot.com/judge/problem/read/CANADATRIP)
+- [알](/algospot/WITHDRAWAL/) | [WITHDRAWAL](https://algospot.com/judge/problem/read/WITHDRAWAL)
 
 ## Game theory
 
-  - F | [overview](doc/algorithm_game.md)
+- F | [overview](doc/algorithm_game.md)
 
 ## Minimax
 
-  - [L](/leetcode/GuesstheWord/REAME.md) | [Guess the Word](https://leetcode.com/problems/guess-the-word/)
+- [L](/leetcode/GuesstheWord/REAME.md) | [Guess the Word](https://leetcode.com/problems/guess-the-word/)
 
 ## Two Pointers
 
@@ -1005,23 +1009,23 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## Brain Teaser
 
-  - [L](/leetcode/BulbSwitcher/a.cpp) | [Bulb Switcher](https://leetcode.com/problems/bulb-switcher/)
+- [L](/leetcode/BulbSwitcher/a.cpp) | [Bulb Switcher](https://leetcode.com/problems/bulb-switcher/)
 
 ## Design
 
-  - [L](/leetcode/LRUCache/) | [LRU Cache](https://leetcode.com/problems/lru-cache)
+- [L](/leetcode/LRUCache/) | [LRU Cache](https://leetcode.com/problems/lru-cache)
 
 ## Reservoir Sampling
 
-  - [L](/leetcode/RandomPickIndex/a.cpp) | [Random Pick Index](https://leetcode.com/problems/random-pick-index/)
+- [L](/leetcode/RandomPickIndex/a.cpp) | [Random Pick Index](https://leetcode.com/problems/random-pick-index/)
   
 ## Rejection Sampling
 
-  - [L](/leetcode/RandomPickIndex/a.cpp) | [Random Pick Index](https://leetcode.com/problems/random-pick-index/)
+- [L](/leetcode/RandomPickIndex/a.cpp) | [Random Pick Index](https://leetcode.com/problems/random-pick-index/)
   
 ## Random
 
-  - [L](/leetcode/ImplementRand10()UsingRand7/a.cpp) | [Implement Rand10() Using Rand7()](https://leetcode.com/problems/implement-rand10-using-rand7/)
+- [L](/leetcode/ImplementRand10()UsingRand7/a.cpp) | [Implement Rand10() Using Rand7()](https://leetcode.com/problems/implement-rand10-using-rand7/)
 
 ## Probe and forward
 
@@ -1038,18 +1042,18 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 # Concurrency
 
-  - L | [Print in Order](https://leetcode.com/problems/print-in-order)
-  - L | [Building H2O](https://leetcode.com/problems/building-h2o)
+- L | [Print in Order](https://leetcode.com/problems/print-in-order)
+- L | [Building H2O](https://leetcode.com/problems/building-h2o)
 
 # Database
 
-  - L | [Nth Highest Salary](https://leetcode.com/problems/nth-highest-salary/)
+- L | [Nth Highest Salary](https://leetcode.com/problems/nth-highest-salary/)
 
 # Bash
 
-  - L | [Valid Phone Numbers](https://leetcode.com/problems/valid-phone-numbers)
-  - L | [Tenth Line](https://leetcode.com/problems/tenth-line)
-  - L | [Word Frequency](https://leetcode.com/problems/transpose-file)
+- L | [Valid Phone Numbers](https://leetcode.com/problems/valid-phone-numbers)
+- L | [Tenth Line](https://leetcode.com/problems/tenth-line)
+- L | [Word Frequency](https://leetcode.com/problems/transpose-file)
 
 # Series
 
@@ -1308,117 +1312,117 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ### Arrays And Strings
 
-  - C | IsUnique
-  - C | CheckPermutation
-  - C | URLify
-  - C | Palindrome Permutation
-  - C | One Away
-  - C | String Compression
-  - C | Rotate Matrix
-  - C | Zero Matrix
-  - C | String Rotation
+- C | IsUnique
+- C | CheckPermutation
+- C | URLify
+- C | Palindrome Permutation
+- C | One Away
+- C | String Compression
+- C | Rotate Matrix
+- C | Zero Matrix
+- C | String Rotation
 
 ### Linked Lists
 
-  - C | Remove Dups
-  - C | Return Kth to Last
-  - C | Delete Middle Node
-  - C | Partition
-  - C | Sum Lists
-  - C | Palindrome
-  - C | Intersection
-  - C | Loop Detection
+- C | Remove Dups
+- C | Return Kth to Last
+- C | Delete Middle Node
+- C | Partition
+- C | Sum Lists
+- C | Palindrome
+- C | Intersection
+- C | Loop Detection
 
 ### Stacks and Queues
 
-  - C | Three in One
-  - C | Stack Min
-  - C | Stack of Plates
-  - C | Queue via Stacks
-  - C | Sort Stack
-  - C | Animal Shelter
+- C | Three in One
+- C | Stack Min
+- C | Stack of Plates
+- C | Queue via Stacks
+- C | Sort Stack
+- C | Animal Shelter
 
 ### Trees and Graphs
 
-  - C | Route Between Nodes
-  - C | Minimal Tree
-  - C | List of Depths
-  - C | Check Balanced
-  - C | Validate BST
-  - C | Successor
-  - C | Build Order  
-  - C | First Common Ancestor
-  - C | BST Sequences
-  - C | Check Subtree
-  - C | Random Node
-  - C | Paths with Sum
+- C | Route Between Nodes
+- C | Minimal Tree
+- C | List of Depths
+- C | Check Balanced
+- C | Validate BST
+- C | Successor
+- C | Build Order  
+- C | First Common Ancestor
+- C | BST Sequences
+- C | Check Subtree
+- C | Random Node
+- C | Paths with Sum
 
 ### Bit Manimulation
 
-  - C | Insertion
-  - C | Binary to String
-  - C | Flip Bit to Win
-  - C | Next Number
-  - C | Debugger
-  - C | Conversion
-  - C | Pairwise Swap
-  - C | Draw Line
+- C | Insertion
+- C | Binary to String
+- C | Flip Bit to Win
+- C | Next Number
+- C | Debugger
+- C | Conversion
+- C | Pairwise Swap
+- C | Draw Line
 
 ### Math and Logic Puzzles
 
-  - C | Egg Drop
-  - C | The Apocalypse
-  - C | Test Strips
+- C | Egg Drop
+- C | The Apocalypse
+- C | Test Strips
 
 ### Object Oriented Design
 
-  - C | Deck_of_Cards
-  - C | Call_Center	
-  - C | Jukebox	
-  - C | Parking_Lot	
-  - C | Online_Book_Reader
-  - C | Jigsaw	
-  - C | Chat_Server	
-  - C | Othello	
-  - C | Circular_Array	
-  - C | Minesweeper	
-  - C | File_System	
-  - C | Hash_Table
+- C | Deck_of_Cards
+- C | Call_Center	
+- C | Jukebox	
+- C | Parking_Lot	
+- C | Online_Book_Reader
+- C | Jigsaw	
+- C | Chat_Server	
+- C | Othello	
+- C | Circular_Array	
+- C | Minesweeper	
+- C | File_System	
+- C | Hash_Table
 
 ### Recursion and Dynamic Programming
 
-  - C | Triple Step
-  - C | Robot in a Grid
-  - C | Magic Index
-  - C | Power Set
-  - C | Recursive Multiply
-  - C | Towers of Hanoi
-  - C | Permutations without Dups
-  - C | Permutations with Dups
-  - C | Parens
-  - C | Paint Fill
-  - C | Coins
-  - C | Eight Queens
-  - C | Stack of Boxes
-  - C | [boolean evaluation](/crackingthecodinginterview/8.14_BooleanEvaluation/)
+- C | Triple Step
+- C | Robot in a Grid
+- C | Magic Index
+- C | Power Set
+- C | Recursive Multiply
+- C | Towers of Hanoi
+- C | Permutations without Dups
+- C | Permutations with Dups
+- C | Parens
+- C | Paint Fill
+- C | Coins
+- C | Eight Queens
+- C | Stack of Boxes
+- C | [boolean evaluation](/crackingthecodinginterview/8.14_BooleanEvaluation/)
 
 ### System Design and Scalability
 
-  - C | Social Network
-  - C | Cache
+- C | Social Network
+- C | Cache
 
 ### Sorting and Searching
 
-  - C | Sorted Merge
-  - C | Group Anagrams
-  - C | Search in Rotated Array
-  - C | Sorted Search, No Size
-  - C | Sparse Search
-  - C | Missing Int
-  - C | Find Duplicates
-  - C | Sorted Matrix Search
-  - C | Rank from Stream
-  - C | Peaks and Valleys
+- C | Sorted Merge
+- C | Group Anagrams
+- C | Search in Rotated Array
+- C | Sorted Search, No Size
+- C | Sparse Search
+- C | Missing Int
+- C | Find Duplicates
+- C | Sorted Matrix Search
+- C | Rank from Stream
+- C | Peaks and Valleys
 
 ### Testing
 
@@ -1440,14 +1444,14 @@ TODO
 
 ### Java
 
-  - C | Private Constructor
-  - C | Return from Finally
-  - C | Final, etc.
-  - C | Generics vs. Templates
-  - C | TreeMap, HashMap, LinkedHashMap
-  - C | Object Reflection
-  - C | Lambda Expressions
-  - C | Lambda Random
+- C | Private Constructor
+- C | Return from Finally
+- C | Final, etc.
+- C | Generics vs. Templates
+- C | TreeMap, HashMap, LinkedHashMap
+- C | Object Reflection
+- C | Lambda Expressions
+- C | Lambda Random
 
 ### Databases
 
@@ -1455,69 +1459,69 @@ TODO
 
 ### Threads and Locks
 
-  - C | Dining Philosophers
-  - C | Deadlock Free Class
-  - C | Call in Order
-  - C | Synchronized Methods
-  - C | FizzBuzz
+- C | Dining Philosophers
+- C | Deadlock Free Class
+- C | Call in Order
+- C | Synchronized Methods
+- C | FizzBuzz
 
 ### Moderate
 
-  - C | Number Swapper
-  - C | Word Frequencies
-  - C | Intersection
-  - C | Tic Tac Win
-  - C | Factorial Zeros
-  - C | Smallest Difference
-  - C | Number Max
-  - C | English Int
-  - C | Operations
-  - C | Living People
-  - C | Diving Board
-  - C | XML Encoding
-  - C | Bisect Squares
-  - C | Best Line
-  - C | Master Mind
-  - C | SubSort
-  - C | Contiguous Sequence
-  - C | Pattern Matching
-  - C | Pond Sizes
-  - C | T9
-  - C | Sum Swap
-  - C | Langton'sAnt
-  - C | Rand7 from RandS
-  - C | Pairs with Sum
-  - C | LRU Cache
-  - C | Calculator
+- C | Number Swapper
+- C | Word Frequencies
+- C | Intersection
+- C | Tic Tac Win
+- C | Factorial Zeros
+- C | Smallest Difference
+- C | Number Max
+- C | English Int
+- C | Operations
+- C | Living People
+- C | Diving Board
+- C | XML Encoding
+- C | Bisect Squares
+- C | Best Line
+- C | Master Mind
+- C | SubSort
+- C | Contiguous Sequence
+- C | Pattern Matching
+- C | Pond Sizes
+- C | T9
+- C | Sum Swap
+- C | Langton'sAnt
+- C | Rand7 from RandS
+- C | Pairs with Sum
+- C | LRU Cache
+- C | Calculator
 
 ### Hard
 
-  - C | Add Without Plus
-  - C | Shuffle
-  - C | Random Set
-  - C | Missing Number
-  - C | Letters and Numbers
-  - C | Count of 25
-  - C | Baby Names
-  - C | Circus Tower
-  - C | Kth Multiple
-  - C | Majority Element
-  - C | Word Distance
-  - C | BiNode
-  - C | Re-Space
-  - C | Smallest K
-  - C | Longest Word
-  - C | The Masseuse
-  - C | Multi Search
-  - C | Shortest Supersequence
-  - C | Missing Two
-  - C | Continuous Median
-  - C | Volume of Histogram
-  - C | Word Transformer
-  - C | MaxBlackSquare
-  - C | Max Submatrix
-  - C | Word Rectangle
-  - C | Sparse Similarity
+- C | Add Without Plus
+- C | Shuffle
+- C | Random Set
+- C | Missing Number
+- C | Letters and Numbers
+- C | Count of 25
+- C | Baby Names
+- C | Circus Tower
+- C | Kth Multiple
+- C | Majority Element
+- C | Word Distance
+- C | BiNode
+- C | Re-Space
+- C | Smallest K
+- C | Longest Word
+- C | The Masseuse
+- C | Multi Search
+- C | Shortest Supersequence
+- C | Missing Two
+- C | Continuous Median
+- C | Volume of Histogram
+- C | Word Transformer
+- C | MaxBlackSquare
+- C | Max Submatrix
+- C | Word Rectangle
+- C | Sparse Similarity
 
 ## 백준온라인
 
