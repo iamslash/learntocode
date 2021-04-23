@@ -1,11 +1,11 @@
 # Problem
 
-[Minimum Area Rectangle](https://leetcode.com/problems/minimum-area-rectangle/)
-
-# Idea
+> [Minimum Area Rectangle](https://leetcode.com/problems/minimum-area-rectangle/)
 
 좌표들의 모음 `P[][]` 가 주어지면 점 4 개를 선택하여 만들 수 있는
 사각형들 중 가장 넓이가 적은 것의 크기를 구하는 문제이다.
+
+# Idea
 
 문제를 잘 읽어봐야 한다. 모든 점을 포함하는 사각형의 넓이가 아니고 4
 개의 점을 선택하여 만들 수 있는 최소 크기의 사각형의 넓이를 구하는
