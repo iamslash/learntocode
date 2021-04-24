@@ -8,7 +8,15 @@ import java.util.*;
 // chSet: e c b
 //        2 1 1
 //   ans: 3
+// 
+//        i
+//     s: c c a a b b b
+//                j
+// chSet: c a b
+//        2 2 1
+//   ans: 4
 
+// 4ms 85.55% 38.8MB 66.12%
 // two pointers
 // O(N) O(N)
 class Solution {
@@ -22,9 +30,10 @@ class Solution {
 			Character c = s.charAt(j);
 			cntMap.put(c, cntMap.getOrDefault(c, 0) + 1);
 			while (cntMap.size() > 2) {
-				cntMap.put(c, cntMap.get(c) - 1);
-				if (cntMap.get(c) <= 0) {
-					cntMap.remove(c);
+				Character d = s.charAt(i);
+				cntMap.put(d, cntMap.get(d) - 1);
+				if (cntMap.get(d) <= 0) {
+					cntMap.remove(d);
 				}
 				++i;
 			}
