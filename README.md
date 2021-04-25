@@ -826,6 +826,11 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 - [알](/algospot/PASS486/) | [PASS486](https://algospot.com/judge/problem/read/PASS486)
 - [알](/algospot/POTION/) | [POTION](https://algospot.com/judge/problem/read/POTION)
 
+## Number Theory, Math, base convert
+
+* F | [base convert](doc/base_convert.md)
+* [L]() | [Sum of Digits in Base K](https://leetcode.com/problems/sum-of-digits-in-base-k/)
+
 ## Computational Geometry
 
 - F | [vector class](/fundamentals/computationalgeometry/vector/README.md)
