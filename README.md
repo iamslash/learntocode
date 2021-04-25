@@ -60,6 +60,7 @@
   - [Binary Search](#binary-search)
   - [Numerical Analysis](#numerical-analysis)
   - [Number Theory, Math](#number-theory-math)
+  - [Number Theory, Math, base convert](#number-theory-math-base-convert)
   - [Computational Geometry](#computational-geometry)
   - [Line Sweep](#line-sweep)
   - [Exhaustive Search](#exhaustive-search)
@@ -770,6 +771,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## up and down
 
+* F | [up and down](/doc/up_and_down.md)
 * [L](/leetcode/BullsandCows/README.md) | [Bulls and Cows](https://leetcode.com/problems/bulls-and-cows/)
 
 ## reverse order
@@ -840,7 +842,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 ## Number Theory, Math, base convert
 
 * F | [base convert](doc/base_convert.md)
-* [L]() | [Sum of Digits in Base K](https://leetcode.com/problems/sum-of-digits-in-base-k/)
+* [L](/leetcode2/SumofDigitsinBaseK) | [Sum of Digits in Base K](https://leetcode.com/problems/sum-of-digits-in-base-k/)
 
 ## Computational Geometry
 
