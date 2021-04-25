@@ -53,6 +53,8 @@
   - [Trie](#trie)
   - [Network Flow](#network-flow)
 - [Focused on Algorithms](#focused-on-algorithms)
+  - [up and down](#up-and-down)
+  - [reverse order](#reverse-order)
   - [Sort](#sort)
   - [Search](#search)
   - [Binary Search](#binary-search)
@@ -72,6 +74,7 @@
   - [Game theory](#game-theory)
   - [Minimax](#minimax)
   - [Two Pointers](#two-pointers)
+  - [Two Pointers, one step j multi step i](#two-pointers-one-step-j-multi-step-i)
   - [Sliding Window](#sliding-window)
   - [Min 1st, 2nd](#min-1st-2nd)
   - [Brain Teaser](#brain-teaser)
@@ -765,6 +768,14 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 # Focused on Algorithms
 
+## up and down
+
+* [L](/leetcode/BullsandCows/README.md) | [Bulls and Cows](https://leetcode.com/problems/bulls-and-cows/)
+
+## reverse order
+
+* [L](/leetcode2/BackspaceStringCompare/README.md) | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
+
 ## Sort
 
 - F | [overview](/fundamentals/sort/overview/README.md)
@@ -1001,6 +1012,10 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 * F | [Two Pointers Loop Pattern](/doc/two_pointers.md)
 * [L](/leetcode/TrappingRainWater/README.md) | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water)
 * [L](/leetcode2/GettheMaximumScore/README.md) | [Get the Maximum Score](https://leetcode.com/problems/get-the-maximum-score/)
+
+## Two Pointers, one step j multi step i
+
+* [L](/leetcode/LongestSubstringwithAtMostTwoDistinctCharacters/) | [Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/)
 
 ## Sliding Window
 
