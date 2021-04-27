@@ -16,7 +16,7 @@
 - [How to practise](#how-to-practise)
 - [Problems by categories](#problems-by-categories)
 - [Focused on Basic](#focused-on-basic)
-  - [Linear Traversal, How to loop](#linear-traversal-how-to-loop)
+  - [Linear Traversal, Loop](#linear-traversal-loop)
   - [Recursion](#recursion)
 - [Focused on Data Structures](#focused-on-data-structures)
   - [Array](#array)
@@ -53,8 +53,6 @@
   - [Trie](#trie)
   - [Network Flow](#network-flow)
 - [Focused on Algorithms](#focused-on-algorithms)
-  - [up and down](#up-and-down)
-  - [reverse order](#reverse-order)
   - [Sort](#sort)
   - [Search](#search)
   - [Binary Search](#binary-search)
@@ -75,7 +73,6 @@
   - [Game theory](#game-theory)
   - [Minimax](#minimax)
   - [Two Pointers](#two-pointers)
-  - [Two Pointers, one step j multi step i](#two-pointers-one-step-j-multi-step-i)
   - [Sliding Window](#sliding-window)
   - [Min 1st, 2nd](#min-1st-2nd)
   - [Brain Teaser](#brain-teaser)
@@ -435,16 +432,20 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 # Focused on Basic
 
-## Linear Traversal, How to loop
+## Linear Traversal, Loop
 
-* [L](/leetcode2/MinimumNumberofDaystoMakemBouquets/a.go) | [Minimum Number of Days to Make m Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/)
-  * group count, member count
-* [L](/leetcode2/MinimumNumberofTapstoOpentoWateraGarden/README.md) | [Minimum Number of Taps to Open to Water a Garden](https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) 
-  * covered count 
-* [L](/leetcode2/BulbSwitcherIV/a.cpp) | [Bulb Switcher IV](https://leetcode.com/problems/bulb-switcher-iv/)
-  * continuous count
-* [L](/leetcode2/FindtheWinnerofanArrayGame/a.go) | [Find the Winner of an Array Game](https://leetcode.com/problems/find-the-winner-of-an-array-game/)
-  * win count
+* [up and down](/doc/linear_traversal.md#up-and-down)
+  * [L](/leetcode/BullsandCows/README.md) | [Bulls and Cows](https://leetcode.com/problems/bulls-and-cows/)
+* [reverse order](/doc/linear_traversal.md#reverse-order)
+  * [L](/leetcode2/BackspaceStringCompare/README.md) | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
+* group count, member count
+  * [L](/leetcode2/MinimumNumberofDaystoMakemBouquets/a.go) | [Minimum Number of Days to Make m Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/)
+* covered count   
+  * [L](/leetcode2/MinimumNumberofTapstoOpentoWateraGarden/README.md) | [Minimum Number of Taps to Open to Water a Garden](https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) 
+* continuous count
+  * [L](/leetcode2/BulbSwitcherIV/a.cpp) | [Bulb Switcher IV](https://leetcode.com/problems/bulb-switcher-iv/)
+* win count
+  * [L](/leetcode2/FindtheWinnerofanArrayGame/a.go) | [Find the Winner of an Array Game](https://leetcode.com/problems/find-the-winner-of-an-array-game/)
 * [L](/leetcode2/DetectPatternofLengthMRepeatedKorMoreTimes/a.js) | [Detect Pattern of Length M Repeated K or More Times](https://leetcode.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/)
 
 ## Recursion
@@ -769,15 +770,6 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 # Focused on Algorithms
 
-## up and down
-
-* F | [up and down](/doc/up_and_down.md)
-* [L](/leetcode/BullsandCows/README.md) | [Bulls and Cows](https://leetcode.com/problems/bulls-and-cows/)
-
-## reverse order
-
-* [L](/leetcode2/BackspaceStringCompare/README.md) | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
-
 ## Sort
 
 - F | [overview](/fundamentals/sort/overview/README.md)
@@ -1011,13 +1003,10 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## Two Pointers
 
-* F | [Two Pointers Loop Pattern](/doc/two_pointers.md)
+* [one step j, multi step i](#one-step-j-multi-step-i)
+  * [L](/leetcode/LongestSubstringwithAtMostTwoDistinctCharacters/) | [Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/)
 * [L](/leetcode/TrappingRainWater/README.md) | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water)
 * [L](/leetcode2/GettheMaximumScore/README.md) | [Get the Maximum Score](https://leetcode.com/problems/get-the-maximum-score/)
-
-## Two Pointers, one step j multi step i
-
-* [L](/leetcode/LongestSubstringwithAtMostTwoDistinctCharacters/) | [Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/)
 
 ## Sliding Window
 
