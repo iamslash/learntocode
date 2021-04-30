@@ -438,6 +438,8 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
   * [L](/leetcode/BullsandCows/README.md) | [Bulls and Cows](https://leetcode.com/problems/bulls-and-cows/)
 * [reverse order](/doc/linear_traversal.md#reverse-order)
   * [L](/leetcode2/BackspaceStringCompare/README.md) | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
+* longest non-decreasing substring
+  * [L](/leetcode2/LongestSubstringOfAllVowelsinOrder/README.md) | [Longest Substring Of All Vowels in Order](https://leetcode.com/problems/longest-substring-of-all-vowels-in-order/)
 * group count, member count
   * [L](/leetcode2/MinimumNumberofDaystoMakemBouquets/a.go) | [Minimum Number of Days to Make m Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/)
 * covered count   
