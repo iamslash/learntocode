@@ -83,9 +83,6 @@
   - [Probe and forward](#probe-and-forward)
   - [Palindrome](#palindrome)
   - [Simulated Annealing](#simulated-annealing)
-- [Concurrency](#concurrency)
-- [Database](#database)
-- [Bash](#bash)
 - [Series](#series)
   - [Best Time to Buy and Sell Stock](#best-time-to-buy-and-sell-stock)
   - [Jump Game](#jump-game)
@@ -101,6 +98,9 @@
   - [Paint House](#paint-house)
   - [Course Schedule](#course-schedule)
   - [Decode Ways](#decode-ways)
+- [Concurrency](#concurrency)
+- [Database](#database)
+- [Bash](#bash)
 - [Excercises](#excercises)
   - [Leetcode Top Interview Questions](#leetcode-top-interview-questions)
   - [Cracking The Coding Intervew 6 th](#cracking-the-coding-intervew-6-th)
@@ -490,7 +490,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## Partial Sum
 
-- F | [overview](doc/partial_sum.md)
+- F | [partial sum overview](/doc/partial_sum_overview.md)
 - F | [partial sum, range sum](fundamentals/partialsum/partialsum/README.md)
 - F | [variance](fundamentals/partialsum/variance/README.md)
 - F | [grid sum](fundamentals/partialsum/gridsum/README.md)
@@ -501,13 +501,13 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## Partial Min
 
-- F | [overview](doc/partial_min.md)
+- F | [partial min overview](doc/partial_min_overview.md)
 
 ## List, LinkedList
 
-- F | [dynamic array](fundamentals/list/dynamicarray/README.md)
+- F | [dynamic array](/fundamentals/list/dynamicarray/README.md)
 - F | [singly linked list](/fundamentals/list/singlylinkedlist/README.md)
-- F | [doubly linked list](fundamentals/list/doublylinkedlist/README.md)
+- F | [doubly linked list](/fundamentals/list/doublylinkedlist/README.md)
 - L | [Find The Duplicate Number](/leetcode/FindTheDuplicateNumber)
   - tortoise and the hare algorithm
 - [알](/algospot/JOSEPHUS/) | [JOSEPHUS](https://algospot.com/judge/problem/read/JOSEPHUS)
@@ -1054,21 +1054,6 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 * [L](/leetcode2/BestPositionforaServiceCentre) | [Best Position for a Service Centre](https://leetcode.com/problems/best-position-for-a-service-centre/)
 
-# Concurrency
-
-- L | [Print in Order](https://leetcode.com/problems/print-in-order)
-- L | [Building H2O](https://leetcode.com/problems/building-h2o)
-
-# Database
-
-- L | [Nth Highest Salary](https://leetcode.com/problems/nth-highest-salary/)
-
-# Bash
-
-- L | [Valid Phone Numbers](https://leetcode.com/problems/valid-phone-numbers)
-- L | [Tenth Line](https://leetcode.com/problems/tenth-line)
-- L | [Word Frequency](https://leetcode.com/problems/transpose-file)
-
 # Series
 
 ## Best Time to Buy and Sell Stock
@@ -1167,160 +1152,26 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 * [L](/leetcode/DecodeWays/REAME.md) | [Decode Ways](https://leetcode.com/problems/decode-ways/)
 * [L](/leetcode2/DecodeWaysII/README.md) | [Decode Ways II](https://leetcode.com/problems/decode-ways-ii/)
 
+# Concurrency
+
+- L | [Print in Order](https://leetcode.com/problems/print-in-order)
+- L | [Building H2O](https://leetcode.com/problems/building-h2o)
+
+# Database
+
+- L | [Nth Highest Salary](https://leetcode.com/problems/nth-highest-salary/)
+
+# Bash
+
+- L | [Valid Phone Numbers](https://leetcode.com/problems/valid-phone-numbers)
+- L | [Tenth Line](https://leetcode.com/problems/tenth-line)
+- L | [Word Frequency](https://leetcode.com/problems/transpose-file)
+
 # Excercises
 
 ## Leetcode Top Interview Questions
 
 * [Top Interview Questions @ leetcode](https://leetcode.com/problemset/top-interview-questions/)
-
-----
-
-  - L | [Pick One ](https://leetcode.com/problems/random-one-question/top-interview-questions)
-  - [L](/leetcode/TwoSum/README.md) | [Two Sum](https://leetcode.com/problems/two-sum)
-  - [L](/leetcode/AddTwoNumbers/) | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers)
-  - [L](/leetcode/LongestSubstringWithoutRepeatingCharacters/) | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)
-  - [L](/leetcode/MedianofTwoSortedArrays/README.md) | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays)
-  - [L](/leetcode/LongestPalindromicSubstring/) | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring)
-  - [L](/leetcode/ReverseInteger/) | [Reverse Integer](https://leetcode.com/problems/reverse-integer)
-  - L | [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi)
-  - [L](/leetcode/RegularExpressionMatching/README.md) | [Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching)
-  - [L](/leetcode/ContainerWithMostWater/) | [Container With Most Water](https://leetcode.com/problems/container-with-most-water)
-  - L | [Roman to Integer](https://leetcode.com/problems/roman-to-integer)
-  - [L](/leetcode/LongestCommonPrefix/) | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix)
-  - [L](/leetcode/3Sum/) | [3Sum](https://leetcode.com/problems/3sum)
-  - [L](/leetcode/LetterCombinationsofaPhoneNumber/) | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number)
-  - [L](/leetcode/RemoveNthNodeFromEndofList/) | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list)
-  - L | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
-  - L | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists)
-  - [L](/leetcode/GenerateParentheses/) | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses)
-  - [L](/leetcode/MergekSortedLists/) | [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists)
-  - [L](/leetcode/RemoveDuplicatesfromSortedArray/) | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array)
-  - L | [Implement strStr()](https://leetcode.com/problems/implement-strstr)
-  - [L](/leetcode/DivideTwoIntegers/README.md) | [Divide Two Integers](https://leetcode.com/problems/divide-two-integers)
-  - [L](/leetcode/SearchinRotatedSortedArray/) | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array)
-  - L | [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array)
-  - [L](/leetcode/ValidSudoku/) | [Valid Sudoku](https://leetcode.com/problems/valid-sudoku)
-  - [L](/leetcode/CountandSay/) | [Count and Say](https://leetcode.com/problems/count-and-say)
-  - [L](/leetcode/FirstMissingPositive/) | [First Missing Positive](https://leetcode.com/problems/first-missing-positive)
-  - [L](/leetcode/TrappingRainWater/README.md) | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water)
-  - [L](/leetcode/WildcardMatching/) | [Wildcard Matching](https://leetcode.com/problems/wildcard-matching)
-  - [L](/leetcode/Permutations/) | [Permutations](https://leetcode.com/problems/permutations)
-  - [L](/leetcode/RotateImage/README.md) | [Rotate Image](https://leetcode.com/problems/rotate-image)
-  - [L](/leetcode/GroupAnagrams/) | [Group Anagrams](https://leetcode.com/problems/group-anagrams)
-  - L | [Pow(x, n)](https://leetcode.com/problems/powx-n)
-  - [L](/leetcode/MaximumSubarray/) | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray)
-  - [L](/leetcode/SpiralMatrix/) | [Spiral Matrix](https://leetcode.com/problems/spiral-matrix)
-  - [L](/leetcode/JumpGame/) | [Jump Game](https://leetcode.com/problems/jump-game)
-  - [L](/leetcode/MergeIntervals/) | [Merge Intervals](https://leetcode.com/problems/merge-intervals)
-  - [L](/leetcode/UniquePaths/) | [Unique Paths](https://leetcode.com/problems/unique-paths)
-  - [L](/leetcode/PlusOne/) | [Plus One](https://leetcode.com/problems/plus-one)
-  - L | [Sqrt(x)](https://leetcode.com/problems/sqrtx)
-  - L | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs)
-  - [L](/leetcode/SetMatrixZeroes/) | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes)
-  - [L](/leetcode/SortColors/) | [Sort Colors](https://leetcode.com/problems/sort-colors)
-  - [L](/leetcode/MinimumWindowSubstring/README.md) | [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring)
-  - [L](/leetcode/Subsets/) | [Subsets](https://leetcode.com/problems/subsets)
-  - [L](/leetcode/WordSearch/) | [Word Search](https://leetcode.com/problems/word-search)
-  - [L](/leetcode/LargestRectangleinHistogram/README.md) | [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram)
-  - [L](/leetcode/MergeSortedArray/) | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array)
-  - [L](/leetcode/DecodeWays/) | [Decode Ways](https://leetcode.com/problems/decode-ways)
-  - [L](/leetcode/BinaryTreeInorderTraversal/README.md) | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal)
-  - [L](/leetcode/ValidateBinarySearchTree/README.md) | [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree)
-  - [L](/leetcode/SymmetricTree/) | [Symmetric Tree](https://leetcode.com/problems/symmetric-tree)
-  - [L](/leetcode/BinaryTreeLevelOrderTraversal/) | [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal)
-  - [L](/leetcode/BinaryTreeZigzagLevelOrderTraversal/) | [Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal)
-  - [L](/leetcode/MaximumDepthofBinaryTree/) | [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree)
-  - [L](/leetcode/ConstructBinaryTreefromPreorderandInorderTraversal/) | [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal)
-  - [L](/leetcode/ConvertSortedArraytoBinarySearchTree/) | [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree)
-  - [L](/leetcode/PopulatingNextRightPointersinEachNode/) | [Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node)
-  - L | [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle)
-  - L | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock)
-  - [L](/leetcode/BestTimetoBuyandSellStockII/) | [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii)
-  - [L](/leetcode/BinaryTreeMaximumPathSum/) | [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum)
-  - [L](/leetcode/ValidPalindrome/) | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome)
-  - [L](/leetcode/WordLadder/) | [Word Ladder](https://leetcode.com/problems/word-ladder)
-  - [L](/leetcode/LongestConsecutiveSequence/) | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence)
-  - [L](/leetcode/SurroundedRegions/) | [Surrounded Regions](https://leetcode.com/problems/surrounded-regions)
-  - [L](/leetcode/PalindromePartitioning/) | [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning)
-  - [L](/leetcode/GasStation/) | [Gas Station](https://leetcode.com/problems/gas-station)
-  - [L](/leetcode/SingleNumber/) | [Single Number](https://leetcode.com/problems/single-number)
-  - [L](/leetcode/CopyListwithRandomPointer/) | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer)
-  - [L](/leetcode/WordBreak/) | [Word Break](https://leetcode.com/problems/word-break)
-  - [L](/leetcode/WordBreakII/) | [Word Break II](https://leetcode.com/problems/word-break-ii)
-  - L | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle)
-  - [L](/leetcode/LRUCache/) | [LRU Cache](https://leetcode.com/problems/lru-cache)
-  - [L](/leetcode/SortList/) | [Sort List](https://leetcode.com/problems/sort-list)
-  - [L](/leetcode/MaxPointsonaLine/README.md) | [Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line)
-  - [L](/leetcode/EvaluateReversePolishNotation/) | [Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation)
-  - [L](/leetcode/MaximumProductSubarray/) | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray)
-  - L | [Min Stack](https://leetcode.com/problems/min-stack)
-  - [L](/leetcode/IntersectionofTwoLinkedLists/) | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists)
-  - [L](/leetcode/FindPeakElement/) | [Find Peak Element](https://leetcode.com/problems/find-peak-element)
-  - [L](/leetcode/MissingRanges/README.md) | [Missing Ranges](https://leetcode.com/problems/missing-ranges)
-  - [L](/leetcode/FractiontoRecurringDecimal/) | [Fraction to Recurring Decimal](https://leetcode.com/problems/fraction-to-recurring-decimal)
-  - [L](/leetcode/MajorityElement/README.md) | [Majority Element](https://leetcode.com/problems/majority-element)
-  - [L](/leetcode/ExcelSheetColumnNumber/) | [Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number)
-  - [L](/leetcode/FactorialTrailingZeroes/README.md) | [Factorial Trailing Zeroes](https://leetcode.com/problems/factorial-trailing-zeroes)
-  - [L](/leetcode/LargestNumber/) | [Largest Number](https://leetcode.com/problems/largest-number)
-  - [L](/leetcode/RotateArray/) | [Rotate Array](https://leetcode.com/problems/rotate-array)
-  - L | [Reverse Bits](https://leetcode.com/problems/reverse-bits)
-  - L | [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits)
-  - [L](/leetcode/HouseRobber/) | [House Robber](https://leetcode.com/problems/house-robber)
-  - [L](/leetcode/NumberofIslands/) | [Number of Islands](https://leetcode.com/problems/number-of-islands)
-  - [L](/leetcode/HappyNumber/) | [Happy Number](https://leetcode.com/problems/happy-number)
-  - L | [Count Primes](https://leetcode.com/problems/count-primes)
-  - [L](/leetcode/ReverseLinkedList/README.md) | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list)
-  - [L](/leetcode/CourseSchedule/) | [Course Schedule](https://leetcode.com/problems/course-schedule)
-  - L | [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree)
-  - [L](/leetcode/CourseScheduleII/) | [Course Schedule II](https://leetcode.com/problems/course-schedule-ii)
-  - [L](/leetcode/WordSearchII/) | [Word Search II](https://leetcode.com/problems/word-search-ii)
-  - [L](/leetcode/KthLargestElementinanArray/) | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array)
-  - [L](/leetcode/ContainsDuplicate/) | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate)
-  - [L](/leetcode/TheSkylineProblem/) | [The Skyline Problem](https://leetcode.com/problems/the-skyline-problem)
-  - [L](/leetcode/BasicCalculatorII/) | [Basic Calculator II](https://leetcode.com/problems/basic-calculator-ii)
-  - [L](/leetcode/KthSmallestElementinaBST/) | [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst)
-  - [L](/leetcode/PalindromeLinkedList/README.md) | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list)
-  - [L](/leetcode/LowestCommonAncestorofaBinaryTree/) | [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree)
-  - [L](/leetcode/DeleteNodeinaLinkedList/) | [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list)
-  - [L](/leetcode/ProductofArrayExceptSelf/) | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self)
-  - [L](/leetcode/SlidingWindowMaximum/) | [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum)
-  - [L](/leetcode/Searcha2DMatrixII/) | [Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii)
-  - [L](/leetcode/ValidAnagram/) | [Valid Anagram](https://leetcode.com/problems/valid-anagram)
-  - [L](/leetcode/Flatten2DVector/) | [Flatten 2D Vector](https://leetcode.com/problems/flatten-2d-vector)
-  - [L](/leetcode/MeetingRoomsII/) | [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii)
-  - L | [Missing Number](https://leetcode.com/problems/missing-number)
-  - [L](/leetcode/AlienDictionary/) | [Alien Dictionary](https://leetcode.com/problems/alien-dictionary)
-  - [L](/leetcode/FindtheCelebrity/README.md) | [Find the Celebrity](https://leetcode.com/problems/find-the-celebrity)
-  - [L](/leetcode/PerfectSquares/README.md) | [Perfect Squares](https://leetcode.com/problems/perfect-squares)
-  - L | [Move Zeroes](https://leetcode.com/problems/move-zeroes)
-  - [L](/leetcode/InorderSuccessorinBST/README.md) | [Inorder Successor in BST](https://leetcode.com/problems/inorder-successor-in-bst)
-  - [L](/leetcode/FindtheDuplicateNumber/README.md) | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number)
-  - [L](/leetcode/GameofLife/) | [Game of Life](https://leetcode.com/problems/game-of-life)
-  - [L](/leetcode/FindMedianfromDataStream/) | [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream)
-  - [L](/leetcode/SerializeandDeserializeBinaryTree/) | [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree)
-  - [L](/leetcode/LongestIncreasingSubsequence/README.md) | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence)
-  - [L](/leetcode/RangeSumQuery2D-Mutable/README.md) | [Range Sum Query 2D - Mutable](https://leetcode.com/problems/range-sum-query-2d-mutable)
-  - [L](/leetcode/CountofSmallerNumbersAfterSelf/) | [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self)
-  - [L](/leetcode/CoinChange/README.md) | [Coin Change](https://leetcode.com/problems/coin-change)
-  - [L](/leetcode/WiggleSortII/README.md) | [Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii)
-  - L | [Power of Three](https://leetcode.com/problems/power-of-three)
-  - [L](/leetcode/OddEvenLinkedList/) | [Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list)
-  - [L](/leetcode/LongestIncreasingPathinaMatrix/) | [Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix)
-  - [L](/leetcode/IncreasingTripletSubsequence/) | [Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence)
-  - [L](/leetcode/LongestSubstringwithAtMostKDistinctCharacters/) | [Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters)
-  - [L](/leetcode/FlattenNestedListIterator/) | [Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator)
-  - [L](/leetcode/ReverseString/) | [Reverse String](https://leetcode.com/problems/reverse-string)
-  - [L](/leetcode/TopKFrequentElements/) | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements)
-  - [L](/leetcode/DesignTic-Tac-Toe/) | [Design Tic-Tac-Toe](https://leetcode.com/problems/design-tic-tac-toe)
-  - [L](/leetcode/IntersectionofTwoArraysII/) | [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii)
-  - [L](/leetcode/SumofTwoIntegers/) | [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers)
-  - [L](/leetcode/KthSmallestElementinaSortedMatrix/) | [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix)
-  - L | [Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1)
-  - [L](/leetcode/ShuffleanArray/) | [Shuffle an Array](https://leetcode.com/problems/shuffle-an-array)
-  - [L](/leetcode/FirstUniqueCharacterinaString/) | [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string)
-  - [L](/leetcode/LongestSubstringwithAtLeastKRepeatingCharacters/) | [Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters)
-  - L | [Fizz Buzz](https://leetcode.com/problems/fizz-buzz)
-  - [L](/leetcode/4SumII/) | [4Sum II](https://leetcode.com/problems/4sum-ii)
 
 ## Cracking The Coding Intervew 6 th
 
