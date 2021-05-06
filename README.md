@@ -16,7 +16,7 @@
 - [How to practise](#how-to-practise)
 - [Problems by categories](#problems-by-categories)
 - [Focused on Basic](#focused-on-basic)
-  - [Linear Traversal, Loop](#linear-traversal-loop)
+  - [Loop](#loop)
   - [Recursion](#recursion)
 - [Focused on Data Structures](#focused-on-data-structures)
   - [Array](#array)
@@ -432,12 +432,14 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 # Focused on Basic
 
-## Linear Traversal, Loop
+## Loop
 
 * [up and down](/doc/linear_traversal.md#up-and-down)
   * [L](/leetcode/BullsandCows/README.md) | [Bulls and Cows](https://leetcode.com/problems/bulls-and-cows/)
 * [reverse order](/doc/linear_traversal.md#reverse-order)
   * [L](/leetcode2/BackspaceStringCompare/README.md) | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
+* [multi control flow in loop](/doc/linear_traversal.md#multi-control-flow-in-loop)
+  * [L](/leetcode2/DistinctNumbersinEachSubarray/) | [Distinct Numbers in Each Subarray](https://leetcode.com/problems/distinct-numbers-in-each-subarray/)
 * longest non-decreasing substring
   * [L](/leetcode2/LongestSubstringOfAllVowelsinOrder/README.md) | [Longest Substring Of All Vowels in Order](https://leetcode.com/problems/longest-substring-of-all-vowels-in-order/)
 * group count, member count
