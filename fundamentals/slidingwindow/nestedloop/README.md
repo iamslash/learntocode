@@ -1,56 +1,61 @@
-# References
+- [Abstract](#abstract)
+- [sliding window shrinkable](#sliding-window-shrinkable)
+- [sliding window non-shrinkable](#sliding-window-non-shrinkable)
+- [References](#references)
 
-* [Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/)
+------
 
-# Sliding Window Basic
+# Abstract
 
 보통 두개의 인덱스 `i, j` 를 이용하여 window 를 옮기는 것을 sliding
 window 라고 한다.  이때 인덱스 `i, j` 에 대하여 인덱스를 늘리고 로직을
-처리할지 로직을 처리하고 증가할지 유의해야 한다. nested loop 를
-사용하면 더욱 간결하게 코드를 작성할 수 있다.
+처리할지 로직을 처리하고 증가할지 유의해야 한다. 
 
-# Sliding Window With Limited Resources
+slding window 의 크기를 줄이느냐 혹은 크기를 줄이지 않느냐에 따라 다음과 같은 전략으로 구분할 수 있다.
 
-제한된 자원 `k` 가 주어진다. `k` 가 특정한 값보다 크면 `i` 를 증가하고
-`k` 가 특정한 값보다 작으면 `j` 를 증가하면서 sliding 해보자.
+* sliding window shrinkable
+* sliding window non-shrinkable
 
-```go
-func longestSubarray(A []int) int {
-	i, j, n, k, ans := 0, 0, len(A), 1, 0
-	for j = 0; j < n; j++ {
-		if A[j] == 0 {
-			k--
-		}
-		for k < 0 {
-			if A[i] == 0 {
-				k++
-			}
-			i++
-		}
-		ans = max(ans, j-i)
-	}
-	return ans
+sliding window 의 크기를 줄이지 않고 반복하는 것이 시간복잡도가 더욱 좋다. 그러나 사용할 수 없는 경우도 있다.
+
+# sliding window shrinkable
+
+보통 다음과 같은 code-pattern 을 갖는다. 
+
+```java
+int i = 0, j = 0, ans = 0;
+for (; j < N; ++j) {
+    // TODO: update sliding window using j
+    for (; invalid(); ++i) { 
+			// TODO: shrink sliding window using i
+    }
+		// update sliding window
+    ans = max(ans, j - i + 1);
 }
+return ans;
 ```
 
-# Sliding Window With Limited Resources Not Shrinking
+* [L](/leetcode2/FrequencyoftheMostFrequentElement/README.md) | [Frequency of the Most Frequent Element](https://leetcode.com/problems/frequency-of-the-most-frequent-element/)
 
-또한 한번 늘어난 window 를 다시 줄이지 않고 sliding 할 수도 있다.
+# sliding window non-shrinkable
 
-```go
-func longestSubarray(A []int) int {
-	i, j, n, k := 0, 0, len(A), 1
-	for j = 0; j < n; j++ {
-		if A[j] == 0 {
-			k--
-		}
-		if k < 0 {
-			i++
-			if A[i] == 0 {
-				k++
-			}
-		}
-	}
-	return j - i
+보통 다음과 같은 code-pattern 을 갖는다.
+
+```java
+int i = 0, j = 0;
+for (; j < N; ++j) {
+    // TODO: update sliding window using j
+    if (invalid()) {
+      // TODO: update sliding window using i
+      ++i;
+    }
 }
+// return maximum sliding window
+return j - i; 
 ```
+
+* [L](/leetcode2/FrequencyoftheMostFrequentElement/README.md) | [Frequency of the Most Frequent Element](https://leetcode.com/problems/frequency-of-the-most-frequent-element/)
+# References
+
+* [C++ Maximum Sliding Window Cheatsheet Template! @ leetcode.discussion](https://leetcode.com/problems/frequency-of-the-most-frequent-element/discuss/1175088/C%2B%2B-Maximum-Sliding-Window-Cheatsheet-Template!)
+* [L](/leetcode2/LongestSubarrayof1sAfterDeletingOneElement/a.go) | [Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/)

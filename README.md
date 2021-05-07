@@ -1014,7 +1014,10 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## Sliding Window
 
-* F | [sliding window nestedloop](/fundamentals/slidingwindow/nestedloop/README.md)
+* F | [sliding window shrinkable](/fundamentals/slidingwindow/nestedloop/README.md#sliding-window-shrinkable)
+  * [L](/leetcode2/FrequencyoftheMostFrequentElement/README.md) | [Frequency of the Most Frequent Element](https://leetcode.com/problems/frequency-of-the-most-frequent-element/)
+* F | [sliding window non-shrinkable](/fundamentals/slidingwindow/nestedloop/README.md#sliding-window-non-shrinkable)
+  * [L](/leetcode2/FrequencyoftheMostFrequentElement/README.md) | [Frequency of the Most Frequent Element](https://leetcode.com/problems/frequency-of-the-most-frequent-element/)
 * [L](/leetcode/SubarraySumsDivisiblebyK/) | [Subarray Sums Divisible by K](https://leetcode.com/problems/subarray-sums-divisible-by-k/)
 * [L](/leetcode2/MaximumErasureValue/README.md) | [Maximum Erasure Value](https://leetcode.com/problems/maximum-erasure-value/)
 * [L](/leetcode/KEmptySlots/README.md) | [K Empty Slots](https://leetcode.com/problems/k-empty-slots/)
