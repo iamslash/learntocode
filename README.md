@@ -440,6 +440,8 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
   * [L](/leetcode2/BackspaceStringCompare/README.md) | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
 * [multi control flow in loop](/doc/linear_traversal.md#multi-control-flow-in-loop)
   * [L](/leetcode2/DistinctNumbersinEachSubarray/) | [Distinct Numbers in Each Subarray](https://leetcode.com/problems/distinct-numbers-in-each-subarray/)
+* [number out loop](/doc/linear_traversal.md#number-out-loop)
+  * [L](/leetcode/MissingRanges/README.md) | [Missing Ranges](https://leetcode.com/problems/missing-ranges/)
 * longest non-decreasing substring
   * [L](/leetcode2/LongestSubstringOfAllVowelsinOrder/README.md) | [Longest Substring Of All Vowels in Order](https://leetcode.com/problems/longest-substring-of-all-vowels-in-order/)
 * group count, member count

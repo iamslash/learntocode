@@ -2,6 +2,7 @@
 - [up and down](#up-and-down)
 - [reverse order](#reverse-order)
 - [multi control flow in loop](#multi-control-flow-in-loop)
+- [number out loop](#number-out-loop)
 
 ---
 
@@ -26,3 +27,9 @@ linear traversal 할 때 거꾸로 접근하는 전략을 reverse order 라고 �
 loop statement 안에 여러개의 control flow statement 를 두어 해결하는 전략이다. loop statement 는 하나씩 전진하고 context 의 상태에 따라 logic 을 분리한다.
 
 * [L](/leetcode2/DistinctNumbersinEachSubarray/) | [Distinct Numbers in Each Subarray](https://leetcode.com/problems/distinct-numbers-in-each-subarray/)
+
+# number out loop
+
+loop statement 밖에 또다른 숫자 num 을 두어 해결하는 전략이다.
+
+* [L](/leetcode/MissingRanges/README.md) | [Missing Ranges](https://leetcode.com/problems/missing-ranges/)
