@@ -8,7 +8,7 @@ import java.util.*;
 // nums: 0 1 3 50 75
 //       i
 
-// 6ms 60.14% 38MB 5.53%
+// 0ms 100.00% 37.1MB 91.09%
 // linear traversal
 // O(N) O(N)
 class Solution {
@@ -16,38 +16,7 @@ class Solution {
 		if (s == e) {
 			return String.valueOf(s);
 		}
-		return String.format("%d->%d", s, e);
-	}
-	public List<String> findMissingRanges(int[] nums, int lo, int hi) {
-		List<String> ans = new ArrayList<String>();
-		int next = lo, n = nums.length;
-		for (int i = 0; i < n; ++i) {
-			if (nums[i] < next) {
-				continue;
-			}
-			if (nums[i] == next) {
-				next++;
-				continue;
-			}
-			ans.add(getRange(next, nums[i]-1));
-			next = nums[i] + 1;
-		}
-		if (next <= hi) {
-			ans.add(getRange(next, hi));
-		}
-		return ans;
-	}
-}
-
-// 0ms 100.00% 36.7MB 99.62%
-// linear traversal
-// O(N) O(N)
-class Solution {
-	private String getRange(int s, int e) {
-		if (s == e) {
-			return String.valueOf(s);
-		}
-		StringBuilder sb = new Stringbuilder();
+		StringBuilder sb = new StringBuilder();
 		sb.append(s);
 		sb.append("->");
 		sb.append(e);
@@ -55,20 +24,15 @@ class Solution {
 	}
 	public List<String> findMissingRanges(int[] nums, int lo, int hi) {
 		List<String> ans = new ArrayList<String>();
-		int next = lo, n = nums.length;
-		for (int i = 0; i < n; ++i) {
-			if (nums[i] < next) {
-				continue;
+		int miss = lo, n = nums.length;
+		for (int num : nums) {
+			if (miss < num) {
+				ans.add(getRange(miss, num - 1));
 			}
-			if (nums[i] == next) {
-				next++;
-				continue;
-			}
-			ans.add(getRange(next, nums[i]-1));
-			next = nums[i] + 1;
+			miss = num + 1;
 		}
-		if (next <= hi) {
-			ans.add(getRange(next, hi));
+		if (miss <= hi) {
+			ans.add(getRange(miss, hi));
 		}
 		return ans;
 	}

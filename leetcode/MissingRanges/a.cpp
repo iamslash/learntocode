@@ -5,37 +5,38 @@
 #include <string>
 #include <algorithm>
 
-// 4ms 100.00% 8.5MB 35.00%
+using namespace std;
+
+// 0ms 100.00% 7MB 29.30%
 // O(N) O(N)
 class Solution {
  private:
-  std::string getRange(int64_t s, int64_t e) {
-    std::string r = std::to_string(s);
+  string getRange(int64_t s, int64_t e) {
+    string r = to_string(s);
     if (e > s)
-      r += "->" + std::to_string(e);
+      r += "->" + to_string(e);
     return r;
   }
  public:
-  std::vector<std::string> findMissingRanges(
-      std::vector<int>& V, int64_t lo, int64_t hi) {
-    int s = std::lower_bound(V.begin(), V.end(), lo) - V.begin();
-    int e = std::lower_bound(V.begin(), V.end(), hi) - V.begin();
-    std::vector<std::string> rslt;
-    int64_t prv = lo - 1;
-    for (int i = s; i <= e; ++i) {
-      int64_t cur = (i == V.size() ? hi + 1 : V[i]);
-      if (cur - prv >= 2)
-        rslt.push_back(getRange(prv+1, cur-1));
-      prv = cur;
+  vector<string> findMissingRanges(
+      vector<int>& A, int64_t lo, int64_t hi) {
+    vector<string> ans;
+    int64_t miss = lo;
+    A.push_back(hi + 1);
+    for (int num : A) {
+      if (miss < num) {
+        ans.push_back(getRange(miss, num - 1));
+      }
+      miss = num + 1;
     }
-    return rslt;
+    return ans;
   }
 };
 
 int main() {
 
-  std::vector<int> V = {0, 1, 3, 50, 75};
-  // std::vector<int> V = {};
+  vector<int> V = {0, 1, 3, 50, 75};
+  // vector<int> V = {};
   int lo = 0, hi = 99;
   Solution sln;
   auto r = sln.findMissingRanges(V, lo, hi);
