@@ -873,11 +873,13 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## Line Sweep
 
-- [L](/leetcode/TheSkylineProblem/) | [The Skyline Problem](https://leetcode.com/problems/the-skyline-problem)
+* F | [line sweep overview](/doc/line_sweep.md)
+* [L](/leetcode/TheSkylineProblem/) | [The Skyline Problem](https://leetcode.com/problems/the-skyline-problem)
+* [L](/leetcode2/MaximumPopulationYear/README.md) | [Maximum Population Year](https://leetcode.com/problems/maximum-population-year/)
 
 ## Exhaustive Search
 
-- F | [overview](doc/exhaustive_search.md)
+- F | [exhaustive search overview](doc/exhaustive_search.md)
 - [알](/algospot/BOGGLE/) | [BOGGLE](https://algospot.com/judge/problem/read/BOGGLE)
 - [알](/algospot/PICNIC/) | [PICNIC](https://algospot.com/judge/problem/read/PICNIC)
 - [알](/algospot/BOARDCOVER/) | [BOARDCOVER](https://algospot.com/judge/problem/read/BOARDCOVER)
