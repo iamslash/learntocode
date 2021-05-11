@@ -26,7 +26,6 @@
   - [Partial Min](#partial-min)
   - [List, LinkedList](#list-linkedlist)
   - [Stack](#stack)
-  - [Double Stack](#double-stack)
   - [Queue](#queue)
   - [Heap](#heap)
   - [Double Heap](#double-heap)
@@ -509,27 +508,28 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 ## List, LinkedList
 
-- F | [dynamic array](/fundamentals/list/dynamicarray/README.md)
-- F | [singly linked list](/fundamentals/list/singlylinkedlist/README.md)
-- F | [doubly linked list](/fundamentals/list/doublylinkedlist/README.md)
-- L | [Find The Duplicate Number](/leetcode/FindTheDuplicateNumber)
-  - tortoise and the hare algorithm
-- [알](/algospot/JOSEPHUS/) | [JOSEPHUS](https://algospot.com/judge/problem/read/JOSEPHUS)
-- 알 | [Dancing Links](https://arxiv.org/abs/cs/0011047)
+* F | [dynamic array](/fundamentals/list/dynamicarray/README.md)
+* F | [singly linked list](/fundamentals/list/singlylinkedlist/README.md)
+* F | [doubly linked list](/fundamentals/list/doublylinkedlist/README.md)
+* tortoise and the hare algorithm  
+  * [L](/leetcode/FindTheDuplicateNumber/README.md) | [Find The Duplicate Number](/leetcode/FindTheDuplicateNumber)
+* [알](/algospot/JOSEPHUS/) | [JOSEPHUS](https://algospot.com/judge/problem/read/JOSEPHUS)
+* 알 | [Dancing Links](https://arxiv.org/abs/cs/0011047)
 
 ## Stack 
 
-- F | [LIFO implementation](/fundamentals/stack/lifoimpl/README.md)
-- [L](/leetcode/ValidParentheses/) | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
-- [L](/leetcode/LongestValidParentheses/) | [Longest valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)
-- [L](/leetcode/DecodeString/a.py) | [Decode String](https://leetcode.com/problems/decode-string/)
-- [알](/algospot/FENCE/) | [FENCE](http://algospot.com/judge/problem/read/FENCE)
-- [알](/algospot/BRACKETS2/) | [BRACKETS2](http://algospot.com/judge/problem/read/BRACKETS2)
-- G | [Maximum of minimum for every window size](http://www.practice.geeksforgeeks.org/problem-page.php?pid=170)
-
-## Double Stack
-
-* [L](/leetcode2/BuildBinaryExpressionTreeFromInfixExpression/Solution.java) | [Build Binary Expression Tree From Infix Expression](https://leetcode.com/problems/build-binary-expression-tree-from-infix-expression/)
+* F | [LIFO implementation](/fundamentals/stack/lifoimpl/README.md)
+  * L | [Last-in-first-out Data Structure](https://leetcode.com/explore/learn/card/queue-stack/230/usage-stack/1369/)
+* [mono stack](/doc/stack_overview.md#mono_stack)
+  * [L](/leetcode2/MaximumSubarrayMin-Product/README.md) | [Maximum Subarray Min-Product](https://leetcode.com/problems/maximum-subarray-min-product/)
+* [double stack](/doc/stack_overview.md#double-stack)
+  * [L](/leetcode2/BuildBinaryExpressionTreeFromInfixExpression/Solution.java) | [Build Binary Expression Tree From Infix Expression](https://leetcode.com/problems/build-binary-expression-tree-from-infix-expression/)
+* [L](/leetcode/ValidParentheses/) | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
+* [L](/leetcode/LongestValidParentheses/) | [Longest valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)
+* [L](/leetcode/DecodeString/a.py) | [Decode String](https://leetcode.com/problems/decode-string/)
+* [알](/algospot/FENCE/) | [FENCE](http://algospot.com/judge/problem/read/FENCE)
+* [알](/algospot/BRACKETS2/) | [BRACKETS2](http://algospot.com/judge/problem/read/BRACKETS2)
+* G | [Maximum of minimum for every window size](http://www.practice.geeksforgeeks.org/problem-page.php?pid=170)
 
 ## Queue
 
