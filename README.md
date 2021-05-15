@@ -15,10 +15,10 @@
 - [Collections By Programming Languages](#collections-by-programming-languages)
 - [How to practise](#how-to-practise)
 - [Problems by categories](#problems-by-categories)
-- [Focused on Basic](#focused-on-basic)
+- [Basic](#basic)
   - [Loop](#loop)
   - [Recursion](#recursion)
-- [Focused on Data Structures](#focused-on-data-structures)
+- [Data Structures](#data-structures)
   - [Array](#array)
   - [Matrix](#matrix)
   - [Bit Manipulation](#bit-manipulation)
@@ -51,7 +51,7 @@
   - [Topological Sort](#topological-sort)
   - [Trie](#trie)
   - [Network Flow](#network-flow)
-- [Focused on Algorithms](#focused-on-algorithms)
+- [Algorithms](#algorithms)
   - [Sort](#sort)
   - [Search](#search)
   - [Binary Search](#binary-search)
@@ -82,7 +82,8 @@
   - [Probe and forward](#probe-and-forward)
   - [Palindrome](#palindrome)
   - [Simulated Annealing](#simulated-annealing)
-- [Series](#series)
+- [Famous Problems](#famous-problems)
+  - [Parentheses](#parentheses)
   - [Best Time to Buy and Sell Stock](#best-time-to-buy-and-sell-stock)
   - [Jump Game](#jump-game)
   - [Basic Calculator](#basic-calculator)
@@ -429,7 +430,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 * [leetcode by tags](https://github.com/iamslash/devinterview/wiki/Algorithm)
 
-# Focused on Basic
+# Basic
 
 ## Loop
 
@@ -459,7 +460,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 * F | [pick k numbers from n numbers](/fundamentals/recursion/pickKnumbers/README.md)
 * F | [tower of hanoi](/fundamentals/recursion/towerofhanoi/README.md)
 
-# Focused on Data Structures
+# Data Structures
 
 ## Array
 
@@ -774,7 +775,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 - F | [overview](doc/network_flow.md)
 
-# Focused on Algorithms
+# Algorithms
 
 ## Sort
 
@@ -1063,7 +1064,9 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 * [L](/leetcode2/BestPositionforaServiceCentre) | [Best Position for a Service Centre](https://leetcode.com/problems/best-position-for-a-service-centre/)
 
-# Series
+# Famous Problems
+
+## Parentheses
 
 ## Best Time to Buy and Sell Stock
 
