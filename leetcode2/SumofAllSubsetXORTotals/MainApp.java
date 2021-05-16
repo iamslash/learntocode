@@ -16,9 +16,21 @@ import java.util.*;
 //          
 //            
 
+// bit manipulation
+// O(2^N) O(1)
 class Solution {
 	public int subsetXORSum(int[] nums) {
-        
+		int ans = 0, n = nums.length, npow = 1 << nums.length;
+		for (int i = 1; i < npow; ++i) {
+			int bm = 0;
+			for (int j = 0; j < n; ++j) {
+				if ((i & (1 << j)) > 0) {
+					bm ^= nums[j];
+				}
+			}
+			ans += bm;
+		}
+		return ans;
 	}
 }
 
