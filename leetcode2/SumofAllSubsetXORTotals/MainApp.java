@@ -20,15 +20,15 @@ import java.util.*;
 // O(2^N) O(1)
 class Solution {
 	public int subsetXORSum(int[] nums) {
-		int ans = 0, n = nums.length, npow = 1 << nums.length;
-		for (int i = 1; i < npow; ++i) {
-			int bm = 0;
+		int ans = 0, n = nums.length, subsetCnt = 1 << nums.length;
+		for (int bm = 1; bm < subsetCnt; ++bm) {
+			int xorTotal = 0;
 			for (int j = 0; j < n; ++j) {
-				if ((i & (1 << j)) > 0) {
-					bm ^= nums[j];
+				if ((bm & (1 << j)) > 0) {
+					xorTotal ^= nums[j];
 				}
 			}
-			ans += bm;
+			ans += xorTotal;
 		}
 		return ans;
 	}
