@@ -3,10 +3,14 @@
 #include <cstdio>
 #include <vector>
 
+using namespace std;
+
+// backtracking
+// O(2^N) O(N)
 class Solution {
  private:
-  std::vector<int> m_comb;
-  std::vector<std::vector<int>> m_rslt;
+  vector<int> m_comb;
+  vector<vector<int>> m_rslt;
   int m_n;
   void solve(int pos) {
     // for (int i = 0; i < pos; ++i) 
@@ -25,11 +29,30 @@ class Solution {
     }
   }
  public:
-  std::vector<std::vector<int>> subset(int n) {
+  vector<vector<int>> subset(int n) {
     m_n = n;
     solve(0);
     m_rslt.push_back({});
     return m_rslt;
+  }
+};
+
+// bit manipulation
+// O(2^N) O(N)
+class Solution {
+ public:
+  vector<vector<int>> subset(int n) {
+    vector<vector<int>> ans;
+    for (int bm = 1; bm < (1 << n); ++bm) {
+      vector<int> subset;
+      for (int i = 0; i < n; ++i) {
+        if ((1 << i) & bm) {
+          subset.push_back(i+1);
+        }
+      }
+      ans.push_back(subset);
+    }
+    return ans;
   }
 };
 
