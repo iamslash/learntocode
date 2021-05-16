@@ -961,6 +961,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 - F | [overview](doc/combinatorial_search.md)
 - F | [permutation](/fundamentals/combinatorialsearch/permutation/README.md)
 - F | [subset](/fundamentals/combinatorialsearch/subset/README.md)
+  - [L](/leetcode2/SumofAllSubsetXORTotals/README.md) | [Sum of All Subset XOR Totals](https://leetcode.com/problems/sum-of-all-subset-xor-totals/) 
 - F | [sudoku](/fundamentals/combinatorialsearch/sudoku/README.md)
 - F | [A*](/fundamentals/combinatorialsearch/astar/README.md)
 - F | [pathfinding](/fundamentals/combinatorialsearch/pathfinding/README.md)
