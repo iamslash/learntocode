@@ -19,6 +19,7 @@ class Solution {
 
 public class MainApp {
   public static void main(String[] args) {
-		
+		String[] words = new String[]{"Hello", "World"};
+		String s = String.join(" ", words);		
   }
 }
