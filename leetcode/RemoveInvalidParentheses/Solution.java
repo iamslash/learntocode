@@ -2,57 +2,78 @@
 
 import java.util.*;
 
+// 0) Understand the problem
+//    s: ( ) ( ) ) ( )
+//       (   ( ) ) ( )
+//       ( ) (   ) ( )
+
+// 1) How to decide invalid parentheses
+//       i
+//    s: ( ) )
+//  bal: -1
+//       i
+//    s: ( ( )
+//  bal: 1
+//           i
+//    s: ) ( (
+//  bal: -1
+
+// 2) How to remove invalid one
 //               i
 //    s: ( ) ( ) ) ( )
-//         j
-// stck: 1 0 1 0 -
-//  par: ( )   
+//             j
+//  bal: -1
+//       (   ( ) ) ( )
+//       ( ) (   ) ( )
 
-//    s: ( ) ( ( ) ( )
-//
-// stck: 1 0 1 2 1 2 1
-//  par: ( )
+// 3) design subproblem
+// void dfs(String s, List<String> ans, int lastI, int lastJ, 
+//          char parInc, char parDec)
 
-//    s: ) ( ) ( ( ) (
-//
-// stck: 1 0 1 0 -
-//  par: ) (
+// 4) recursion tree
+
+// 5) 
 
 // 1ms 99.93% 38.9MB 76.55%
 // DFS
 // O(N) O(N)
 class Solution {
 	private void dfs(String s, List<String> ans,
-									 int lastI, int lastJ, char[] par) {
-		for (int stck = 0, i = lastI; i < s.length(); ++i) {
-			if (s.charAt(i) == par[0]) {
-				stck++;
+									 int lastI, int lastJ, char parInc, char parDec) {
+		for (int bal = 0, i = lastI; i < s.length(); ++i) {
+			if (s.charAt(i) == parInc) {
+				bal++;
 			}
-			if (s.charAt(i) == par[1]) {
-				stck--;
+			if (s.charAt(i) == parDec) {
+				bal--;
 			}
-			if (stck >= 0) {
+			if (bal >= 0) {
 				continue;
 			}
+			// s is invalid
 			for (int j = lastJ; j <= i; ++j) {
-				if (s.charAt(j) == par[1] &&
-						(j == lastJ || s.charAt(j-1) != par[1])) {
-					dfs(s.substring(0, j) + s.substring(j+1, s.length()),
-							ans, i, j, par);
+				if (s.charAt(j) == parDec &&
+						(j == lastJ || s.charAt(j-1) != parDec)) {
+					dfs(s.substring(0, j) + s.substring(j+1),
+							ans, i, j, parInc, parDec);
 				}
 			}
+			// already handled in recursion and prevent overlapping
 			return;
 		}
-		String reversed = new StringBuilder(s).reverse().toString();
-		if (par[0] == '(') {
-			dfs(reversed, ans, 0, 0, new char[]{')', '('});
-		} else {
-			ans.add(reversed);
+		// s is ok
+		String r = new StringBuilder(s).reverse().toString();
+		if (parInc == '(') {
+			// check reversed s
+			dfs(r, ans, 0, 0, parDec, parInc);
+		} else { 
+			// forwarded, reversed s is valid
+			ans.add(r);
 		}
 	}
 	public List<String> removeInvalidParentheses(String s) {
 		List<String> ans = new ArrayList<>();
-		dfs(s, ans, 0, 0, new char[]{'(', ')'});
+		dfs(s, ans, 0, 0, '(', ')');
 		return ans;
 	}
 }
