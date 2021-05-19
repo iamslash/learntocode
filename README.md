@@ -1060,6 +1060,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 * F | [generate palindrome](/fundamentals/palindrome/generatepalindrome/README.md)
 * F | [is palindrome](/fundamentals/palindrome/ispalindrome/README.md)
+* [L](/leetcode2/NextPalindromeUsingSameDigits/README.md) | [Next Palindrome Using Same Digits](https://leetcode.com/problems/next-palindrome-using-same-digits/)
 
 ## Simulated Annealing
 
@@ -1068,6 +1069,8 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 # Famous Problems
 
 ## Parentheses
+
+* [L](/leetcode/RemoveInvalidParentheses/README.md) | [Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/)
 
 ## Best Time to Buy and Sell Stock
 
