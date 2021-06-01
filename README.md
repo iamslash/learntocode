@@ -341,9 +341,15 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 - kotlin
 
-```console
-> kotlinc a.kt -include-runtime -d a.jar
-> java -jar a.jar
+```bash
+# kotlinc is alias of kotlinc-jvm
+# build with kotlinc run with java
+$ kotlinc a.kt -include-runtime -d a.jar
+$ java -jar a.jar
+
+# build with kotlinc run with kotlin
+$ kotlinc a.kt
+$ kotlin AKt
 ```
 
 - c#
