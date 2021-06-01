@@ -56,3 +56,5 @@ GRTAGS
 
 package.json
 *.class
+
+**/META-INF/
