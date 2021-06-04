@@ -83,6 +83,7 @@
   - [Palindrome](#palindrome)
   - [Simulated Annealing](#simulated-annealing)
 - [Famous Problems](#famous-problems)
+  - [Egg Drop](#egg-drop)
   - [Parentheses](#parentheses)
   - [Best Time to Buy and Sell Stock](#best-time-to-buy-and-sell-stock)
   - [Jump Game](#jump-game)
@@ -1075,6 +1076,11 @@ $ kotlin AKt
 * [L](/leetcode2/BestPositionforaServiceCentre) | [Best Position for a Service Centre](https://leetcode.com/problems/best-position-for-a-service-centre/)
 
 # Famous Problems
+
+## Egg Drop
+
+* [L](/leetcode2/SuperEggDrop/README.md) | [Super Egg Drop](https://leetcode.com/problems/super-egg-drop/)
+* [L](/leetcode2/EggDropWith2EggsandNFloors/README.md) | [Egg Drop With 2 Eggs and N Floors](https://leetcode.com/problems/egg-drop-with-2-eggs-and-n-floors/)
 
 ## Parentheses
 
