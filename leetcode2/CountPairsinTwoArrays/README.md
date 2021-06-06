@@ -34,6 +34,35 @@ sorted diffs: -3  0 5  6
          cnt: 5
 ```
 
+two pointers 를 이용해서 `diff[i] + diff[j] > 0` 를 만족하는 짝 `(i, j)`
+을 구하는 방법은 조금 까다롭다. 
+
+* `i < j` 인 경우는 짝의 개수가 `n - 1 - j` 이다.
+  * `i` 를 기준으로 선택할 수 있는 `j` 의 개수와 같다.
+* `i == j` 인 경우는 짝의 개수가 0 이다.
+* `i > j` 인 경우는 짝의 개수가 `n - 1 - i` 이다.
+  * `j` 를 기준으로 선택할 수 있는 `i` 의 개수와 같다.
+  
+다음은 `sorted diffs: -3 0 5 6` 인 경우 `diff[i] + diff[j] > 0` 를
+만족하는 짝 `(i, j)` 의 개수를 구하는 과정이다.
+  
+```
+               i
+sorted diffs: -3  0 5  6
+                  j
+         cnt:  2
+                    i
+sorted diffs: -3  0 5  6
+                  j
+         cnt:  4
+                       i
+sorted diffs: -3  0 5  6
+                  j
+         cnt:  5
+```
+
+따라서 답은 `5` 이다.
+
 # Implementation
 
 * [java8](MainApp.java)
