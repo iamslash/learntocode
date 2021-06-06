@@ -459,7 +459,7 @@ $ kotlin AKt
   * [L](/leetcode2/BulbSwitcherIV/a.cpp) | [Bulb Switcher IV](https://leetcode.com/problems/bulb-switcher-iv/)
 * win count
   * [L](/leetcode2/FindtheWinnerofanArrayGame/a.go) | [Find the Winner of an Array Game](https://leetcode.com/problems/find-the-winner-of-an-array-game/)
-* produce, consume
+* produce, consume, update
   * [L](/leetcode/ReadNCharactersGivenRead4II/README.md) | [Read N Characters Given Read4 II - Call multiple times](https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/)
 * [L](/leetcode2/DetectPatternofLengthMRepeatedKorMoreTimes/a.js) | [Detect Pattern of Length M Repeated K or More Times](https://leetcode.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/)
 
@@ -483,8 +483,10 @@ $ kotlin AKt
 
 ## Matrix
 
-- F | [diagonal, spiral traversal of matrix](/fundamentals/matrix/traversal/README.md)  
-- F | [2D loop descencing, decreasing](/fundamentals/matrix/loopdescdec/README.md)  
+* [rotate matrix](/doc/matrix.md)
+  * [L](/leetcode2/DetermineWhetherMatrixCanBeObtainedByRotation/) | [Determine Whether Matrix Can Be Obtained By Rotation](https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/)
+* F | [diagonal, spiral traversal of matrix](/fundamentals/matrix/traversal/README.md)  
+* F | [2D loop descencing, decreasing](/fundamentals/matrix/loopdescdec/README.md)  
 
 ## Bit Manipulation
 
@@ -1022,8 +1024,10 @@ $ kotlin AKt
 
 ## Two Pointers
 
-* [one step j, multi step i](#one-step-j-multi-step-i)
+* [one step j, multi step i](/doc/two_pointers.md#one-step-j-multi-step-i)
   * [L](/leetcode/LongestSubstringwithAtMostTwoDistinctCharacters/) | [Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/)
+* [finding pairs with the condition](#finding-pairs-with-the-condition)
+  * [L](/leetcode2/CountPairsinTwoArrays/README.md) | [Count Pairs in Two Arrays](https://leetcode.com/problems/count-pairs-in-two-arrays/)
 * [L](/leetcode/TrappingRainWater/README.md) | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water)
 * [L](/leetcode2/GettheMaximumScore/README.md) | [Get the Maximum Score](https://leetcode.com/problems/get-the-maximum-score/)
 
