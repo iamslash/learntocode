@@ -83,6 +83,7 @@
   - [Palindrome](#palindrome)
   - [Simulated Annealing](#simulated-annealing)
 - [Famous Problems](#famous-problems)
+  - [Find Peak Element](#find-peak-element)
   - [Egg Drop](#egg-drop)
   - [Parentheses](#parentheses)
   - [Best Time to Buy and Sell Stock](#best-time-to-buy-and-sell-stock)
@@ -1083,6 +1084,11 @@ $ kotlin AKt
 * [L](/leetcode2/BestPositionforaServiceCentre) | [Best Position for a Service Centre](https://leetcode.com/problems/best-position-for-a-service-centre/)
 
 # Famous Problems
+
+## Find Peak Element
+
+* [L](/leetcode/FindPeakElement/README.md) | [Find Peak Element](https://leetcode.com/problems/find-peak-element/)
+* [L](/leetcode2/FindaPeakElementII/README.md) | [Find a Peak Element II](https://leetcode.com/problems/find-a-peak-element-ii/)
 
 ## Egg Drop
 
