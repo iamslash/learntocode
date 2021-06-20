@@ -461,7 +461,10 @@ $ kotlin AKt
   * [L](/leetcode2/FindtheWinnerofanArrayGame/a.go) | [Find the Winner of an Array Game](https://leetcode.com/problems/find-the-winner-of-an-array-game/)
 * produce, consume, update
   * [L](/leetcode/ReadNCharactersGivenRead4II/README.md) | [Read N Characters Given Read4 II - Call multiple times](https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/)
+* [forward and backward](/doc/linear_traversal.md#forward-and-backward)
+  * [L](/leetcode/ProductofArrayExceptSelf/README.md) | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
 * [L](/leetcode2/DetectPatternofLengthMRepeatedKorMoreTimes/a.js) | [Detect Pattern of Length M Repeated K or More Times](https://leetcode.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/)
+
 
 ## Recursion
 

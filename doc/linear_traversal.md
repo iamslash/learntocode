@@ -3,6 +3,7 @@
 - [reverse order](#reverse-order)
 - [multi control flow in loop](#multi-control-flow-in-loop)
 - [number out loop](#number-out-loop)
+- [forward and backward](#forward-and-backward)
 
 ---
 
@@ -33,3 +34,9 @@ loop statement 안에 여러개의 control flow statement 를 두어 해결하�
 loop statement 밖에 또다른 숫자 num 을 두어 해결하는 전략이다.
 
 * [L](/leetcode/MissingRanges/README.md) | [Missing Ranges](https://leetcode.com/problems/missing-ranges/)
+
+# forward and backward
+
+앞으로 한번 탐색하고 거꾸로 한번 탐색하는 전략이다.
+
+* [L](/leetcode/ProductofArrayExceptSelf/README.md) | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
