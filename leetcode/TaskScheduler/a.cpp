@@ -1,56 +1,44 @@
-/* Copyright (C) 2018 by iamslash */
-// https://leetcode.com/explore/interview/card/top-interview-questions-medium/114/others/826/
+/* Copyright (C) 2021 by iamslash */
 
 #include <cstdio>
 #include <vector>
-#include <algorithm>
+#include <unordered_map>
 
-// tasks = ["A","A","A","B","B","B"], n = 2
+using namespace std;
+
+// tasks: A A A B B B
+//     n:2
 //
-// A X X A X X A
 // A B X A B X A B
 //
-// max_freq
-// max_freq_tasks
-// unit_len    = n - (max_freq_tasks - 1)
-// unit_cnt    = max_freq - 1
-// slots       = unit_len * unit_cnt
-// free_tasks  = tasks - max_freq * max_freq_tasks
-// idles       = max(0, slots - free_tasks)
-// r           = tasks + idles
+// maxFreq: 3
+// unitCnt: 2
+// unitLen: 3
+// slotCnt: 6
+//     ans: 6+2
+
+// 60ms 73.16% 34.4MB 88.47%
+// math
+// O(N) O(1)
 class Solution {
-public:
-  int leastInterval(std::vector<char>& tasks, int n) {
-    int freq[26] = {0,};
-    int max_freq = 0;
-    int max_freq_tasks = 0;
-    for (char t : tasks) {
-      int idx = t - 'A';
-      freq[idx]++;
-      if (max_freq == freq[idx]) {
-        max_freq_tasks++;
-      } else if (max_freq < freq[idx]) {
-        max_freq = freq[idx];
-        max_freq_tasks = 1;
+ public:
+  int leastInterval(vector<char>& tasks, int n) {
+    unordered_map<char, int> freqMap;
+    int maxFreq = 0;
+    for (char task : tasks) {
+      freqMap[task]++;
+      maxFreq = max(maxFreq, freqMap[task]);
+    }
+    int ans = (maxFreq-1) * (n+1);
+    for (auto& pr : freqMap) {
+      if (pr.second == maxFreq) {
+        ans++;
       }
     }
-    //
-    int unit_len = n - (max_freq_tasks - 1);
-    int unit_cnt = max_freq - 1;
-    int slots = unit_len * unit_cnt;
-    int free_tasks = tasks.size() - max_freq * max_freq_tasks;
-    int idles = std::max(0, slots - free_tasks);
-    
-    return tasks.size() + idles;
+    return max((int)tasks.size(), ans);
   }
 };
 
 int main() {
-  std::vector<char> v = {'A', 'A', 'A', 'B', 'B', 'B'};
-  int n = 2;
-  
-  Solution s;
-  printf("%d\n", s.leastInterval(v, n));
-  
   return 0;
 }
