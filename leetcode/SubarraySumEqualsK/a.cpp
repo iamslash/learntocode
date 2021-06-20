@@ -50,7 +50,6 @@ class Solution {
   }
 };
 
-
 int main() {
   
   std::vector<int> N = {1, 1, 1};
