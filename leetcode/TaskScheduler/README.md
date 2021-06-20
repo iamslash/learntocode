@@ -34,7 +34,7 @@ A B X A B X A B
 maxFreq: 3      A A A
 unitCnt: 2      A . . A . .
 unitLen: 3      A . .
-slotCnt: 6      A . . A . .
+  batch: 6      A . . A . .
          6+2    A . . A . . A B
 ```
 
@@ -42,7 +42,9 @@ slotCnt: 6      A . . A . .
 ["A","A","A","B","B","B"], n = 0` 의 경우를 살펴보자.  idle 은 필요
 없다. 따라서 `tasks.length` 가 곧 답이다.
 
-따라서 `slotCnt` 와 `tasks.length` 중 큰 값이 곧 답이다.
+또한 `n == 1` 인 경우를 생각해 보자. idle 없이 배치가 가능하다. 곧, `tasks.length` 가 답이다.
+
+따라서 `batch` 와 `tasks.length` 중 큰 값이 곧 답이다.
 
 # Implementation
 
