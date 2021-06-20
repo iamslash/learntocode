@@ -19,14 +19,16 @@ freqMap: 0 1
     cnt: 0 1 2 
 ```
 
+* 인덱스 `i` 를 이용하여 `[0..A.length]` 동안 순회한다.
 * `int sum` 을 선언하고 `A[0]` 부터 `A[i]` 까지 더하여 저장한다. `sum` 에 `A[i]`
-  가 합하여 질 때 마다 map 에 그 발생횟수를 저장한다. 이때 사용한 map 을 freqMap
-  이라고 하자. `i == 2` 일 때 `sum == 3` 이다.
+  가 합하여 질 때 마다 map 에 그 발생횟수를 저장한다. 이때 사용한 map 을
+  `Map<Integer, Integer> freqMap` 이라고 하자. 참고로 `i == 2` 일 때 `sum == 3`
+  이다.
 * `freqMap` 은 seed 값이 필요하다. `freqMap[0] = 1` 을 수행한다.
 * `sum - K` 를 freqMap 에서 검색한다. 그 수가 1 이라는 것은 `A[2]` 를 포함한
   subarray 중 합이 `K` 인 것이 하나 있다는 의미이다. 만약 그 수가 2 이라면
   subarray 중 합이 `K` 인 것이 두개가 있다는 의미이다. 이때 발생횟수를 `cnt` 에
-  더한다. 모두 더하면 답이 된다.
+  더한다. 반복을 마치면 cnt 는 답이된다.
 * 예를 들어 `A = 1 0 1 0 1, K = 2` 인 경우 `i == 4` 일 때를 살펴보자. `sum - K =
   1` 의 발생횟수는 2 이다. 이것은 `sum - K` 의 구간이 `A[0], A[0..1]` 와 같이 2
   곳에서 발생했다는 것을 의미한다. 즉, 조건을 만족하는 subarray 의 구간은
@@ -62,6 +64,7 @@ freqMap: 0 1
 
 * [c++11](a.cpp)
 * [java8](MainApp.java)
+* [kotlin](MainApp.kt)
 
 # Complexity
 
