@@ -27,16 +27,22 @@ A B X A B X A B
 * slotCnt: `n` 을 고려하여 배치한 태스크들의 개수
 
 앞서 언급한 예를 살펴보자. 태스크들의 그룹을 unit 이라고 하자. 일정한
-길이의 unit 을 반복해서 배치한다. 그리고 마지막에 가장 출현 횟수가
-많은 태스크 종류의 개수를 더한 것과 `tasks.length` 중 큰 값이 답이다.
+길이의 unit 을 반복해서 배치한다. 그리고 마지막에 출현 횟수가 가장 많은
+태스크 종류의 개수를 더한 것이 답이다.
 
 ```
 maxFreq: 3      A A A
 unitCnt: 2      A . . A . .
 unitLen: 3      A . .
 slotCnt: 6      A . . A . .
-    ans: 6+2    A . . A . . A B
+         6+2    A . . A . . A B
 ```
+
+이번에는 `n == 0` 인 경우를 생각해 보자. 예를 들어 `tasks =
+["A","A","A","B","B","B"], n = 0` 의 경우를 살펴보자.  idle 은 필요
+없다. 따라서 `tasks.length` 가 곧 답이다.
+
+따라서 `slotCnt` 와 `tasks.length` 중 큰 값이 곧 답이다.
 
 # Implementation
 
