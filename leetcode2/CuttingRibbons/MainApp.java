@@ -6,6 +6,7 @@ import java.util.*;
 // ribbons: 9 7 5
 // 
 
+// Why minus one???
 // 32ms 84.54% 52MB 42.53%
 // binary search
 // O(NlgN) O(1)
