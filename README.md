@@ -57,7 +57,6 @@
   - [Binary Search](#binary-search)
   - [Numerical Analysis](#numerical-analysis)
   - [Number Theory, Math](#number-theory-math)
-  - [Number Theory, Math, base convert](#number-theory-math-base-convert)
   - [Computational Geometry](#computational-geometry)
   - [Line Sweep](#line-sweep)
   - [Exhaustive Search](#exhaustive-search)
@@ -837,26 +836,25 @@ $ kotlin AKt
 
 ## Number Theory, Math
 
-- F | [overview](doc/number_theory.md)
-- F | [math functions](/fundamentals/numbertheory/mathfunction/README.md)
-- F | [prime number, composite number](fundamentals/numbertheory/primenumber/README.md)
-- F | [prime factorization](fundamentals/numbertheory/primefactorization/README.md)
-- F | [sieve of eratosthenes](fundamentals/numbertheory/sieveoferatosthenes/README.md)
-- F | [prime factorization with sieve of eratosthenes](fundamentals/numbertheory/primefactorizationwithsieveoferatosthenes/README.md)
-- F | [Euclidean algorithm, GCD](fundamentals/numbertheory/euclideanalgorithm/README.md)
-- F | [modular arithmetic](fundamentals/numbertheory/modulararithmatic/README.md)
-- F | [extended euclidean algorithm](fundamentals/numbertheory/exeuclideanalgorithm/README.md)
-- F | [chinese remainder theorem](fundamentals/numbertheory/chineseremaindertheorem/README.md)
-- F | [lucas' theorem](fundamentals/numbertheory/lucas/README.md)
-- F | [binomial coefficient, combination](/doc/dynamic_binomial_coefficient.md)
-- [L](/leetcode/UglyNumberIII/README.md) | [Ugly Number III](https://leetcode.com/problems/ugly-number-iii/)
-- [알](/algospot/PASS486/) | [PASS486](https://algospot.com/judge/problem/read/PASS486)
-- [알](/algospot/POTION/) | [POTION](https://algospot.com/judge/problem/read/POTION)
-
-## Number Theory, Math, base convert
-
+* F | [overview](doc/number_theory.md)
+* F | [previous, next boundary](doc/number_theory.md#previous-next-boundary)
+  * [L](/leetcode2/TheNumberofFullRoundsYouHavePlayed/README.md) | [The Number of Full Rounds You Have Played](https://leetcode.com/problems/the-number-of-full-rounds-you-have-played/) 
 * F | [base convert](doc/base_convert.md)
-* [L](/leetcode2/SumofDigitsinBaseK) | [Sum of Digits in Base K](https://leetcode.com/problems/sum-of-digits-in-base-k/)
+  * [L](/leetcode2/SumofDigitsinBaseK) | [Sum of Digits in Base K](https://leetcode.com/problems/sum-of-digits-in-base-k/)
+* F | [math functions](/fundamentals/numbertheory/mathfunction/README.md)
+* F | [prime number, composite number](fundamentals/numbertheory/primenumber/README.md)
+* F | [prime factorization](fundamentals/numbertheory/primefactorization/README.md)
+* F | [sieve of eratosthenes](fundamentals/numbertheory/sieveoferatosthenes/README.md)
+* F | [prime factorization with sieve of eratosthenes](fundamentals/numbertheory/primefactorizationwithsieveoferatosthenes/README.md)
+* F | [Euclidean algorithm, GCD](fundamentals/numbertheory/euclideanalgorithm/README.md)
+* F | [modular arithmetic](fundamentals/numbertheory/modulararithmatic/README.md)
+* F | [extended euclidean algorithm](fundamentals/numbertheory/exeuclideanalgorithm/README.md)
+* F | [chinese remainder theorem](fundamentals/numbertheory/chineseremaindertheorem/README.md)
+* F | [lucas' theorem](fundamentals/numbertheory/lucas/README.md)
+* F | [binomial coefficient, combination](/doc/dynamic_binomial_coefficient.md)
+* [L](/leetcode/UglyNumberIII/README.md) | [Ugly Number III](https://leetcode.com/problems/ugly-number-iii/)
+* [알](/algospot/PASS486/) | [PASS486](https://algospot.com/judge/problem/read/PASS486)
+* [알](/algospot/POTION/) | [POTION](https://algospot.com/judge/problem/read/POTION)
 
 ## Computational Geometry
 
