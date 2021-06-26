@@ -81,6 +81,7 @@
   - [Probe and forward](#probe-and-forward)
   - [Palindrome](#palindrome)
   - [Simulated Annealing](#simulated-annealing)
+  - [Combinatorial game theory](#combinatorial-game-theory)
 - [Famous Problems](#famous-problems)
   - [Find Peak Element](#find-peak-element)
   - [Egg Drop](#egg-drop)
@@ -1080,6 +1081,11 @@ $ kotlin AKt
 ## Simulated Annealing
 
 * [L](/leetcode2/BestPositionforaServiceCentre) | [Best Position for a Service Centre](https://leetcode.com/problems/best-position-for-a-service-centre/)
+
+## Combinatorial game theory
+
+* Sprague-Grundy theorem. Nim
+  * [L](/leetcode2/GameofNim/README.md) | [Game of Nim](https://leetcode.com/problems/game-of-nim/)
 
 # Famous Problems
 
