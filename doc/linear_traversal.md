@@ -4,6 +4,7 @@
 - [multi control flow in loop](#multi-control-flow-in-loop)
 - [number out loop](#number-out-loop)
 - [forward and backward](#forward-and-backward)
+- [probe and forward](#probe-and-forward)
 
 ---
 
@@ -40,3 +41,9 @@ loop statement 밖에 또다른 숫자 num 을 두어 해결하는 전략이다.
 앞으로 한번 탐색하고 거꾸로 한번 탐색하는 전략이다.
 
 * [L](/leetcode/ProductofArrayExceptSelf/README.md) | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+
+# probe and forward
+
+linear traversal 할 때 전진할 수 있는지 검사해보고 전진하는 전략이다.
+
+* [L](/leetcode/TextJustification/README.md) | [Text Justification](https://leetcode.com/problems/text-justification/)

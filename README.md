@@ -68,7 +68,7 @@
   - [Backtracking](#backtracking)
   - [Shortest Path](#shortest-path)
   - [Optimization Problems To Decision Problems](#optimization-problems-to-decision-problems)
-  - [Game theory](#game-theory)
+  - [Combinatorial game theory](#combinatorial-game-theory)
   - [Minimax](#minimax)
   - [Two Pointers](#two-pointers)
   - [Sliding Window](#sliding-window)
@@ -78,10 +78,8 @@
   - [Reservoir Sampling](#reservoir-sampling)
   - [Rejection Sampling](#rejection-sampling)
   - [Random](#random)
-  - [Probe and forward](#probe-and-forward)
   - [Palindrome](#palindrome)
   - [Simulated Annealing](#simulated-annealing)
-  - [Combinatorial game theory](#combinatorial-game-theory)
 - [Famous Problems](#famous-problems)
   - [Find Peak Element](#find-peak-element)
   - [Egg Drop](#egg-drop)
@@ -464,8 +462,9 @@ $ kotlin AKt
   * [L](/leetcode/ReadNCharactersGivenRead4II/README.md) | [Read N Characters Given Read4 II - Call multiple times](https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/)
 * [forward and backward](/doc/linear_traversal.md#forward-and-backward)
   * [L](/leetcode/ProductofArrayExceptSelf/README.md) | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+* [Probe and forward](/doc/linear_traversal.md#probe-and-forward)
+  * [L](/leetcode/TextJustification/README.md) | [Text Justification](https://leetcode.com/problems/text-justification/)
 * [L](/leetcode2/DetectPatternofLengthMRepeatedKorMoreTimes/a.js) | [Detect Pattern of Length M Repeated K or More Times](https://leetcode.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/)
-
 
 ## Recursion
 
@@ -1017,9 +1016,11 @@ $ kotlin AKt
 - [알](/algospot/CANADATRIP/) | [CANADATRIP](https://algospot.com/judge/problem/read/CANADATRIP)
 - [알](/algospot/WITHDRAWAL/) | [WITHDRAWAL](https://algospot.com/judge/problem/read/WITHDRAWAL)
 
-## Game theory
+## Combinatorial game theory
 
-- F | [overview](doc/algorithm_game.md)
+* F | [overview](doc/algorithm_game.md)
+* Sprague-Grundy theorem. Nim
+  * [L](/leetcode2/GameofNim/README.md) | [Game of Nim](https://leetcode.com/problems/game-of-nim/)
 
 ## Minimax
 
@@ -1068,10 +1069,6 @@ $ kotlin AKt
 
 - [L](/leetcode/ImplementRand10()UsingRand7/a.cpp) | [Implement Rand10() Using Rand7()](https://leetcode.com/problems/implement-rand10-using-rand7/)
 
-## Probe and forward
-
-* [L](/leetcode/TextJustification/README.md) | [Text Justification](https://leetcode.com/problems/text-justification/)
-
 ## Palindrome
 
 * F | [generate palindrome](/fundamentals/palindrome/generatepalindrome/README.md)
@@ -1081,11 +1078,6 @@ $ kotlin AKt
 ## Simulated Annealing
 
 * [L](/leetcode2/BestPositionforaServiceCentre) | [Best Position for a Service Centre](https://leetcode.com/problems/best-position-for-a-service-centre/)
-
-## Combinatorial game theory
-
-* Sprague-Grundy theorem. Nim
-  * [L](/leetcode2/GameofNim/README.md) | [Game of Nim](https://leetcode.com/problems/game-of-nim/)
 
 # Famous Problems
 
