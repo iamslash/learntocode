@@ -7,19 +7,21 @@ import java.util.*;
 // sumEven: 4 4 7 7
 //  sumOdd: 0 2 2 4
 
-// // iterative dynamic programming
-// // O(N) O(1)
-// class Solution {
-// 	public long maxAlternatingSum(int[] nums) {
-// 		long sumOdd = 0, sumEven = 0;
-// 		for (int num : nums) {
-// 			sumEven = Math.max(sumEven, sumOdd+num);
-// 			sumOdd = sumEven - num;
-// 		}
-// 		return sumEven;
-// 	}
-// }
+// 4ms 100.00% 48.3MB 100.00%
+// iterative dynamic programming
+// O(N) O(1)
+class Solution {
+	public long maxAlternatingSum(int[] nums) {
+		long sumOdd = 0, sumEven = 0;
+		for (int num : nums) {
+			sumEven = Math.max(sumEven, sumOdd+num);
+			sumOdd = sumEven - num;
+		}
+		return sumEven;
+	}
+}
 
+// 64ms 50.00% 79.1MB 50.00%
 // recursive dynamic programming
 // O(N^2) O(N)
 class Solution {
