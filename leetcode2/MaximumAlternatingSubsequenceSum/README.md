@@ -42,6 +42,8 @@ O(N^2) O(N)
 
 # Iterative Dynamic Programming
 
+## Idea
+
 인덱스 `i` 로 `[0..n)` 동안 `nums[]` 를 순회한 다고 해보자. 다음과
 같은 3 가지 경우를 생각할 수 있다.
 
@@ -70,8 +72,6 @@ sumOdd = sumEven - nums[i]
   when sumEven is sumOdd + nums[i]: nums[i] is not included as odd index
 ```
 
-## Idea
-
 ## Implementation
 
 * [java8](MainApp.java)
@@ -83,3 +83,35 @@ sumOdd = sumEven - nums[i]
 O(N) O(1)
 ```
 
+# Iterative Dynamic Programming
+
+## Idea
+
+숫자 `[A...Z]` 중 임의의 개수에 대해 다음과 같이 생각해 볼 수 있다.
+
+* `[A]`
+  * 답은 `A` 이다.
+* `[A,B]`
+  * 답은 `A + max(B-A, 0)` 이다.
+  * `[2,4]` 의 답은 `2+(4-2)` 이다.
+  * `[4,2]` 의 답은 `4+(0)` 이다.
+*`[A,B,C]`
+  * 답은 `A + max(B-A, 0) + max(C-B, 0)` 이다.
+  * `[4,6,2]` 의 답은 `4 + (6-4) + (0)` 이다.
+  * `[2,6,4]` 의 답은 `2 + (6-2) + (0)` 이다.
+  * `[4,2,6]` 의 답은 `4 + (0) + (4)` 이다.
+  * `[6,2,4]` 의 답은 `6 + (0) + (2)` 이다.
+
+`nums[0]` 제외한 max alternating subsequence sum 는 [BestTimeToBuyAndSellStockII](/leetcode/BestTimeToBuyAndSellStockII/README.md)
+의 답과 같다.
+
+## Implementation
+
+* [java8](MainApp.java)
+* [kotlin](MainApp.kotlin)
+
+# Complexity
+
+```
+O(N) O(1)
+```
