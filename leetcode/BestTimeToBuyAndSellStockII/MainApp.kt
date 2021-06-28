@@ -1,4 +1,5 @@
 
+// 160ms 100.00% 
 // linear traversal
 // O(N) O(1)
 class Solution {
