@@ -464,6 +464,8 @@ $ kotlin AKt
   * [L](/leetcode/ProductofArrayExceptSelf/README.md) | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
 * [Probe and forward](/doc/linear_traversal.md#probe-and-forward)
   * [L](/leetcode/TextJustification/README.md) | [Text Justification](https://leetcode.com/problems/text-justification/)
+* [count of subarray sum less equal to k](/doc/linear_traversal.md#)
+  * [L](/leetcode2/KthSmallestSubarraySum/README.md) | [Kth Smallest Subarray Sum](https://leetcode.com/problems/kth-smallest-subarray-sum/)
 * [L](/leetcode2/DetectPatternofLengthMRepeatedKorMoreTimes/a.js) | [Detect Pattern of Length M Repeated K or More Times](https://leetcode.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/)
 
 ## Recursion

@@ -24,6 +24,13 @@ while (l < r) {
 }
 ```
 
+```cpp
+middle equation: int m = (l+r+1)/2
+  comparison op: A[m] < k
+   low equation: l = m  
+    hi equation: r = m-1
+```
+
 `K` 보다 작거나 같은 값중 가장 큰 값 (right most equal value) 을 검색하려면 다음
 pattern 을 이용한다. 
 
@@ -37,6 +44,13 @@ while (l < r) {
     r = m-1;
   }
 }  
+```
+
+```cpp
+middle equation: int m = (l+r+1)/2
+  comparison op: A[m] <= k
+   low equation: l = m  
+    hi equation: r = m-1
 ```
 
 `K` 보다 크거나 같은 값 중 가장 작은 값 (left most equal value) 검색하려면
@@ -54,6 +68,13 @@ while (l < r) {
 }  
 ```
 
+```cpp
+middle equation: int m = (l+r)/2
+  comparison op: A[m] < k
+   low equation: l = m+1  
+    hi equation: r = m
+```
+
 `K` 보다 큰 값 중 가장 작은 값 (left most value) 검색하려면
 다음 pattern 을 이용한다. 
 
@@ -67,6 +88,13 @@ while (l < r) {
     r = m;
   }
 }
+```
+
+```cpp
+middle equation: int m = (l+r)/2
+  comparison op: A[m] <= k
+   low equation: l = m+1  
+    hi equation: r = m
 ```
 
 예를 들어 `V = [1 2 3 5 6 7], K = 4` 인 경우 `right most pattern` 의 풀이과정은
