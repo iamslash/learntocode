@@ -58,3 +58,5 @@ package.json
 *.class
 
 **/META-INF/
+
+*.jar
