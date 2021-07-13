@@ -2,6 +2,7 @@
 
 import java.util.*;
 
+// 254ms 55.11% 39.8MB 82.75%
 // hash map
 // O(N) O(1)
 class Solution {
@@ -17,6 +18,9 @@ class Solution {
 		}
 		int cnt = 0;
 		for (int charIdx = 0; charIdx < 26; ++charIdx) {
+			if (firstIdxs[charIdx] >= lastIdxs[charIdx]) {
+				continue;
+			}
 			cnt += s.substring(firstIdxs[charIdx]+1, lastIdxs[charIdx])
 					.chars()
 					.distinct()
