@@ -6,6 +6,7 @@ import java.util.*;
 //     k: 22
 //        0
 
+// 1ms 100.005 55.3MB 67.57%
 // linear traversal
 // O(N) O(1)
 class Solution {

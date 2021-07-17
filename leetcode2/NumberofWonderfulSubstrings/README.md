@@ -42,6 +42,17 @@
 `s` 를 bitmask 로 표현헤 보자. 예를 들어 `s = ab` 이라면 bitmask 는
 `11` 이다. `s = aba` 라면 bitmask 는 `10` 이다. 
 
+```
+        i
+word:   a b a b c c b
+  bm:   1 3 2 0 4 0 2
+cnts: 0 
+      1
+ ans:   0
+```
+
+WIP...
+
 # Implementation
 
 * [java8](MainApp.java)
