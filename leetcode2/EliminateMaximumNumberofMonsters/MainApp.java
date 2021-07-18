@@ -10,7 +10,7 @@ import java.util.*;
 
 // 15ms 97.88% 48.4MB 93.08%
 // sort
-// O(N) O(1)
+// O(NlgN) O(1)
 class Solution {
 	public int eliminateMaximum(int[] dist, int[] speed) {
 		// save duration
