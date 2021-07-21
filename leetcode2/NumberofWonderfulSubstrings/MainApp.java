@@ -2,6 +2,7 @@
 
 import java.util.*;
 
+// 22ms 96.70% 39.8MB 63.09%
 // bit manipulation
 // O(N) O(1)
 class Solution {
