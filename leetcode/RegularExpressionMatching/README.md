@@ -2,7 +2,27 @@
 
 [Regular Expression Matching @ leetcode](https://leetcode.com/explore/interview/card/top-interview-questions-hard/119/backtracking/856/)
 
-# Idea
+# DFS
+
+## Idea
+
+`s[i]` 와 `p[j]` 를 `i, j` 를 증가하면서 비교해본다. `p[j] == '*'` 인
+경우와 그렇지 않은 경우를 생각해 보자. `p[j] == '*'` 인 경우 `p[j-1]` 를
+0 개 사용하는 경우와 1 개 이상 사용하는 경우를 생각해 보자.
+
+## Implementation
+
+* [java8](MainApp.java)
+
+## Complexity
+
+```
+O(2^N) O(N)
+```
+
+# Iterative Dynamic Programming
+
+## Idea
 
 먼저 regular expression 을 잘 이해해야 한다.  다음과 같이 다양한 `s,
 p` 에 대해 regular expression 결과를 살펴보자. 
@@ -68,21 +88,14 @@ C[i][j] = C[i-1][j-1]     : p[j-1] == s[i-1] || p[j-1] == '.'
 | 5 | **y** | F | F | F | F | F | T | F |
 | 6 | **c** | F | F | F | F | F | F | T |
 
-# Implementation
+## Implementation
 
 [c++11](a.cpp)
 
-# Time Complexity
+## Complexity
 
 ```
-O(MN)
-```
-
-# Space Complexity
-
-```
-O(MN)
-```
+O(MN) O(MN)
 
 # References
 
