@@ -2,6 +2,9 @@
 
 [Minimum Window Substring](https://leetcode.com/explore/interview/card/top-interview-questions-hard/116/array-and-strings/838/)
 
+문자열 `s, t` 가 주어진다. `t` 의 모든 문자열들을 포함하는 `s` 의 최소크기
+부분문자열을 구하라. 
+
 # Idea
 
 슬라이드의 왼쪽 인덱스를 `l`, 오른쪽 인덱스를 `r` 이라고 하자. `l`,
@@ -17,28 +20,25 @@
 증가 혹은 감소한다. `cnt` 가 `0` 이라는 것은 슬라이드에 `T` 의 모든
 문자들이 포함되어 있다는 의미이다.
 
-
-
 ```
-// c: 3
-//    0    5    0
-// S: ADOBECODEBANC
-//    l
-//    r
+     t: ABC
+        l
+     s: ADOBECODEBANC
+        r
+ freqs: A B C D O E N
+        1 1 1 0 0 0 0
+   cnt: 3
+wndIdx:-1
+wndLen: M
 ```
 
 # Implementation
 
-[c++11](a.cpp)
+* [java8](MainApp.java)
+* [c++11](a.cpp)
 
 # Time Complexity
 
 ```
-O(N)
-```
-
-# Space Complexity
-
-```
-O(N)
+O(N) O(N)
 ```

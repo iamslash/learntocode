@@ -7,16 +7,16 @@ import java.util.*;
 // O(3^N) O(N)
 class Solution {
     private void dfs(List<String> rst,
-                     String path,
+                     String cand,
                      String num,
                      int target,
                      int pos,
                      long eval,
-                     long multed) {
+                     long lastTerm) {
         // base
         if (pos == num.length()) {
             if (target == eval) {
-                rst.add(path);
+                rst.add(cand);
             }
             return;
         }
@@ -27,11 +27,11 @@ class Solution {
             }
             long cur = Long.parseLong(num.substring(pos, i + 1));
             if (pos == 0) {
-                dfs(rst, path + cur, num, target, i + 1, cur, cur);
+                dfs(rst, cand + cur, num, target, i+1, cur, cur);
             } else {
-                dfs(rst, path + "+" + cur, num, target, i+1, eval + cur, cur);
-                dfs(rst, path + "-" + cur, num, target, i+1, eval - cur, -cur);
-                dfs(rst, path + "*" + cur, num, target, i+1, eval - multed + multed * cur, multed * cur);
+                dfs(rst, cand + "+" + cur, num, target, i+1, eval + cur, cur);
+                dfs(rst, cand + "-" + cur, num, target, i+1, eval - cur, -cur);
+                dfs(rst, cand + "*" + cur, num, target, i+1, eval - lastTerm + lastTerm * cur, lastTerm * cur);
             }
         }
     }
