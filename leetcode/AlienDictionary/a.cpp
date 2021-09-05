@@ -10,6 +10,8 @@
 #include <set>
 
 // 16ms 7.36% 9.4MB 50.67%
+// topological sort
+// O(N^2) O(N^2)
 class Solution {
  private:
   std::set<char> m_V;
@@ -18,7 +20,7 @@ class Solution {
   std::string m_order;
   void dfs(char u) {
     m_seen[u] = true;
-    // traverse neightbor
+    // traverse neighbor
     if (m_G.count(u)) {
       for (char v : m_G[u]) {
         if (m_seen[v] == false)
@@ -34,6 +36,10 @@ class Solution {
       return "";
     m_V.insert(W[0].begin(), W[0].end());
     for (int i = 1; i < W.size(); ++i) {
+      if (W[i-1].size() > W[i].size() &&
+          W[i-1].find(W[i]) >= 0) {
+        return "";
+      }
       m_V.insert(W[i].begin(), W[i].end());
       int nmin = std::min(W[i-1].size(), W[i].size());
       for (int j = 0; j < nmin; ++j) {
@@ -48,16 +54,16 @@ class Solution {
     for (char c : m_V)
       m_seen[c] = false;
 
-    // for (auto& pr : m_G) {
-    //   int u = pr.first;
-    //   for (int v : pr.second) {
-    //     printf("(%c, %c) ", u, v);
-    //   }
-    // }
-    // printf("\n");
-    // for (char c : m_V)
-    //   printf("%c ", c);
-    // printf("\n");
+    for (auto& pr : m_G) {
+      int u = pr.first;
+      for (int v : pr.second) {
+        printf("(%c, %c) ", u, v);
+      }
+    }
+    printf("\n");
+    for (char c : m_V)
+      printf("%c ", c);
+    printf("\n");
     
     // dfs all
     for (char u : m_V) {
