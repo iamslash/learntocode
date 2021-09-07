@@ -54,16 +54,16 @@ class Solution {
     for (char c : m_V)
       m_seen[c] = false;
 
-    for (auto& pr : m_G) {
-      int u = pr.first;
-      for (int v : pr.second) {
-        printf("(%c, %c) ", u, v);
-      }
-    }
-    printf("\n");
-    for (char c : m_V)
-      printf("%c ", c);
-    printf("\n");
+    // for (auto& pr : m_G) {
+    //   int u = pr.first;
+    //   for (int v : pr.second) {
+    //     printf("(%c, %c) ", u, v);
+    //   }
+    // }
+    // printf("\n");
+    // for (char c : m_V)
+    //   printf("%c ", c);
+    // printf("\n");
     
     // dfs all
     for (char u : m_V) {
