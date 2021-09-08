@@ -29,6 +29,9 @@ a + b + c = d (a < b < c < d)
 따라서 `d - c` 의 개수를 `Map<Integer, Integer>` 에 저장해 두고 `a +
 b` 가 `Map<>` 에 있다면 그 개수를 답에 저장하는 식으로 생각해 보자.
 
+이때 인덱스 `i` 를 기준으로 `a + b`, `d - c` 의 영역이 나누어져야 `a,
+b, c, d` 를 중복되지 않게 처리할 수 있다.
+
 # Implementation
 
 * [java8](MainApp.java)
