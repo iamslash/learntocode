@@ -25,7 +25,7 @@ A: 1 3 12 3 12    1 3 12 3 12    1 3 12 0 12    1 3 12 0 0
 # Implementation
 
 * [go](a.go)
-* [java8](Solution.java)
+* [java8](MainApp.java)
 
 # Complexity
 
