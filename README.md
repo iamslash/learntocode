@@ -444,6 +444,7 @@ $ kotlin AKt
   * [L](/leetcode/BullsandCows/README.md) | [Bulls and Cows](https://leetcode.com/problems/bulls-and-cows/)
 * [reverse order](/doc/linear_traversal.md#reverse-order)
   * [L](/leetcode2/BackspaceStringCompare/README.md) | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
+  * [L](/leetcode/NextPermutation/README.md) | [Next Permutation](https://leetcode.com/problems/next-permutation/)
 * [multi control flow in loop](/doc/linear_traversal.md#multi-control-flow-in-loop)
   * [L](/leetcode2/DistinctNumbersinEachSubarray/) | [Distinct Numbers in Each Subarray](https://leetcode.com/problems/distinct-numbers-in-each-subarray/)
 * [number out loop](/doc/linear_traversal.md#number-out-loop)
