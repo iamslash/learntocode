@@ -46,11 +46,26 @@ class Solution {
     }
 }
 
+//       i
+// 1 3 3 3 12
+//          j
+
+// 0ms 100.00% 41.8MB 20.29%
 // two pointers
+// O(N) O(1)
 class Solution {
     public void moveZeroes(int[] nums) {
         int i = 0, j = 0, n = nums.length;
-        
+        while (j < n) {
+            if (nums[j] != 0) {
+                nums[i] = nums[j];
+                ++i;
+            }
+            ++j;
+        }
+        while (i < n) {
+            nums[i++] = 0;
+        }
     }
 }
 
