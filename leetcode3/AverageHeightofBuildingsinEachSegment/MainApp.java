@@ -2,11 +2,14 @@
 
 import java.util.*;
 
-//                i
-// buildings: 
+//                
+// buildings:
+//                               i
 //        pq: 1,2 3,4 5,-2 10,-4
-//       ans:      
-//            
+//       ans: 1,3,2 3,5,3 5,10,4
+//     start: 10
+//       sum: 0
+//       cnt: 0              
 
 // priority queue
 // O(NlgN) O(N)
