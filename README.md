@@ -540,6 +540,7 @@ $ kotlin AKt
   * L | [Last-in-first-out Data Structure](https://leetcode.com/explore/learn/card/queue-stack/230/usage-stack/1369/)
 * [mono stack](/doc/stack_overview.md#mono_stack)
   * [L](/leetcode2/MaximumSubarrayMin-Product/README.md) | [Maximum Subarray Min-Product](https://leetcode.com/problems/maximum-subarray-min-product/)
+  * [L](/leetcode2/MaximumofMinimumValuesinAllSubarrays/README.md) | [Maximum of Minimum Values in All Subarrays](https://leetcode.com/problems/maximum-of-minimum-values-in-all-subarrays/)
 * [double stack](/doc/stack_overview.md#double-stack)
   * [L](/leetcode2/BuildBinaryExpressionTreeFromInfixExpression/Solution.java) | [Build Binary Expression Tree From Infix Expression](https://leetcode.com/problems/build-binary-expression-tree-from-infix-expression/)
 * [L](/leetcode/ValidParentheses/) | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
