@@ -672,7 +672,9 @@ $ kotlin AKt
 ## Binary Search Tree
 
 - F | [binary search tree](/fundamentals/tree/binarysearchtree/README.md)
-
+- in-order traversal, dummy node, previous node
+  - [L](/leetcode/ConvertBinarySearchTreetoSortedDoublyLinkedList) | [Convert Binary Search Tree to Sorted Doubly Linked List](https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/submissions/)
+  
 ## Binary Indexed Tree
 
 - F | [fenwick tree (binary indexed tree)](/fundamentals/tree/fenwick/README.md)
