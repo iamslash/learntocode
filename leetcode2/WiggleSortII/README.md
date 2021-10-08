@@ -46,5 +46,5 @@ V:     1 5 1 4    V:   6 1 5 1 4    V: 1 6 1 5 1 4
 # Complexity
 
 ```
-O(N) O(N)
+O(NlgN) O(N)
 ```

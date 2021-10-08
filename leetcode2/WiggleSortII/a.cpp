@@ -9,7 +9,7 @@
 // V : 1 1 1 1 2 2 2 2
 
 // 68ms 97.47% 11.7MB 17.07%
-// O(N) O(N)
+// O(NlgN) O(N)
 class Solution {
  public:
   void wiggleSort(std::vector<int>& V) {
