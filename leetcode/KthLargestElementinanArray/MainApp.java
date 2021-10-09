@@ -29,6 +29,11 @@ import java.util.*;
 //     }
 // }
 
+//     p
+//                   i
+// 2 1 2 6 3 4 5 5 3
+//       s
+
 // Wrong Answer:
 // [3,2,3,1,2,4,5,5,6]
 // 4
@@ -66,10 +71,13 @@ class Solution {
         int pivotIdx = left + randomNum.nextInt(right - left);
         pivotIdx = partition(left, right, pivotIdx);
         if (kSmallest == pivotIdx) {
+            // the pivot is on (n-k)th smallest position
             return this.nums[kSmallest];
         } else if (kSmallest < pivotIdx) {
+            // left side    
             return quickselect(left, pivotIdx - 1, kSmallest);
         }
+        // right side
         return quickselect(pivotIdx + 1, right, kSmallest);
     }
     public int findKthLargest(int[] nums, int k) {

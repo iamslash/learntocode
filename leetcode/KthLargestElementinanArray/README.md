@@ -47,16 +47,6 @@ O(NlgK) O(1)
 
 # Quick Select
 
+역시 정렬의 대상을 줄이면서 답을 찾는 방식이다.
+
 WIP...
-
-## Idea
-
-## Implementation
-
-* [c++11](a.cpp)
-* [java8](MainApp.java)
-
-## Complexity
-
-```
-```
