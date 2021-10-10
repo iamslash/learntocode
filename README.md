@@ -817,6 +817,7 @@ $ kotlin AKt
 - F | [upper_bound, lower_bound](/fundamentals/search/upperlowerbound/README.md)
 - F | [Binary Search with array](/fundamentals/search/binarysearch/README.md)
 - F | [Binary Search closest with array](/fundamentals/search/binarysearchclosest/README.md)
+- F | [quick select](/fundamentals/search/quickselect/README.md)
 - [L](leetcode/SearchinRotatedSortedArrayII/) | [Binary Search with rotated array](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/)
 - [L](/leetcode2/DivideChocolate/README.md) | [Divide Chocolate](https://leetcode.com/problems/divide-chocolate/) 
 - [L](/leetcode/TheEarliestMomentWhenEveryoneBecomeFriends/a.cpp) | [The Earliest Moment When Everyone Become Friends](https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends/)
