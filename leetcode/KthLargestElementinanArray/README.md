@@ -1,3 +1,19 @@
+- [Problem](#problem)
+- [Sort](#sort)
+  - [Idea](#idea)
+  - [Implementation](#implementation)
+  - [Complexity](#complexity)
+- [Heap](#heap)
+  - [Idea](#idea-1)
+  - [Implementation](#implementation-1)
+  - [Complexity](#complexity-1)
+- [Quick Select](#quick-select)
+  - [Idea](#idea-2)
+  - [Implementation](#implementation-2)
+  - [Complexity](#complexity-2)
+
+----
+
 # Problem
 
 [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
@@ -36,7 +52,6 @@ b)` 를 선언한다. 이제 `pq.peek()` 는 가장 작은 수가 저장된다. 
 
 ## Implementation
 
-* [c++11](a.cpp)
 * [java8](MainApp.java)
 
 ## Complexity
@@ -47,6 +62,19 @@ O(NlgK) O(1)
 
 # Quick Select
 
-역시 정렬의 대상을 줄이면서 답을 찾는 방식이다.
+## Idea
 
-WIP...
+역시 정렬의 대상을 줄이면서 답을 찾는 방식이다. 정렬의 대상을 절반씩 줄여가면서
+n-k 번째 작은 수를 찾는다.
+
+위와 같은 방법을 [quick select](https://en.wikipedia.org/wiki/Quickselect) 이라고 한다.
+
+## Implementation
+
+* [java8](MainApp.java)
+
+## Complexity
+
+```
+O(N) O(lgN)
+```
