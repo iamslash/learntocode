@@ -41,10 +41,10 @@ class Solution {
 	public int[] twoSum(int[] nums, int target) {
 		int n = nums.length;
 		int[] pair = new int[2];
-		for (int i = 1; i < n; ++i) {
-			for (int j = i; j < n; ++j) {
-				if (nums[j-i] + nums[j] == target) {
-					pair[0] = j - i;
+		for (int dist = 1; dist < n; ++dist) {
+			for (int j = dist; j < n; ++j) {
+				if (nums[j-dist] + nums[j] == target) {
+					pair[0] = j - dist;
 					pair[1] = j;
 					return pair;
 				}
