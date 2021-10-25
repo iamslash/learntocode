@@ -39,6 +39,7 @@ class Solution {
 //            t
 // 
 
+// 3ms 82.11% 146.6MB 6.50%
 // linked list
 // O(N) O(N)
 class Solution {
