@@ -2,13 +2,13 @@
 
 [Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)
 
+수열 `V` 와 숫자 `k` 가 주어지면 부분 수열들 중 합이 `k` 인 것들 중
+가장 길이가 긴 것을 구하는 문제이다.
+
 # Idea
 
-수열 `V` 와 숫자 `k` 가 주어지면 부분 수열들 중 합이 `k`
-인 것들 중 가장 길이가 긴 것을 구하는 문제이다.
-
-다음과 같이 `V = (1, -1, 5, -2, 3), k = 3` 일 때
-인덱스 i 를 이용하여 처음부터 끝까지 순회하면서 다음을 반복한다.
+다음과 같이 `V = (1, -1, 5, -2, 3), k = 3` 일 때 인덱스 i 를 이용하여
+처음부터 끝까지 순회하면서 다음을 반복한다.
 
 ```
    i
@@ -24,7 +24,8 @@ k: 3
 
 # Implementation
 
-* [c++11](a.cpp
+* [c++11](a.cpp)
+* [java8](MainApp.java)
 
 # Complexity
 
