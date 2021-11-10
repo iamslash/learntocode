@@ -48,7 +48,21 @@ class Solution {
     }
 }
 
-public class MainApp {
-  public static void main(String[] args) {
-  }
+// 9ms 91.40% 39.9MB 67.85%
+// brute force
+// O(N) O(1)
+class Solution {
+    private boolean isVowel(char c) {
+        // return "aeiou".indexOf(c) >= 0;
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
+    public long countVowels(String word) {
+        long n = word.length(), sum = 0;
+        for (int i = 0; i < n; ++i) {
+            if (isVowel(word.charAt(i))) {
+                sum += (i+1)*(n-i);
+            }
+        }
+        return sum;
+    }
 }
