@@ -7,28 +7,31 @@ import java.util.*;
 //   s: a a a b c b b c c
 //                      j
 
+// 33ms 100.00% 39.2MB 100.00%
+// sliding window
+// O(N) O(1)
 class Solution {
     public int equalCountSubstrings(String s, int count) {
-        Set<Character> charSet = Set.of(s.toCharArray());
-        int ans = 0, uniqBnd = charSet.size();
-        for (int uniq = 1; uniq <= uniqBnd; ++uniq) {
+        Set<Character> charSet = new HashSet<>();
+        for (char c : s.toCharArray()) {
+            charSet.add(c);
+        }
+        int substrCnt = 0, maxUniqGrpBnd = charSet.size();
+        for (int uniqGrpBnd = 1; uniqGrpBnd <= maxUniqGrpBnd; ++uniqGrpBnd) {
             int[] freqs = new int[26];
-            int maxUniqCharCnt = count * uniq, uniqCharCnt = 0;
+            int substrLen = count * uniqGrpBnd, uniqGroupCnt = 0;
             for (int i = 0; i < s.length(); ++i) {
-                if (++freqs[s.charAt(i) - 'a'] == count) {
-                    ++uniqCharCnt;
+                if (++freqs[s.charAt(i)-'a'] == count) {
+                    ++uniqGroupCnt;
                 }
-                if (i >= maxUniqCharCnt && --freqs[s[i-maxUniqCharCnt]-'a'] == count - 1) {
-                    --uniqCharCnt;
+                if (i >= substrLen && --freqs[s.charAt(i-substrLen)-'a'] == count - 1) {
+                    --uniqGroupCnt;
                 }
-                ans += uniqCharCnt == uniq;
+                if (uniqGroupCnt == uniqGrpBnd) {
+                    substrCnt++;
+                }
             }
         }
-        return ans;
+        return substrCnt;
     }
-}
-
-public class MainApp {
-  public static void main(String[] args) {
-  }
 }
