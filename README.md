@@ -420,7 +420,7 @@ $ kotlin AKt
   * brute force, dynamic programming, divide and conquer, greedy
   * quick sort, merge sort
   * binary search, two pointers, sliding window
-  * merge-find
+  * disjointset
   * backtracking, BFS, DFS, in-order, pre-order, post-order
   * monotone increasing, monotone decreasing
   * trie, suffix array
