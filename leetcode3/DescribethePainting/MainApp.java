@@ -2,6 +2,7 @@
 
 import java.util.*;
 
+// 128ms 32.73% 56.9MB 59.09%
 // hash map
 // O(N) O(N)
 class Solution {
@@ -14,7 +15,7 @@ class Solution {
         List<List<Long>> ans = new ArrayList<>();
         long prvTs = 0, prvCol = 0;
         for (Long key : colMap.keySet()) {
-            if (prvTs > 0) {
+            if (prvCol > 0) {
                 ans.add(Arrays.asList(prvTs, key, prvCol));
             }
             prvTs = key;
