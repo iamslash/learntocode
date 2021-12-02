@@ -12,18 +12,22 @@ import java.util.*;
 // freqs: a b c 
 //        1 2 1
 
-// brute force
+// nCr = n! / (r! * (n-r)!)
+//
+// nC2 = n * (n - 1) / 2
+
+// 3ms 100.00% 39.5MB 86.01%
+// math
 // O(N) O(1)
 class Solution {
     public long numberOfSubstrings(String s) {
-        int ans = 0;
-        int[] freqs = new int[26];
+        long ans = s.length();
+        long[] freqs = new long[26];
         for (char c : s.toCharArray()) {
             freqs[c-'a']++;
         }
         for (int i = 0; i < freqs.length; ++i) {
-            int cnt = freqs[i];
-            ans += cnt * (cnt + 1) / 2;
+            ans +=  freqs[i] * (freqs[i] - 1) / 2;
         }
         return ans;
     }
