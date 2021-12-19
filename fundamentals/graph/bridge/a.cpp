@@ -38,15 +38,12 @@ int find_bridge(int u, int p) {
   for (int v : adj[u]) {
     if (v == p)
       continue;
-
-    // tree edge만 bridge가 될 수 있다.
-    if (found[v] == -1) {
+    if (found[v] == -1) { // tree edge만 bridge가 될 수 있다.
       int minord = find_bridge(v, u);
       if (minord > found[u])
         bridge[u][v] = true;
       r = std::min(r, minord);
-    // (u, v)는 forward, back edge이다.
-    } else {
+    } else { // (u, v)는 forward, back edge이다.
       r = std::min(r, found[v]);
     }
   }

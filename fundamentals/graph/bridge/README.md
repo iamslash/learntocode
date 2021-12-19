@@ -8,23 +8,26 @@
 # References
 
 * [DFS spanning tree](/fundamentals/graph/dfsspanningtree/README.md)
-* [Critical Connections in a Network](/leetcode/CriticalConnectionsinaNetwork)
+* [Critical Connections in a Network @ learntocode](/leetcode/CriticalConnectionsinaNetwork)
 
 # Keyword
 
 ```cpp
 adj[][], counter, found[], vector<vector<int,int>> bridges, 
-findbridge(u, p)
+dfs(u, p)
 ```
 
 # Problem
 
 그래프 `adj[][]` 가 주어지면 `bridge` 를 구하는 문제이다. `bridge` 를
-제거하면 두 component 사이에 간선은 없다.
+제거하면 두 component 사이에 어떠한 간선도 없다. 즉, 별도의 component
+로 나누어 진다.
 
 # Idea
 
-`bridge` 는 `tree edge` 일 수 밖에 없다. `(u, v)` 가 `forward, backedge` 라면 `u, v` 를 잇는 또 다른 경로가 있다는 것이다. `tree edge` 들에 대해서만 `bridge` 판정을 해야 한다.
+`bridge` 는 `tree edge` 일 수 밖에 없다. `(u, v)` 가 `forward,
+backedge` 라면 `u, v` 를 잇는 또 다른 경로가 있다는 것이다. `tree
+edge` 들에 대해서만 `bridge` 판정을 해야 한다.
 
 `p` 를 `u` 의 선조라 하고 `v` 를 `u` 의 자손이라고 하자. `v` 를 루트로
 하는 서브트리의 노드들 중 가장 빨리 발견된 것의 발견 순서가 `u` 의
@@ -34,7 +37,8 @@ findbridge(u, p)
 
 ![](bridge.png)
 
-자세한 풀이는 [Critical Connections in a Network](/leetcode/CriticalConnectionsinaNetwork) 를 참고한다.
+자세한 풀이는 [Critical Connections in a Network @
+learntocode](/leetcode/CriticalConnectionsinaNetwork) 를 참고한다.
 
 # Implementation
 
