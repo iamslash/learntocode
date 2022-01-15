@@ -2,10 +2,10 @@
 
 [Analyze User Website Visit Pattern](https://leetcode.com/problems/analyze-user-website-visit-pattern/)
 
-# Idea
-
 유저의 모음 `U[]`, 사이트의 모음 `W[]`, 시간의 모음 `T[]` 가 주어진다.
 가장 많은 유저가 방문한 사이트들의 `1, 2, 3` 위를 구하는 문제이다.
+
+# Idea
 
 예를 들어 `U =
 ["joe","joe","joe","james","james","james","james","mary","mary","mary"],
@@ -29,6 +29,7 @@ T = [1,2,3,4,5,6,7,8,9,10], W =
 # Implementation
 
 * [c++11](a.cpp)
+* [py3](a.py)
 
 # Complexity
 
