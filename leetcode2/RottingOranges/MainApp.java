@@ -2,7 +2,9 @@
 
 import java.util.*;
 
+// 4ms 48.14% 39.7MB 27.04%
 // BFS
+// O(HW) O(HW)
 class Solution {
     public int orangesRotting(int[][] grid) {
         int fresh = 0, h = grid.length, w = grid[0].length;
@@ -30,20 +32,17 @@ class Solution {
                 int x = u % 100;
                 for (int j = 0; j < 4; ++j) {
                     int ny = y + dirs[j], nx = x + dirs[j+1];
-                    if (ny < 0 || nx >= h || nx < 0 || nx >= w || grid[ny][nx] != 1) {
+                    // System.out.printf("ny:%d, nx:%d, h:%d, w:%d\n", ny, nx, h, w);
+                    if (ny < 0 || ny >= h || nx < 0 || nx >= w || grid[ny][nx] != 1) {
                         continue;
                     }
                     grid[ny][nx] = 2;
                     fresh--;
+                    q.offer(ny * 100 + nx);
                 }
             }
             step++;
         }
-        return fresh > 0 ? -1 : step;
+        return fresh > 0 ? -1 : step-1;
     }
-}
-
-public class MainApp {
-  public static void main(String[] args) {
-  }
 }
