@@ -14,6 +14,32 @@ import java.util.*;
 //   rMax: 7
 //  water: 4
 
+// one pointer
+// O(N) O(1)
+class Solution {
+    public int trap(int[] height) {
+        int n = height.length, maxIdx = 0, maxHeight = height[0];
+        int ans = 0;
+        int locMax = height[0];
+        for (int i = 0; i < n; ++i) {
+            if (height[i] > maxHeight) {
+                maxIdx = i;
+                maxHeight = height[i];
+            }
+        }
+        for (int i = 0; i < maxIdx; ++i) {
+            locMax = Math.max(locMax, height[i]);
+            ans += locMax - height[i];
+        }
+        locMax = height[n-1];
+        for (int i = n-1; i > maxIdx; --i) {
+            locMax = Math.max(locMax, height[i]);
+            ans += locMax - height[i];
+        }
+        return ans;
+    }
+}
+
 // 1ms 92.24% 42.1MB 23.56%
 // two pointers
 // O(N) O(1)
