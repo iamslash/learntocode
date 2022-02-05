@@ -7,7 +7,7 @@ import "fmt"
 // 76ms 79.25% 8.1MB 88.46%
 // sort
 // O(NlgN) O(1)
-var MAXVAL int = 1000000007
+var MAXxVAL int = 1000000007
 func max(a, b int) int {
   if a > b {
     return a
