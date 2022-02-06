@@ -1,4 +1,4 @@
-// Copyright (C) 2022 by iamslash
+// Copyright (C) 2021 by iamslash
 
 import java.util.*;
 
@@ -10,10 +10,12 @@ class ListNode {
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
 
-// // 11ms 33.90% 47MB 12.03%
-// // heap
-// // O(NlgN) O(N)
-// //   N: count of nodes
+
+// // 8ms 27.18% 44.6MB 5.64%
+// // priority queue
+// // O(NLlgL) O(N)
+// // N: count of nodes
+// // L: count of lists
 // class Solution {
 //     public ListNode mergeKLists(ListNode[] lists) {
 //         ListNode head = new ListNode();
@@ -36,54 +38,46 @@ class ListNode {
 //     }
 // }
 
-// 1ms 100.00% 44.1MB 56.05%
 // divide and conquor
-// O(NlgN) O(lgN)
+// O(NlgL) O(lgL)
+// N: count of nodes
+// L: count of lists
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        if (lists.length == 0 || lists == null) {
+       if(lists.length == 0 || lists  == null)
             return null;
-        }
-        return mergeParts(lists, 0, lists.length - 1);
+        return recurLists(lists, 0, lists.length - 1);
     }
-    private ListNode mergeParts(ListNode[] lists, int beg, int end) {
+    public ListNode recurLists(ListNode[] lists, int start, int end){
         // base
-        if (beg > end) {
+        if(start > end)
             return null;
-        }
-        if (beg == end) {
-            return lists[beg];
-        }
+        if(start == end)
+            return lists[start];
         // recursion
-        int mid = beg + (end - beg) / 2;
-        ListNode left = mergeParts(lists, beg, mid);
-        ListNode right = mergeParts(lists, mid + 1, end);
+        int m = start+(end - start) / 2; 
+        ListNode left = recurLists(lists, start, m);
+        ListNode right = recurLists(lists, m + 1, end);
         return merge(left, right);
     }
-    private ListNode merge(ListNode left, ListNode right) {
-        ListNode head = new ListNode();
-        ListNode p = head;
-        while (left != null && right != null) {
-            if (left.val < right.val) {
-                p.next = left;
+    public ListNode merge(ListNode left, ListNode right){
+        ListNode ans = new ListNode();
+        ListNode iter = ans;
+        while(left != null && right != null){
+            if(left.val < right.val){
+                iter.next = left;
                 left = left.next;
-            } else {
-                p.next = right;
+            }
+            else{
+                iter.next = right;
                 right = right.next;
             }
-            p = p.next;
+            iter = iter.next;
         }
-        if (left != null) {
-            p.next = left;
-        }
-        if (right != null) {
-            p.next = right;
-        }
-        return head.next;
+        if(left != null)
+            iter.next = left;
+        if(right != null)
+            iter.next = right;
+        return ans.next;
     }
-}
-
-public class MainApp {
-  public static void main(String[] args) {
-  }
 }
