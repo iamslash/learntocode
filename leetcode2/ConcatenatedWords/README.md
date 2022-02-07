@@ -29,8 +29,8 @@
 * 인덱스 `j` 를 이용하여 `W[i]` 를 `W[i..j), W[j..]` 형태로
   나눈다. `W[i..j)` 가 `wordSet` 에 존재한다면 다시 `W[j..]` 를 비슷한
   방법으로 `W[j..k), W[k..)` 으로 나누고 `W[j..k)` 가 `wordSet` 에
-  존재하는지 확인한다. [DFS](/fundamentals/graph/DFS/README.md) 로
-  처리할 만 하다.
+  존재하는지 확인한다. 
+  * [WordBreak](/leetcode2/WordBreak/README.md) 로 해결할 만 하다.
 
 # Implementation
 
