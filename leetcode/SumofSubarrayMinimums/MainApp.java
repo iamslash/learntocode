@@ -9,7 +9,7 @@ import java.util.*;
 
 // 975ms 5.02% 62.2MB 55.50%
 // math
-// O(N) O(1)
+// O(N^2) O(1)
 class Solution {
     public int sumSubarrayMins(int[] A) {
         int MOD = 1_000_000_007;
@@ -25,6 +25,29 @@ class Solution {
             }
             sum += (long)A[i] * (i-l) * (r-i);
             sum %= MOD;
+        }
+        return (int)sum;
+    }
+}
+
+// 124ms 15.37% 66.1MB 45.42%
+// mono stack
+// O(N) O(1)
+class Solution {
+    public int sumSubarrayMins(int[] nums) {
+        int MOD = 1_000_000_007;
+        int n = nums.length, j, k;
+        long sum = 0;
+        Stack<Integer> stck = new Stack<>();
+        for (int i = 0; i <= n; ++i) {
+            while (!stck.isEmpty() &&
+                   nums[stck.peek()] > (i == n ? Integer.MIN_VALUE : nums[i])) {
+                j = stck.pop();
+                k = stck.isEmpty() ? -1 : stck.peek();
+                sum += (long)nums[j] * (j - k) * (i - j);
+                sum %= MOD;
+            }
+            stck.push(i);
         }
         return (int)sum;
     }
