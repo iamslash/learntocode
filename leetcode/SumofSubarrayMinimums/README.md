@@ -2,10 +2,10 @@
 
 [Sum of Subarray Minimums](https://leetcode.com/problems/sum-of-subarray-minimums/)
 
-# Idea
-
 수열 `A` 가 주어진다. 모든 부분수열의 최소 값들을 더한 것을
 구하는 문제이다.
+
+# Idea
 
 예를 들어 `A = 3 1 2 4` 의 경우 인덱스 `i` 를 이용하여
 순회할 때 다음과 같이 부분수열을 만들어 낼 수 있다.
@@ -77,6 +77,7 @@ stck:            3          1          1 2        1 2 4
 # Implementation
 
 * [c++11](a.cpp)
+* [java8](MainApp.java)
 
 # Complexity
 
