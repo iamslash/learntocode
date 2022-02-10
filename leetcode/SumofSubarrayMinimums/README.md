@@ -1,3 +1,16 @@
+- [Problem](#problem)
+- [Brute Force](#brute-force)
+  - [Idea](#idea)
+  - [Implementation](#implementation)
+  - [Complexity](#complexity)
+- [Mono Stack](#mono-stack)
+- [Dot Product](#dot-product)
+  - [Idea](#idea-1)
+  - [Implementation](#implementation-1)
+  - [Complexity](#complexity-1)
+
+----
+
 # Problem
 
 [Sum of Subarray Minimums](https://leetcode.com/problems/sum-of-subarray-minimums/)
@@ -5,7 +18,64 @@
 수열 `A` 가 주어진다. 모든 부분수열의 최소 값들을 더한 것을
 구하는 문제이다.
 
-# Idea
+# Brute Force
+
+## Idea
+
+예를 들어 `A = 3 1 2 4` 의 경우를 살펴보자.
+
+```
+A: 3 1 2 4
+   3          3
+   3 1        1
+   3   2      1
+   3     4    1
+     1        1
+     1 2      1
+     1   4    1
+       2      2
+       2 4    2
+         4    4
+```
+
+따라서 답은 `17` 이다.
+
+임의의 숫자 `A[2]` 를 살펴보자.
+
+```
+       i
+A: 3 1 2 4
+
+  count of subarray which ends with A[2]: 1 ({2})
+count of subarray which starts with A[2]: 2 ({2}, {2, 4})
+     count of subarray whose min is A[2]: 1 * 2 = 2 ({2}, {2, 4})
+```
+
+따라서 다음과 같은 공식을 발견할 수 있다.
+
+```
+  count of subarray which ends with A[i]: l
+count of subarray which starts with A[i]: r
+     count of subarray whose min is A[i]: l * r
+```
+
+## Implementation
+
+* [java8](MainApp.java)
+
+## Complexity
+
+```
+O(N) O(1)
+```
+
+# Mono Stack
+
+WIP...
+
+# Dot Product
+
+## Idea
 
 예를 들어 `A = 3 1 2 4` 의 경우 인덱스 `i` 를 이용하여
 순회할 때 다음과 같이 부분수열을 만들어 낼 수 있다.
@@ -74,12 +144,11 @@ stck:            3          1          1 2        1 2 4
  ans: 0          3          5          9          17
 ```
 
-# Implementation
+## Implementation
 
 * [c++11](a.cpp)
-* [java8](MainApp.java)
 
-# Complexity
+## Complexity
 
 ```
 O(N) O(N)

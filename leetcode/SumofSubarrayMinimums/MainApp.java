@@ -30,6 +30,30 @@ class Solution {
     }
 }
 
+// 11ms 99.27% 63.6MB 50.79%
+// math
+// O(N^2) O(N)
+class Solution {
+    public int sumSubarrayMins(int[] A) {
+        int MOD = 1_000_000_007, n = A.length;
+        long sum = 0;
+        int[] nums = new int[n+1];
+        int[] minIdxs = new int[n+1];
+        int[] sums = new int[n+1];
+        System.arraycopy(A, 0, nums, 1, n);
+        for (int i = 1; i <= n; ++i) {
+            int num = nums[i], minIdx = i - 1;
+            while (nums[minIdx] >= num) {
+                minIdx = minIdxs[minIdx];
+            }
+            minIdxs[i] = minIdx;
+            sums[i] = num * (i - minIdx) + sums[minIdx];
+            sum = (sum + sums[i]) % MOD;
+        }
+        return (int)sum;
+    }
+}
+
 // 124ms 15.37% 66.1MB 45.42%
 // mono stack
 // O(N) O(1)
@@ -51,9 +75,4 @@ class Solution {
         }
         return (int)sum;
     }
-}
-
-public class MainApp {
-  public static void main(String[] args) {
-  }
 }
