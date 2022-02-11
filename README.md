@@ -420,9 +420,9 @@ $ kotlin AKt
   * brute force, dynamic programming, divide and conquer, greedy
   * quick sort, merge sort
   * binary search, two pointers, sliding window
-  * disjointset
   * backtracking, BFS, DFS, in-order, pre-order, post-order
-  * monotone increasing, monotone decreasing
+  * stack, mono stack, double stack, heap, double heap, disjointset
+  * hash map, hash set
   * trie, suffix array
 * Validate a algorithm with examples
 * Think about exceptions
@@ -569,7 +569,8 @@ $ kotlin AKt
 
 ## Double Heap
   
-- [L](/leetcode2/SlidingWindowMedian/README.md) | [Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
+* [L](/leetcode2/SlidingWindowMedian/README.md) | [Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
+* [L](/leetcode/FindMedianfromDataStream/) | [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) 
 
 ## Deque
 
