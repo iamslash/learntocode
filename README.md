@@ -26,6 +26,8 @@
   - [Partial Min](#partial-min)
   - [List, LinkedList](#list-linkedlist)
   - [Stack](#stack)
+  - [Mono Stack](#mono-stack)
+  - [Double Stack](#double-stack)
   - [Queue](#queue)
   - [Heap](#heap)
   - [Double Heap](#double-heap)
@@ -540,17 +542,23 @@ $ kotlin AKt
 
 * F | [LIFO implementation](/fundamentals/stack/lifoimpl/README.md)
   * L | [Last-in-first-out Data Structure](https://leetcode.com/explore/learn/card/queue-stack/230/usage-stack/1369/)
-* [mono stack](/doc/stack_overview.md#mono_stack)
-  * [L](/leetcode2/MaximumSubarrayMin-Product/README.md) | [Maximum Subarray Min-Product](https://leetcode.com/problems/maximum-subarray-min-product/)
-  * [L](/leetcode2/MaximumofMinimumValuesinAllSubarrays/README.md) | [Maximum of Minimum Values in All Subarrays](https://leetcode.com/problems/maximum-of-minimum-values-in-all-subarrays/)
-* [double stack](/doc/stack_overview.md#double-stack)
-  * [L](/leetcode2/BuildBinaryExpressionTreeFromInfixExpression/Solution.java) | [Build Binary Expression Tree From Infix Expression](https://leetcode.com/problems/build-binary-expression-tree-from-infix-expression/)
 * [L](/leetcode/ValidParentheses/) | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
 * [L](/leetcode/LongestValidParentheses/) | [Longest valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)
 * [L](/leetcode/DecodeString/a.py) | [Decode String](https://leetcode.com/problems/decode-string/)
 * [알](/algospot/FENCE/) | [FENCE](http://algospot.com/judge/problem/read/FENCE)
 * [알](/algospot/BRACKETS2/) | [BRACKETS2](http://algospot.com/judge/problem/read/BRACKETS2)
 * G | [Maximum of minimum for every window size](http://www.practice.geeksforgeeks.org/problem-page.php?pid=170)
+
+## Mono Stack
+
+* [mono stack](/doc/stack_overview.md#mono_stack)
+  * [L](/leetcode2/MaximumSubarrayMin-Product/README.md) | [Maximum Subarray Min-Product](https://leetcode.com/problems/maximum-subarray-min-product/)
+  * [L](/leetcode2/MaximumofMinimumValuesinAllSubarrays/README.md) | [Maximum of Minimum Values in All Subarrays](https://leetcode.com/problems/maximum-of-minimum-values-in-all-subarrays/)
+
+## Double Stack
+
+* [double stack](/doc/stack_overview.md#double-stack)
+  * [L](/leetcode2/BuildBinaryExpressionTreeFromInfixExpression/Solution.java) | [Build Binary Expression Tree From Infix Expression](https://leetcode.com/problems/build-binary-expression-tree-from-infix-expression/)
 
 ## Queue
 
