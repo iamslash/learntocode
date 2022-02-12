@@ -7,11 +7,12 @@ Given job difficulties `J[]` and day `d`, you can seperate `J[]` with
 difficulty of a day is the maximum difficulty of a job difficulty in
 that day. Find the minimum difficulty of a job schedule.
 
-# Recursive way
+# Recursive Dynamic Programming
 
 ## Idea
 
-This is very similar with [Palindrome PartitioningIII](https://github.com/iamslash/learntocode/blob/master/leetcode2/PalindromePartitioningIII/README.md).
+This is very similar with [Palindrome
+PartitioningIII](/leetcode2/PalindromePartitioningIII/README.md).
 
 ## Implementation
 
@@ -23,7 +24,7 @@ This is very similar with [Palindrome PartitioningIII](https://github.com/iamsla
 O(DN^2) O(N^2)
 ```
 
-# Iterative way
+# Iterative Dynamic Programming
 
 ## Idea
 
@@ -32,6 +33,7 @@ O(DN^2) O(N^2)
 ## Implementation
 
 * [c++11](a.cpp)
+* [java8](MainApp.java)
 
 ## Complexity
 
