@@ -37,6 +37,58 @@ class Solution {
     }
 }
 
+// 37ms 14.86% 42.6MB 7.53%z
+// recursive dynamic programming
+// O(DN^2) O(N)
+class Solution {
+    private final int MAX_SUM = 300_000;
+    private int max(int[] A, int beg) {
+        int maxVal = 0;
+        for (int i = beg; i < A.length; ++i) {
+            maxVal = Math.max(maxVal, A[i]);
+        }
+        return maxVal;
+    }
+    private int dfs(int[][] C, int[] jobDifficulty, int d, int i) {        
+        // base
+        int n = jobDifficulty.length;
+        if (d <= 0) {
+            return MAX_SUM;
+        }
+        if (d == 1) {
+            return max(jobDifficulty, i);
+        }
+        // memo
+        if (C[d][i] >= 0) {
+            return C[d][i];
+        }
+        // recursion
+        int r = MAX_SUM;
+        int frontMaxDifficulty = 0;
+        for (int j = i; j + d - 1 < n; ++j) {
+            frontMaxDifficulty = Math.max(frontMaxDifficulty, jobDifficulty[j]);
+            r = Math.min(r, frontMaxDifficulty + dfs(C, jobDifficulty, d-1, j+1));
+        }
+        return C[d][i] = r;
+    }
+    public int minDifficulty(int[] jobDifficulty, int days) {
+        int n = jobDifficulty.length;
+        if (n < days) {
+            return -1;
+        }
+        // C[i][j]: min sum of difficulty when i day j job
+        int[][] C = new int[days+1][n];
+        for (int i = 0; i <= days; ++i) {
+            Arrays.fill(C[i], -1);
+        }
+        int ans = dfs(C, jobDifficulty, days, 0);
+        if (ans >= MAX_SUM) {
+            return -1;
+        }
+        return ans;
+    }
+}
+
 public class MainApp {
   public static void main(String[] args) {
   }
