@@ -7,12 +7,16 @@
 
 # Problem
 
-정점과 간선의 가중치가 이차원 배열 `G[][]` 로 주어진다. 정점 `0` 에서 모든 정점들로 가는 최단거리들을 구하는 문제이다.
+정점과 간선의 가중치가 이차원 배열 `G[][]` 로 주어진다. 정점 `0` 에서 모든
+정점들로 가는 최단거리들을 구하는 문제이다.
 
 # Keyword
 
 ```cpp
-dist[], G[][], priority_queue<pair<int, int>> pq
+G[][], dist[], priority_queue<pair<int, int>> pq
+
+     pq: [cost to v, v]
+dist[v]: minimum cost from 0 to v
 ```
 
 # References
