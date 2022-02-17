@@ -16,6 +16,7 @@ import java.util.*;
 // 1 1 0 0 0
 // 1 0 0 0 1
 
+// 2ms 100.00% 41.8MB 100.00
 // back tracking
 // O(HW) O(1)
 class Solution {
@@ -33,7 +34,7 @@ class Solution {
                     grid[r][x] = 0;
                 }
                 for (int c = 0; c < w; ++c) {
-                    cols[y] = grid[y][c];
+                    rows[c] = grid[y][c];
                     grid[y][c] = 0;
                 }
                 cnt = Math.min(cnt, 1 + removeOnes(grid));
