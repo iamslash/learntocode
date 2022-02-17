@@ -478,6 +478,7 @@ $ kotlin AKt
 * F | [fibonacci number](/fundamentals/recursion/fibonacci/README.md)
 * F | [pick k numbers from n numbers](/fundamentals/recursion/pickKnumbers/README.md)
 * F | [tower of hanoi](/fundamentals/recursion/towerofhanoi/README.md)
+* [L](/leetcode/MergeTwoSortedLists/README.md) | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 
 # Data Structures
 
