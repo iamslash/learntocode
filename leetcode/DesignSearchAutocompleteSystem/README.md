@@ -1,5 +1,4 @@
 # Problem
-
 > [Design Search Autocomplete System](https://leetcode.com/problems/design-search-autocomplete-system/)
 
 문자열들의 모음 `S[]` 와 출현횟수의 모음 `T[]` 가 주어진다.  한문자

@@ -1,51 +1,50 @@
-// Copyright (C) 2021 by iamslash
+// Copyright (C) 2022 by iamslash
 
 import java.util.*;
 
-// 12ms 59.08% 48.3MB 13.10%
-// DFS
-public class Codec {
-	private static final String SEP = ",";
-	private static final String NUL = "N";
-
-	// Encodes a tree to a single string.
-	public String serialize(TreeNode u) {
-		StringBuilder sb = new StringBuilder();
-		buildString(u, sb);
-		return sb.toString();
-	}
-	private void buildString(TreeNode u, StringBuilder sb) {
-		// base
-		if (u == null) {
-			sb.append(NUL).append(SEP);
-			return;
-		}
-		// recursion
-		sb.append(u.val).append(SEP);
-		buildString(u.left, sb);
-		buildString(u.right, sb);
-	}
-	// Decodes your encoded data to tree.
-	public TreeNode deserialize(String s) {
-		Deque<String> nodes = new LinkedList<>();
-		nodes.addAll(Arrays.asList(s.split(SEP)));
-		return buildTree(nodes);
-	}
-	private TreeNode buildTree(Deque<String> nodes) {
-		String val = nodes.remove();
-		// base
-		if (val.equals(NUL)) {
-			return null;
-		}
-		// recursion
-		TreeNode u = new TreeNode(Integer.valueOf(val));
-		u.left = buildTree(nodes);
-		u.right = buildTree(nodes);
-		return u;
-	}
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int x) { val = x; }
 }
 
-public class MainApp {
-  public static void main(String[] args) {
-  }
+//     1
+//   /   \
+// 2       3
+//       /   \
+//     4       5
+
+// 1,2,N,N,3,4,N,N,5,N,N,
+
+// 27ms 41.07% 55MB 15.00%
+// pre-order
+//   serialize: O(N) O(N)
+// deserialize: O(N) O(lgN) 
+class Codec {
+    public String serialize(TreeNode u) {
+        // base
+        if (u == null) {
+            return "N";
+        }
+        // recursion
+        return String.valueOf(u.val) + "," + serialize(u.left) + "," + serialize(u.right);
+    }
+    private TreeNode buildTree(Deque<String> deq) {
+        String s = deq.removeFirst();
+        // base
+        if (s.equals("N")) {
+            return null;
+        }
+        // recursion
+        TreeNode u = new TreeNode(Integer.valueOf(s));
+        u.left = buildTree(deq);
+        u.right = buildTree(deq);
+        return u;        
+    }
+    public TreeNode deserialize(String data) {
+        List<String> dataList = Arrays.asList(data.split(","));
+        Deque<String> deq = new ArrayDeque<>(dataList);
+        return buildTree(deq);
+    }
 }
