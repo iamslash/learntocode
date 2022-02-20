@@ -2,35 +2,23 @@
 
 import java.util.*;
 
-// 288ms 41.99% 131.3MB 7.64%
-// TrieNode
+// 134ms 80.95% 59.5MB 68.55%
+// trie
 class TrieNode {
-    char c;
     TrieNode[] child = new TrieNode[128];
     Map<String, Integer> freqMap = new HashMap<>();
-    TrieNode(char c) {
-        this.c = c;
-    }
-}
-class Pair {
-    String sentence;
-    int cnt;
-    Pair(String sentence, int cnt) {
-        this.sentence = sentence;
-        this.cnt = cnt;
-    }
 }
 class AutocompleteSystem {
-    TrieNode trie = new TrieNode(' ');
+    TrieNode trie = new TrieNode();
     String prefix = "";
-    private void insert(String sentence, int cnt) {
+    private void insert(String sentence, int freq) {
         TrieNode u = trie;
         for (char c : sentence.toCharArray()) {
             if (u.child[c] == null) {
-                u.child[c] = new TrieNode(c);
+                u.child[c] = new TrieNode();    
             }
             u = u.child[c];
-            u.freqMap.put(sentence, u.freqMap.getOrDefault(sentence, 0) + cnt);
+            u.freqMap.put(sentence, u.freqMap.getOrDefault(sentence, 0) + freq);
         }
     }
     public AutocompleteSystem(String[] sentences, int[] times) {
@@ -45,8 +33,8 @@ class AutocompleteSystem {
             prefix = "";
             return new ArrayList<>();
         }
-        // Traverse Trie
         prefix += c;
+        // Traverse trie and get freqs
         TrieNode u = trie;
         for (char d : prefix.toCharArray()) {
             if (u.child[d] == null) {
@@ -54,20 +42,24 @@ class AutocompleteSystem {
             }
             u = u.child[d];
         }
-        // Pick top 3
-        Queue<Pair> pq = new PriorityQueue<>((a, b) -> {
-                if (a.cnt == b.cnt) {
-                    return a.sentence.compareTo(b.sentence);
-                }
-                return b.cnt - a.cnt;
+        // Sort
+        Queue<Map.Entry<String, Integer>> pq = new PriorityQueue<>((a, b) -> {
+            if (a.getValue() == b.getValue()) {
+                return b.getKey().compareTo(a.getKey());
+            }
+            return a.getValue() - b.getValue();
         });
-        for (String key : u.freqMap.keySet()) {
-            pq.offer(new Pair(key, u.freqMap.get(key)));
+        for (Map.Entry<String, Integer> item : u.freqMap.entrySet()) {
+            pq.offer(item);
+            if (pq.size() > 3) {
+                pq.poll();
+            }
         }
         List<String> ans = new ArrayList<>();
-        for (int i = 0; i < 3 && !pq.isEmpty(); ++i) {
-            ans.add(pq.poll().sentence);
+        while (!pq.isEmpty()) {
+            ans.add(pq.poll().getKey());
         }
+        Collections.reverse(ans);
         return ans;
     }
 }
