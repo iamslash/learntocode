@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#define PRIME 10000007
+#define PRIME 1000000007
 class Solution {
  private:
   vector<int> powers;

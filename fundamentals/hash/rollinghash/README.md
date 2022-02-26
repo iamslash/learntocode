@@ -10,7 +10,7 @@
 
 # Problem
 
-* [Distinct Echo Substrings](https://leetcode.com/problems/distinct-echo-substrings/)
+* [L](/leetcode2/DistinctEchoSubstrings/) | [Distinct Echo Substrings](https://leetcode.com/problems/distinct-echo-substrings/)
 
 # Idea
 
@@ -43,19 +43,19 @@ slide window 가 움직일 때 마다 window 에서 벗어나는 문자 `s` 와 
 다음과 같이 `hash(new window)` 를 구할 수 있다.
 
 ```c
-hash(new window) = (hash(old window) - 's'*7^0) / 7 * 't'*7^2
+hash(new window) = (hash(old window) - 's'*7^0) / 7 + 't'*7^2
 ```
 
 hash 의 값이 매우 크다면 적당히 큰 prime number (P) 로 modulo 연산을 해준다.
 
 ```c
-hash(new window) = (hash(old window) - 's'*7^0 % P) / 7 * 't'*7^2 % P
+hash(new window) = ((hash(old window) - 's'*7^0 % P) / 7 + 't'*7^2) % P
 ```
 
 이때 뺄셈 연산때문에 음수가 되는 것을 방지 하기 위해 prime number (P) 를 한번 더해준다.
 
 ```c
-hash(new window) = (hash(old window) - 's'*7^0 % P + P) / 7 * 't'*7^2 % P
+hash(new window) = ((hash(old window) - 's'*7^0 % P + P) / 7 + 't'*7^2) % P
 ```
 
 rolling hash 를 위해서는 `base (R)` 과 `prime number (Q)` 가 필요하다.

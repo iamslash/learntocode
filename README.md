@@ -605,7 +605,8 @@ $ kotlin AKt
 
 ## Rolling Hash
 
-- [L](/leetcode/LongestChunkedPalindromeDecomposition/README.md) | [Longest Chunked Palindrome Decomposition](https://leetcode.com/problems/longest-chunked-palindrome-decomposition/)
+* F | [rolling hash](/fundamentals/hash/rollinghash/README.md)
+* [L](/leetcode/LongestChunkedPalindromeDecomposition/README.md) | [Longest Chunked Palindrome Decomposition](https://leetcode.com/problems/longest-chunked-palindrome-decomposition/)
 
 ## Bidirectional Indexing
 

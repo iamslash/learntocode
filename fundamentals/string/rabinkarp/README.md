@@ -14,7 +14,7 @@ rabin karp 알고리즘에 대해 정리한다.
 
 # Idea
 
-예를 들어 다음과 같이 `leetcodecookies` 에서 길이가 2 개인 문자열들 중 중복된 것을 찾아보자.
+예를 들어 다음과 같이 `"leetcodecookies"` 에서 길이가 2 개인 문자열들 중 중복된 것을 찾아보자.
 `unordered_hash<int, vector<int>> hash` 를 선언하여 `{hash-value: [index,...]}` 를 저장한다.
 길이가 2 인 sliding window 를 만들고 한칸씩 이동하면서 검색한다. `hash-value` 는 제거된 문자와 추가된 문자를 이용하여
 [rolling hash](/fundamentals/hash/rollinghash/README.md) 를 만들어 저장한다.
