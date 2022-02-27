@@ -46,7 +46,7 @@ slide window 가 움직일 때 마다 window 에서 벗어나는 문자 `s` 와 
 hash(new window) = (hash(old window) - 's'*7^0) / 7 + 't'*7^2
 ```
 
-hash 의 값이 매우 크다면 적당히 큰 prime number (P) 로 modulo 연산을 해준다.
+hash 의 값이 매우 크다면 적당히 큰 `prime number (P)` 로 modulo 연산을 해준다.
 
 ```c
 hash(new window) = ((hash(old window) - 's'*7^0 % P) / 7 + 't'*7^2) % P
