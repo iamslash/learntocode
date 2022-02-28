@@ -110,7 +110,7 @@
     - [Linked Lists](#linked-lists)
     - [Stacks and Queues](#stacks-and-queues)
     - [Trees and Graphs](#trees-and-graphs)
-    - [Bit Manimulation](#bit-manimulation)
+    - [Bit Manipulation](#bit-manipulation-1)
     - [Math and Logic Puzzles](#math-and-logic-puzzles)
     - [Object Oriented Design](#object-oriented-design)
     - [Recursion and Dynamic Programming](#recursion-and-dynamic-programming)
@@ -190,7 +190,7 @@
   - 유료이긴하지만 다양한 문제풀이 강좌가 있다.
 - [c++로 배우는 알고리즘 동영상](https://www.youtube.com/watch?v=mzM3S5FtKuw&list=PLl5LpJCoD2mCIRn0Fkt8z07EK320ZmHgY)
 - [Sedgewick Algorithms I](https://www.coursera.org/learn/algorithms-part1)
-- [Sedgewick Algorithms II](https://www.coursera.org/learn/algorithms-part2)
+  - [Sedgewick Algorithms II](https://www.coursera.org/learn/algorithms-part2)
 - [michael sambol short videos](https://www.youtube.com/channel/UCzDJwLWoYCUQowF_nG3m5OQ)
 - [Curtis Lassam short videos](https://www.youtube.com/watch?v=r4r1DZcx1cM&list=PLmVb1OknmNJuC5POdcDv5oCS7_OUkDgpj&index=22)
   - trie, bloom filters, Endianness, scrum
@@ -257,13 +257,13 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 # Algorithm Proof
 
-- [Mathmatical Induction](doc/proof.md)
-- [Proof by Contradiction](doc/proof.md)
-- [Direct Proof](doc/proof.md)
-- [Contrapositive Proof](doc/proof.md)
-- [Existence Proof](doc/proof.md)
-- [Proof by Counter Example](doc/proof.md)
-- [if and only if proof](doc/proof.md)
+- [Mathmatical Induction](doc/proof.md#수학적-귀납법-mathmatical-induction)
+- [Proof by Contradiction](doc/proof.md#귀류법-모순증명법-proof-by-contradiction)
+- [Direct Proof](doc/proof.md#직접-증명법-direct-proof)
+- [Contrapositive Proof](doc/proof.md#대우-증명법-contrapositive-proof)
+- [Existence Proof](doc/proof.md#존재-증명법-existence-proof)
+- [Proof by Counter Example](doc/proof.md#반례-증명법-proof-by-counter-example)
+- [if and only if proof](doc/proof.md#필요충분조건-증명법-if-and-only-if-proof)
 
 # Algorithm Analysis
 
@@ -424,7 +424,7 @@ $ kotlin AKt
   * binary search, two pointers, sliding window
   * backtracking, BFS, DFS, in-order, pre-order, post-order
   * stack, mono stack, double stack, heap, double heap, disjointset
-  * hash map, hash set
+  * hash map, hash set, rolling hash
   * trie, suffix array
 * Validate a algorithm with examples
 * Think about exceptions
@@ -516,7 +516,7 @@ $ kotlin AKt
 
 ## Partial Sum
 
-- F | [partial sum overview](/doc/partial_sum_overview.md)
+- F | [partial sum](/doc/partial_sum_overview.md)
 - F | [partial sum, range sum](fundamentals/partialsum/partialsum/README.md)
 - F | [variance](fundamentals/partialsum/variance/README.md)
 - F | [grid sum](fundamentals/partialsum/gridsum/README.md)
@@ -527,7 +527,7 @@ $ kotlin AKt
 
 ## Partial Min
 
-- F | [partial min overview](doc/partial_min_overview.md)
+- F | [partial min](doc/partial_min_overview.md)
 
 ## List, LinkedList
 
@@ -552,14 +552,14 @@ $ kotlin AKt
 
 ## Mono Stack
 
-* [mono stack](/doc/stack_overview.md#mono_stack)
-  * [L](/leetcode2/MaximumSubarrayMin-Product/README.md) | [Maximum Subarray Min-Product](https://leetcode.com/problems/maximum-subarray-min-product/)
-  * [L](/leetcode2/MaximumofMinimumValuesinAllSubarrays/README.md) | [Maximum of Minimum Values in All Subarrays](https://leetcode.com/problems/maximum-of-minimum-values-in-all-subarrays/)
+* F | [mono stack](/doc/stack_overview.md#mono_stack)
+* [L](/leetcode2/MaximumSubarrayMin-Product/README.md) | [Maximum Subarray Min-Product](https://leetcode.com/problems/maximum-subarray-min-product/)
+* [L](/leetcode2/MaximumofMinimumValuesinAllSubarrays/README.md) | [Maximum of Minimum Values in All Subarrays](https://leetcode.com/problems/maximum-of-minimum-values-in-all-subarrays/)
 
 ## Double Stack
 
-* [double stack](/doc/stack_overview.md#double-stack)
-  * [L](/leetcode2/BuildBinaryExpressionTreeFromInfixExpression/Solution.java) | [Build Binary Expression Tree From Infix Expression](https://leetcode.com/problems/build-binary-expression-tree-from-infix-expression/)
+* F | [double stack](/doc/stack_overview.md#double-stack)
+* [L](/leetcode2/BuildBinaryExpressionTreeFromInfixExpression/Solution.java) | [Build Binary Expression Tree From Infix Expression](https://leetcode.com/problems/build-binary-expression-tree-from-infix-expression/)
 
 ## Queue
 
@@ -643,7 +643,7 @@ $ kotlin AKt
 
 ## Tree
 
-- F | [overview](/doc/tree.md)
+- F | [tree](/doc/tree.md)
 - F | [inorder, preorder, postorder traversals](/fundamentals/tree/traversal/README.md)
 - F | [get kth element](/fundamentals/tree/getkthelement/README.md)
 - F | [get largest subtree with same value](/fundamentals/tree/largestsubtreewithsamevalue/README.md)
@@ -657,7 +657,7 @@ $ kotlin AKt
   - compress trie like suffix tree.
 - F | [Aho–Corasick algorithm](/fundamentals/tree/ahocorasic/README.md)★
 - F | [heap for priority queue](fundamentals/tree/heap/README.md)
-- L | [Unique Binary Search Trees](/leetcode/UniqueBinarySearchTrees/README.md)
+- L | [Unique Binary Search Tree](/leetcode/UniqueBinarySearchTrees/README.md)
 - L | [Validate Binary Search Tree](/leetcode/ValidateBinarySearchTree/README.md)
 - G | [LCA](geeksforgeeks/LowestCommonAncestorInABinaryTree/README.md)
 - [L](/leetcode/LowestCommonAncestorofaBinaryTree/a.cpp) | [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
@@ -701,14 +701,14 @@ $ kotlin AKt
 
 ## Disjoint Set, Union Find, Merge Find
 
-* F | [union-find (merge-find)](fundamentals/disjointset/unionfind/README.md)
+* F | [disjoint set (union-find, merge-find)](fundamentals/disjointset/unionfind/README.md)
 * F | [check the connectivity of a graph](/fundamentals/disjointset/checkconnectivity/README.md)
 * F | [track the largest set](/fundamentals/disjointset/traclargestset/README.md)  
 * [L](/leetcode/MostStonesRemovedwithSameRoworColumn/README.md) | [Most Stones Removed with Same Row or Column](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/)
 
 ## Graph
 
-- F | [overview](doc/graph.md)
+- F | [graph](doc/graph.md)
 - F | [finding out two vertices are connected](/fundamentals/graph/findingouttwovertices/README.md)
 - F | [counting the number of components](/fundamentals/graph/countingthenumber/README.md)
 - F | [eulerian circuit](fundamentals/graph/euleriancircuit/README.md)
@@ -806,13 +806,13 @@ $ kotlin AKt
   
 ## Network Flow
 
-- F | [overview](doc/network_flow.md)
+- F | [network flow](doc/network_flow.md)
 
 # Algorithms
 
 ## Sort
 
-- F | [overview](/fundamentals/sort/overview/README.md)
+- F | [sort](/fundamentals/sort/overview/README.md)
   - sort and stable
 - F | [insertion sort](fundamentals/sort/insertionsort/README.md)
 - F | [shell sort](/fundamentals/sort/shellsort/README.md)
@@ -856,7 +856,7 @@ $ kotlin AKt
 
 ## Number Theory, Math
 
-* F | [overview](doc/number_theory.md)
+* F | [number theory](doc/number_theory.md)
 * F | [previous, next boundary](doc/number_theory.md#previous-next-boundary)
   * [L](/leetcode2/TheNumberofFullRoundsYouHavePlayed/README.md) | [The Number of Full Rounds You Have Played](https://leetcode.com/problems/the-number-of-full-rounds-you-have-played/) 
 * F | [base convert](doc/base_convert.md)
@@ -907,13 +907,13 @@ $ kotlin AKt
 
 ## Line Sweep
 
-* F | [line sweep overview](/doc/line_sweep.md)
+* F | [line sweep](/doc/line_sweep.md)
 * [L](/leetcode/TheSkylineProblem/) | [The Skyline Problem](https://leetcode.com/problems/the-skyline-problem)
 * [L](/leetcode2/MaximumPopulationYear/README.md) | [Maximum Population Year](https://leetcode.com/problems/maximum-population-year/)
 
 ## Exhaustive Search
 
-- F | [exhaustive search overview](doc/exhaustive_search.md)
+- F | [exhaustive search](doc/exhaustive_search.md)
 - [알](/algospot/BOGGLE/) | [BOGGLE](https://algospot.com/judge/problem/read/BOGGLE)
 - [알](/algospot/PICNIC/) | [PICNIC](https://algospot.com/judge/problem/read/PICNIC)
 - [알](/algospot/BOARDCOVER/) | [BOARDCOVER](https://algospot.com/judge/problem/read/BOARDCOVER)
@@ -931,7 +931,7 @@ $ kotlin AKt
   
 ## Dynamic Programming
 
-- F | [overview](/doc/dynamic_programming.md)
+- F | [dynamic programming](/doc/dynamic_programming.md)
 - F | [binomial coefficient, combination](/doc/dynamic_binomial_coefficient.md)
 - F | [0/1 knapsack problem](/fundamentals/dynamicprog/knapsack01/README.md)
 - F | Hidden Markov Model, HMM
@@ -991,7 +991,7 @@ $ kotlin AKt
 
 ## Combinatorial Search
 
-- F | [overview](doc/combinatorial_search.md)
+- F | [combinatorial search](doc/combinatorial_search.md)
 - F | [permutation](/fundamentals/combinatorialsearch/permutation/README.md)
 - F | [subset](/fundamentals/combinatorialsearch/subset/README.md)
   - [L](/leetcode2/SumofAllSubsetXORTotals/README.md) | [Sum of All Subset XOR Totals](https://leetcode.com/problems/sum-of-all-subset-xor-totals/) 
@@ -1030,7 +1030,7 @@ $ kotlin AKt
   
 ## Optimization Problems To Decision Problems
 
-- F | [overview](doc/optimization_to_decision.md)
+- F | [optimization problems to descision problems](doc/optimization_to_decision.md)
 - [알](/algospot/DARKPA/) | [DARPA](https://algospot.com/judge/problem/read/DARPA)
 - [알](/algospot/ARCTIC/) | [ARCTIC](https://algospot.com/judge/problem/read/ARCTIC)
 - [알](/algospot/CANADATRIP/) | [CANADATRIP](https://algospot.com/judge/problem/read/CANADATRIP)
@@ -1038,7 +1038,7 @@ $ kotlin AKt
 
 ## Combinatorial game theory
 
-* F | [overview](doc/algorithm_game.md)
+* F | [cobinatorial game theory](doc/algorithm_game.md)
 * Sprague-Grundy theorem. Nim
   * [L](/leetcode2/GameofNim/README.md) | [Game of Nim](https://leetcode.com/problems/game-of-nim/)
 
@@ -1075,7 +1075,8 @@ $ kotlin AKt
 
 ## Design
 
-- [L](/leetcode/LRUCache/) | [LRU Cache](https://leetcode.com/problems/lru-cache)
+* [L](/leetcode/LRUCache/) | [LRU Cache](https://leetcode.com/problems/lru-cache)
+* [L](/leetcode/DesignIn-MemoryFileSystem/README.md) | [Design In-Memory File System](https://leetcode.com/problems/design-in-memory-file-system/) 
 
 ## Reservoir Sampling
 
@@ -1281,7 +1282,7 @@ $ kotlin AKt
 - C | Random Node
 - C | Paths with Sum
 
-### Bit Manimulation
+### Bit Manipulation
 
 - C | Insertion
 - C | Binary to String
