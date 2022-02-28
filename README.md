@@ -308,6 +308,13 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 > ./a.out
 ```
 
+- Rust
+
+```bash
+> rustc a.rs
+> ./a
+```
+
 - java
 
 ```bash
@@ -354,13 +361,20 @@ $ kotlinc a.kt
 $ kotlin AKt
 ```
 
-- c#
+- cs
 
 ```bash
-> mcs -out:a.exe a.cs
-> mono a.exe
-> csc -out:a.exe a.cs
-> a.exe
+# dotnet core
+# https://dotnet.microsoft.com/en-us/learn/dotnet/hello-world-tutorial/create
+$ dotnet new -o console A
+$ cd A
+$ dotnet run
+
+# Mono
+$ mcs -out:a.exe a.cs
+$ mono a.exe
+$ csc -out:a.exe a.cs
+$ a.exe
 ```
 
 - objc
