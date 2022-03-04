@@ -22,7 +22,7 @@
 `int i = 0, j = 0` 를 선언하여 `i < n` 동안 다음을 반복한다.
 
 * `begArr[i] < endArr[j]` 이면 `ans++, i++` 한다.
-* `begArr[i] >= endArr[j]` 이면 `i++, j++` 한다.
+* `begArr[i] >= endArr[j]` 이면 `j++, i++` 한다.
 
 모든 반복을 마치면 `ans` 가 곧 답이다. 다음은 언급한 알고리즘의
 풀이과정이다.
@@ -53,6 +53,7 @@ ans: 2                       ans: 2
 
 * [c++11](a.cpp)
 * [java8](MainApp.java)
+* [kotlin](MainApp.kt)
 
 # Complexity
 
