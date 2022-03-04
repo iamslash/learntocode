@@ -52,6 +52,7 @@ ans: 2                       ans: 2
 # Implementation
 
 * [c++11](a.cpp)
+* [java8](MainApp.java)
 
 # Complexity
 
