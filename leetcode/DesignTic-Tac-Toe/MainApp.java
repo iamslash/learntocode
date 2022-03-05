@@ -2,6 +2,9 @@
 
 import java.util.*;
 
+// 2ms 100.00% 44.8MB 79.14%
+// hash map
+// O(1) O(N)
 class TicTacToe {
     private int[] rows;
     private int[] cols;
@@ -14,20 +17,20 @@ class TicTacToe {
     }
     
     public int move(int row, int col, int player) {
-        int toAdd = player == 1 ? 1 : -1;
-        rows[row] += toAdd;
-        cols[col] += toAdd;
+        int cell = player == 1 ? 1 : -1;
+        rows[row] += cell;
+        cols[col] += cell;
         if (row == col) {
-            ldiag += toAdd;
+            ldiag += cell;
         }
         if (col == (cols.length - row - 1)) {
-            rdiag += toAdd;
+            rdiag += cell;
         }
-        int len = rows.length;
-        if (Math.abs(rows[row]) == len ||
-            Math.abs(cols[col]) == len ||
-            Math.abs(ldiag) == len ||
-            Math.abs(rdiag) == len) {
+        int n = rows.length;
+        if (Math.abs(rows[row]) == n ||
+            Math.abs(cols[col]) == n ||
+            Math.abs(ldiag) == n ||
+            Math.abs(rdiag) == n) {
             return player;
         }
         return 0;
