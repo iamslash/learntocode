@@ -96,3 +96,72 @@ class LRUCache {
         dataMap.put(u.key, u);
     }
 }
+
+// 118ms 25.64% 190.4MB 5.05%
+// hash map, linked hash set
+// get: O(1) O(N)
+// put: O(1) O(N)
+class LRUCache {
+    private Map<Integer, Integer> valueMap = new HashMap<>(); 
+    private Set<Integer> history = new LinkedHashSet<>();
+    private int cap = 0;
+
+    public LRUCache(int capacity) {
+        cap = capacity;
+    }
+
+    private void touch(int val) {
+        history.remove(val);
+        history.add(val);
+    }
+   
+    public int get(int key) {
+        // miss
+        if (!valueMap.containsKey(key)) {
+            return -1;
+        }
+        // hit
+        Integer val = valueMap.get(key);
+        touch(key);
+        return val;
+    }
+    
+    public void put(int key, int val) {
+        // hit
+        if (valueMap.containsKey(key)) {
+            touch(key);
+            valueMap.put(key, val);
+            return;
+        }
+        // evict
+        if (valueMap.size() == cap) {
+            Integer firstKey = history.iterator().next();
+            valueMap.remove(firstKey);
+            history.remove(firstKey);
+        }
+        // save
+        history.add(key);
+        valueMap.put(key, val);
+    }
+}
+
+// 105ms 36.39% 124.7MB 67.11%
+// hash map
+class LRUCache extends LinkedHashMap<Integer, Integer> {
+    private int cap;
+
+    public LRUCache(int capacity) {
+        super(capacity, 0.75f, true);
+        this.cap = capacity;
+    }
+
+    public int get(int key) {
+        Integer val = super.get(key);
+        return val == null ? -1 : val;
+    }
+
+    @Override
+    protected boolean removeEldestEntry(Map.Entry eldest) {
+        return size() > cap;
+    }
+}
