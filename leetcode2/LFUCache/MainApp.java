@@ -57,3 +57,63 @@ class LFUCache {
         freq2keysMap.get(1).add(key);
     }
 }
+
+// hash map
+// get: O(1) O(N)
+// put: O(1) O(N)
+class LFUCache {
+    Map<Integer, int[]> valFreqMap;  // {key, [val, fre]}
+    Map<Integer, Set<Integer>> freq2keysMap; // {freq, {key, ...}}
+    int cap;
+    int minFreq = -1;
+    public LFUCache(int capacity) {
+        cap = capacity;
+        valFreqMap = new HashMap<>();
+        freq2keysMap = new HashMap<>();
+        freq2keysMap.put(1, new LinkedHashSet<>());
+    }
+    
+    public int get(int key) {
+        if (!valFreqMap.containsKey(key)) {
+            return -1;
+        }
+        // Increase freq of key
+        int[] item = valFreqMap.get(key);
+        int val = item[0], freq = item[1];
+        item[1] = freq+1;
+        freqMap.put(key, item);
+        freq2keysMap.get(freq).remove(key);
+        if (freq == minFreq && freq2keysMap.get(freq).size() == 0) {
+            minFreq++;
+        }
+        if (!freq2keysMap.containsKey(freq+1)) {
+            freq2keysMap.put(freq+1, new LinkedHashSet<>());
+        }
+        freq2keysMap.get(freq+1).add(key);
+        return val;
+    }
+    
+    public void put(int key, int val) {
+        if (cap <= 0) {
+            return;
+        }
+        // Cache hit
+        if (valFreqMap.containsKey(key)) {
+            int[] item = valFreqMap.get(key);
+            item[0] = val;
+            valFreqMap.put(key, item);
+            get(key);
+            return;
+        }
+        // Evict
+        if (valFreqMap.size() >= cap) {
+            int keyToEvict = freq2keysMap.get(minFreq).iterator().next();
+            freq2keysMap.get(minFreq).remove(keyToEvict);
+            valFreqMap.remove(keyToEvict);
+        }
+        // Put
+        valFreqMap.put(key, new int[]{val, 1});
+        minFreq = 1;
+        freq2keysMap.get(1).add(key);
+    }
+}

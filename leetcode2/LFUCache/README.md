@@ -13,14 +13,25 @@ Cache Strategy 이다.
 
 다음과 같은 자료구조를 선언한다.
 
+```java
+Map<Integer, Integer> valMap;  // {key, val}
+Map<Integer, Integer> freqMap; // {key, freq}
+Map<Integer, LinkedHashSet<Integer>> freq2keysMap; // {freq, {key, ...}}
+int cap;
+int minFreq = -1;
 ```
-int     cap : capacity of LFUCache
-int    size : size of LFUCache
-int minFreq : minimum freq of LFUCache
-unordered_map<int, pair<int, int>> key2valFreq: {key: {val, freq}}
-unordered_map<int, list<int>::iterator> key2iter: {key: iterator}
-unordered_map<int, pair<int, int>> freq2keys: {freq: [key,...]}
-```
+
+get 은 다음을 순서대로 구현한다.
+
+* cache miss (없으면 -1 을 리턴한다.)
+* cache hit (있으면 freq 를 늘리고 값을 리턴한다.)
+
+put 은 다음을 순서대로 구현한다.
+
+* `cap <= 0` 이면 리턴한다.
+* cache hit (있으면 freq 를 늘리고 값을 저장한다.)
+* evit (꽉 찼으면 하나 지운다.)
+* save (새로운 값을 저장한다.)
 
 # Implementation
 

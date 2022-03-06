@@ -4,12 +4,12 @@
 
 LRUCache 를 디자인 하고 다음을 구현하는 문제이다.
 
-# Idea
-
 ```cpp
 int get(int key)
 void put(int key, int val)
 ```
+
+# Idea
 
 LRUCache 가 가득차 있다면 가장 오래된 녀석을 지워야 한다.  언제
 사용되었는지를 저장할 자료구조가 필요하다.  `list<int> m_H` 를
