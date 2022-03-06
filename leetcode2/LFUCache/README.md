@@ -16,8 +16,10 @@ void put(int key, int val)
 이다. [LFUCache](/leetcode2/LFUCache/README.md) 는 가장 덜 사용된
 녀석들을 evict 하는 Cache Strategy 이다.
 
-`key, val` 를 저장해야 한다. `key` 를 얼마나 자주 사용했는지도
-저장해야 한다. 다음과 같은 자료구조를 선언한다.
+`key, val` 를 저장해야 한다. 얼마나 자주 사용했는지와 그 만큼 사용한
+`key` 들을 저장할 필요가 있다. 그리고 `int minFreq = -1` 를 선언하여
+가장 덜 사용한 횟수도 저장해야 한다. 가장 덜 사용한 `key` 들이 evict
+의 대상이다. 다음과 같은 자료구조를 선언한다.
 
 ```java
 Map<Integer, Integer> valMap;  // {key, val}
