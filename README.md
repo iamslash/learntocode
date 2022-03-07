@@ -83,6 +83,7 @@
   - [Palindrome](#palindrome)
   - [Simulated Annealing](#simulated-annealing)
 - [Famous Problems](#famous-problems)
+  - [Design](#design-1)
   - [Find Peak Element](#find-peak-element)
   - [Egg Drop](#egg-drop)
   - [Parentheses](#parentheses)
@@ -1115,6 +1116,12 @@ $ a.exe
 * [L](/leetcode2/BestPositionforaServiceCentre) | [Best Position for a Service Centre](https://leetcode.com/problems/best-position-for-a-service-centre/)
 
 # Famous Problems
+
+## Design
+
+* [L](/leetcode/LRUCache/README.md) | [LRU Cache](https://leetcode.com/problems/lru-cache)
+* [L](/leetcode2/LFUCache/README.md) | [LFU Cache](https://leetcode.com/problems/lfu-cache/)
+* [L](/leetcode/InsertDeleteGetRandom/) | [Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) 
 
 ## Find Peak Element
 
