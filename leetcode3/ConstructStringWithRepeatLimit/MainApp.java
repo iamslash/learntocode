@@ -8,7 +8,7 @@ import java.util.*;
 //              zzcccca
 //         
 
-// hash map
+// priority queue
 // O(N) O(N)
 class Solution {
     public String repeatLimitedString(String s, int repeatLimit) {
@@ -16,20 +16,19 @@ class Solution {
         for (char c : s.toCharArray()) {
             freqs[c-'a']++;
         }
-        int i = 25;
+        int i = 25, prev = -1;
         StringBuilder ans = new StringBuilder();
-        while (i >= 0) {
-            if (i < 25 && freqs[i+1] > 0) {
-                i++;
-            }
+        Queue<int[]> pq = new PriorityQueue<>((a, b) -> b[0] - a[0]);
+        for (int i = 0; i < 26; ++i) {
             if (freqs[i] > 0) {
-                int len = Math.min(freqs[i], repeatLimit);
-                for (int j = 0; j < len; ++j) {
-                    ans.append((char)('a'+i));
-                }
-                freqs[i] -= len;
+                pq.offer(new int[]{i, freqs[i]});
             }
-            i--;
+        }
+        while (!pq.isEmpty()) {
+            int item[] = pq.poll();
+            boolean remained = false;
+            while (item[1] > 0) {
+            }
         }
         return ans.toString();
     }
