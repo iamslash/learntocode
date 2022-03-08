@@ -12,15 +12,15 @@ import java.util.*;
 // O(AC) O(A)
 class Solution {  
 	public int coinChange(int[] coins, int amount) {
-    final int MAXVAL = 40000;
+    	final int MAXVAL = 40000;
 		int n = coins.length;
 		int[] C = new int[amount+1];
 		Arrays.fill(C, MAXVAL);
 		C[0] = 0;
-		for (int i = 0; i <= amount; ++i) {
+		for (int a = 0; a <= amount; ++a) {
 			for (int j = 0; j < n; ++j) {
-				if (coins[j] <= i) {
-					C[i] = Math.min(C[i], C[i - coins[j]] + 1);
+				if (coins[j] <= a) {
+					C[a] = Math.min(C[a], C[a - coins[j]] + 1);
 				}
 			}
 		}

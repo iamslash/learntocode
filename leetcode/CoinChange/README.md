@@ -51,7 +51,7 @@ dfs(tgt - i * coins[idx], idx - 1, cnt + i)
 
 ## Implementation
 
-* [c++11](backtracking.cpp)
+* [c++11](recursive.cpp)
 
 ## Time Complexity
 
