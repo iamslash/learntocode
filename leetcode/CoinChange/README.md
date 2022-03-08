@@ -1,3 +1,15 @@
+- [Problem](#problem)
+- [Backtracking](#backtracking)
+  - [Idea](#idea)
+  - [Implementation](#implementation)
+  - [Time Complexity](#time-complexity)
+- [Iterative Dynamic Programming](#iterative-dynamic-programming)
+  - [Idea](#idea-1)
+  - [Implementation](#implementation-1)
+  - [Time Complexity](#time-complexity-1)
+
+----
+
 # Problem
 
 [Coin Change @ leetcode](https://leetcode.com/problems/coin-change/description/)
