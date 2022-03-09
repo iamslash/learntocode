@@ -20,20 +20,20 @@ class Solution {
             freqs[s.charAt(i)-'a']++;
         }
 
-        for(int i = 0 ; i < 26; i++){
+        for(int i = 0; i < 26; i++){
             if(freqs[i] > 0) {
                 pq.add(new int[]{i, freqs[i]});
             }
         }
 
-        while(!pq.isEmpty()){
+        while (!pq.isEmpty()){
             int item[] = pq.poll();
             int code = item[0], freq = item[1], len = Math.min(freq, repeatLimit);
             for(int i = 0 ; i < len; i++){
                 sb.append((char)(code + 'a'));
             }
             freq -= len;
-            if(freq > 0 && !pq.isEmpty()){
+            if (freq > 0 && !pq.isEmpty()){
                 pq.peek()[1] -= 1;
                 sb.append((char)(pq.peek()[0] + 'a'));
                 if(pq.peek()[1] == 0) {
@@ -45,3 +45,5 @@ class Solution {
         return sb.toString();
     }
 }
+
+
