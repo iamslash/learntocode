@@ -8,37 +8,40 @@ import java.util.*;
 //              zzcccca
 //         
 
+// 36ms 79.80% 43.1MB 91.00%
 // priority queue
-// O(N) O(N)
+// O(NlgN) O(N)
 class Solution {
     public String repeatLimitedString(String s, int repeatLimit) {
-        char[] freqs = new char[26];
-        for (char c : s.toCharArray()) {
-            freqs[c-'a']++;
+        int freqs[] = new int[26];
+        StringBuilder sb = new StringBuilder();
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a,b) -> b[0] - a[0]);
+        for(int i = 0; i < s.length(); i++){
+            freqs[s.charAt(i)-'a']++;
         }
-        StringBuilder ans = new StringBuilder();
-        Queue<int[]> pq = new PriorityQueue<>((a, b) -> b[0] - a[0]);
-        for (int i = 0; i < 26; ++i) {
-            if (freqs[i] > 0) {
-                pq.offer(new int[]{i, freqs[i]});
+
+        for(int i = 0 ; i < 26; i++){
+            if(freqs[i] > 0) {
+                pq.add(new int[]{i, freqs[i]});
             }
         }
-        while (!pq.isEmpty()) {
+
+        while(!pq.isEmpty()){
             int item[] = pq.poll();
             int code = item[0], freq = item[1], len = Math.min(freq, repeatLimit);
-            for (int i = 0; i < len; ++i) {
-                ans.append((char)(code + 'a'));
+            for(int i = 0 ; i < len; i++){
+                sb.append((char)(code + 'a'));
             }
             freq -= len;
-            if (freq > 0 && !pq.isEmpty()) {
+            if(freq > 0 && !pq.isEmpty()){
                 pq.peek()[1] -= 1;
-                ans.append((char)(pq.peek()[0] + 'a'));
-                if (pq.peek()[1] == 0) {
-                    pq.poll();
+                sb.append((char)(pq.peek()[0] + 'a'));
+                if(pq.peek()[1] == 0) {
+                    pq.poll(); 
                 }
                 pq.add(new int[]{code, freq});
             }
         }
-        return ans.toString();
+        return sb.toString();
     }
 }
