@@ -16,7 +16,6 @@ class Solution {
         for (char c : s.toCharArray()) {
             freqs[c-'a']++;
         }
-        int i = 25, prev = -1;
         StringBuilder ans = new StringBuilder();
         Queue<int[]> pq = new PriorityQueue<>((a, b) -> b[0] - a[0]);
         for (int i = 0; i < 26; ++i) {
@@ -26,8 +25,18 @@ class Solution {
         }
         while (!pq.isEmpty()) {
             int item[] = pq.poll();
-            boolean remained = false;
-            while (item[1] > 0) {
+            int code = item[0], freq = item[1], len = Math.min(freq, repeatLimit);
+            for (int i = 0; i < len; ++i) {
+                ans.append((char)(code + 'a'));
+            }
+            freq -= len;
+            if (freq > 0 && !pq.isEmpty()) {
+                pq.peek()[1] -= 1;
+                ans.append((char)(pq.peek()[0] + 'a'));
+                if (pq.peek()[1] == 0) {
+                    pq.poll();
+                }
+                pq.add(new int[]{code, freq});
             }
         }
         return ans.toString();
