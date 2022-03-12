@@ -15,7 +15,6 @@
 0  5  10  15  20  30
 ```
 
-
 `vector<int> begArr, endArr` 을 선언하여 시작의 모음, 끝의 모음을 각각
 저장한다. 그리고 오름차순으로 정렬한다.
 
@@ -54,6 +53,7 @@ ans: 2                       ans: 2
 * [c++11](a.cpp)
 * [java8](MainApp.java)
 * [kotlin](MainApp.kt)
+* [go](a.go)
 
 # Complexity
 
