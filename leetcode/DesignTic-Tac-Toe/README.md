@@ -71,6 +71,7 @@ ticTacToe.move(2, 1, 1); // return 1 (player 1 wins)
 
 * [c++11](a.cpp)
 * [java8](MainApp.java)
+* [go](a.go)
 
 # Complexity
 
