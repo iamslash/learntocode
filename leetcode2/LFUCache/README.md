@@ -36,7 +36,7 @@ get 은 다음을 순서대로 구현한다.
 
 put 은 다음을 순서대로 구현한다.
 
-* `cap <= 0` 이면 리턴한다.
+* empty (`cap <= 0` 이면 리턴한다.)
 * hit (있으면 freq 를 늘리고 값을 저장한다.)
 * miss
   * evict (꽉 찼으면 하나 지운다.)
@@ -46,6 +46,7 @@ put 은 다음을 순서대로 구현한다.
 
 * [c++11](a.cpp)
 * [java8](MainApp.java)
+* [python3](a.py)
 
 # Complexity
 
