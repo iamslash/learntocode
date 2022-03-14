@@ -457,6 +457,8 @@ $ a.exe
 
 ## Loop
 
+* [move one by one shortly](doc/linear_traversal.md#move-one-by-one-shortly)
+  * [Minimum Cost Homecoming of a Robot in a Grid](https://leetcode.com/problems/minimum-cost-homecoming-of-a-robot-in-a-grid/)
 * [up and down](/doc/linear_traversal.md#up-and-down)
   * [L](/leetcode/BullsandCows/README.md) | [Bulls and Cows](https://leetcode.com/problems/bulls-and-cows/)
 * [reverse order](/doc/linear_traversal.md#reverse-order)

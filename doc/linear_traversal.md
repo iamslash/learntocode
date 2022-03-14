@@ -1,4 +1,5 @@
 - [Abstract](#abstract)
+- [move one by one shortly](#move-one-by-one-shortly)
 - [up and down](#up-and-down)
 - [reverse order](#reverse-order)
 - [multi control flow in loop](#multi-control-flow-in-loop)
@@ -12,6 +13,19 @@
 # Abstract
 
 선형탐색 전략의 패턴을 정리한다.
+
+# move one by one shortly
+
+숫자 `y` 에서 숫자 `z` 까지 최단 거리로 한칸씩 이동해 보자. 음수, 양수를 고려해야 한다. 이 것을 간단히 구하는 전략을 move one by one shortly 이라고 하자.
+
+```java
+        while (y != z) {
+            y += (z - y) / Math.abs(z - y);
+            cost += rowCosts[y];
+        }
+```
+
+* [Minimum Cost Homecoming of a Robot in a Grid](https://leetcode.com/problems/minimum-cost-homecoming-of-a-robot-in-a-grid/)
 
 # up and down
 
