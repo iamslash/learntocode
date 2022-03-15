@@ -674,6 +674,7 @@ $ a.exe
   - compress trie like suffix tree.
 - F | [Aho–Corasick algorithm](/fundamentals/tree/ahocorasic/README.md)★
 - F | [heap for priority queue](fundamentals/tree/heap/README.md)
+- F | [lca (lowest common ancestor)](/fundamentals/tree/lca/README.md)
 - L | [Unique Binary Search Tree](/leetcode/UniqueBinarySearchTrees/README.md)
 - L | [Validate Binary Search Tree](/leetcode/ValidateBinarySearchTree/README.md)
 - [L](/leetcode/LowestCommonAncestorofaBinaryTree/README.md) | [Lowest Common Ancestor of a Binary Tree (LCA)](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)

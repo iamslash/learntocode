@@ -7,7 +7,7 @@
 
 # Idea
 
-[LCA](/geeksforgeeks/LowestCommonAncestorInABinaryTree/README.md) 를 참고해서 해결한다.
+[LCA](/fundamentals/tree/lca/README.md) 를 참고해서 해결한다.
 
 `TreeNode* pp, qq` 를 멤버로 선언한다. DFS 도중 `p` 를 만나면 `p` 를
 `pp` 에 저장하고 `q` 를 만나면 `q` 를 `qq` 에 저장한다. DFS 를 마치고
