@@ -1,32 +1,23 @@
-// Copyright (C) 2018 by iamslash
-// https://leetcode.com/explore/interview/card/top-interview-questions-medium/110/sorting-and-searching/800/
+/* Copyright (C) 2022 by iamslash */
 
 #include <cstdio>
-#include <vector>
 #include <algorithm>
-#include <functional>
+#include <vector>
 
+using namespace std;
 
-// 3 2 1 5 6 4
-// 6 5 4 3 2 1
+// 8ms 82.61% 10MB 60.06%
+// sort
+// O(NlgN) O(1)
 class Solution {
- public:
-  int findKthLargest(std::vector<int>& nums, int k) {
-    std::sort(nums.begin(), nums.end(), std::greater<int>());
-    int r = -1;
-    for (int i = 0; i < k; ++i) {
-      // printf("%d %d\n", i, nums[i]);
-      r = nums[i];
-    }
-    return r;
+public:
+  int findKthLargest(vector<int>& nums, int k) {
+    sort(nums.begin(), nums.end());
+    int n = nums.size();
+    return nums[n-k];
   }
 };
 
 int main() {
-  std::vector<int> v = {3, 2, 1, 5, 6, 4};
-  int k = 2;
-
-  Solution s;
-  printf("%d\n", s.findKthLargest(v, k));
+  return 0;
 }
-
