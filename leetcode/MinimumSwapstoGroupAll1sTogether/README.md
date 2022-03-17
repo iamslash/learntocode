@@ -2,10 +2,10 @@
 
 [Minimum Swaps to Group All 1's Together](https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together/)
 
-# Idea
-
 `0, 1` 로만 구성된 수열 `A[]` 가 주어진다. `A[]` 의 임의의 위치에서 연속된
 `1` 로 만들기 위해 최소의 숫자로 교체했을 때 그 숫자를 구하는 문제이다.
+
+# Idea
 
 예를 들어 `A = [1, 0, 1, 0, 1]` 을 살펴보자. 어딘가 연속된 1 을
 만들기 위해 `0` 의 숫자가 최소인 곳을 찾으면 된다.
@@ -18,6 +18,7 @@
 # Implementation
 
 * [c++11](a.cpp)
+* [java8](MainApp.java)
 
 # Complexity
 
