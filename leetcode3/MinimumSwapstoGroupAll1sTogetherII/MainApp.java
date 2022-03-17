@@ -16,6 +16,7 @@ import java.util.*;
 //       0 1 1 0 1 0 1 1 0 1
 //               
 
+// 14ms 58.49% 89.4MB 41.03%
 // sliding window
 // O(N) O(N)
 class Solution {
