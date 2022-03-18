@@ -1,26 +1,24 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2020 by iamslash 
+# Copyright (C) 2022 by iamslash 
 
-# 28ms 80.30% 14MB 100.00%
+# 53ms 30.92% 13.8MB 98.51%
 # stack
-# O(N) O(N)
+# O(N) O(1)
 class Solution:
     def isValid(self, s: str) -> bool:
-        d = {'(': ')', '{': '}', '[': ']'}
+        dict = {')': '(', '}': '{', ']': '['}
         stck = []
         for c in s:
-            if c in d:
+            if c == ')' or c == '}' or c == ']':
+                if len(stck) == 0 or stck[-1] != dict[c]:
+                    return False
+                stck.pop()
+            else:
                 stck.append(c)
-            elif len(stck) == 0 or c != d[stck.pop()]:
-                return False
         return len(stck) == 0
 
-if __name__ == '__main__':
-    sln = Solution()
+def main():
+    pass
 
-    print(sln.isValid("()"))     # True
-    print(sln.isValid("()[]{}")) # True
-    print(sln.isValid("(]"))     # False
-    print(sln.isValid("(())"))   # True
-    print(sln.isValid("((]}"))   # False
-    
+if __name__ == "__main__":
+    main()
