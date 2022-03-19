@@ -24,6 +24,7 @@ greedy approach 로 해결할 만하다. 가장 작은 길이의 막대기 둘�
 
 * [c++11](a.cpp)
 * [java8](MainApp.java)
+* [python3](a.py)
 
 # Complexity
 
