@@ -2,12 +2,12 @@
 
 [Minimum Cost to Connect Sticks](https://leetcode.com/problems/minimum-cost-to-connect-sticks/)
 
-# Idea
-
 막대기 길이의 모음 `S[]` 가 주어진다. 임의의 두개의 막대기를 고르고
 둘의 길이를 각각 `a, b` 라고 하자. 합한 막대기의 길이는 `c` 라 하고
 합할 때 비용은 `a + b` 이라고 하자. 막대기가 하나가 남을 때까지 비용이
 최소가 되는 방향으로 합한다. 그때 최소의 비용을 구하는 문제이다.
+
+# Idea
 
 예를 들어 `S = [2, 4, 3]` 인 경우를 살펴보자. 
 
@@ -23,6 +23,7 @@ greedy approach 로 해결할 만하다. 가장 작은 길이의 막대기 둘�
 # Implementation
 
 * [c++11](a.cpp)
+* [java8](MainApp.java)
 
 # Complexity
 
