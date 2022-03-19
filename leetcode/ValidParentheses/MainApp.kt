@@ -4,7 +4,7 @@ import java.util.*;
 
 // ([)]
 
-// 294ms 11.52% 34.9MB 39.51%
+// 192ms 72.56% 35.1MB 32.51%
 // stack
 // O(N) O(N)
 class Solution {
@@ -16,14 +16,12 @@ class Solution {
             '}' to '{'
         )
         for (c in s) {
-            if (c == ')' || c == ']' || c == '}') {
-                if (deq.isNotEmpty() && deq.peekLast() == dict.get(c)) {
-                    deq.pollLast()
-                } else {
-                    return false
-                }
+            if (c == '(' || c == '[' || c == '{') {
+                deq.offerLast(c)
+            } else if (deq.isNotEmpty() && deq.peekLast() == dict.get(c)) {
+                deq.pollLast()
             } else {
-                deq.addLast(c)
+                return false
             }
         }
         return deq.isEmpty()
