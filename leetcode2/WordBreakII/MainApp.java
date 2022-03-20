@@ -11,18 +11,11 @@ import java.util.*;
 // backtracking
 // O(2^N) O(N)
 class Solution {
-    private String genStr(List<String> path) {
-        StringBuilder sb = new StringBuilder();
-        for (String s : path) {
-            sb.append(s).append(" ");
-        }
-        return sb.deleteCharAt(sb.length()-1).toString();
-    }
     private void dfs(String s, List<String> wordDict,
                              List<String> ans, List<String> cand, int beg) {
         // base
         if (beg == s.length()) {
-            ans.add(genStr(cand));
+            ans.add(String.join(" ", cand));
             return;
         }
         // recursion
