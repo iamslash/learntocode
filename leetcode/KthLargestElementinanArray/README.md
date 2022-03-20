@@ -79,5 +79,5 @@ n-k 번째 작은 수를 찾는다.
 ## Complexity
 
 ```
-O(N) O(lgN)
+O(NlgN) O(lgN)
 ```
