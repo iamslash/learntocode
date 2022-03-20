@@ -26,7 +26,7 @@ class Solution {
             sum += (long)A[i] * (i-l) * (r-i);
             sum %= MOD;
         }
-        return (int)sum;
+        return (int)sum;    
     }
 }
 
