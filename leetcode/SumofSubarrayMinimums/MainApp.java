@@ -113,8 +113,9 @@ class Solution {
 //         i
 //   nums: 3 1 2 4
 //           j
-//  lefts: - - 1 2
+//  lefts: - - 1 2 
 // rights: 1 4 4 4
+//           i
  
 // 14ms 98.17% 63.9MB 75.96%
 // hash map

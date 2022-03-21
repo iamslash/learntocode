@@ -3,12 +3,13 @@
   - [Idea](#idea)
   - [Implementation](#implementation)
   - [Complexity](#complexity)
+- [Hash Map](#hash-map)
+  - [Implementation](#implementation-1)
+  - [Complexity](#complexity-1)
 - [Mono Stack](#mono-stack)
   - [Idea](#idea-1)
-  - [Implementation](#implementation-1)
-- [Hash Map](#hash-map)
   - [Implementation](#implementation-2)
-  - [Complexity](#complexity-1)
+  - [Complexity](#complexity-2)
 ----
 
 # Problem
@@ -67,6 +68,8 @@ count of subarray which starts with A[i] minimum: r
 
 모든 반복을 마치면 `ans` 가 곧 답이다.
 
+`l, r` 을 빨리 찾을 수 있다면 time complexity 를 개선할 수 있다.
+
 ## Implementation
 
 * [java8](MainApp.java)
@@ -75,6 +78,67 @@ count of subarray which starts with A[i] minimum: r
 
 ```
 O(N) O(1)
+```
+
+# Hash Map
+
+`long ans = 0` 을 선언하여 답을 저장한다.
+
+`int[] lefts = new int[n]` 을 선언한다. `A[i]` 로 끝나면서 `A[i]` 가 최소값으로 사용된 subarray 를 생각해 보자. 그 subarray 들 중 가장 긴 것의 시작 인덱스를 `lefts[i]` 에 저장한다. 
+
+`int[] rights = new int[n]` 을 선언한다. `A[i]` 로 시작하면서 `A[i]` 가 최소값으로 사용된 subarray 를 생각해 보자. 그 subarray 들 중 가장 긴 것의 끝 인덱스를 `rights[i]` 에 저장한다.
+
+이제 다음과 같은 수식을 발견할 수 있다.
+
+```
+  count of subarray which ends with A[i] minimum: i - lefts[i]
+count of subarray which starts with A[i] minimum: rights[i] - i
+             count of subarray whose min is A[i]: (i - lefts[i]) * (rights[i] - i)
+```
+
+예를 들어 `nums = 3 1 2 4` 의 풀이과정은 다음과 같다.
+
+```
+         i
+   nums: 3 1 2 4
+           j
+  lefts: - - 1 2 
+ rights: 1 4 4 4
+         i
+         3 * (0 - (-1)) * (1 - 0) = 3
+         1 * (1 - (-1)) * (4 - 1) = 6
+         2 * (2 - 1)    * (4 - 2) = 4
+         4 * (3 - 2)    * (4 - 3) = 4
+```
+
+따라서 답은 `17` 이다.
+
+다음은 `nums = 3 1 2 4 1 2` 의 풀이과정이다.
+
+```
+         i
+   nums: 3 1 2 4 1
+           j
+  lefts: - - 1 2 1 
+ rights: 1 5 4 4 5
+         i
+         3 * (0 - (-1)) * (1 - 0) = 3
+         1 * (1 - (-1)) * (5 - 1) = 6
+         2 * (2 - 1)    * (4 - 2) = 4
+         4 * (3 - 2)    * (4 - 3) = 4
+         1 * (4 - 1)    * (5 - 4) = 3
+```
+
+따라서 답은 `21` 이다.
+
+## Implementation
+
+* [java8](MainApp.java)
+
+## Complexity
+
+```
+O(N) O(N)
 ```
 
 # Mono Stack
@@ -98,26 +162,6 @@ O(N) O(1)
 모든 반복을 마치면 `ans` 가 곧 답이다.
 
 구현이 복잡하고 시간복잡도가 좋지 않다.
-
-## Implementation
-
-* [java8](MainApp.java)
-
-# Hash Map
-
-`long ans = 0` 을 선언하여 답을 저장한다.
-
-`int[] lefts = new int[n]` 을 선언한다. `A[i]` 로 끝나면서 `A[i]` 가 최소값으로 사용된 subarray 를 생각해 보자. 그 subarray 들 중 가장 긴 것의 시작 인덱스를 `lefts[i]` 에 저장한다.
-
-`int[] rights = new int[n]` 을 선언한다. `A[i]` 로 시작하면서 `A[i]` 가 최소값으로 사용된 subarray 를 생각해 보자. 그 subarray 들 중 가장 긴 것의 끝 인덱스를 `rights[i]` 에 저장한다.
-
-이제 다음과 같은 수식을 발견할 수 있다.
-
-```
-  count of subarray which ends with A[i] minimum: lefts[i]
-count of subarray which starts with A[i] minimum: rights[i]
-             count of subarray whose min is A[i]: lefts[i] * rights[i]
-```
 
 ## Implementation
 
