@@ -1,59 +1,57 @@
-/* Copyright (C) 2019 by iamslash */
+/* Copyright (C) 2022 by iamslash */
 
 #include <cstdio>
 #include <vector>
-#include <stack>
+#include <cstdint>
 
-// {3}
-// {3, 1} {1}
-// {3, 1, 2} {1, 2} {2}
-// {3, 1, 2, 4} {1, 2, 4} {2, 4} {4}
+using namespace std;
 
-// 3
-// 1 1
-// 1 1 2
-// 1 1 2 4
+//         i
+//   nums: 3 1 2 4 1
+//             j 
+//  lefts: - - 1 2 1
+// rights: 1 5 4 4 5
+//                 i
 
-//    A: 3 1 2 4
-//             j
-// stck: 2
-//       1
-//  cnt: 1
-//  dot: 0
-//  ans: 3
 
-// 8ms 90.99% 13.5MB 82.79%
-// using one stack
-// O(N) O(N)
-#define MOD 1000000007
-class Solution {
- public:
-  int sumSubarrayMins(std::vector<int>& A) {
-    // {value : count}
-    std::stack<std::pair<int, int>> stck;
-    int ans = 0, dot = 0, n = A.size();
-    for (int j = 0; j < n; ++j) {
-      int cnt = 1;
-      while (stck.size() && stck.top().first >= A[j]) {
-        auto pr = stck.top(); stck.pop();
-        cnt += pr.second;
-        dot -= pr.first * pr.second;
-      }
-      stck.push({A[j], cnt});
-      dot += A[j] * cnt;
-      ans += dot;
-      ans %= MOD;
+void dump(const vector<int>& A) {
+    for (int num : A) {
+        printf("%d ", num);
     }
-    return ans;
+    printf("\n");
+}
+// 80ms 95.76% 41.7MB 69.53%
+// hash map
+// O(N) O(N)
+class Solution {
+public:
+  int sumSubarrayMins(vector<int>& nums) {
+    int64_t ans = 0;
+    int n = nums.size(), MOD = 1000000007;
+    vector<int> lefts(n, 0), rights(n, 0);
+    // build lefts
+    for (int i = 0; i < n; ++i) {
+      int j = i - 1;
+      while (j >= 0 && nums[j] > nums[i]) {
+        j = lefts[j];
+      }
+      lefts[i] = j;
+    }
+    // build rights, ans
+    for (int i = n-1; i >= 0; --i) {
+      int j = i + 1;
+      while (j < n && nums[i] <= nums[j]) {
+        j = rights[j];
+      }
+      rights[i] = j;
+      ans = (ans + (int64_t)nums[i] * (i - lefts[i]) * (rights[i] - i)) % MOD;
+    } 
+    // dump(lefts);
+    // dump(rights);
+    return (int)ans;
   }
 };
 
 int main() {
-
-  std::vector<int> A = {3, 1, 2, 4};
-
-  Solution sln;
-  printf("%d\n", sln.sumSubarrayMins(A));
-  
   return 0;
 }
