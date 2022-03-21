@@ -3,9 +3,11 @@
   - [Idea](#idea)
   - [Implementation](#implementation)
   - [Complexity](#complexity)
-- [Mono Stack, Dot Product](#mono-stack-dot-product)
+- [Mono Stack](#mono-stack)
   - [Idea](#idea-1)
   - [Implementation](#implementation-1)
+- [Hash Map](#hash-map)
+  - [Implementation](#implementation-2)
   - [Complexity](#complexity-1)
 ----
 
@@ -44,18 +46,26 @@ A: 3 1 2 4
        i
 A: 3 1 2 4
 
-  count of subarray which ends with min A[2]: 1 ({2})
-count of subarray which starts with min A[2]: 2 ({2}, {2, 4})
-         count of subarray whose min is A[2]: 1 * 2 = 2 ({2}, {2, 4})
+      count of subarray which ends with A[2] minimum: 1 ({2})
+count of subarray which starts with min A[2] minimum: 2 ({2}, {2, 4})
+                 count of subarray whose min is A[2]: 1 * 2 = 2 ({2}, {2, 4})
 ```
 
 따라서 다음과 같은 공식을 발견할 수 있다.
 
 ```
-  count of subarray which ends with min A[i]: l
-count of subarray which starts with min A[i]: r
-     count of subarray whose min is A[i]: l * r
+  count of subarray which ends with A[i] minimum: l
+count of subarray which starts with A[i] minimum: r
+             count of subarray whose min is A[i]: l * r
 ```
+
+`long ans = 0` 을 선언하여 답을 저장한다. 인덱스 `i` 를 `[0, n)` 동안 순회하면서 다음을 반복한다.
+
+* `int l = -1` 을 선언하고 `A[i]` 로 끝나는 subarray 중 `A[i]` 가 최소값인 것들의 개수를 저장한다.
+* `int r = -1` 을 선언하고 `A[i]` 로 시작하는 subarray 중 `A[i]` 가 최소값인 것들의 개수를 저장한다.
+* `ans = l * r` 을 저장한다.
+
+모든 반복을 마치면 `ans` 가 곧 답이다.
 
 ## Implementation
 
@@ -67,79 +77,51 @@ count of subarray which starts with min A[i]: r
 O(N) O(1)
 ```
 
-# Mono Stack, Dot Product
+# Mono Stack
 
 ## Idea
 
-예를 들어 `A = 3 1 2 4` 의 경우 인덱스 `i` 를 이용하여
-순회할 때 다음과 같이 부분수열을 만들어 낼 수 있다.
+`long ans = 0` 을 선언하여 답을 저장한다.
+
+`int[] lefts = new int[n]` 을 선언하여 `lefts[i]` 에 `A[i]` 로 끝나는 subarray 중 `A[i]` 가 최소값인 것들의 개수를 저장한다.
+
+`Stack<Integer> leftStack = new Stack<>()` 을 선언하여 `lefts[i]` 를 채우는데 사용한다.
+
+`int[] rights = new int[n]` 을 선언하여 `rights[i]` 에 `A[i]` 로 시작하는 subarray 중 `A[i]` 가 최소값인 것들의 개수를 저장한다.
+
+`Stack<Integer> rightStack = new Stack<>()` 을 선언하여 `rights[i]` 를 채우는데 사용한다.
+
+인덱스 `i` 를 `[0..n)` 동안 순회하면서 다음을 반복한다.
+
+* `ans += lefts[i] * rights[i]` 를 수행한다.
+
+모든 반복을 마치면 `ans` 가 곧 답이다.
+
+구현이 복잡하고 시간복잡도가 좋지 않다.
+
+## Implementation
+
+* [java8](MainApp.java)
+
+# Hash Map
+
+`long ans = 0` 을 선언하여 답을 저장한다.
+
+`int[] lefts = new int[n]` 을 선언한다. `A[i]` 로 끝나면서 `A[i]` 가 최소값으로 사용된 subarray 를 생각해 보자. 그 subarray 들 중 가장 긴 것의 시작 인덱스를 `lefts[i]` 에 저장한다.
+
+`int[] rights = new int[n]` 을 선언한다. `A[i]` 로 시작하면서 `A[i]` 가 최소값으로 사용된 subarray 를 생각해 보자. 그 subarray 들 중 가장 긴 것의 끝 인덱스를 `rights[i]` 에 저장한다.
+
+이제 다음과 같은 수식을 발견할 수 있다.
 
 ```
-0: {3}
-1: {3 1} {1}
-2: {3 1 2} {1 2} {2}
-3: {3 1 2 4} {1 2 4} {2 4} {4}
-```
-
-각 부분 수열의 최소 값은 다음과 같다.
-
-```
-0: 3
-1: 1 1
-2: 1 1 2
-3: 1 1 2 4
-```
-
-`A[i]` 단계에서 만들어진 부분 수열의 최소값들의 합을 `S[i]` 라고 하자. `S[i]` 는
-`S[i-1]` 를 이용하여 구할 수 있다. 특히 `A[i]` 가 지금껏 등장한 값들 중 가장
-크다면 `S[i] = S[i-1] + A[i]` 이다.
-
-그렇다면 이번에는 `A[i]` 가 기존의 값들 보다 작은 경우를 처리하기 위해 monotone
-increasing stack 을 하나 도입해 보자. `stack<pair<int, int>> stck` 를 선언하여
-`{value of A[i] : count of A[i]}` 을 저장한다. 다음은 `A = 3 1 2 4 1` 의 경우
-처리과정이다.
-
-| i | A[i] | subarrays                                         | min num   | dot prod        | min sum | stack |
-|:--|:-----|:--------------------------------------------------|:----------|:----------------|:--------|:------|
-| 0 | 3    | {3}                                               | 3         | `3*1`           | 3       | {3:1} |
-| 1 | 1    | {3, 1} {1}                                        | 1 1       | `3 - 3*1 + 1*2` | 5       | {1:2} |
-| 2 | 2    | {3, 1, 2} {1, 2} {2}                              | 1 1 2     | `2 + 2*1`       | 9       | {1:2} {2:1} |
-| 3 | 4    | {3, 1, 2, 4} {1, 2, 4} {2, 4} {4}                 | 1 1 2 4   | `4 + 4*1`       | 17      | {1:2} {2:1} {4:1} |
-| 4 | 1    | {3, 1, 2, 4,1 } {1, 2, 4, 1} {2, 4, 1} {4, 1} {1} | 1 1 1 1 1 | `8 - 4*1 - 2*1 + 1*3` | 22 | {1:5} |
-
-`A[]` 를 순회하면서 `ans` 에 `dot product` 를 더하는 방식이다. 
-이때 `A[i]` 값이 `stack` 의 값들 보다 작으면
-`dot product` 에서 예전에 더했던 값을 뺀다.
-이때 뺀 것들의 개수를 `x` 라 하면
-`dot product += A[i] * (x+1)` 를 수행한다.
-
-위의 표를 기반으로 알고리즘을 생각해 보자.
-인덱스 `i` 를 이용하여 `A` 를 순회하면서 다음을 반복한다.
-
-0. `int cnt = 1` 를 수행한다.
-1. `stck.size() && stck.top().first >= A[i]` 인 동안 다음을 반복한다.
-  0. `stck` 에서 하나 제거한 것을 `pr` 이라 하자.
-  1.  `cnt += pr.second` 를 수행한다.
-  2.  `dot -= pr.first * pr.second` 를 수행한다.
-2. `stck` 에 `{A[i], cnt}` 를 삽입한다. 이제 `stck` 는 monotone increasing 이다.
-3. `dot += A[j] * cnt`
-4. `ans = (ans + dot) % MOD`
-
-다음은 `A = 3 1 2 4` 의 경우 풀이과정이다.
-
-```
-                 i            i            i            i
-   A: 3 1 2 4    3 1 2 4    3 1 2 4    3 1 2 4    3 1 2 4
-stck:            3          1          1 2        1 2 4  
-                 1          2          2 1        2 1 1
- cnt: 1          1          2          1          1
- dot: 0          3          2          4          8
- ans: 0          3          5          9          17
+  count of subarray which ends with A[i] minimum: lefts[i]
+count of subarray which starts with A[i] minimum: rights[i]
+             count of subarray whose min is A[i]: lefts[i] * rights[i]
 ```
 
 ## Implementation
 
-* [c++11](a.cpp)
+* [java8](MainApp.java)
 
 ## Complexity
 
