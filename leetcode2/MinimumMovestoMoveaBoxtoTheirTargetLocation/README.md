@@ -15,7 +15,7 @@
 
 # Idea
 
-cost 가 1 이고 최소 거리 문제이다. `BFS` 로 해결할 만 하다.
+cost 가 1 이고 최소 거리 문제이다. [bfs](/fundamentals/graph/bfs/README.md) 로 해결할 만 하다.
 
 다음과 같이 두가지의 BFS 를 생각해 볼 수 있다.
 
