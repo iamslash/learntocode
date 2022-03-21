@@ -6,6 +6,7 @@ import java.util.*;
 //       1 4 4 5
 //       1 4 4 1
 
+// 1ms 100.00% 42.1MB 66.67%
 // brute force
 // O(N) O(1)
 class Solution {
@@ -16,16 +17,17 @@ class Solution {
                 continue;
             }
             int left = nums[i-1], right = nums[i+1];
-            for (int j = i-1; j >= 0 && nums[j] == nums[i]; --j) {
-                left = nums[j];
+            int j = i-1, k = i+1;
+            while (j >= 0 && nums[j] == nums[i]) {
+                j--;
             }
-            for (int j = i+1; j < n && nums[j] == nums[i]; ++j) {
-                right = nums[j];
+            while (k < n && nums[i] == nums[k]) {
+                k++;
             }
-            System.out.printf("i:%d, nums[i]: %d, left: %d, right: %d\n", i, nums[i], left, right);
-            if ((left != nums[i] && right != nums[i]) &&
-                ((left < nums[i] && nums[i] > right) ||
-                 (left > nums[i] && nums[i] < right))) {
+            // System.out.printf("i:%d, nums[i]: %d, left: %d, right: %d\n", i, nums[i], left, right);
+            if ((j >= 0 && k < n) &&
+                ((nums[j] < nums[i] && nums[i] > nums[k]) ||
+                 (nums[j] > nums[i] && nums[i] < nums[k]))) {
                 cnt++;
             }
         }
