@@ -698,7 +698,7 @@ $ a.exe
 * F | [B+Tree](/fundamentals/tree/b+tree/README.md)
 * F | [red black tree (balanced binary search tree)★](/fundamentals/tree/redblacktree/README.md)
 * F | [avl tree (balanced binary search tree)](/fundamentals/tree/avltree/README.md)★
-* F | [treap (balanced binary search tree)](fundamentals/tree/treap/README.md)★
+* F | [treap (balanced binary search tree)](/fundamentals/tree/treap/README.md)★
 
 ## Binary Search Tree
 
