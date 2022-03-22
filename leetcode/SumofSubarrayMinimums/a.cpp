@@ -52,6 +52,29 @@ public:
   }
 };
 
+// 111ms 70.36% 40.9MB 79.13%
+// mono stack
+// O(N) O(N)
+class Solution {
+public:
+  int sumSubarrayMins(vector<int>& nums) {
+    int n = nums.size(), ans = 0, MOD = 1000000007;
+    vector<int> C(n+1);
+    stack<int> stck;
+    stck.push(-1);
+    for (int i = 0; i < n; ++i) {
+      while (stck.top() >= 0 && nums[i] <= nums[stck.top()]) {
+        stck.pop();
+      }
+      int j = stck.top();
+      C[i + 1] = (C[j + 1] + nums[i] * (i - j)) % MOD;
+      stck.push(i);
+      ans = (ans + C[i + 1]) % MOD;
+    }
+    return ans;
+  }
+};
+
 int main() {
   return 0;
 }
