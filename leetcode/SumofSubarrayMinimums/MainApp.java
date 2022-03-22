@@ -144,3 +144,26 @@ class Solution {
         return (int)ans;
     }
 }
+
+// 8ms 99.81% 49.6MB 94.13%
+// mono stack
+// O(N) O(N)
+class Solution {
+    public int sumSubarrayMins(int[] nums) {
+        int n = nums.length;
+        Deque<Integer> stck = new ArrayDeque<>();
+        int[] C = new int[n + 1];
+        stck.push(-1);
+        int ans = 0, MOD = 1_000_000_007;
+        for (int i = 0; i < n; ++i) {
+            while (stck.peekLast() != -1 && A[i] <= A[stck.peekLast()]) {
+                stck.pollLast();
+            }
+            int j = stck.peekLast();
+            C[i+1] = (C[j + 1] + A[i] * (i - j)) % MOD;
+            stck.offerLast(i);
+            ans = (ans + C[i+1]) % MOD;
+        }
+        return ans;
+    }
+}

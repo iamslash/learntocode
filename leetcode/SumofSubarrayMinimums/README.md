@@ -6,10 +6,14 @@
 - [Hash Map](#hash-map)
   - [Implementation](#implementation-1)
   - [Complexity](#complexity-1)
-- [Mono Stack](#mono-stack)
+- [Double Mono Stack](#double-mono-stack)
   - [Idea](#idea-1)
   - [Implementation](#implementation-2)
   - [Complexity](#complexity-2)
+- [Single Mono Stack](#single-mono-stack)
+  - [Idea](#idea-2)
+  - [Implementation](#implementation-3)
+  - [Complexity](#complexity-3)
 ----
 
 # Problem
@@ -197,7 +201,7 @@ count of subarray which starts with A[i] minimum: rights[i] - i
 O(N) O(N)
 ```
 
-# Mono Stack
+# Double Mono Stack
 
 ## Idea
 
@@ -222,6 +226,59 @@ O(N) O(N)
 ## Implementation
 
 * [java8](MainApp.java)
+
+## Complexity
+
+```
+O(N) O(N)
+```
+
+# Single Mono Stack
+
+## Idea
+
+예를 들어 `A = 3 1 2 5 4` 의 경우를 살펴보자.
+
+```
+A: 3 1 2 4
+
+[3]
+[3,1], [1]
+[3,1,2], [1,2], [2]
+[3,1,2,5], [1,2,5], [2,5], [5]
+[3,1,2,5,4], [1,2,5,4], [2,5,4], [5,4], [4]
+
+3
+1 + 1
+1 + 1 + 2
+1 + 1 + 2 + 5
+1 + 1 + 2 + 4 + 4
+
+ans = [3, 2, 4, 9, 12]
+```
+
+다음과 같은 규칙을 발견할 수 있다.
+
+```
+if 
+  A[i-1] <= A[i] 
+then 
+  ans[i] = ans[i-1] + A[i]
+
+if 
+  A[j] <= A[i] (j < i) 
+then 
+  ans[i] = ans[j] + A[i] * (i - j)
+```
+
+`Deque<Integer> stck = new ArrayDeque<>()` 를 선언하여 인덱스를 저장한다. 인덱스를 `k` 라고 할 때 `A[k]` 가 오름차순이 되도록 `stck` 을 업데이트 한다. 임의의 `i` 에 대해 `j` 를 `stck.peek()` 를 통해 얻어올 수 있다.
+
+구현이 가장 쉽고 시간 복잡도도 괜찮다.
+
+## Implementation
+
+* [java8](MainApp.java)
+* [python3](a.py)
 
 ## Complexity
 
