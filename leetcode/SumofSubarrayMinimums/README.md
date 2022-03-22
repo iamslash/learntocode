@@ -84,9 +84,63 @@ O(N) O(1)
 
 `long ans = 0` 을 선언하여 답을 저장한다.
 
-`int[] lefts = new int[n]` 을 선언한다. `A[i]` 로 끝나면서 `A[i]` 가 최소값으로 사용된 subarray 를 생각해 보자. 그 subarray 들 중 가장 긴 것의 시작 인덱스를 `lefts[i]` 에 저장한다. 
+`int[] lefts = new int[n]` 을 선언한다. `A[i]` 로 끝나면서 `A[i]` 가 최소값으로
+사용된 subarray 를 생각해 보자. 그 subarray 들 중 가장 긴 것의 시작 인덱스를
+`lefts[i]` 에 저장한다. 
 
-`int[] rights = new int[n]` 을 선언한다. `A[i]` 로 시작하면서 `A[i]` 가 최소값으로 사용된 subarray 를 생각해 보자. 그 subarray 들 중 가장 긴 것의 끝 인덱스를 `rights[i]` 에 저장한다.
+예를 들어 `nums = 5 4 3 2 1` 의 경우 `lefts[]` 를 채워보자.
+
+```
+               i
+ nums: 5 4 3 2 1
+             j
+lefts: - - - - - 
+
+                                      lefts[0]: -1 
+count of subarray which ends with A[0] minimum: 0 - (-1) = 1
+([5])
+                                      lefts[1]: -1 
+count of subarray which ends with A[1] minimum: 1 - (-1) = 2
+([5, 4], [4])
+                                      lefts[0]: -1 
+count of subarray which ends with A[2] minimum: 2 - (-1) = 3
+([5, 4, 3], [4, 3], [3])
+                                      lefts[0]: -1 
+count of subarray which ends with A[3] minimum: 3 - (-1) = 4
+([5, 4, 3, 2], [4, 3, 2], [3, 2], [2])
+                                      lefts[4]: -1 
+count of subarray which ends with A[4] minimum: 4 - (-1) = 5
+([5, 4, 3, 2, 1], [4, 3, 2, 1], [3, 2, 1], [2, 1], [1])
+```
+
+`int[] rights = new int[n]` 을 선언한다. `A[i]` 로 시작하면서 `A[i]` 가
+최소값으로 사용된 subarray 를 생각해 보자. 그 subarray 들 중 가장 긴 것의 끝
+인덱스를 `rights[i]` 에 저장한다.
+
+예를 들어 `nums = 5 4 3 2 1` 의 경우 `rights[]` 를 채워보자.
+
+```
+             i
+ nums: 5 4 3 2 1
+               j
+lefts: 1 2 3 4 5  
+
+                                      rights[4]: 5 
+count of subarray which starts with A[4] minimum: 5 - 4 = 1
+([1])
+                                      rights[3]: 4 
+count of subarray which starts with A[3] minimum: 4 - 3 = 1
+([2])
+                                      rights[2]: 3 
+count of subarray which starts with A[2] minimum: 3 - 2 = 1
+([3])
+                                      rights[1]: 2 
+count of subarray which starts with A[1] minimum: 1 - 1 = 1
+([4])
+                                      rights[0]: 1 
+count of subarray which starts with A[0] minimum: 1 - 0 = 1
+([5])
+```
 
 이제 다음과 같은 수식을 발견할 수 있다.
 

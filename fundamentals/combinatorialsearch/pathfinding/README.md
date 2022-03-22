@@ -1,3 +1,11 @@
+- [Abstract](#abstract)
+- [one src to one dst](#one-src-to-one-dst)
+- [one src to all dst](#one-src-to-all-dst)
+- [all src to all dst](#all-src-to-all-dst)
+- [Shortest Path Cost](#shortest-path-cost)
+
+----
+
 # Abstract
 
 * 길 찾기 문제를 해결할 수 있는 전략들에 대해 적는다.
@@ -19,4 +27,11 @@
 
 * [Floyd algorithm @ learntocode](/fundamentals/graph/floyd/README.md)
 * Johnson’s algorithm
+
+# Shortest Path Cost
+
+모든 거리의 비용이 1 이다. [bfs](/fundamentals/graph/bfs/README.md) 를 이용하여 최단 거리 경로의 비용을 구할 수 있다.
+
+* [L](/leetcode3/MinimumOperationstoConvertNumber/README.md) | [Minimum Operations to Convert Number](https://leetcode.com/problems/minimum-operations-to-convert-number/)
+  * cost of edge is 1 and finding shortest path cost 
   

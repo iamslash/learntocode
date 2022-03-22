@@ -69,7 +69,6 @@
   - [Combinatorial Search](#combinatorial-search)
   - [Backtracking](#backtracking)
   - [Shortest Path](#shortest-path)
-  - [Shortest Path Cost](#shortest-path-cost)
   - [Optimization Problems To Decision Problems](#optimization-problems-to-decision-problems)
   - [Combinatorial game theory](#combinatorial-game-theory)
   - [Minimax](#minimax)
@@ -1040,14 +1039,11 @@ $ a.exe
 
 ## Shortest Path
 
-- F | [pathfinding](/fundamentals/combinatorialsearch/pathfinding/README.md)
-- F | [bfs shortest path @ learntocode](/fundamentals/graph/bfsshortestpath/README.md) (unweighted graphs)
-- F | [Dijkstra algorithm @ learntocode](/fundamentals/graph/dijkstra/README.md) (non-negative weighted graphs)
-- F | [Bellman-Ford algorithm @ learntocode](/fundamentals/graph/bellmanford/README.md) (negative weighted graphs)
-- F | [Floyd algorithm @ learntocode](/fundamentals/graph/floyd/README.md)
-
-## Shortest Path Cost
-
+* F | [path finding, shorest path](/fundamentals/combinatorialsearch/pathfinding/README.md)
+* F | [bfs shortest path](/fundamentals/graph/bfsshortestpath/README.md) (unweighted graphs)
+* F | [Dijkstra algorithm](/fundamentals/graph/dijkstra/README.md) (non-negative weighted graphs)
+* F | [Bellman-Ford algorithm](/fundamentals/graph/bellmanford/README.md) (negative weighted graphs)
+* F | [Floyd algorithm](/fundamentals/graph/floyd/README.md)
 * [L](/leetcode3/MinimumOperationstoConvertNumber/README.md) | [Minimum Operations to Convert Number](https://leetcode.com/problems/minimum-operations-to-convert-number/)
   * cost of edge is 1 and finding shortest path cost 
   
