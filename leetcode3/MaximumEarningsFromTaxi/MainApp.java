@@ -1,6 +1,6 @@
 // Copyright (C) 2022 by iamslash
 
-imoprt java.util.*;
+import java.util.*;
 
 // recursive dynamic programming, sort
 class Solution {
@@ -16,9 +16,14 @@ class Solution {
         // recursion
         long r = 0;
         for (int i = beg; i < n; ++i) {
-            // TODO
+            int j = i;
+            while (j < n && rides[i][1] >= rides[j][0]) {
+                j++;
+            }
+            r = Math.max(rides[i][2] + dfs(n, rides, C, j),
+                         dfs(n, rides, C, i+1));
         }
-        return c[beg] = r;
+        return C[beg] = r;
     }
     public long maxTaxiEarnings(int n, int[][] rides) {
         Arrays.sort(rides, (a, b) -> {
@@ -30,7 +35,7 @@ class Solution {
                 }
                 return a[0] - b[0];
             });
-        long[] C = new int[n+1];
+        long[] C = new long[n+1];
         return dfs(n, rides, C, 0);
     }
 }
