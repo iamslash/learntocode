@@ -1,39 +1,42 @@
-/* Copyright (C) 2021 by iamslash */
+/* Copyright (C) 2022 by iamslash */
 
-//              i
-// begs:  0  5 15
-// ends: 10 20 30
-//        j
-//  ans:  2
-
-// 301ms 25.00% 42.5MB 23.81%
-// sort
+// 321ms 79.01% 47MB 58.01%
+// two pointers, sort
 // O(NlgN) O(N)
 class Solution {
     fun minMeetingRooms(intervals: Array<IntArray>): Int {
-        val n : Int = intervals.size
-        val begs : IntArray = IntArray(n)
-        val ends : IntArray = IntArray(n)
-        var maxRoomCnt : Int = 0
-        var i : Int = 0; var j : Int = 0
-        for (k in 0 until n) {
-            begs[k] = intervals[k][0]
-            ends[k] = intervals[k][1]            
+        var n = intervals.size
+        var ans = 0
+        val begs = IntArray(n)
+        val ends = IntArray(n)
+        for (i in 0 until n) {
+            begs[i] = intervals[i][0]
+            ends[i] = intervals[i][1]
         }
         begs.sort()
         ends.sort()
-        while (i < n) {
+        var j = 0
+        for (i in 0 until n) {
             if (begs[i] < ends[j]) {
-                ++maxRoomCnt
+                ans++
             } else {
-                ++j
+                j++
             }
-            ++i
         }
-        return maxRoomCnt
+        return ans
     }
 }
 
 fun main() {
-    println("Hello World")
+    val begs = intArrayOf(5, 4, 3, 2, 1)
+    val ends = mutableListOf(5, 4, 3, 2, 1)
+    begs.sort()
+    ends.sort()
+    for (a in begs) {
+        print("${a} ")
+    }
+    for (a in ends) {
+        print("${a} ")
+    }
+    println()
 }
