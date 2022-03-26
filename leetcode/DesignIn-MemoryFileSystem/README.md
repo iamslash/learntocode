@@ -15,6 +15,16 @@ struct FSNode {
 };
 ```
 
+다음과 같이 `getOrCreateNode(String path)` 를 잘 구현하면 쉽게 해결할
+수 있다.
+
+```
+FSNode getOrCreateNode(String path, boolean isDir)
+
+ path: path
+isDir: id dir??? when it is true, assign that
+```
+
 # Implementation
 
 * [c++11](a.cpp)

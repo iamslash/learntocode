@@ -18,14 +18,14 @@ class FileSystem {
 		String[] pathArray = filePath.substring(1).split("/");
     // System.out.println(Arrays.toString(pathArray));
 		for (String token : pathArray) {
-      if (token.isEmpty())
-        continue;
-			u.pathMap.putIfAbsent(token, new FSNode());
-			u = u.pathMap.get(token);
-			u.name = token;
+                    if (token.isEmpty())
+                        continue;
+                    u.pathMap.putIfAbsent(token, new FSNode());
+                    u = u.pathMap.get(token);
+                    u.name = token;
 		}
 		if (bDir == false)
-			u.bDir = false;
+                    u.bDir = false;
 		return u;
 	}
 
