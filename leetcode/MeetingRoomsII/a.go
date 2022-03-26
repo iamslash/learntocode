@@ -7,36 +7,30 @@ import (
     "sort"
 )
 
-// intervals: 0,30 5,10 15,20
-//                     i
-//      begs:  0  5 15
-//      ends: 10 20 30
-//                j
-//       cnt:  2
+//        i
+// begs:  0 5  15
+// ends: 10 20 30
+//        j
 
-// 10ms 67.78% 4.6MB 69.45%
+// 11ms 64.17% 4.6MB 63.61%
 // two pointers, sort
-// O(N) O(N)
+// O(NlgN) O(N)
 func minMeetingRooms(intervals [][]int) int {
-    n, cnt, j := len(intervals), 0, 0
-    begs := make([]int, n)
-    ends := make([]int, n)
+    n, ans := len(intervals), 0
+    begs, ends := make([]int, n), make([]int, n)
     for i := 0; i < n; i++ {
-        begs[i] = intervals[i][0]
-        ends[i] = intervals[i][1]
+        begs[i], ends[i] = intervals[i][0], intervals[i][1]
     }
     sort.Ints(begs)
     sort.Ints(ends)
-    // fmt.Println(begs)
-    // fmt.Println(ends)
-    for i := 0; i < n; i++ {
+    for i, j := 0, 0; i < n; i++ {
         if begs[i] < ends[j] {
-            cnt++
+            ans++
         } else {
             j++
         }
     }
-    return cnt;
+    return ans
 }
 
 func main() {
