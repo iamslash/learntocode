@@ -2,49 +2,24 @@
 
 import java.util.*;
 
-// 0 5 10 15 20 30 
-// + +  -  +  -  -
-
-// 1 13 13 15
-// +  -  +
-
-// 11ms 54.30% 46MB 7.25%
-// sort
-// O(NlgN) O(N)
-class Solution {
-    public int minMeetingRooms(int[][] intervals) {
-        List<int[]> eventList = new ArrayList<>();
-        for (int[] interval : intervals) {
-            eventList.add(new int[]{interval[0], 1});
-            eventList.add(new int[]{interval[1], -1});
-        }
-        Collections.sort(eventList, (a, b) -> {
-                if (a[0] == b[0]) {
-                    return a[1] - b[1];
-                }
-                return a[0] - b[0];
-            });
-        int maxCnt = 0, cnt = 0;
-        for (int[] event : eventList) {
-            cnt += event[1];
-            maxCnt = Math.max(maxCnt, cnt);
-        }
-        return maxCnt;
-    }
-}
-
-// intervals: [[0,30],[5,10],[15,20]]
+// intervals: 0,30 5,10 15,20
 //                     i
-//      begs:  0  5 15
-//      ends: 10 20 30
+//     start:  0  5 15
+//       end: 10 20 30
 //                j
 
-// 2ms 99.38% 41.9MB 83.07%
-// two pointers, sort
-// O(NlgN) O(N)
+// intervals: 7,10 2,4
+//                i
+//      begs: 2 7
+//      ends: 4 10
+//               j
+
+// 4ms 95.90% 44.9MB 63.22%
+// sort, two pointers
+// O(NlgN) O(1)
 class Solution {
     public int minMeetingRooms(int[][] intervals) {
-        int n = intervals.length;
+        int n = intervals.length, ans = 0;
         int[] begs = new int[n];
         int[] ends = new int[n];
         for (int i = 0; i < n; ++i) {
@@ -53,14 +28,12 @@ class Solution {
         }
         Arrays.sort(begs);
         Arrays.sort(ends);
-        int maxCnt = 0;
-        for (int i = 0, j = 0; i < n; ++i) {
-            if (begs[i] < ends[j]) {
-                maxCnt++;
-            } else {
-                j++;
+        for (int i = 0, j = 0; i < n; ++j) {
+            while (i < n && begs[i] < ends[j]) {
+                i++;
+                ans = Math.max(ans, i - j);
             }
         }
-        return maxCnt;
+        return ans;
     }
 }

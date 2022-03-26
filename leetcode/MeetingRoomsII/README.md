@@ -52,6 +52,7 @@ ans: 2                       ans: 2
 
 * [c++11](a.cpp)
 * [java8](MainApp.java)
+* [python3](a.py)
 * [kotlin](MainApp.kt)
 * [go](a.go)
 
