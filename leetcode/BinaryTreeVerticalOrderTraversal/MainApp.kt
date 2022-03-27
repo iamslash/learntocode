@@ -1,3 +1,13 @@
+/* Copyright (C) 2022 by iamslash */
+import java.util.*
+import kotlin.math.*
+
+class TreeNode(var `val`: Int) {
+    var left: TreeNode? = null
+    var right: TreeNode? = null
+}
+
+// 431ms 6.30% 37.1MB 62.99%
 // BFS
 // O(N) O(N)
 import kotlin.math.*
@@ -6,28 +16,32 @@ class Solution {
         if (root == null) {
             return listOf<List<Int>>()
         }
-        val q : Queue<Pair<Int, TreeNode?>> = ArrayDeque<Pair<Int, TreeNode?>>()
-        val ans : MutableList<List<Int>> = mutableListOf<List<Int>>()
-        val col2nodesMap = mutableMapOf<Int, MutableList<Int>>()
-        var minCol = 100
-        var maxCol = -100
-        q.offer(Pair(0, root))
-        while (q.size > 0) {
-            val (col, node) = q.poll()
-            minCol = min(minCol, col)
-            maxCol = max(maxCol, col)
-            val nodes = col2nodesMap.getOrPut(col, { mutableListOf<Int>() })
-            nodes.add(node!!.`val`)
+        val q: Queue<Pair<Int, TreeNode>> = ArrayDeque<Pair<Int, TreeNode>>()
+        val ans = mutableListOf<List<Int>>()
+        val valsMap = mutableMapOf<Int, MutableList<Int>>()
+        q.offer(Pair<Int, TreeNode>(0, root))
+        var minOrder = 0
+        var maxOrder = 0
+        while (q.isNotEmpty()) {
+            val (order, node) = q.poll()
+            minOrder = min(minOrder, order)
+            maxOrder = max(maxOrder, order)
+            val vals = valsMap.getOrPut(order, { mutableListOf<Int>() })
+            vals.add(node.`val`)
             if (node.left != null) {
-                q.offer(Pair(col-1, node.left))
+                q.offer(Pair<Int, TreeNode>(order-1, node.left!!))
             }
             if (node.right != null) {
-                q.offer(Pair(col+1, node.right))
+                q.offer(Pair<Int, TreeNode>(order+1, node.right!!))
             }
         }
-        for (i in minCol..maxCol) {
-            ans.add(col2nodesMap[i]!!.toList())
+        for (i in minOrder..maxOrder) {
+            ans.add(valsMap[i]!!.toList())
         }
         return ans.toList()
     }
+}
+
+fun main() {
+    println("Hello World")
 }
