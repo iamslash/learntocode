@@ -7,21 +7,22 @@ import java.util.*;
 //          669 007 07
 //    idxs:   0   1  2
 
-// Wrong Answer for:
-// [9,8,7,6,5,4,3,2,1,0]
-// [0,1,2,3,4,5,6,7,8,9]
+// nums: 0 1 2 3 4 5 6 7 8 9
+// orgs: 9 8 7 6 5 4 3 2 1 0
+// idxs: 9 8 7 6 5 4 3 2 1 0
 
+// 151ms 91.44% 117.8MB 71.28%
 // hash map, sort
 // O(NlgN) O(n)
 class Solution {
     private int getOrgNum(int[] mapping, int num) {
         int org = 0, mul = 1;
-        while (num > 0) {
+        do {
             int dgt = mapping[num % 10];
             org = mul * dgt + org;
             mul *= 10;
             num /= 10;
-        }
+        } while (num > 0);
         return org;
     }
     public int[] sortJumbled(int[] mapping, int[] nums) {
