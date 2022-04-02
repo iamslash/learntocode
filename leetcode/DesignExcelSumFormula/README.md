@@ -2,10 +2,10 @@
 
 [Design Excel Sum Formula](https://leetcode.com/problems/design-excel-sum-formula/)
 
-# Idea
-
 행과 열의 숫자 `H, W` 가 주어지면 `set, get, sum` 을 구현하는
 문제이다.
+
+# Idea
 
 `sum(r, c, ranges[])` 은 `set()` 혹은 `sum` 에 의해 동일한 `r, c` 가
 오버래핑될때 까지 `ranges[]` 를 보관해야 한다.
@@ -44,6 +44,7 @@ m_smp[{r, c}]` 를 리턴한다. 그렇지 않다면 `m_M[r-1][c-'A']` 를
 # Implementation
 
 * [c++11](a.cpp)
+* [java11](MainApp.java)
 
 # Complexity
 
