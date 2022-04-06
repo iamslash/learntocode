@@ -16,6 +16,19 @@ import java.util.*;
 // mSum: 11
 // nSum: 24 - 11 = 13
 
+
+// Wrong Answer for
+// [1,5,6]
+// 3
+// 4
+
+// mean: 3
+//    m: 3
+//    n: 2
+// mSum: 12
+// nSum: 3
+
+// 3ms 96.52% 60.6MB 88.56%
 // math
 // O(M) O(N)
 class Solution {
@@ -25,17 +38,16 @@ class Solution {
         for (int roll : rolls) {
             mSum += roll;
         }
-        int nSum = (m + n) * 4 - mSum;
-        int quo = nSum / n;
-        int rem = nSum % n;
-        if ((quo == 6 && rem > 0) ||
-            quo > 6) {
+        int nSum = (m + n) * mean - mSum;
+        if (nSum < n || nSum > 6 * n) {
             return new int[0];
         }
+        int quo = nSum / n;
+        int rem = nSum % n;
         int[] missings = new int[n];
         Arrays.fill(missings, quo);
-        if (rem > 0) {
-            missings[n-1] = rem;
+        for (int i = 0; i < rem; ++i) {
+            missings[i]++;
         }
         return missings;
     }
