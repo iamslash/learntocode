@@ -10,6 +10,7 @@ import java.util.*;
 //               ]
 //    supplies = ["yeast","flour","meat"]
 
+// 2366ms 5.03% 89MB 24.89%
 // hash set
 // O(N) O(N)
 class Solution {
@@ -26,7 +27,7 @@ class Solution {
                                        String[] supplies) {
         Set<String> recipeSet = new HashSet<>();
         Set<String> supplySet = new HashSet<>(Arrays.asList(supplies));
-        int j = 2, n = recipes.length;
+        int n = recipes.length, j = n;
         while (j-- > 0) {
             for (int i = 0; i < n; ++i) {
                 if (valid(supplySet, ingredients.get(i))) {
