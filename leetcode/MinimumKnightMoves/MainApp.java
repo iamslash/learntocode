@@ -2,10 +2,6 @@
 
 import java.util.*;
 
-// Wrong Answer for:
-// 0
-// 1
-
 // 1805ms 13.38% 210.4MB 18.47%
 // BFS
 // O(8^N) O(8^N) 
@@ -75,6 +71,35 @@ class Solution {
             step++;
         }
         return -1;
+    }
+}
+
+// 13ms 98.43% 44.4MB 95.28%
+// DFS
+// O(N) O(N)
+class Solution {
+    private int dfs(Map<Pair, Integer> C, int ex, int ey) {
+        ex = Math.abs(ex);
+        ey = Math.abs(ey);
+        if (ex + ey == 0) {
+            return 0;
+        }
+        if (ex + ey == 2) {
+            return 2;
+        }
+        Pair key = new Pair(ex, ey);
+        if (C.containsKey(key)) {
+            return C.get(key);
+        }
+        int minStep = 1 + Math.min(dfs(C, ex-1, ey-2), dfs(C, ex-2, ey-1));
+        C.put(key, minStep);
+        return minStep;
+    }
+    public int minKnightMoves(int ex, int ey) {
+        Map<Pair, Integer> C = new HashMap<>();
+        ex = Math.abs(ex);
+        ey = Math.abs(ey);
+        return dfs(C, ex, ey);
     }
 }
 
