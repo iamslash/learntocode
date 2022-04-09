@@ -22,7 +22,7 @@ class Interval {
 
 // 13ms 73.59% 55.5MB 14.28%
 // sort
-// O(N) O(N)
+// O(NlgN) O(N)
 class Solution {
     public List<Interval> employeeFreeTime(List<List<Interval>> schedule) {
         List<Interval> ans = new ArrayList<>();
