@@ -6,12 +6,17 @@ import java.util.*;
 // 0
 // 1
 
+// Time Limit Exceeded
+// 11
+// 248
 // BFS
 // O(8^N) O(8^N) 
 class Solution {
     public int minKnightMoves(int ex, int ey) {
         int step = 0;
-        int[][] dirs = new int[][]{{1,2}, {2,1}, {2,-1}, {1,-1}, {-1,2}, {-2,1}, {-2,-1}, {-1,-2}};
+        ex = Math.abs(ex);
+        ey = Math.abs(ey);
+        int[][] dirs = new int[][]{{2, 1}, {1, 2}, {-1, 2}, {-2, 1}, {-2, -1}, {-1, -2}, {1, -2}, {2, -1}};
         Set<String> visit = new HashSet<>();
         Queue<int[]> q = new ArrayDeque<>();
         q.add(new int[]{0, 0});
@@ -28,8 +33,7 @@ class Solution {
                     int nx = x + dir[0], ny = y + dir[1];
                     int[] pos = new int[]{nx, ny};
                     String posStr = String.format("%d,%d", nx, ny);
-                    if (!visit.contains(posStr) &&
-                        ((ex * nx) >= 0 && (ey * ny) >= 0) || step < 3) {
+                    if (!visit.contains(posStr) && ex >= -1 && ey >= -1) {
                         q.add(pos);
                         visit.add(posStr);
                     }

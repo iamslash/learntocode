@@ -11,16 +11,11 @@
 문제이다. [BFS](/fundamentals/graph/bfs/README.md) 를 이용하여 해결할
 수 있다.
 
-단, 주의할 점이 있다. 다음과 같이 steps 의 개수가 3 미만일 때를
-제외하고는 `ex, ey` 방향으로 움직이도록 하여 pruning 할 수 있다.
+`ex, ey` 가 어떤 사분면에 있더라도 1 사분면에 가져다 놓고 한 결과와 같다. 즉,
+`ex = abs(ex), ey = abs(ey)` 를 한 것과 같다.
 
-```go
-        if _, exists := seen[nx][ny]; !exists &&
-          (nx * ex >= 0 && ny * ey >= 0 || steps < 3) {
-          seen[nx][ny] = true
-          q = append(q, []int{nx, ny})
-        }
-```
+`nx, ny` 를 새로 이동할 좌표라고 해보자. `nx >= -1 && ny >= -1` 인
+경우만 계속 탐색한다. 그렇지 않은 경우는 가지치기 한다.
 
 # Implementation
 
@@ -30,6 +25,5 @@
 # Complexity
 
 ```
-// O(8^N) O(8^N)
-// N is a distance
+N is a distance
 ```
