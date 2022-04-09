@@ -7,14 +7,15 @@ Queue 를 이용하는 것이 훨씬 수월하다.
 # Keyword
 
 ```cpp
-adj[][], seen, dfs, topological_sort, order
+G[][], indegMap, q, order
+G[][], visit, dfs, order
 ```
 
 # Rerences
 
 * [Topological Sorting @ geeksforgeeks](https://www.geeksforgeeks.org/topological-sorting/)
 
-# Using Queue
+# Queue
 
 ## Idea
 
@@ -37,7 +38,7 @@ queue 에 삽입한다. 이후 다음을 반복한다.
 O(V+E) O(V)
 ```
 
-# Using Stack
+# Stack
 
 ## Idea
 
