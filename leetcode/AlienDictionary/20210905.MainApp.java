@@ -63,7 +63,7 @@ class Solution {
                 }
             }
         }
-        // dumpAdj();
+        dumpAdj();
         // dfs all
         for (char c : nodeSet) {
             if (seen[c-'a'] == false) {
