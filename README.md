@@ -813,9 +813,10 @@ $ a.exe
 
 ## Topological Sort
 
-- F | [topological sort](fundamentals/graph/topologicalsort/README.md)
-- F | proof of topological sort★  
-- F | topological sort of scc★
+* F | [topological sort](fundamentals/graph/topologicalsort/README.md)
+* F | proof of topological sort★  
+* F | topological sort of scc★
+* [L](/leetcode/AlienDictionary/README.md) | [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)
 
 ## Trie
 

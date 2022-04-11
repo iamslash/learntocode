@@ -2,31 +2,48 @@
 
 import java.util.*;
 
-// hash set
-// O(N) O(N)
+// Idea ★
+// 0. The number of points is just 10, use Bit Mask. ttl represents
+//    all points.
+// 1. C[bm] means the number of lines of bm which represents points
+// 2. Find points whose C[bm] is 1
+// 3. Traverse C[bm]
+// 4. return C[ttl]
+
+// 10ms 80.00% 42.9MB 66.36%
+// iterative dynamic programming
+// O(N^3) O(N)
 class Solution {
-    private String getLine(int[] src, int[] dst) {
-    }
-    private int dfs(Set<String> lineSet, int bm) {
-    }
-    private int gcd(int a, int b) {
-        return b == 0 ? a : gcd(b, a % b);
-    }
     public int minimumLines(int[][] points) {
-        int n = points.length;
-        if (n <= 1) {
-            return n;
-        }
-        String[][] C = new String[n][n];
+        int n = points.length, ttl = (1 << n) - 1;
+        int[] C = new int[ttl + 1];
+        Arrays.fill(C, ttl);
         for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < n; ++j) {
-                if (i != j) {
-                    C[i][j] = getLine(points[i], points[j]);
+            for (int j = i+1; j < n; ++j) {
+                int bm = (1 << i) + (1 << j);
+                int dx = points[i][0] - points[j][0];
+                int dy = points[i][1] - points[j][1];
+                for (int k = j+1; k < n; ++k) {
+                    int ddx = points[i][0] - points[k][0];
+                    int ddy = points[i][1] - points[k][1];
+                    // points i, j, k are on the same line
+                    if (dx * ddy == dy * ddx) {
+                        bm |= 1 << k;
+                    }
+                }
+                for (int subBm = bm; subBm > 0; subBm = (subBm - 1) & bm) {
+                    C[subBm] = 1;
                 }
             }
         }
-        Set<String> lineSet = new HashSet<>();
-        return dfs(lineSet, 0);
+        for (int i = 0; i <= ttl; ++i) {
+            if (C[i] == ttl) {
+                for (int j = i & (i - 1); j > 0; j = (j - 1) & i) {
+                    C[i] = Math.min(C[i], C[j] + C[i-j]);
+                }
+            }
+        }
+        return C[ttl];
     }
 }
 
