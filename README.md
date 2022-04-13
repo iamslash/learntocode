@@ -1158,7 +1158,9 @@ $ a.exe
 * [L](/leetcode/JumpGameII/a.cpp) | [Jump Game II](https://leetcode.com/problems/jump-game-ii/)
 * [L](/leetcode2/JumpGameIII/Solution.java) | [Jump Game III](https://leetcode.com/problems/jump-game-iii/)
 * [L](/leetcode2/JumpGameIV/README.md) | [Jump Game IV](https://leetcode.com/problems/jump-game-iv/)
-* L | [Jump Game V](https://leetcode.com/problems/jump-game-v/)
+* [L](/leetcode2/JumpGameV/) | [Jump Game V](https://leetcode.com/problems/jump-game-v/)
+* [L](/leetcode2/JumpGameVI/README.md) | [Jump Game VI](https://leetcode.com/problems/jump-game-vi/)
+* [L](/leetcode2/JumpGameVII/) | [Jump Game VII](https://leetcode.com/problems/jump-game-vii/)
 
 ## Basic Calculator
 
