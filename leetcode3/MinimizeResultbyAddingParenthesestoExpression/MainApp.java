@@ -13,23 +13,45 @@ import java.util.*;
 //             24(7+3)8 24 
 //             24(7+38) 24* (7   + 38)* 1
 
+// 1ms 99.89% 40.4MB 98.47%
 // brute force
 // O(N^2) O(1)
 class Solution {
     public String minimizeResult(String s) {
         int n = s.length(), addIdx = s.indexOf('+');
         int minSum = Integer.MAX_VALUE;
-        for (int i = 0; i < addIdx - 1; ++i) {
+        String minStr = "";
+        for (int i = 0; i < addIdx; ++i) {
             for (int j = addIdx+2; j <= n; ++j) {
-                int a = (i == 0) ? 1 : Integer.valueOf(s.substring(0, i+1));
-                int b = Integer.valueOf(s.substring(i, addIdx));
-                int c = Integer.valueOf(s.substring(addIdx+1,j));
-                int d = (j == n) ? 1 : Integer.valueOf(s.substring(j));
+                String aStr = s.substring(0, i);
+                String bStr = s.substring(i, addIdx);
+                String cStr = s.substring(addIdx+1,j);
+                String dStr = s.substring(j);
+                int a = (i == 0) ? 1 : Integer.valueOf(aStr);
+                int b = Integer.valueOf(bStr);
+                int c = Integer.valueOf(cStr);
+                int d = (j == n) ? 1 : Integer.valueOf(dStr);
+                // System.out.printf("%d * (%d + %d) * %d\n", a, b, c, d);
                 int sum = a * (b + c) * d;
-                minSum = Math.min(minSum, sum);
+                if (sum < minSum) {
+                    minSum = sum;
+                    StringBuilder minSb = new StringBuilder();
+                    if (i > 0) {
+                        minSb.append(aStr);
+                    }
+                    minSb.append("(");
+                    minSb.append(bStr);
+                    minSb.append("+");
+                    minSb.append(cStr);
+                    minSb.append(")");
+                    if (j < n) {
+                        minSb.append(dStr);
+                    }
+                    minStr = minSb.toString();
+                }
             }
         }
-        return String.valueOf(minSum);
+        return minStr;
     }
 }
 
