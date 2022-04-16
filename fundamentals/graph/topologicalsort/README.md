@@ -1,41 +1,47 @@
+- [Problem](#problem)
+- [Rerences](#rerences)
+- [DFS](#dfs)
+  - [Keyword](#keyword)
+  - [Idea](#idea)
+  - [Complexity](#complexity)
+- [Implementation](#implementation)
+- [BFS](#bfs)
+  - [Keyword](#keyword-1)
+  - [Idea](#idea-1)
+  - [Implementation](#implementation-1)
+  - [Complexity](#complexity-1)
+
+----
+
 # Problem
 
 어떤 작업을 수행하는데 선행해야 하는 작업이 존재할 때 선행작업을 먼저 
 수행하는 식으로 정렬하는 방법이다. 사이클이 있다면 위상정렬은 불가능 하다. 정렬의 결과는 여러개일 수 있다.
 
-# Keyword
-
-## Queue
-
-```cpp
-graph[][], indegMap, q, order
-// Build graph
-// Build inegMap
-// Build q, order
-```
-
-## Stack
-
-```cpp
-graph[][], nodeSet, visit, dfs, order
-// Build nodeSet
-// Build graph
-// dfs and Build visit, order
-// Reverse order
-// Check back-edges
-```
-
 # Rerences
 
 * [Topological Sorting @ geeksforgeeks](https://www.geeksforgeeks.org/topological-sorting/)
 
-# Stack
+# DFS
+
+## Keyword
+
+```cpp
+graph[][], visit, order[], dfs()
+// Build graph
+// dfs with building visit, order
+// Reverse order
+// Check back-edges
+```
 
 ## Idea
 
-[DFS](/fundamentals/graph/dfs/README.md) 를 수행한다. 방문한 순서를 `order[]` 에 저장한다. 그리고 `order[]` 를 뒤집는다.
+[DFS](/fundamentals/graph/dfs/README.md) 를 수행한다. 방문한 순서를 `order[]` 에
+저장한다. 그리고 `order[]` 를 뒤집는다.
 
-[DFS spanning tree](/fundamentals/graph/dfsspanningtree/README.md) 에서 배웠던 `back-edge` 가 있는지 다음과 같이 검사한다. 만약 있다면 cycle 이 존재하기 때문에 위상정렬은 불가능하다.
+[DFS spanning tree](/fundamentals/graph/dfsspanningtree/README.md) 에서 배웠던
+`back-edge` 가 있는지 다음과 같이 검사한다. 만약 있다면 cycle 이 존재하기 때문에
+위상정렬은 불가능하다.
 
 ```cpp
   // check invalid edge direction
@@ -57,7 +63,17 @@ O(V+E) O(V)
 
 * [c++11](a.cpp)
 
-# Queue
+# BFS
+
+## Keyword
+
+```cpp
+graph[][], indegMap, q, order, BFS
+// Build graph
+// Build inegMap
+// Build q
+// BFS with building order
+```
 
 ## Idea
 
@@ -68,7 +84,8 @@ queue 에 삽입한다. 이후 다음을 반복한다.
 하나씩 감소한다. 
 2. in-degree 가 0 인 녀석을 queue 에 삽입한다.  
 
-방문한 순서가 곧 위상정렬의 결과이다. 모든 노드를 방문하지 않고 queue 가 비워진다면 싸이클이 존재하는 것이다.
+방문한 순서가 곧 위상정렬의 결과이다. 모든 노드를 방문하지 않고 queue 가
+비워진다면 싸이클이 존재하는 것이다.
 
 ## Implementation
 
