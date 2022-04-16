@@ -2,67 +2,35 @@
 
 import java.util.*;
 
-public interface NestedInteger {
-    public NestedInteger();
-    public NestedInteger(int value);
-    public boolean isInteger();
-    public Integer getInteger();
-    public void setInteger(int value);
-    public void add(NestedInteger ni);
-    public List<NestedInteger> getList();
+interface NestedInteger {
+    boolean isInteger();
+    Integer getInteger();
+    void setInteger(int value);
+    void add(NestedInteger ni);
+    List<NestedInteger> getList();
 }
 
-// 1ms 87.28% 41.4MB 71.97%
-// double DFS
-// O(N) O(N)
-class Solution {
-    private int getMaxDepth(List<NestedInteger> nestedList) {
-        int maxDepth = 0;
-        // recursion
-        for (NestedInteger ni : nestedList) {
-            if (!ni.isInteger()) {
-                maxDepth = Math.max(maxDepth, getMaxDepth(ni.getList()));
-            }
-        }
-        return maxDepth + 1;
-    }
-    private int dfs(int maxDepth, List<NestedInteger> nestedList, int depth) {
-        int sum = 0;
-        // recursion
-        for (NestedInteger ni : nestedList) {
-            if (ni.isInteger()) {
-                sum += (maxDepth - depth) * ni.getInteger();
-            } else {
-                sum += dfs(maxDepth, ni.getList(), depth + 1);
-            }
-        }
-        return sum;
-    }
-    public int depthSumInverse(List<NestedInteger> nestedList) {
-        int maxDepth = getMaxDepth(nestedList);
-        return dfs(maxDepth, nestedList, 0);
-    }
-}
+// nl: [[1,1],2,[1,1]]
 
-// 1ms 87.28% 41.6MB 53.95%
-// DFS
+// 1ms 86.65% 41.9MB 32.76%
+// BFS
 // O(N) O(N)
 class Solution {
     public int depthSumInverse(List<NestedInteger> nestedList) {
-        int sum = 0, weightedSum = 0;
+        int locSum = 0, glbSum = 0;
         while (!nestedList.isEmpty()) {
-            List<NestedInteger> nextList = new ArrayList<>();
-            for (NestedInteger ni : nestedList) {
+            List<NestedInteger> tmpList = nestedList;
+            nestedList = new ArrayList<>();
+            for (NestedInteger ni : tmpList) {
                 if (ni.isInteger()) {
-                    sum += ni.getInteger();
+                    locSum += ni.getInteger();
                 } else {
-                    nextList.addAll(ni.getList());
+                    nestedList.addAll(ni.getList());
                 }
             }
-            weightedSum += sum;
-            nestedList = next;
+            glbSum += locSum;
         }
-        return weightedSum;
+        return glbSum;
     }
 }
 
