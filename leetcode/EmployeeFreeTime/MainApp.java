@@ -23,6 +23,7 @@ class Interval {
 //   2   4
 //   2     5       9 12
 
+// 9ms 92.67% 55.3MB 24.50%
 // sort
 // O(N) O(N)
 class Solution {
@@ -43,7 +44,7 @@ class Solution {
             if (prvEnd > 0 && prvEnd < evt.start) {
                 ans.add(new Interval(prvEnd, evt.start));
             }
-            prvEnd = evt.end;
+            prvEnd = Math.max(prvEnd, evt.end);
         }
         return ans;
     }
