@@ -550,6 +550,7 @@ $ a.exe
 
 * F | [dynamic array](/fundamentals/list/dynamicarray/README.md)
 * F | [singly linked list](/fundamentals/list/singlylinkedlist/README.md)
+* F | [reverse singly lniked list](/fundamentals/list/reverse/README.md)
 * F | [doubly linked list](/fundamentals/list/doublylinkedlist/README.md)
 * F | [skip list](/fundamentals/list/skiplist/README.md)
 * tortoise and the hare algorithm  
