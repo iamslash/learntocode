@@ -22,7 +22,7 @@ bob 이 최대 점수를 획득하도록 `bobArrows[]` 를 구하라.
 * `int[] maxBobArrows` 를 선언하여 bob 이 최고점수를 획득했을 때
   점수별로 사용한 화살의 개수를 저장한다.
   
-앞서 선언한 두 변수는 [backtracking]() 의 Best 에 해당한다.
+앞서 선언한 두 변수는 [backtracking](/doc/backtracking.md) 의 Best 에 해당한다.
 
 다음과 같은 부분문제 `dfs()` 를 선언한다.
 
@@ -36,7 +36,7 @@ aliceArrows: input
         pos: 이번에 따져볼 bobArrows 의 인덱스. 곧, 점수이다.
 ```
 
-`bobArrows, bobPoint` 는 [backtracking]() 의 Candidate 에 해당한다.
+`bobArrows, bobPoint` 는 [backtracking](/doc/backtracking.md) 의 Candidate 에 해당한다.
 
 `dfs()` 의 `base` 는 다음과 같이 구현한다.
 
