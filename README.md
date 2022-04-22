@@ -704,7 +704,7 @@ $ a.exe
 ## Binary Search Tree
 
 - F | [binary search tree](/fundamentals/tree/binarysearchtree/README.md)
-- in-order traversal, dummy node, previous node
+- in-order traversal, dummy node, prev node
   - [L](/leetcode/ConvertBinarySearchTreetoSortedDoublyLinkedList) | [Convert Binary Search Tree to Sorted Doubly Linked List](https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/submissions/)
   
 ## Binary Indexed Tree

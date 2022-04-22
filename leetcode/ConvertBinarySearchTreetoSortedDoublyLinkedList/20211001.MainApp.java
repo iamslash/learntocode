@@ -1,15 +1,19 @@
-// Copyright (C) 2022 by iamslash
+// Copyright (C) 2021 by iamslash
 
 import java.util.*;
 
+// Definition for a Node.
 class Node {
     public int val;
     public Node left;
     public Node right;
+
     public Node() {}
+
     public Node(int _val) {
         val = _val;
     }
+
     public Node(int _val,Node _left,Node _right) {
         val = _val;
         left = _left;
@@ -17,11 +21,13 @@ class Node {
     }
 };
 
-// 0ms 100.00% 41.9MB 78.08%
-// in-order traversal, dummy node, prev node
+// 0ms 100.00% 38.1MB 90.56%
+// keywords: dummy node, prev node
+// in-order traverse
 // O(N) O(lgN)
 class Solution {
-    private Node prev;
+    private Node prv;
+    // in-order traverse
     private void dfs(Node u) {
         // base
         if (u == null) {
@@ -29,21 +35,23 @@ class Solution {
         }
         // recursion
         dfs(u.left);
-        prev.right = u;
-        u.left = prev;
-        prev = u;
+        prv.right = u;
+        u.left = prv;
+        prv = u;        
         dfs(u.right);
     }
     public Node treeToDoublyList(Node root) {
         if (root == null) {
-            return root;
+            return null;
         }
-        Node dumm = new Node();
-        prev = dumm;
+        Node dum = new Node();
+        prv = dum;
         dfs(root);
-        dumm.right.left = prev;
-        prev.right = dumm.right;
-        return dumm.right;
+        // prv is tail
+        // dum.rigth is head
+        prv.right = dum.right;
+        dum.right.left = prv;
+        return dum.right;
     }
 }
 
