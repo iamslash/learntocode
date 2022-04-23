@@ -53,6 +53,13 @@ class Solution {
     return G;
   }
 };
+//    r
+//  0 
+//  0 
+//  0 w  
+//  3 
+//  4   
+//    
 
 void printg(std::vector<std::vector<int>>& G) {
   for (auto l : G) {

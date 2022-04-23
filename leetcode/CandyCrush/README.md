@@ -2,10 +2,10 @@
 
 [Candy Crush](https://leetcode.com/problems/candy-crush/)
 
-# Idea
+그리드 데이터 `G[][]` 가 주어지면 캔디 크러시 알고리즘을 적용한 결과를
+구하는 문제이다.
 
-그리드 데이터 `G[][]` 가 주어지면 캔디 크러시 알고리즘을
-적용한 결과를 구하는 문제이다.
+# Idea
 
 지워야할 후보자들을 표기하는 eliminate phase 와 표기된 후보자들을
 지우는 resolve phase 로 단계를 나누자.  eliminate phase 에서 아무것도
@@ -35,6 +35,7 @@
 # Implementation
 
 * [c++11](a.cpp)
+* [java11](MainApp.java)
 
 # Complexity
 
