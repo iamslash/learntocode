@@ -11,7 +11,7 @@ import java.util.*;
 //    supplies = ["yeast","flour","meat"]
 
 // 2366ms 5.03% 89MB 24.89%
-// hash set
+// brute force, hash set
 // O(N) O(N)
 class Solution {
     private boolean valid(Set<String> supplySet, List<String> ingredientList) {
