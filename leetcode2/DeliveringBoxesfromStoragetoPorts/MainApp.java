@@ -4,6 +4,7 @@ import java.util.*;
 
 // boxes: 1,1 2,1 1,1
 
+// 11ms 82.08% 135.6MB 62.26%
 // iterative dynamic programming, sliding window
 // O(N) O(N)
 public class Solution {
@@ -14,22 +15,21 @@ public class Solution {
         int n = boxes.length;
         // C[i]: min trips from i-th box
         int[] C = new int[n+1];
-        int i = 0, distinctPorts = 0;
-        for (int j = 0; j < n; ++j) {
-            maxWeight -= boxes[j][1];
-            maxBoxes--;
-            if (j > 0 && boxes[j-1][0] != boxes[j][0]) {
-                distinctPorts++;
+        int weight = 0, cost = 2;
+        for (int l = 0, r = 0; r < n; ++r) {
+            weight += boxes[r][1];
+            if (r > 0 && boxes[r-1][0] != boxes[r][0]) {
+                cost++;
             }
-            while (maxWeight < 0 || maxBoxes < 0 ||
-                   (i < j && C[i] == C[i + 1])) {
-                maxWeight += boxes[i++][1];
-                maxBoxes++;
-                if (boxes[i-1][0] != boxes[i][0]) {
-                    distinctPorts--;
+            while (r - l >= maxBoxes || weight > maxWeight ||
+                   (l < r && C[l] == C[l + 1])) {
+                weight -= boxes[l][1];
+                if (boxes[l][0] != boxes[l+1][0]) {
+                    cost--;
                 }
+                l++;
             }
-            C[i+1] = C[i] + distinctPorts + 2;
+            C[r+1] = C[l] + cost;
         }
         return C[n];
     }
