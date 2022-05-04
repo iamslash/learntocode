@@ -7,6 +7,7 @@
 - [forward and backward](#forward-and-backward)
 - [probe and forward](#probe-and-forward)
 - [count of subarray sum less equal to k](#count-of-subarray-sum-less-equal-to-k)
+- [subarray](#subarray)
 
 ---
 
@@ -68,3 +69,53 @@ linear traversal 할 때 전진할 수 있는지 검사해보고 전진하는 �
 수열 `A[]` 에 대해 `tgtSum` 이 주어지면 그것보다 작거나 같은 subarray sum 의 개수를 [sliding window](/fundamentals/slidingwindow/nestedloop/README.md) 를 이용하여 구하는 전략이다. [KthSmallestSubarraySum @ learntocode](/leetcode2/KthSmallestSubarraySum/README.md) 의 `int countLessEqual(int A[], int tgtSum)` 를 참고한다.
 
 * [L](/leetcode2/KthSmallestSubarraySum/README.md) | [Kth Smallest Subarray Sum](https://leetcode.com/problems/kth-smallest-subarray-sum/)
+
+# subarray
+
+subarray 를 `i, j` 인덱스를 이용하여 순회하는 방법은 다음과 같이 2 가지 방법이 있다.
+
+첫번째 방법
+
+```
+// nums: 2 3 3 2 2
+//       2
+//       2 3
+//       2 3 3
+//       2 3 3 2
+//       2 3 3 2 2
+//         3 
+//         3 3
+//         3 3 2
+//         3 3 2 2
+//           3
+//           3 2
+//           3 2 2
+//             2 
+//             2 2
+//               2
+```
+
+두번째 방법
+
+```
+// nums: 2 3 3 2 2
+//       2
+//         3
+//           3
+//             2
+//               2
+//       2 3
+//         3 3
+//           3 2
+//             2 2
+//       2 3 3
+//         3 3 2
+//           3 2 2
+//       2 3 3 2
+//         3 3 2 2
+//       2 3 3 2 2
+```
+
+어느 쪽 방법이든 탐색한 subarray 의 개수는 `1 + 2 + 3 + 4 + 5 = 15` 이다.
+
+* [L](/leetcode3/KDivisibleElementsSubarrays/) | [K Divisible Elements Subarrays](https://leetcode.com/problems/k-divisible-elements-subarrays/)

@@ -457,6 +457,7 @@ $ a.exe
 
 ## Loop
 
+* [subarray](doc/linear_traversal.md#subarray)
 * [move one by one shortly](doc/linear_traversal.md#move-one-by-one-shortly)
   * [Minimum Cost Homecoming of a Robot in a Grid](https://leetcode.com/problems/minimum-cost-homecoming-of-a-robot-in-a-grid/)
 * [up and down](/doc/linear_traversal.md#up-and-down)
