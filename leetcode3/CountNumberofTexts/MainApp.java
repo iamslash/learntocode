@@ -9,24 +9,31 @@ import java.util.*;
 //   c
 //
 
+
+// Idea: Iterative dynamic programming
+// 
+// * Consider all cases
 // 7      1
 // p
 // 77     2 
 // pp
 //  q
 // 777    4
+//   r
+// p q
+// ppp
+//  qp
 // 7777   8
-// pppp
-//  qpp
-// p qp
+//    s
+// p  r
 // pp q
 //  q q
-// r  p
-// p  r
-//    s
-
-// Idea
-// Consider all cases
+//   rp
+// p qp
+// pppp
+//  qpp
+//
+// * Equation
 // 7    = 1     
 // 77   = 1 + 1
 // 777  = 2 + 1 + 1
