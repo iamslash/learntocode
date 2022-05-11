@@ -600,6 +600,7 @@ $ a.exe
   
 * [L](/leetcode2/SlidingWindowMedian/README.md) | [Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
 * [L](/leetcode/FindMedianfromDataStream/) | [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) 
+* [L](/leetcode2/ProcessTasksUsingServers/) | [Process Tasks Using Servers](https://leetcode.com/problems/process-tasks-using-servers/)
 
 ## Deque
 
