@@ -53,7 +53,14 @@ class RangeFreqQuery {
     }
 }
 
-// Why ~r -1 instead of ~r
+// Idea: binary search
+//   l
+// 1 3 5 7 9    (r-1) - l + 1
+//        r
+//   l
+// 1 3 5 7 9    r     - l + 1
+//         r
+
 // 289ms 43.92% 200.6MB 46.73%
 // binary search
 // query: O(lgN) O(N)
