@@ -55,6 +55,7 @@
   - [Network Flow](#network-flow)
 - [Algorithms](#algorithms)
   - [Sort](#sort)
+  - [Double Sort](#double-sort)
   - [Search](#search)
   - [Binary Search](#binary-search)
   - [Numerical Analysis](#numerical-analysis)
@@ -847,6 +848,10 @@ $ a.exe
 - F | [bucket sort](fundamentals/sort/bucketsort/README.md)
 - F | [counting sort](fundamentals/sort/countingsort/README.md)
 - F | [radix sort](/fundamentals/sort/radixsort/README.md)
+
+## Double Sort
+
+* [L](/leetcode2/TheNumberofWeakCharactersintheGame/) | [The Number of Weak Characters in the Game](https://leetcode.com/problems/the-number-of-weak-characters-in-the-game/)
 
 ## Search
 
