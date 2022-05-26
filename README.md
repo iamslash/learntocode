@@ -1099,6 +1099,7 @@ $ a.exe
 ## Min 1st, 2nd
 
 * [L](/leetcode2/MinimumFallingPathSumII/README.md) | [Minimum Falling Path Sum II](https://leetcode.com/problems/minimum-falling-path-sum-ii/)
+* [L](/leetcode3/MinimumOperationstoMaketheArrayAlternating) | [Minimum Operations to Make the Array Alternating](https://leetcode.com/problems/minimum-operations-to-make-the-array-alternating/submissions/) 
 
 ## Brain Teaser
 
