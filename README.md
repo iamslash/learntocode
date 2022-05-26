@@ -75,7 +75,7 @@
   - [Minimax](#minimax)
   - [Two Pointers](#two-pointers)
   - [Sliding Window](#sliding-window)
-  - [Min 1st, 2nd](#min-1st-2nd)
+  - [Finding 1st, 2nd](#finding-1st-2nd)
   - [Brain Teaser](#brain-teaser)
   - [Design](#design)
   - [Reservoir Sampling](#reservoir-sampling)
@@ -1096,7 +1096,7 @@ $ a.exe
 * [L](/leetcode2/MaximumErasureValue/README.md) | [Maximum Erasure Value](https://leetcode.com/problems/maximum-erasure-value/)
 * [L](/leetcode/KEmptySlots/README.md) | [K Empty Slots](https://leetcode.com/problems/k-empty-slots/)
 
-## Min 1st, 2nd
+## Finding 1st, 2nd
 
 * [L](/leetcode2/MinimumFallingPathSumII/README.md) | [Minimum Falling Path Sum II](https://leetcode.com/problems/minimum-falling-path-sum-ii/)
 * [L](/leetcode3/MinimumOperationstoMaketheArrayAlternating) | [Minimum Operations to Make the Array Alternating](https://leetcode.com/problems/minimum-operations-to-make-the-array-alternating/submissions/) 
