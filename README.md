@@ -576,6 +576,7 @@ $ a.exe
 * F | [mono stack](/doc/stack_overview.md#mono_stack)
 * [L](/leetcode2/MaximumSubarrayMin-Product/README.md) | [Maximum Subarray Min-Product](https://leetcode.com/problems/maximum-subarray-min-product/)
 * [L](/leetcode2/MaximumofMinimumValuesinAllSubarrays/README.md) | [Maximum of Minimum Values in All Subarrays](https://leetcode.com/problems/maximum-of-minimum-values-in-all-subarrays/)
+* [L](/leetcode3/NumberofPeopleThatCanBeSeeninaGrid/) | [Number of People That Can Be Seen in a Grid](https://leetcode.com/problems/number-of-people-that-can-be-seen-in-a-grid/)
 
 ## Double Stack
 
