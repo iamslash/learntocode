@@ -11,6 +11,7 @@ import java.util.*;
 //
 // 
 
+// 204ms 30.00% 61.5MB 100.00%
 // iterative dynamic programming, mono stack
 // O(N) O(N)
 class Solution {
@@ -19,24 +20,22 @@ class Solution {
         long INF = Long.MAX_VALUE, jump1 = 0, jump2 = 0;
         // C[i]: min cost to n-1 index from i index
         long[] C = new long[n];
-        Stack<Integer> incStck = new Stack<>();
-        Stack<Integer> decStck = new Stack<>();
-        incStck.push(n-1);
-        decStck.push(n-1);
+        Stack<Integer> ltIdxStck = new Stack<>();
+        Stack<Integer> gteIdxStck = new Stack<>();
+        ltIdxStck.push(n-1);
+        gteIdxStck.push(n-1);
         for (int idx = n-2; idx >= 0; --idx) {
-            while (!incStck.isEmpty() && nums[idx] <= nums[incStck.peek()]) {
-                incStck.pop();
+            while (!ltIdxStck.isEmpty() && nums[idx] <= nums[ltIdxStck.peek()]) {
+                ltIdxStck.pop();
             }
-            while (!decStck.isEmpty() && nums[idx] > nums[decStck.peek()]) {
-                decStck.pop();
+            while (!gteIdxStck.isEmpty() && nums[idx] > nums[gteIdxStck.peek()]) {
+                gteIdxStck.pop();
             }
-            int incTop = incStck.peek();
-            int decTop = decStck.peek();
-            jump1 = incStck.isEmpty() ? INF : costs[incTop] + C[incTop];
-            jump2 = decStck.isEmpty() ? INF : costs[decTop] + C[decTop];
+            jump1 = ltIdxStck.isEmpty() ? INF : costs[ltIdxStck.peek()] + C[ltIdxStck.peek()];
+            jump2 = gteIdxStck.isEmpty() ? INF : costs[gteIdxStck.peek()] + C[gteIdxStck.peek()];
             C[idx] = Math.min(jump1, jump2);
-            incStck.add(idx);
-            decStck.add(idx);
+            ltIdxStck.add(idx);
+            gteIdxStck.add(idx);
         }
         return C[0];
     }
