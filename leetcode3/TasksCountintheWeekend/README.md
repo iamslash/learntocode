@@ -5,6 +5,7 @@
 # Implementation
 
 ```
+-- 464ms 50.00% 0B 100.00%
 SELECT SUM(WEEKDAY(submit_date) >= 5) AS weekend_cnt,
        SUM(WEEKDAY(submit_date) < 5) AS working_cnt
   FROM Tasks;
