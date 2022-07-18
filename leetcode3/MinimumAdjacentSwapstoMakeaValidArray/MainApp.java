@@ -2,15 +2,32 @@
 
 import java.util.*;
 
+//             M
 // nums: 3 4 5 5 3 1
-//             3 1 5
-//           3 1 5 5
-//         3 1 4 5 5
+//                 m
+//       1 3 4 5 5 3
+//             5 3 5
 
-// sort
+// Idea:
+//
+// maxIdx: index of right most max numm
+// minIdx: index of left most min num
+//    ans: (n - 1 - maxIdx) + minIdx - (minIdx > maxIdx ? 1 : 0)
+
+// math
 // O(NlgN) O(N)
 class Solution {
     public int minimumSwaps(int[] nums) {
+        int n = nums.length, maxIdx = n - 1, minIdx = 0;
+        for (int i = 0; i < n; ++i) {
+            if (nums[i] < nums[minIdx]) {
+                minIdx = i;
+            }
+            if (nums[n-1-i] > nums[maxIdx]) {
+                maxIdx = n-1-i;
+            }
+        }
+        return (n - 1 - maxIdx) + minIdx - (minIdx > maxIdx ? 1 : 0);
     }
 }
 
