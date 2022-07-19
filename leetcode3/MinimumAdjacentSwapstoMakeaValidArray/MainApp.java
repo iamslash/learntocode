@@ -14,8 +14,9 @@ import java.util.*;
 // minIdx: index of left most min num
 //    ans: (n - 1 - maxIdx) + minIdx - (minIdx > maxIdx ? 1 : 0)
 
+// 3ms 100.00% 80.3MB 100.00%
 // math
-// O(NlgN) O(N)
+// O(N) O(1)
 class Solution {
     public int minimumSwaps(int[] nums) {
         int n = nums.length, maxIdx = n - 1, minIdx = 0;
