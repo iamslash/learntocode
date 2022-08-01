@@ -29,6 +29,20 @@ class NumberContainers {
         return num2idxsMap.get(num).first();
     }
 }
+// edge cases
+//
+// Runtime Error Message:
+// java.util.NoSuchElementException
+//   at line 1602, java.base/java.util.TreeMap.key
+//   at line 291, java.base/java.util.TreeMap.firstKey
+//   at line 391, java.base/java.util.TreeSet.first
+//   at line 23, NumberContainers.find
+//   at line 68, __Driver__.__helperSelectMethod__
+//   at line 87, __Driver__.__helper__
+//   at line 108, __Driver__.main
+// Last executed input:
+// ["NumberContainers","change","find","change","find","find","find"]
+// [[],[1,10],[10],[1,20],[10],[20],[30]]
 
 public class MainApp {
   public static void main(String[] args) {
