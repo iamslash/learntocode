@@ -2,39 +2,38 @@
 
 import java.util.*;
 
+// 619ms 47.12% 143.7MB 80.99%
 // bidirectional indexing
 // changeRating: O(NlgN) O(N)
 // highestRated: O(1) O(N)
 class FoodRatings {
-    static class Rating {
-        public String food;
-        public int rate;
-        public Rating(String food, int rate) {
-            this.food = food;
-            this.rate = rate;
-        }
-    }
-    Map<String, TreeSet<Rating>> cuisine2ratingsMap = new HashMap<>();
+    Map<String, TreeSet<String>> cuisine2ratingsMap = new HashMap<>();
     Map<String, String> food2cuisineMap = new HashMap<>();
+    Map<String, Integer> food2rateMap = new HashMap<>();
     
     public FoodRatings(String[] foods, String[] cuisines, int[] ratings) {
-        int n = foods.length;
-        for (int i = 0; i < n; ++i) {
-            cuisine2ratingsMap.putIfAbsent(cuisines[i], new TreeSet<Rating>((a, b) -> a.rate == b.rate ? a.food.compareTo(b.food) : b.rate - a.rate));
-            cuisine2ratingsMap.get(cuisines[i]).add(new Rating(foods[i], ratings[i]));
+        for (int i = 0; i < foods.length; ++i) {
+            cuisine2ratingsMap.putIfAbsent(
+                cuisines[i], new TreeSet<String>(
+                    (a, b) -> food2rateMap.get(a) == food2rateMap.get(b) ?
+                    a.compareTo(b) :
+                    food2rateMap.get(b) - food2rateMap.get(a)));
+            cuisine2ratingsMap.get(cuisines[i]).add(foods[i]);
+            food2rateMap.put(foods[i], ratings[i]);
             food2cuisineMap.put(foods[i], cuisines[i]);
         }
     }
     
     public void changeRating(String food, int newRating) {
         String cuisine = food2cuisineMap.get(food);
-        TreeSet ratingSet = cuisine2ratingsMap.get(cuisine);
-        ratingSet.removeIf(rating -> rating.food == food);
-        ratingSet.add(new Rating(food, newRating));
+        TreeSet<String> ratingSet = cuisine2ratingsMap.get(cuisine);
+        ratingSet.remove(food);
+        food2rateMap.put(food, newRating);
+        ratingSet.add(food);
     }
     
     public String highestRated(String cuisine) {
-        return cuisine2ratingsMap.get(cuisine).first().food;
+        return cuisine2ratingsMap.get(cuisine).first();
     }
 }
 
