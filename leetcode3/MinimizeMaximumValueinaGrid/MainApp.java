@@ -10,6 +10,7 @@ import java.util.*;
 // maxRows:
 // maxCols:
 
+// 289ms 21.49% 98.3MB 83.18%
 // priority queue
 // O(HW*lgHW) O(HW)
 class Solution {
