@@ -6,29 +6,57 @@ import java.util.*;
 // 2 3 3
 // 1 3 4
 
-// Wrong Answer:
-// Input:
- // [[71575,109387,113328,258018,317748,327741,385646,423299,489324,563784,612475,725022,728067,750414,769846,824496,899884],
- // [19324,36317,61462,112157,286730,300583,313241,345757,483842,586927,733078,743581,752183,774762,871565,944784,956649],
- // [2165,63036,66552,186476,217978,235978,265673,315636,328790,417180,442602,557679,566878,598316,614081,813774,969910]]
-// Output:
-// 563784
-// Expected:
-// 423299
-// 
-// matrix
-// O(HW) O(HW)
+// 67ms 28.95% 93MB 57.89%
+// sort
+// O(HWlgHW) O(HW)
 class Solution {
     public int matrixMedian(int[][] grid) {
-        int h = grid.length, w = grid[0].length, i = 0;
-        int[] nums = new int[h * w];
+        int h = grid.length, w = grid[0].length, n = h * w;
+        int[] nums = new int[n];
+        int i= 0;
         for (int y = 0; y < h; ++y) {
             for (int x = 0; x < w; ++x) {
-                if (nums[i] < grid[y][x]) {
-                    nums[i++] = grid[y][x];
-                }
+                nums[i++] = grid[y][x];
             }
         }
-        return nums[(i - 1) / 2];
+        Arrays.sort(nums);
+        return nums[(n-1)/2];
+    }
+}
+
+// 14ms 36.84% 93.6MB 46.49%
+// binary search
+// O(HW) O(1) 
+class Solution {
+    // binary search left most equal
+    private int binarySearch(int[] nums, int tgt) {
+        int lo = 0, hi = nums.length - 1;
+        while (lo < hi) {
+            int mi = (lo + hi) / 2;
+            if (nums[mi] < tgt) {
+                lo = mi + 1;
+            } else {
+                hi = mi;
+            }
+        }
+        return nums[lo] >= tgt ? lo : nums.length;
+    }
+    // binary search right most equal
+    public int matrixMedian(int[][] grid) {
+        int h = grid.length, w = grid[0].length;
+        int lo = 1, hi = 1_000_000, k = h * w / 2 + 1;
+        while (lo < hi) {
+            int mi = (lo + hi + 1) / 2;
+            int cnt = 0;
+            for (int[] row: grid) {
+                cnt += w - binarySearch(row, mi);
+            }
+            if (cnt >= k) {
+                lo = mi;
+            } else {
+                hi = mi - 1;
+            }
+        }
+        return lo;
     }
 }
