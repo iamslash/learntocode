@@ -303,8 +303,8 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 * c++, java, python
 * kotlin, typescript, go
-* swift, cs, rust
-* haskell, ruby, obj-c, clojure
+* cs, swift, objc, rust
+* haskell, ruby, clojure
 
 - c++
 
