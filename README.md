@@ -301,7 +301,10 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
  
 # Commandline By Programming Languages
 
-* c++, java, go, python, javascript, ruby, kotlin, obj-c, swift, c#, clojure, rust
+* c++, java, python
+* kotlin, typescript, go
+* swift, cs, rust
+* haskell, ruby, obj-c, clojure
 
 - c++
 
