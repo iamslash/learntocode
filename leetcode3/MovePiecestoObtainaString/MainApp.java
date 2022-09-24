@@ -2,65 +2,27 @@
 
 import java.util.*;
 
-//              i
-// src: _L__R__R_
-// dst: L______RR
-//               j
-
-
-//               i
-// src: _L__R__R_L
-// dst: L______RR_
-//                j
-
-//        i
-// src: _L
-// dst: LL
-//       j
-
-// 21ms 87.77% 54.9MB 59.11%
+// 33ms 50.10% 55.2MB 46.73%
 // two pointers
 // O(N) O(1)
 class Solution {
-    public boolean canChange(String src, String dst) {
-        // if (!src.replaceAll("_", "").equals(dst.replaceAll("_", ""))) {
-        //     return false;
-        // }
-        int i = 0, j = 0, n = src.length();
-        while (i < n && j < n) {
-            while (i < n && src.charAt(i) == '_') {
-                ++i;
+    public boolean canChange(String s, String t) {
+        int i = 0, j = 0, n = s.length();
+        for (i = 0, j = 0; i < n || j < n; ++i, ++j) {
+            while (i < n && s.charAt(i) == '_') {
+                i++;
             }
-            while (j < n && dst.charAt(j) == '_') {
-                ++j;
+            while (j < n && t.charAt(j) == '_') {
+                j++;
             }
-            // System.out.printf("i: %d, j: %d\n", i, j);
-            if (i >= n || j >= n) {
+            if (i == n ||
+                j == n ||
+                s.charAt(i) != t.charAt(j) ||
+                (s.charAt(i) == 'L' && i < j) ||
+                (s.charAt(i) == 'R' && i > j)) {
                 break;
             }
-            if (src.charAt(i) == 'L' && dst.charAt(j) == 'L') {
-                if (i < j) {
-                    return false;
-                }
-            } else if (src.charAt(i) == 'R' && dst.charAt(j) == 'R') {
-                if (i > j) {
-                    return false;
-                }
-            } else {
-                return false;
-            }
-            i++;
-            j++;
         }
-        if ((i < n && src.charAt(i) != '_') ||
-            (j < n && dst.charAt(j) != '_')) {
-            return false;
-        }
-        return true;
+        return i == n && j == n;
     }
-}
-
-public class MainApp {
-  public static void main(String[] args) {
-  }
 }
