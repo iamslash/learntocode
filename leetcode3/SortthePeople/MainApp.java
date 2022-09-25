@@ -2,21 +2,20 @@
 
 import java.util.*;
 
-// 17ms 70.00% 55MB 70.00%
-// sort
+// 6ms 100.00% 42.9MB 100.00%
+// hash map, sort
 // O(NlgN) O(N)
 class Solution {
     public String[] sortPeople(String[] names, int[] heights) {
-        int n = names.length;
-        Integer[] idxs = new Integer[n];
+        int n = heights.length;
+        Map<Integer, String> hight2nameMap = new HashMap<>();
         for (int i = 0; i < n; ++i) {
-            idxs[i] = i;
+            hight2nameMap.put(heights[i], names[i]);
         }
-        Arrays.sort(idxs, (i, j) -> heights[j] - heights[i]);
-        String[] ans = new String[n];
+        Arrays.sort(heights);
         for (int i = 0; i < n; ++i) {
-            ans[i] = names[idxs[i]];
+            names[i] = hight2nameMap.get(heights[n-1-i]);
         }
-        return ans;
+        return names;
     }
 }
