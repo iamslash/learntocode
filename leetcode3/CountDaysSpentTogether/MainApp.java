@@ -3,7 +3,7 @@
 import java.util.*;
 
 // 0ms 100.00% 42.7MB 9.86%
-// hash map
+// partial sum
 // O(1) O(1)
 class Solution {
     int[] days = new int[]{0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
