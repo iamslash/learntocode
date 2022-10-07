@@ -16,7 +16,7 @@ class Solution {
     }
 }
 
-// 0ms 100.00% 40.9MB 75.00%
+// 0ms 100.00% 40.9MB 75.00%z
 class Solution {
     private int gcd(int a, int b) {
         if (b == 0) {
