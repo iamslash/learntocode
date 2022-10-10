@@ -18,6 +18,7 @@
 - [Basic](#basic)
   - [Loop](#loop)
   - [Recursion](#recursion)
+  - [Subarray](#subarray)
 - [Data Structures](#data-structures)
   - [Array](#array)
   - [Matrix](#matrix)
@@ -501,6 +502,10 @@ $ a.exe
 * F | [pick k numbers from n numbers](/fundamentals/recursion/pickKnumbers/README.md)
 * F | [tower of hanoi](/fundamentals/recursion/towerofhanoi/README.md)
 * [L](/leetcode/MergeTwoSortedLists/README.md) | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+
+## Subarray
+
+* F | [subarray](/doc/subarray.md)
 
 # Data Structures
 
