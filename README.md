@@ -1142,6 +1142,7 @@ $ a.exe
 ## Subarray
 
 * F | [subarray](/doc/subarray.md)
+* [L](/leetcode3/SumofTotalStrengthofWizards/) | [Sum of Total Strength of Wizards](https://leetcode.com/problems/sum-of-total-strength-of-wizards/)
 
 ## Design
 

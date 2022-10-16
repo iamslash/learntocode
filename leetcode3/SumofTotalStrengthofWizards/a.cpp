@@ -5,34 +5,10 @@
 
 using namespace std;
 
-//           i
-// strength: 1 3 1 2
-//    lefts: - 0 - 2 
-//   rights: 2 2 4 4
-//
-// 1 is min: 1 * 4
-//           1
-//           1 3
-//           1 3 1
-//           1 3 1 2
-// 3 is min: 1 * 1
-//             3
-// 1 is min: 2 * 2
-//               1
-//               1 2
-//             3 1
-//             3 1 2
-// 2 is min: 1 * 1
-//                 2
-//
-//       ps:
-//           1 3 5 7
-//      pps:
-//           1 4 9 16
-
-// 520ms 39.92% 105.4MB 44.13%
+// 233ms 98.90% 105.6MB 26.85%
 // prefix sum, monotonic stack
 // O(N) O(N)
+// difficult
 class Solution {
 public:
   int totalStrength(vector<int>& strength) {
@@ -71,9 +47,9 @@ public:
     // Sum it
     int64_t ans = 0;
     for (int i = 0; i < n; ++i) {
-      ans += ((pps[rights[i] + 1] - pps[i + 1]) * (i - lefts[i]) % MOD +
-              MOD * 2 -
-              (pps[i + 1] - pps[lefts[i] + 1]) * (rights[i] - i) % MOD) % MOD *
+      ans += ((pps[rights[i] + 1] - pps[i + 1]) * (i - lefts[i]) % MOD -
+              (pps[i + 1] - pps[lefts[i] + 1]) * (rights[i] - i) % MOD +
+              MOD * 2) % MOD *
         strength[i] % MOD;
       ans %= MOD;
     }
@@ -82,10 +58,11 @@ public:
 };
 
 //           i
-// strength: 1 3 1 2
-//    lefts: - 0 - 2 
-//   rights: 2 2 4 4
-//
+// strength: 1 3  1  2
+//    lefts: - 0  -  2 
+//   rights: 2 2  4  4
+//       ps: 1 4  5  7
+//      pps: 1 5 10 17
 
 int main() {
   return 0;
