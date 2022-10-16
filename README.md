@@ -18,7 +18,6 @@
 - [Basic](#basic)
   - [Loop](#loop)
   - [Recursion](#recursion)
-  - [Subarray](#subarray)
 - [Data Structures](#data-structures)
   - [Array](#array)
   - [Matrix](#matrix)
@@ -85,6 +84,7 @@
   - [Palindrome](#palindrome)
   - [Simulated Annealing](#simulated-annealing)
 - [Famous Problems](#famous-problems)
+  - [Subarray](#subarray)
   - [Design](#design-1)
   - [Find Peak Element](#find-peak-element)
   - [Egg Drop](#egg-drop)
@@ -502,10 +502,6 @@ $ a.exe
 * F | [pick k numbers from n numbers](/fundamentals/recursion/pickKnumbers/README.md)
 * F | [tower of hanoi](/fundamentals/recursion/towerofhanoi/README.md)
 * [L](/leetcode/MergeTwoSortedLists/README.md) | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
-
-## Subarray
-
-* F | [subarray](/doc/subarray.md)
 
 # Data Structures
 
@@ -1142,6 +1138,10 @@ $ a.exe
 * [L](/leetcode2/BestPositionforaServiceCentre) | [Best Position for a Service Centre](https://leetcode.com/problems/best-position-for-a-service-centre/)
 
 # Famous Problems
+
+## Subarray
+
+* F | [subarray](/doc/subarray.md)
 
 ## Design
 

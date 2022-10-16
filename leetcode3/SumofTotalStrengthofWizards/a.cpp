@@ -71,10 +71,9 @@ public:
     // Sum it
     int64_t ans = 0;
     for (int i = 0; i < n; ++i) {
-      ans += (
-              (pps[rights[i] + 1] - pps[i + 1]) * (i - lefts[i]) % MOD + MOD * 2 -
-              (pps[i + 1] - pps[lefts[i] + 1]) * (rights[i] - i) % MOD) %
-        MOD *
+      ans += ((pps[rights[i] + 1] - pps[i + 1]) * (i - lefts[i]) % MOD +
+              MOD * 2 -
+              (pps[i + 1] - pps[lefts[i] + 1]) * (rights[i] - i) % MOD) % MOD *
         strength[i] % MOD;
       ans %= MOD;
     }

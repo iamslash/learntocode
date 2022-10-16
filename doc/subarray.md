@@ -62,7 +62,7 @@ subarray 를 `i, j` 인덱스를 이용하여 순회하는 방법은 다음과 �
 
 # Number Of Subarrays
 
-원소의 개수가 `n` 개 라고 하면 subarray 의 개수는 `n * (n + 1) / 2` 와 같다.
+원소의 개수가 `n` 개 라고 하면 전체 subarray 의 개수는 `n * (n + 1) / 2` 와 같다.
 예를 들어 다음과 같이 `[1, 2, 3]` 의 경우를 살펴보자.
 
 ```
@@ -79,7 +79,7 @@ nums: 1 2 3
 
 # Number Of Total Min Usages
 
-subarray 의 각 원소가 최소값으로 사용되었을 때의 횟수는 subarray 의 개수와 같다.
+subarray 의 각 원소가 최소값으로 사용되었을 때의 횟수는 전체 subarray 의 개수와 같다.
 예를 들어 다음과 같이 `[1, 2, 3]` 의 경우를 살펴보자.
 
 ```
@@ -101,7 +101,7 @@ Number of total min usages -- 6
 
 # Number Of Total Max Usages
 
-subarray 의 각 원소가 최대값으로 사용되었을 때의 횟수는 subarray 의 개수와 같다.
+subarray 의 각 원소가 최대값으로 사용되었을 때의 횟수는 전체 subarray 의 개수와 같다.
 예를 들어 다음과 같이 `[1, 2, 3]` 의 경우를 살펴보자.
 
 ```
