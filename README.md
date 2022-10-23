@@ -911,6 +911,7 @@ $ a.exe
 
 ## Computational Geometry
 
+- F | [event conflict](/fundamentals/computationalgeometry/eventconflict/README.md)
 - F | [vector class](/fundamentals/computationalgeometry/vector/README.md)
   - normalize, dot product, cross product, polar, how much closer
 - F | [intersection](/fundamentals/computationalgeometry/intersection/README.md)
