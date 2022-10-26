@@ -800,6 +800,8 @@ $ a.exe
 - F | [DFS (depth first search)](fundamentals/graph/dfs/README.md)
 - F | [dfs spanning tree](fundamentals/graph/dfsspanningtree/README.md)
 - [L](/leetcode/RobotRoomCleaner/README.md) | [Robot Room Cleaner](https://leetcode.com/problems/robot-room-cleaner/)
+- [L](/leetcode3/ChooseEdgestoMaximizeScoreinaTree/) | [Choose Edges to Maximize Scorein a Tree](https://leetcode.com/problems/choose-edges-to-maximize-score-in-a-tree/)
+  - with or without node
 
 ## BFS (Breadth First Search)
 
