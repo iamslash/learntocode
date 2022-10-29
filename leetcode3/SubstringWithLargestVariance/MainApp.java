@@ -57,25 +57,86 @@ class Solution {
     }
 }
 
+//           i
+//      s:   a a b a b b b
+//           
+//   diff: a a
+//         a b
+//         0
+//   temp: a
+//         a
+//         0
+
 // 49ms 95.46% 43.8MB 40.62%
-// iterative dynamic programmingz
+// iterative dynamic programming
 // O(N) O(1)
+// difficult
 class Solution {
     public int largestVariance(String s) {
         int maxVar = 0, n = s.length();
+        // freq of a
+        int[][] freq = new int[26][26];
+        // max(freqa - freqb)
         int[][] diff = new int[26][26];
-        int[][] temp = new int[26][26];
         for (int i = 0; i < 26; ++i) {
-            Arrays.fill(temp[i], -n);
+            Arrays.fill(diff[i], -n);
         }
-        for (int i = 0; i < n; ++i) {
-            int idx = s.charAt(i) - 'a';
+        for (int pos = 0; pos < n; ++pos) {
+            int i = s.charAt(pos) - 'a';
             for (int j = 0; j < 26; ++j) {
-                diff[idx][j]++;
-                temp[idx][j]++;
-                temp[j][idx] = --diff[j][idx];
-                diff[j][idx] = Math.max(0, diff[j][idx]);
-                maxVar = Math.max(maxVar, Math.max(temp[idx][j], temp[j][idx]));
+                freq[i][j]++;
+                diff[i][j]++;
+                diff[j][i] = --freq[j][i];
+                freq[j][i] = Math.max(0, freq[j][i]);
+                maxVar = Math.max(maxVar, Math.max(diff[i][j], diff[j][i]));
+            }
+        }
+        return maxVar;
+    }
+}
+
+//               i
+//      s:   a a b a b b b
+//           
+//   C[0]: a b
+//         b a
+//         1 -
+//   C[1]: a b
+//         b a
+//         - -
+
+// 31ms 97.96% 45.9MB 34.28%
+// iterative dynamic programming
+// O(N) O(1)
+// difficult
+class Solution {
+    public int largestVariance(String s) {                
+        int maxVar = 0;
+        // C[a][b][0] is the freq of a
+        // C[a][b][1] is the max(freqa - freqb) in all substring, minmum is -1
+        int[][][] C = new int[26][26][2];
+        for (int i = 0; i < 26; i++) {
+            for (int j = 0; j < 26; j++) {
+                C[i][j][1] = -10000;
+            }
+        }
+
+        for (char c : s.toCharArray()) {
+            int i = c - 'a';
+            for (int j = 0; j < 26; j++) {
+                if (i != j) {
+                    // current ch freq + 1
+                    C[i][j][0] += 1;
+                    C[i][j][1] += 1;
+
+                    // update b&a situation
+                    C[j][i][1] = C[j][i][0] - 1;
+                    if (C[j][i][0] > 0)
+                        C[j][i][0] -= 1;
+
+                    maxVar = Math.max(C[j][i][1], maxVar);
+                    maxVar = Math.max(C[i][j][1], maxVar);
+                }
             }
         }
         return maxVar;
