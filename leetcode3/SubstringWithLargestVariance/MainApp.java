@@ -142,3 +142,89 @@ class Solution {
         return maxVar;
     }
 }
+
+//              p: b
+//              q: a
+//              s: a b b
+//                     i
+//           pCnt: 2
+//           qCnt: 0
+// canExtendPrevQ: t
+//            ans: 0
+
+// 326ms 45.22% 42.4MB 86.26%
+class Solution {
+    public int largestVariance(String s) {
+        int n = s.length(), ans = 0;
+        for (char p = 'a'; p <= 'z'; ++p) {
+            for (char q = 'a'; q <= 'z'; ++q) {
+                int pCnt = 0, qCnt = 0;
+                boolean canExtendPrevQ = false;
+                for (char c : s.toCharArray()) {
+                    if (c == p) {
+                        pCnt++;
+                    }
+                    if (c == q) {
+                        qCnt++;
+                    }
+                    if (qCnt > 0) {
+                        ans = Math.max(ans, pCnt - qCnt);
+                    } else if (qCnt == 0 && canExtendPrevQ) {
+                        ans = Math.max(ans, pCnt - 1);
+                    }
+                    if (qCnt > pCnt) {
+                        pCnt = 0;
+                        qCnt = 0;
+                        canExtendPrevQ = true;
+                    }
+                }
+            }
+        }
+        return ans;
+    }
+}
+
+// kadane algorithm
+// O(N) O(1)
+class Solution {
+    public int largestVariance(String s) {
+        int[] freq = new int[26];
+        for (char c : s.toCharArray()) {
+            freq[c - 'a']++;
+        }
+        int maxVar = 0;
+        for (int i = 0; i < 26; ++i) {
+            for (int j = 0; j < 26; ++j) {
+                if (i == j || freq[i] == 0 || freq[j] == 0) {
+                    continue;
+                }
+                boolean hasA = false, hasB = false;
+                int remainA = 0, remainB = 0, maxSubarray = 0;
+                for (char c : s.toCharArray()) {
+                    int k = c - 'a';
+                    if (k != i && k != j) {
+                        continue;
+                    }
+                    if (maxSubarray < 0 && remainA != 0 && remainB != 0) {
+                        maxSubarray = 0;
+                        hasA = false;
+                        hasB = false;
+                    }
+                    if (k == i) {
+                        maxSubarray += 1;
+                        remainA -= 1;
+                        hasA = true;
+                    } else if (k == j) {
+                        maxSubarray -= 1;
+                        remainB -= 1;
+                        hasB = true;
+                    }
+                    if (hasA && hasB) {
+                        maxVar = Math.max(maxVar, maxSubarray);
+                    }
+                }
+            }
+        }
+        return maxVar;
+    }
+}
