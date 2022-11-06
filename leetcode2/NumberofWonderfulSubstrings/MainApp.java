@@ -3,23 +3,32 @@
 import java.util.*;
 
 
+//       a b c d e f g h i j
 // word: a b a
-//       a
-//         b
-//           a
-//       a b a
+// 
+//       a        w
+//       a b
+//       a b a    w
+//         b      w
+//         b a
+//           a    w
+// cnts: freq of bm
 
-//                      i
-// word:      a    b    a
-//   bm:   0001 0011 0010
-//                      j
-// cnts:   0000 0001 0010 0011 
-//            1    1    0    1
-//  ans:      4
+//                     i
+// word:     a    b    a
+//   bm:  0001 0011 0010   
+//                     j
+//        0100 0100 0001
+//        0101 0111 0011
+//                a    b   ba     dcba      jihgfedcba
+// cnts:  0000 0001 0010 0011 ... 1111 .... 1111111111
+//           1    1    0    1        0               0
+//  ans:     2
 
 // 22ms 96.70% 39.8MB 63.09%
 // bit manipulation
 // O(N) O(1)
+// too difficult
 class Solution {
     public long wonderfulSubstrings(String word) {
         long cnt[] = new long[1024];  // the count of state 

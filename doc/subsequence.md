@@ -11,15 +11,21 @@ subsequence 의 특징들을 몇가지 정리해 본다.
 
 # How To Loop Subsequence
 
-이번 숫자를 `num[i]` 다음 숫자를 `num[i+1]` 라고 하자. 다음과 같은 두가지 방법을
-이용해서 subsequence 를 만들어낼 수 있다.
+이번 숫자를 `num[i]` 다음 숫자를 `num[i+1]` 라고 하자. 최초의 숫자를 `nums[0]`
+이라고 하자. 그외의 subseq 는 다음과 같은 두가지 방법을 이용해서 만들어낼 수
+있다.
 
-* `{num[i], num[i+1]}`
-* `{num[i+1]}`
+```
+* num[i], num[i+1]
+*         num[i+1]
+```
 
 예를 들어 `1, 2, 3, 4` 의 subsequence 들을 살펴보자. 
 
 ```
+  i
+1 2 3 4
+
 1                
   1 2            
     1 2 3        
