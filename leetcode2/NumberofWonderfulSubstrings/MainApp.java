@@ -2,21 +2,28 @@
 
 import java.util.*;
 
-//            i
+
+// word: a b a
+//       a
+//         b
+//           a
+//       a b a
+
+//                      i
 // word:      a    b    a
 //   bm:   0001 0011 0010
-// cnts:   0000 0001 0010 
-//            1    0    0
-//  ans:      0
+//                      j
+// cnts:   0000 0001 0010 0011 
+//            1    1    0    1
+//  ans:      4
 
 // 22ms 96.70% 39.8MB 63.09%
 // bit manipulation
 // O(N) O(1)
 class Solution {
     public long wonderfulSubstrings(String word) {
-        // the count of state
-        long cnt[] = new long[1024];
-        cnt[0] = 1;
+        long cnt[] = new long[1024];  // the count of state 
+        cnt[0] = 1;  // seed
         long ans = 0;
         int bm = 0;
         for (char c : word.toCharArray()) {
