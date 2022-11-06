@@ -85,6 +85,7 @@
   - [Simulated Annealing](#simulated-annealing)
 - [Famous Problems](#famous-problems)
   - [Subarray](#subarray)
+  - [Subsequence](#subsequence)
   - [Design](#design-1)
   - [Find Peak Element](#find-peak-element)
   - [Egg Drop](#egg-drop)
@@ -1146,6 +1147,10 @@ $ a.exe
 
 * F | [subarray](/doc/subarray.md)
 * [L](/leetcode3/SumofTotalStrengthofWizards/) | [Sum of Total Strength of Wizards](https://leetcode.com/problems/sum-of-total-strength-of-wizards/)
+
+## Subsequence
+
+* F | [subsequence](/doc/subsequence.md)
 
 ## Design
 

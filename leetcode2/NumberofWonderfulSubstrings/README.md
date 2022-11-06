@@ -3,7 +3,6 @@
 [Number of Wonderful Substrings](https://leetcode.com/problems/number-of-wonderful-substrings/)
 
 문자열 `word` 가 주어진다. `word` 의 문자는 `[a..j]` 중 하나이다.
-
 다음과 같은 규칙을 지키는 문자열을 wonderful string 이라고 하자.
 
 * 같은 문자의 개수가 홀 수인 것은 최대 한개이다.
@@ -39,19 +38,17 @@
 새로운 문자 `c` 가 하나 추가되었을 때 `wonderfulCnt` 를 어떻게
 계산할 수 있는지 생각해 보자. 
 
-`s` 를 bitmask 로 표현헤 보자. 예를 들어 `s = ab` 이라면 bitmask 는
-`11` 이다. `s = aba` 라면 bitmask 는 `10` 이다. 
+`s` 를 bitmask 로 표현해 보자. 예를 들어 `s = ab` 이라면 bitmask 는
+`11` 이다. `s = aba` 라면 bitmask 는 `10` 이다.
 
 ```
-        i
-word:   a b a b c c b
-  bm:   1 3 2 0 4 0 2
-cnts: 0 
-      1
- ans:   0
+                          i
+word:      a    b    a    b    c    c    b
+  bm:   0001 0011 0010 0000 0100 0000 0010
+cnts:   0000 0001 0010 0011 0100 
+           1    1    1    1    0
+ ans:      4
 ```
-
-too difficult
 
 # Implementation
 
