@@ -1,91 +1,77 @@
-// Copyright (C) 2021 by iamslash
+// Copyright (C) 2022 by iamslash
 
 import java.util.*;
 
-//                              i
-//         s: * * | * * | * * * |
-//         q: 2,5 5,9
-// candleMap: 2 5 9
-//            2 4 7
+// // 129ms 27.73% 89.9MB 97.25%
+// // partial sum, hash map
+// // O(NlgN) O(N)
+// class Solution {
+//     public int[] platesBetweenCandles(String s, int[][] queries) {
+//         TreeMap<Integer, Integer> cntMap = new TreeMap<>();
+//         int cnt = 0, n = s.length();
+//         for (int i = 0; i < n; ++i) {
+//             if (s.charAt(i) == '*') {
+//                 cnt++;
+//             } else {
+//                 cntMap.put(i, cnt);
+//             }
+//         }
+//         int[] ans = new int[queries.length];
+//         for (int i = 0; i < queries.length; ++i) {
+//             int[] qry = queries[i];
+//             Integer fr = cntMap.ceilingKey(qry[0]);
+//             Integer to = cntMap.floorKey(qry[1]);
+//             if (fr != null && to != null && fr < to) {
+//                 ans[i] = cntMap.get(to) - cntMap.get(fr);
+//             }
+//         }
+//         return ans;        
+//     }
+// }
 
-// 99ms 26.14% 86.1MB 88.34%
-// hash map
-// O(NlgN) O(N)
-class Solution {
-    public int[] platesBetweenCandles(String s, int[][] queries) {
-        // build map
-        TreeMap<Integer, Integer> candleMap = new TreeMap<>();
-        int plateCnt = 0;
-        for (int i = 0; i < s.length(); ++i) {
-            if (s.charAt(i) == '*') {
-                plateCnt++;
-            } else {
-                candleMap.put(i, plateCnt);
-            }
-        }
-        // query
-        int[] ans = new int[queries.length];
-        for (int i = 0; i < queries.length; ++i) {
-            Integer fr = candleMap.ceilingKey(queries[i][0]);
-            Integer to = candleMap.floorKey(queries[i][1]);
-            if (fr != null && to != null && fr < to) {
-                ans[i] = candleMap.get(to) - candleMap.get(fr);
-            }
-        }
-        return ans;
-    }
-}
 
-// 7ms 97.19% 98.3MB 45.71%
+//         i
+//      s: * | * | *
+//           j
+//     ps: 1 1 2 2
+//  lefts: - 1 1 3
+// rights: 1 1 3 3 5
+
+// 25ms 65.77% 143.4MB 32.28%
 // partial sum
 // O(N) O(N)
 class Solution {
-    private void dump(int[] A) {
-        for (int a : A) {
-            System.out.printf("%d ", a);
-        }
-        System.out.println();
-    }
     public int[] platesBetweenCandles(String s, int[][] queries) {
-        int n = s.length();
-        int[] ps = new int[n], dnIdxs = new int[n], upIdxs = new int[n];
+        int n = s.length(), m = queries.length;
+        int[] ps = new int[n];
+        int[] lefts = new int[n];
+        int[] rights = new int[n];
         for (int i = 0, cnt = 0; i < n; ++i) {
             if (s.charAt(i) == '*') {
                 cnt++;
-            } 
+            }
             ps[i] = cnt;
-            
         }
-        for (int i = 0, prv = -1; i < n; ++i) {
+        for (int i = 0, left = -1; i < n; ++i) {
             if (s.charAt(i) == '|') {
-                prv = i;
+                left = i;
             }
-            dnIdxs[i] = prv;
+            lefts[i] = left;
         }
-        for (int i = n-1, prv = n; i >= 0; --i) {
+        for (int i = n-1, right = n; i >= 0; --i) {
             if (s.charAt(i) == '|') {
-                prv = i;
+                right = i;
             }
-            upIdxs[i] = prv;
+            rights[i] = right;
         }
-        // dump(ps);
-        // dump(dnIdxs);
-        // dump(upIdxs);
-        int m = queries.length;
         int[] ans = new int[m];
         for (int i = 0; i < m; ++i) {
-            int beg = upIdxs[queries[i][0]];
-            int end = dnIdxs[queries[i][1]];
-
-            if (beg < n && end >= 0 && beg < end) {
+            int beg = rights[queries[i][0]];
+            int end = lefts[queries[i][1]];
+            if (beg >= 0 && end < n && beg < end) {
                 ans[i] = ps[end] - ps[beg];
             }
         }
         return ans;
     }
-}
-
-public class MainApp {
-  public static void main(String[] args) {
-  }
 }
