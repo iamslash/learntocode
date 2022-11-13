@@ -53,8 +53,7 @@ class Solution {
             if (s.charAt(i) == '*') {
                 cnt++;
             } 
-            ps[i] = cnt;
-            
+            ps[i] = cnt;       
         }
         for (int i = 0, prv = -1; i < n; ++i) {
             if (s.charAt(i) == '|') {
