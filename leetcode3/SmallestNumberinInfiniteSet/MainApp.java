@@ -2,36 +2,31 @@
 
 import java.util.*;
 
-// 27ms 68.23% 54.6MB 72.59%
+// 23ms 74.32% 54.6MB 49.55%
 // heap
-//     addBack: O(NlgN) O(N)
-// popSmallest: O(N) O(N)
+// O(NlgN) O(N)
 class SmallestInfiniteSet {
-    int minNum = 1;
-    Queue<Integer> pq = new PriorityQueue<>();
+    private int minNum = 1;
+    private Queue<Integer> pq = new PriorityQueue<>();
 
     public int popSmallest() {
         int rst = minNum;
-        // When pq.peek() is lesser than minNum
-        if (!pq.isEmpty() && pq.peek() < minNum) {
+        // Get minimum number
+        if (!pq.isEmpty() && pq.peek() < rst) {
             rst = pq.poll();
         } else {
             minNum++;
         }
-        // Clean up same with return value
+        // Resolve pq
         while (!pq.isEmpty() && pq.peek() == rst) {
             pq.poll();
         }
-        // return backed value up
         return rst;
     }
     
     public void addBack(int num) {
-        pq.offer(num);
+        if (num < minNum) {
+            pq.offer(num);
+        }
     }
-}
-
-public class MainApp {
-  public static void main(String[] args) {
-  }
 }
