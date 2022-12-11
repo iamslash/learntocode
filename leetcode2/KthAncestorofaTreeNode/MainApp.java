@@ -2,6 +2,26 @@
 
 import java.util.*;
 
+// Time Limit Exceeded
+class TreeAncestor {
+    int[] parent;
+    
+    public TreeAncestor(int n, int[] parent) {
+        this.parent = parent;
+    }
+    
+    public int getKthAncestor(int node, int k) {
+        int p = node;
+        while (k-- > 0) {
+            p = parent[p];
+            if (p < 0) {
+                return -1;
+            }
+        }
+        return p;
+    }
+}
+
 // 142ms 70.22% 105.0MB 64.04%
 // binary lifting
 // O(lgN) O(N)

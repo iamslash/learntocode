@@ -62,3 +62,4 @@ package.json
 *.jar
 a
 .DS_Store
+.metals
