@@ -18,10 +18,10 @@ import java.util.*;
 // O(N) O(1)
 class Solution {
     public int maxJump(int[] stones) {
-        int maxPath = stones[1], n = stones.length;
+        int minCost = stones[1], n = stones.length;
         for (int i = 2; i < n; ++i) {
-            maxPath = Math.max(maxPath, stones[i] - stones[i-2]);
+            minCost = Math.max(minCost, stones[i] - stones[i-2]);
         }
-        return maxPath;
+        return minCost;
     }
 }
