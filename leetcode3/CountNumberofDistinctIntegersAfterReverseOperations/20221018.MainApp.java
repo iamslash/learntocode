@@ -2,17 +2,17 @@
 
 import java.util.*;
 
-// 152ms 59.61% 121.5MB 71.84%
-// hash set
-// O(NlgN) O(N)
+// 178ms 53.19% 124.5MB 66.45%
+// math
+// O(N) O(1)
 class Solution {
-    private int reverse(int num) {
-        int rst = 0;
-        while (num > 0) {
-            rst = (rst * 10) + (num % 10);
-            num /= 10;
+    private int reverse(int a) {
+        int ans = 0;
+        while (a > 0) {
+            ans = ans * 10 + a % 10;
+            a /= 10;
         }
-        return rst;
+        return ans;
     }
     public int countDistinctIntegers(int[] nums) {
         Set<Integer> numSet = new HashSet<>();
@@ -20,7 +20,11 @@ class Solution {
             numSet.add(num);
             numSet.add(reverse(num));
         }
-        // System.out.println(numSet);
         return numSet.size();
     }
+}
+
+public class MainApp {
+  public static void main(String[] args) {
+  }
 }
