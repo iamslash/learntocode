@@ -66,6 +66,28 @@ LEFT JOIN yearly y2
 | 3           | 2017 | 900   || NULL        |      |       |
 | 3           | 2018 | 900   || NULL        |      |       |
 +-------------+------+-------++-------------+------+-------+
+
+WITH yearly AS (
+   SELECT customer_id,
+          YEAR(MAX(order_date)) year,
+          SUM(price) price
+     FROM orders
+ GROUP BY YEAR(order_date), customer_id)
+
+   SELECT y1.customer_id
+     FROM yearly y1
+LEFT JOIN yearly y2
+       ON y1.customer_id = y2.customer_id AND
+          y1.year + 1 = y2.year AND
+          y1.price < y2.price
+ GROUP BY y1.customer_id
+   HAVING COUNT(*) - COUNT(y2.customer_id) = 1
+
++-------------+
+| customer_id |
++-------------+
+| 1           |
++-------------+
 ```
 
 ```sql
