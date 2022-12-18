@@ -67,6 +67,7 @@ class TreeAncestor {
 
 // binary lifting
 // 174ms 42.70% 98.1MB 82.02%
+// difficult
 class TreeAncestor {
     int[][] C;
     int maxPow;
