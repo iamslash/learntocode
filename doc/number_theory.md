@@ -1,6 +1,7 @@
 - [Abstract](#abstract)
 - [다양한 유형의 문제들](#다양한-유형의-문제들)
 - [previous, next boundary](#previous-next-boundary)
+- [int floor, int ceil](#int-floor-int-ceil)
 
 ----
 
@@ -49,3 +50,52 @@ nextBound = (num / unit) * unit
 ```
 
 * [L](/leetcode2/TheNumberofFullRoundsYouHavePlayed/README.md) | [The Number of Full Rounds You Have Played](https://leetcode.com/problems/the-number-of-full-rounds-you-have-played/)
+
+# int floor, int ceil
+
+double `floor()` 는 내림이고 `ceil()` 은 올림이다.
+
+```java
+$ jshell
+> Math.floor((double) 3 / 3)
+1.0
+> Math.floor((double) 4 / 3)
+1.0
+> Math.floor((double) 5 / 3)
+1.0
+
+$ jshell
+> Math.ceil((double) 4 / 3)
+2.0
+> Math.ceil((double) 5 / 3)
+2.0
+> Math.ceil((double) 6 / 3)
+2.0
+```
+
+나누는 숫자를 `div` 라고 하자. 어떤 숫자를 `div` 로 나누고 그 값의 `floor()`
+혹은 `ceil()` 를 얻고 싶다. 이 것을 int 로 해보자.
+
+int floor 는 `div` 를 나누어 구할 수 있다.
+
+```
+$ jshell
+> 3 / 3
+1
+> 4 / 3
+1
+> 5 / 3
+1
+```
+
+int ceil 는 `div - 1` 를 더하고 `div` 를 나누어 구할 수 있다.
+
+```
+$ jshell
+> (4 + 3 - 1) / 3
+2
+> (5 + 3 - 1) / 3
+2
+> (6 + 3 - 1) / 3
+2
+```
