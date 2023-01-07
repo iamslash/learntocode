@@ -20,17 +20,41 @@ nums: 2 5 1 4 3 6
 
 따라서 답은 `3` 이다.
 
-`k` 를 median 으로 하는 subarray 의 후보들은 짝수 혹은 홀수 이다.
-예를 들어 다음의 두 subarray 는 모두 median 이 2 이다.
+`k` 를 median 으로 하는 subarray 의 후보들은 원소의 개수가 짝수 혹은
+홀수 이다.  예를 들어 다음의 두 subarray 는 모두 median 이 2 이다.
 
 ```
   nums: 1 2 3
   nums:   2 3
 ```
 
+`k` 를 중심으로 모든 숫자들에 `k` 보다 크면 `+1`, `k` 보다 작으면 `-1`
+을 할당해 보자. 이 것을 `delta` 라고 하자.
+
+```
+     k: 4
+  nums: 3 4 1 5 6
+ delta: - 0 - 1 1
+          4        sum is 0
+          4 1 5    sum is 0
+        3 4 1 5 6  sum is 0
+
+     k: 5
+  nums: 3 4 1 5 6
+ delta: - - - 0 1
+              5    sum is 0
+              5 6  sum is 1
+            1 5 6  sum is 0 
+```
+
+`k` 를 중심으로 임의의 subarray 를 만들어서 그 delta 의 합이 `0` 이면
+`k` 가 median 인 홀수 개수의 subarray 를 의미한다. delta 의 합이 `1`
+이면 `k` 가 median 인 짝수 개수의 subarray 를 의미한다.
+
 `k` 를 포함하여 오른쪽에 있는 숫자들을 살펴보자. `int sum = 0` 을
 선언하고 `nums[i] > k` 이면 `sum += 1` `nums[i] < k` 이면 `sum -= 1`
-을 수행한다.
+을 수행한다. `Map<Integer, Integer> sumMap` 을 선언하여 발생한 `sum`
+과 그 개수를 저장한다.
 
 ```
    k: 1
