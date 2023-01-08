@@ -878,6 +878,7 @@ $ a.exe
 ## Binary Search
 
 - [L](/leetcode2/FindtheIndexoftheLargeInteger/README.md) | [Find the Index of the Large Integer](https://leetcode.com/problems/find-the-index-of-the-large-integer/)
+- [L](/leetcode3/MaximumCountofPositiveIntegerandNegativeInteger/) | [Maximum Count of Positive Integer and Negative Integer](https://leetcode.com/problems/maximum-count-of-positive-integer-and-negative-integer/)
 
 ## Numerical Analysis
 

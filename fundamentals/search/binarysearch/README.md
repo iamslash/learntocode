@@ -14,8 +14,10 @@
 
 * [binary Search with array @ geeksforgeeks](https://practice.geeksforgeeks.org/problems/binary-search/1)
 
-수열 `A[]` 와 숫자 `K` 가 주어진다. `K` 를 `A[]` 에서 검색하는 문제이다. right
-most, right most equal, **left most equal**, left most pattern 을 기억하자. 
+수열 `A[]` 와 숫자 `K` 가 주어진다. `K` 를 `A[]` 에서 검색하는 문제이다. 
+
+right most, right most equal, **left most equal**, left most pattern 을
+기억하자. 
 
 # Idea
 
@@ -206,5 +208,5 @@ m: 2 4 3
 # Complexity
 
 ```
-O(NlogN) O(1)
+O(logN) O(1)
 ```
