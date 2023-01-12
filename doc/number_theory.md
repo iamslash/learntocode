@@ -2,6 +2,8 @@
 - [다양한 유형의 문제들](#다양한-유형의-문제들)
 - [previous, next boundary](#previous-next-boundary)
 - [int floor, int ceil](#int-floor-int-ceil)
+- [gcd (Greatest Common Divisor)](#gcd-greatest-common-divisor)
+- [lcm (Least Common Multiple)](#lcm-least-common-multiple)
 
 ----
 
@@ -98,4 +100,17 @@ $ jshell
 2
 > (6 + 3 - 1) / 3
 2
+```
+
+# gcd (Greatest Common Divisor)
+
+* [Euclidean algorithm, GCD](fundamentals/numbertheory/euclideanalgorithm/README.md)
+
+# lcm (Least Common Multiple)
+
+```
+  A = a * gcd
+  B = b * gcd
+
+lcm = a * b * gcd = A * B / gcd
 ```
