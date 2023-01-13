@@ -10,8 +10,16 @@ import java.util.*;
 //       arr1: 1
 //       arr2: 2 3 4
 
-// https://leetcode.com/problems/minimize-the-maximum-of-two-arrays/discuss/2947151/JAVA-or-Binary-Search-or-Clean
+// Idea: binary serach (left most equal)
+//
+// Let's find last number when we combine arr1, arr2.
+//   lcm(div1, div2) = div1 * div2 / gcd(div1, div2) 
+//     mi: last number
+//   cnt1: count of arr1 = mi - mi / div1
+//   cnt2: count of arr2 = mi - mi / div2
+// cntAll: count of arr1, arr2 = mi - mi / lcm(div1, div2)
 
+// 0ms 100.00% 39MB 67.32%
 // binary search (left most equal)
 // O(lgN) O(1)
 class Solution {
