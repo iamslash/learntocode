@@ -32,7 +32,7 @@ int main() {
   std::vector<int> a = {-14, 7, 2, 3, -8, 4, -6, 8, 9, 11};
   std::vector<int> psum = partial_sum(a);
 
-  printf("%d\n", close_psum_to_zero(psum));
+  printf("%d\n", close_psum_to_zero(psum));  // 1
 
   return 0;
 }

@@ -541,10 +541,11 @@ $ a.exe
 ## Partial Sum
 
 - F | [partial sum](/doc/partial_sum_overview.md)
-- F | [partial sum, range sum](fundamentals/partialsum/partialsum/README.md)
-- F | [variance](fundamentals/partialsum/variance/README.md)
-- F | [grid sum](fundamentals/partialsum/gridsum/README.md)
-- F | [range which is close to zero](fundamentals/partialsum/rangewhichisclosetozero/README.md)
+- F | [partial sum, range sum](/fundamentals/partialsum/partialsum/README.md)
+- F | [grid sum](/fundamentals/partialsum/gridsum/README.md)
+- F | [range caching](/fundamentals/rangecaching/README.md)
+- F | [variance](/fundamentals/partialsum/variance/README.md)
+- F | [range which is close to zero](/fundamentals/partialsum/rangewhichisclosetozero/README.md)
 - [L](/leetcode/RangeSumQuery2D/README.md) | 
 [Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/)
 - [알](/algospot/CHRISTMAS/) | [CHRISTMAS](https://algospot.com/judge/problem/read/CHRISTMAS)
