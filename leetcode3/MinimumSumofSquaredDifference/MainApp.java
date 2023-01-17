@@ -2,47 +2,52 @@
 
 import java.util.*;
 
-// nums1: 1 2 3 4
+//    k1: 0
+//    k2: 0
+// nums1: 1  2  3  4
 // nums2: 2 10 20 19
-//    pq: 1 8 15
-//     k:  0
-//     x:  2
+// diffs: 1  8 17 15
+// freqs: 1  8 17 15
+//        1  1  1  1
 
-// nums1: 10 10 10 11 5
-// nums2:  1  0  6  6 1
-//    pq:
-//     k: 38
+//    k1: 1
+//    k2: 1
+// nums1: 1  4 10 12
+// nums2: 5  8  6  9
+// diffs: 4  4  4  3
+// freqs: 4  3
+//        1  3 
 
-// heap
-// O(NlgN) O(N)
+// 8ms 91.38% 59.4MB 80.17%
+// bucket sort
+// O(N) O(N)
 class Solution {
-    public long minSumSquareDiff(int[] nums1, int[] nums2, int k1, int k2) {
-        Queue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
-        pq.add(0);
+    public long minSumSquareDiff(int[] nums1, int[] nums2,
+                                 int k1, int k2) {
         int n = nums1.length;
+        int[] diffs = new int[n];
+        int maxDiff = 0;
         for (int i = 0; i < n; ++i) {
-            int diff = Math.abs(nums1[i] - nums2[i]);
-            if (diff > 0) {
-                pq.add(diff);
-            }
+            diffs[i] = Math.abs(nums1[i] - nums2[i]);
+            maxDiff = Math.max(maxDiff, diffs[i]);
+        }
+        int[] freqs = new int[maxDiff + 1];
+        for (int i = 0; i < n; ++i) {
+            freqs[diffs[i]]++;
         }
         int k = k1 + k2;
-        int prv = 0, cnt = 0;
-        while (k > 0 && !pq.isEmpty()) {
-            int top = pq.poll();
-            if (pq.isEmpty()) {
-                if (top > k) {
-                    pq.offer(top - k);
-                }
-            } else {
-                int gap = Math.min(top - pq.peek() + 1, k);
-                pq.offer(top - gap);
-                k -= gap;
+        for (int i = maxDiff; i > 0; --i) {
+            if (freqs[i] == 0) {
+                continue;
             }
+            int delta = Math.min(freqs[i], k);
+            freqs[i] -= delta;
+            freqs[i - 1] += delta;
+            k -= delta;
         }
         long ans = 0;
-        for (long diff : pq) {
-            ans += (long) diff * diff;
+        for (int i = maxDiff; i > 0; --i) {
+            ans += ((long)freqs[i]) * i * i;
         }
         return ans;
     }
