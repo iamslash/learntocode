@@ -1,3 +1,16 @@
+- [Abstract](#abstract)
+- [Prerequisites](#prerequisites)
+  - [Permutation](#permutation)
+  - [Combination](#combination)
+  - [Binomial coefficient](#binomial-coefficient)
+- [Implementation](#implementation)
+  - [Factorials](#factorials)
+  - [파스칼의 삼각형을 이용한 방법](#파스칼의-삼각형을-이용한-방법)
+  - [lucas' theorem을 이용한 방법](#lucas-theorem을-이용한-방법)
+  - [나머지 연산자 곱셈의 역원(modular multiplicative inverse)을 이용한 방법](#나머지-연산자-곱셈의-역원modular-multiplicative-inverse을-이용한-방법)
+
+----
+
 # Abstract
 
 이항계수에 대해 적는다. 먼저 순열과 조합을 이해해야 한다.
@@ -75,14 +88,14 @@ nCr = n! / r! * (n-r)!
 
 위의 수식을 두개의 인덱스 `i, j` 를 이용하여 구현하면 다음과 같다.
 
-```
-  int combi(int n, int r) {
-    int64_t ans = 1;
-    for (int i = 1, j = n - r + 1; i <= r; ++i, ++j) {
-      ans = ans * j / i;
-    }
-    return ans;
+```cpp
+int combi(int n, int r) {
+  int64_t ans = 1;
+  for (int i = 1, j = n - r + 1; i <= r; ++i, ++j) {
+    ans = ans * j / i;
   }
+  return ans;
+}
 ```
 
 ## 파스칼의 삼각형을 이용한 방법
@@ -93,9 +106,9 @@ nCr = n! / r! * (n-r)!
 
 ![](/_img/paskal_triangle.png)
 
-다음은 파스칼의 삼각형을 이용하여 이항계수를 구현한 것이다.  트리의
-깊이가 곧 n과 같다.  overflow 를 막기 위해 나머지 연산자를 이용하였다.
-시간복잡도는 `O(nr)` 이다.
+다음은 파스칼의 삼각형을 이용하여 이항계수를 구현한 것이다.  트리의 깊이가 곧
+`n` 과 같다. overflow 를 막기 위해 나머지 연산자를 이용하였다. 시간복잡도는
+`O(nr)` 이다.
 
 ```cpp
 // in every line first value is always 0 + 1 pattern
@@ -121,13 +134,13 @@ int nCr_dp(int n, int r, int p) {
 
 ## [lucas' theorem](number_lucas.md)을 이용한 방법
 
-파스칼의 삼각형을 이용한 방법보다 시간복잡도를 `O(p^{2} \log_{p}n)` 으로 개선 할 수 있다.
-이때 p가 너무 크면 파스칼의 삼각형을 이용한 방법보다 시간복잡도가 클 수 있다.
-lucas' theorem 은 p 가 작은 경우 사용한다. 
+파스칼의 삼각형을 이용한 방법보다 시간복잡도를 `O(p^{2} \log_{p}n)` 으로 개선 할
+수 있다. 이때 `p` 가 너무 크면 파스칼의 삼각형을 이용한 방법보다 시간복잡도가 클 수
+있다. lucas' theorem 은 `p` 가 작은 경우 사용한다. 
 
-p 가 너무 큰경우 (n < p) 나머지 연산자 곱셈의 역원을 이용한 방법이 더욱
-효율적이다. n 보다 p 가 작거나 같은 경우는 페르마의 소정리를 이용하여
-나머지 연산자 곱셈의 역원을 구하면 결과가 0일 수 있다.
+`p` 가 너무 큰경우 `(n < p)` 나머지 연산자 곱셈의 역원을 이용한 방법이 더욱
+효율적이다. `n` 보다 `p` 가 작거나 같은 경우는 페르마의 소정리를 이용하여 나머지
+연산자 곱셈의 역원을 구하면 결과가 `0` 일 수 있다.
 
 ## 나머지 연산자 곱셈의 역원(modular multiplicative inverse)을 이용한 방법
 
