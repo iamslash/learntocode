@@ -15,3 +15,16 @@ class Solution:
             if any(sum(c1 != c2 for c1, c2 in zip(query, word)) <= 2 for word in dictionary):
                 ans.append(query)
         return ans
+
+if __name__ == "__main__":
+    q = "hello"
+    d = "world"
+    for c1, c2 in zip(q, d):
+        print(c1, c2)
+        # h w
+        # e o
+        # l r
+        # l l
+        # o d
+    print(sum(c1 != c2 for c1, c2 in zip(q, d)))
+    # 4
