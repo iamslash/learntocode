@@ -1,26 +1,38 @@
+- [Abstract](#abstract)
+- [Data Structure Union-Find](#data-structure-union-find)
+- [Algorithm Find](#algorithm-find)
+  - [Idea](#idea)
+  - [Complexity](#complexity)
+- [Algorithm Merge](#algorithm-merge)
+  - [Idea](#idea-1)
+  - [Complexity](#complexity-1)
+- [Implementation](#implementation)
+
+----
+
 # Abstract
 
-교집합이 공집합인 집합들을 상호배타집합 (disjoint set) 이라고 한다.
-union-find 혹은 merge-find 라고도 한다. [kruskal algorithm](/fundamentals/graph/kruskal/README.md) 은 union-find 를 이용하여 구현한다.
+교집합이 공집합인 집합들을 상호배타집합 (disjoint set) 이라고 한다. union-find
+혹은 merge-find 라고도 한다. [kruskal
+algorithm](/fundamentals/graph/kruskal/README.md) 은 union-find 를 이용하여
+구현한다.
 
 # Data Structure Union-Find
 
-임의의 원소 `u` 의 부모에 대한 정보를 `vector<int> m_prnt` 에
-저장한다. 만약 `u` 가 root라면 `m_prnt[u] = u` 이다. 
+임의의 원소 `u` 의 부모에 대한 정보를 `vector<int> m_prnt` 에 저장한다. 만약 `u`
+가 root라면 `m_prnt[u] = u` 이다. 
 
-임의의 원소 `u` 의 `max level` 에 대한 정보를 `vector<int> m_rank` 에 
-저장한다. `m_rank[u]` 는 `u` 가 속한 집합 혹은 트리의 최대 레벨이
-담긴다.
+임의의 원소 `u` 의 `max level` 에 대한 정보를 `vector<int> m_rank` 에 저장한다.
+`m_rank[u]` 는 `u` 가 속한 집합 혹은 트리의 최대 레벨이 담긴다.
 
 # Algorithm Find
 
 ## Idea
 
-`find(u)` 는 `u` 가 포함된 트리의 `root` 를 반환 한다. 만약 `u` 의
-부모가 `u` 가 속한 트리의 `root` 가 아니라면 `u` 의 부모를 `u` 가 포함된
-트리의 `root` 로 교체한다. 이러한 방법은 트리의 `max level` 을 가능한 낮게
-유지하여 검색 속도를 향상시킬 수 있다. 이것을 `path
-compression optimization` 이라고 한다.
+`find(u)` 는 `u` 가 포함된 트리의 `root` 를 반환 한다. 만약 `u` 의 부모가 `u` 가
+속한 트리의 `root` 가 아니라면 `u` 의 부모를 `u` 가 포함된 트리의 `root` 로
+교체한다. 이러한 방법은 트리의 `max level` 을 가능한 낮게 유지하여 검색 속도를
+향상시킬 수 있다. 이것을 `path compression optimization` 이라고 한다.
 
 ![](/_img/unionfind_find.png)
 

@@ -1,49 +1,46 @@
 // Copyright (C) 2016 by iamslash
 
 #include <vector>
+#include <numeric>
 
-struct NaiveDisjointSet {
-  std::vector<int> parent;
-  explicit NaiveDisjointSet(int n) : parent(n) {
-    for (int i = 0; i < n; ++i) {
-      parent[i] = i;
-    }
+using namespace std;
+
+class NaiveDisjointSet {
+  vector<int> prnts;
+public:
+  NaiveDisjointSet(int n) : prnts(n) {
+    iota(begin(prnts), end(prnts), 0);
   }
-  int find(int u) const {
-    if (u == parent[u]) return u;
-    return find(parent[u]);
+  void merge(int a, int b) {
+    prnts[find(b)] = find(a);
   }
-  void merge(int u, int v) {
-    u = find(u);
-    v = find(v);
-    if (u == v)
-      return;
-    parent[u] = v;
+  int find(int a) {
+    return prnts[a] == a ? a : (prnts[a] = find(prnts[a]));
+  }
+  void reset(int a) {
+    prnts[a] = a;
   }
 };
 
 struct OptimizedDisjointSet {
-  std::vector<int> parent, rank;
-  explicit OptimizedDisjointSet(int n) : parent(n), rank(n, 1) {
-    for (int i = 0; i < n; ++i)
-      parent[i] = i;
+  vector<int> prnts, ranks;
+  explicit OptimizedDisjointSet(int n) : prnts(n), ranks(n, 1) {
+    iota(begin(prnts), end(prnts), 0);
   }
-  int find(int u) {
-    if (parent[u] == u)
-      return u;
-    return parent[u] = find(parent[u]);
+  int find(int a) {
+    return prnts[a] == a ? a : (prnts[a] = find(prnts[a]));
   }
   void merge(int u, int v) {
     u = find(u);
     v = find(v);
     if (u == v)
       return;
-    if (rank[u] > rank[v])
-      std::swap(u, v);
-    // always rank[v] > rank[u] u should be child of v
-    parent[u] = v;
-    if (rank[u] == rank[v])
-      ++rank[v];
+    if (ranks[u] > ranks[v])
+      swap(u, v);
+    // always ranks[v] > ranks[u] u should be child of v
+    prnts[u] = v;
+    if (ranks[u] == ranks[v])
+      ++ranks[v];
   }
 };
 
