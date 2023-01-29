@@ -37,6 +37,32 @@ public:
   }
 };
 
-int main() {
-  return 0;
+// 2ms 99.17% 42.3MB 81.82%
+// brute force
+// O(QD) O(Q)
+class Solution {
+    private int difference(String a, String b) {
+        int cnt = 0, n = a.length();
+        for (int i = 0; i < n; ++i) {
+            if (a.charAt(i) != b.charAt(i)) {
+                cnt++;
+            }
+            if (cnt >= 3) {
+                return cnt;
+            }
+        }
+        return cnt;
+    }
+    public List<String> twoEditWords(String[] queries, String[] dictionary) {
+        List<String> ans = new ArrayList<>();
+        for (String query : queries) {
+            for (String word : dictionary) {
+                if (difference(query, word) <= 2) {
+                    ans.add(query);
+                    break;
+                }
+            }
+        }
+        return ans;
+    }
 }
