@@ -4,6 +4,7 @@
 - [int floor, int ceil](#int-floor-int-ceil)
 - [gcd (Greatest Common Divisor)](#gcd-greatest-common-divisor)
 - [lcm (Least Common Multiple)](#lcm-least-common-multiple)
+- [fast pow](#fast-pow)
 
 ----
 
@@ -113,4 +114,21 @@ $ jshell
   B = b * gcd
 
 lcm = a * b * gcd = A * B / gcd
+```
+
+# fast pow
+
+숫자 `n` 이 주어지면 `2 ^ n` 를 빠르게 구해보자. `n` 은 어차피 `1` 이 되기
+마련이다.
+
+```java
+long ans = 1, base = 2, mod = 1_000_000_007L;
+while (n > 0) {
+    if (n % 2 == 1) {
+        ans = ans * base % mod;
+    }
+    base = base * base % mod;
+    n >>= 1;
+}
+return (int)((ans - 2 + mod) % mod);
 ```
