@@ -1,3 +1,14 @@
+- [Abstract](#abstract)
+- [Add](#add)
+- [Sub](#sub)
+- [Mul](#mul)
+- [Div](#div)
+  - [무식한 방법 (brute force)](#무식한-방법-brute-force)
+  - [페르마의 소정리(Fermat's little theorem)을 이용한 방법](#페르마의-소정리fermats-little-theorem을-이용한-방법)
+  - [확장 유클리드 호제법 (Extended Euclidean Algorithm)을 이용한 방법](#확장-유클리드-호제법-extended-euclidean-algorithm을-이용한-방법)
+
+----
+
 # Abstract
 
 나머지 연산자 `%` 에 대해 적는다.
@@ -64,7 +75,9 @@ for (int i = 0; i < N; ++i) {
             = ((a % M) * (b^{-1} % M)) % M
 b^{-1} % M 을 b 의 나머지연산에 대한 곱셈의 역원
 (modular multiplicative inverse) 이라 하고 
-modinv(b, M)이라고 표기하자.
+modinv(b, M)이라고 표기하자. b 의 inverse 를 modulo 한다고
+이해하면 쉽다.
+
 modinv(b, M)을 구하면 다음과 같이 전개해서 해결한다.
 
 (a / b) % M = ((a % M) * modinv(b, M)) % M
@@ -78,7 +91,7 @@ modinv(b, M)을 구하면 다음과 같이 전개해서 해결한다.
 방법은 무식한 방법, 페르마의 소정리를 이용한 방법,
 확장 유클리드를 이용한 방법등이 있다.
 
-앞서 언급한 것들 중 페르마의 소정리를 이용한 방법이 구현이 간단하다.
+앞서 언급한 것들 중 페르마의 소정리를 이용한 방법이 가장 구현이 간단하다.
 
 ## 무식한 방법 (brute force)
 
@@ -156,7 +169,7 @@ bx + My = gcd(b, M)
 x 즉 b^{-1}를 확장 유클리드 호제법을 이용하여 구할 수 있다.
 ```
 
-[extended euclidean algorithm](fundamentals/numbertheory/exeuclideanalgorithm/README.md)
+[extended euclidean algorithm](/fundamentals/numbertheory/exeuclideanalgorithm/README.md)
 
 다음의 코드를 이용하여 x를 구하자.
 
