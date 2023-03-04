@@ -15,12 +15,11 @@ class TreeNode {
     }
 }
 
-// 181ms 28.14% 85.9MB 84.79%
-// sorted set
-// O(NlgN) O(lgN)
+// 176ms 68.87% 86.9MB 94.03%
+// BST
+// O(NlgN) O(N)
 class Solution {
-    private void dfs(SortedSet<Integer> numSet, TreeNode u) {
-        // base
+    private void dfs(TreeSet<Integer> numSet, TreeNode u) {
         if (u == null) {
             return;
         }
