@@ -11,7 +11,24 @@ import java.util.*;
 // Idea: recursive dynamic programming
 //
 // Declare cache C[index][remained k]
-// Implement dfs(int[][] C, String s, int minLen, int i, int k)
+// Design int dfs(int i, int k)
+// i stands for start index
+// j stands for end index
+//
+// minLen : 2
+//       k: 3
+//                  i          
+// s: 2 3 5 4 2 1 8 5 1 3 1
+//                      j 
+// dfs(3, 0) : 3
+//   dfs(2, 4) : 2
+//     dfs(1, 7) : 1
+//       dfs(0, 9) : 0
+//       dfs(0, 11) : 1 
+//     dfs(1, 9) : 1
+//       dfs(0, 11) : 1 hit
+//   dfs(2, 7) : 1
+//     dfs(1, 9) : 1 hit
 
 // 649ms 39.38% 47.7MB 58.13%
 // recursive dynamic programming
@@ -78,6 +95,7 @@ class Solution {
 // 39ms 80.63% 47.7MB 58.13%
 // iterative dynamic programming
 // O(NK) O(NK)
+// difficult
 class Solution {
     private boolean isPrime(char c) {
         return c == '2' || c == '3' || c == '5' || c == '7';
