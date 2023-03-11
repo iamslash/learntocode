@@ -1,35 +1,32 @@
-// Copyright (C) 2022 by iamslash
+// Copyright (C) 2023 by iamslash
 
 import java.util.*;
 
-// 29ms 20.00% 43.4MB 60.00%
-// brute foce
-// O(QD) O(Q)
+// 2ms 95.02% 42.7MB 33.33%
+// brute force
+// O(QD) O(N)
 class Solution {
-    private int diff(String a, String b) {
-        int cnt = 0, n = a.length();
+    private int distance(String a, String b) {
+        int n = a.length(), dist = 0;
         for (int i = 0; i < n; ++i) {
             if (a.charAt(i) != b.charAt(i)) {
-                cnt++;
+                if (++dist > 2) {
+                    break;
+                }
             }
         }
-        return cnt;
+        return dist;
     }
-    public List<String> twoEditWords(String[] queries, String[] dicts) {
+    public List<String> twoEditWords(String[] queries, String[] dictionary) {
         List<String> ans = new ArrayList<>();
-        for (String qry : queries) {
-            for (String dic : dicts) {
-                if (diff(qry, dic) <= 2) {
-                    ans.add(qry);
+        for (String query : queries) {
+            for (String word : dictionary) {
+                if (distance(query, word) <= 2) {
+                    ans.add(query);
                     break;
                 }
             }
         }
         return ans;
     }
-}
-
-public class MainApp {
-  public static void main(String[] args) {
-  }
 }
