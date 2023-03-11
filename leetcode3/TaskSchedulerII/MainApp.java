@@ -1,29 +1,31 @@
-// Copyright (C) 2022 by iamslash
+// Copyright (C) 2023 by iamslash
 
 import java.util.*;
 
-// Caution:
-// space means days we should pass when we do the same task.
+// space: 3
+// tasks: 1 2 1 2 3 1
+//                    i
+//   map: 1 2 3
+//        9 2 7
+//    ts: 9
+// 
 
-// 89ms 22.22% 135.4MB 11.11%
+// 45ms 62.18% 57.2MB 47.90%
 // hash map
 // O(N) O(N)
 class Solution {
     public long taskSchedulerII(int[] tasks, int space) {
-        // { task type : last executed at } 
-        Map<Integer, Long> lastExMap = new HashMap<>();
-        long minDays = 0;
-        for (int task : tasks) {
-            if (lastExMap.containsKey(task)) {
-                minDays = Math.max(lastExMap.get(task) + space, minDays);    
-            } 
-            lastExMap.put(task, ++minDays);
+        Map<Integer, Long> taskTsMap = new HashMap<>();
+        long ts = 0;
+        for (int i = 0; i < tasks.length; ++i, ++ts) {
+            if (taskTsMap.containsKey(tasks[i])) {
+                long gap = ts - taskTsMap.get(tasks[i]) - 1;
+                if (gap < space) {
+                    ts += (space - gap);
+                }
+            }
+            taskTsMap.put(tasks[i], ts);
         }
-        return minDays;
+        return ts;
     }
-}
-
-public class MainApp {
-  public static void main(String[] args) {
-  }
 }
