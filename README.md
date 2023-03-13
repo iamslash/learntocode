@@ -22,8 +22,8 @@
   - [Array](#array)
   - [Matrix](#matrix)
   - [Bit Manipulation](#bit-manipulation)
-  - [Partial Sum](#partial-sum)
-  - [Partial Min](#partial-min)
+  - [Partial Sum (Prefix Sum)](#partial-sum-prefix-sum)
+  - [Partial Min (Prefix Min)](#partial-min-prefix-min)
   - [List, LinkedList](#list-linkedlist)
   - [Stack](#stack)
   - [Mono Stack](#mono-stack)
@@ -538,7 +538,7 @@ $ a.exe
 - [알](/algospot/GRADUATION/) | [GRADUATION](https://algospot.com/judge/problem/read/GRADUATION)
 - [H](hackerrank/algorithms/TheGreatXor/) | [The Great XOR](https://www.hackerrank.com/challenges/the-great-xor)
 
-## Partial Sum
+## Partial Sum (Prefix Sum)
 
 - F | [partial sum](/doc/partial_sum_overview.md)
 - F | [partial sum, range sum](/fundamentals/partialsum/partialsum/README.md)
@@ -548,9 +548,10 @@ $ a.exe
 - F | [range which is close to zero](/fundamentals/partialsum/rangewhichisclosetozero/README.md)
 - [L](/leetcode/RangeSumQuery2D/README.md) | 
 [Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/)
+- [L](/leetcode3/CounttheNumberofBeautifulSubarrays/) | [Count the Number of Beautiful Subarrays](https://leetcode.com/problems/count-the-number-of-beautiful-subarrays/)
 - [알](/algospot/CHRISTMAS/) | [CHRISTMAS](https://algospot.com/judge/problem/read/CHRISTMAS)
 
-## Partial Min
+## Partial Min (Prefix Min)
 
 - F | [partial min](doc/partial_min_overview.md)
 
