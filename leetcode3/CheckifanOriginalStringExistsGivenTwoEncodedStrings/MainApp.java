@@ -15,11 +15,13 @@ import java.util.*;
 //
 // Let's make a chache for dfs()
 //   C[i][j][diff]: matched for i, j, diff
-//   diff range is [-999, 999]
+//   diff range is [-999, 999] because the number of
+//   consecutive digits does not exceed 3.  
 //
 // base section
-// i == n && j == m
-//   diff == 0
+// if (i == n && j == m) {
+//     return diff == 0
+// }
 //
 // memo section
 // C[i][j][diff + 1000] != null
@@ -47,7 +49,7 @@ import java.util.*;
 //
 // dfs(0, 0, 0): true
 //   dfs(1, 1, 0): true
-//     dfs(1, 2, 1): true
+//     dfs(1, 2, 1): false
 //       dfs(2, 2, 0)
 //         dfs(2, 3, 8)
 //           dfs(3, 3, 7)
