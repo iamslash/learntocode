@@ -1,4 +1,4 @@
-// Copyright (C) 2023 by iamslash
+// Copyright (C) 2022 by iamslash
 
 import java.util.*;
 
@@ -15,28 +15,29 @@ class TreeNode {
     }
 }
 
-// 1ms 89.99% 42.4MB 32.11%
-// dfs
+// 1ms 100.00% 45MB 25.00%
+// DFS
 // O(N) O(lgN)
 class Solution {
-    private int best = 0;
+    private int ans = 0;
+    // return: [sum, cnt]
     private int[] dfs(TreeNode u) {
         // base
         if (u == null) {
             return new int[]{0, 0};
         }
         // recursion
-        int[] lrst = dfs(u.left);
-        int[] rrst = dfs(u.right);
-        int sum = lrst[0] + rrst[0] + u.val;
-        int cnt = lrst[1] + rrst[1] + 1;
-        if ((sum / cnt) == u.val) {
-            best++;
+        int[] lefts = dfs(u.left);
+        int[] rights = dfs(u.right);
+        int sum = lefts[0] + rights[0] + u.val;
+        int cnt = lefts[1] + rights[1] + 1;
+        if (sum / cnt == u.val) {
+            ans++;
         }
-        return new int[]{sum, cnt};
+        return new int[]{sum, cnt}; 
     }
     public int averageOfSubtree(TreeNode root) {
         dfs(root);
-        return best;
+        return ans;
     }
 }
