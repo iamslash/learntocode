@@ -315,13 +315,6 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 > ./a.out
 ```
 
-- Rust
-
-```bash
-> rustc a.rs
-> ./a
-```
-
 - java
 
 ```bash
@@ -329,30 +322,10 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 > java A
 ```
 
-- go
-
-```bash
-> go run a.go
-> go build -o a.out a.go
-> ./a.out
-```
-
 - python
 
 ```bash
 > python a.py
-```
-
-- javascript
-
-```bash
-> node a.js
-```
-
-- ruby
-
-```bash
-> ruby a.rb
 ```
 
 - kotlin
@@ -366,6 +339,49 @@ $ java -jar a.jar
 # build with kotlinc run with kotlin
 $ kotlinc a.kt
 $ kotlin AKt
+```
+
+- typescript
+
+```bash
+# Install tsc
+$ npm install -g typescript
+# Build with tsc
+$ tsc a.ts
+# Run with node
+$ node a.js
+
+# Install ts-node 
+$ npm install -g ts-node
+# Run with ts-node
+$ ts-node a.ts
+```
+
+- go
+
+```bash
+> go run a.go
+> go build -o a.out a.go
+> ./a.out
+```
+
+- javascript
+
+```bash
+> node a.js
+```
+
+- Rust
+
+```bash
+> rustc a.rs
+> ./a
+```
+
+- ruby
+
+```bash
+> ruby a.rb
 ```
 
 - cs
