@@ -1,22 +1,26 @@
 // Copyright (C) 2023 by iamslash
 
+import java.util.*;
+
+// 1 1 0 0    1 0 0 0
+// 1 1 1 1    1 0 0 0 
+// 1 1 1 1    1 1 1 1
+
 // Idea: dfs
 //
-// First, dfs with changing cell from 1 to 0.
-// Second, dfs with changing cell from 1 to 0 again.
-// If two dfs return true, return false.
-// That means 2 more connects.
-// Otherwise return true.
-// That means disconnected.
+// At first, dfs with changing the cell from 1 to 0.
+// At second, dfs again.
+// If two dfs returns true the answer is false.
+// That means there are more 2 connects.
+// Otherwise returns true.
 
-// 0ms 100.00% 52.1MB 42.62%
+// 0ms 100.00% 51.5MB 78.46%
 // dfs
 // O(HW) O(HW)
 class Solution {
     private boolean dfs(int[][] grid, int y, int x) {
         int h = grid.length, w = grid[0].length;
-        // base
-        if (y >= h || x >= w || grid[y][x] == 0) {
+        if (y == h || x == w || grid[y][x] == 0) {
             return false;
         }
         if (y == h - 1 && x == w - 1) {
@@ -25,8 +29,7 @@ class Solution {
         if (y != 0 || x != 0) {
             grid[y][x] = 0;
         }
-        // rcursion
-        return dfs(grid, y + 1, x) || dfs(grid, y, x + 1);
+        return dfs(grid, y, x + 1) || dfs(grid, y + 1, x);
     }
     public boolean isPossibleToCutPath(int[][] grid) {
         return !(dfs(grid, 0, 0) && dfs(grid, 0, 0));
