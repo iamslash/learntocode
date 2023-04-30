@@ -4,7 +4,7 @@ import java.util.*;
 
 // 5ms 71.43% 42.9MB 42.86%
 // dfs
-// O(HW) O(HW)
+// O(N) O(lg4N)
 class Solution {
     private int dfs(int[][] grid, int y, int x) {
         int h = grid.length, w = grid[0].length;
