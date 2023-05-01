@@ -7,6 +7,10 @@ import java.util.*;
 //       j
 //
 
+//     i
+// 2 4 3 5
+//       j
+
 // Idea: gcd
 // If there is one at least, the ans is "n - oneCnt".
 // If there is no one,
