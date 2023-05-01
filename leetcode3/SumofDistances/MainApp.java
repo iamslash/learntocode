@@ -48,22 +48,26 @@ class Solution {
 //
 // See also:
 //   https://leetcode.com/problems/intervals-between-identical-elements/
+//     0 <= nums[i] <= 10^5 
 
-// 19ms 100.00% 65.9MB 86.90%
+// 95ms 19.49% 83.4MB 21.56%
 // prefix sum, back and forth
 // O(N) O(N)
 class Solution {
     private void sum(int[] nums, long[] ans, int beg, int inc) {
         int n = ans.length;
-        long[] cnts = new long[100_001], idxSums = new long[100_001];
+        Map<Long, Long> cntMap = new HashMap<>();
+        Map<Long, Long> sumMap = new HashMap<>();
         for (int i = beg, j = 0; i >= 0 && i < n; i += inc, ++j) {
-            int num = nums[i];
-            ans[i] += cnts[num] * j - idxSums[num];
-            cnts[num]++;
-            idxSums[num] += j;
+            long num = (long)nums[i];
+            ans[i] += cntMap.getOrDefault(num, 0L) * j - sumMap.getOrDefault(num, 0L);
+            cntMap.put(num, cntMap.getOrDefault(num, 0L) + 1);
+            sumMap.put(num, sumMap.getOrDefault(num, 0L) + j);
+            // System.out.printf("i: %d, num: %d\n", i, num);
+            // System.out.println(sumMap);
         }
     }
-    public long[] getDistances(int[] nums) {
+    public long[] distance(int[] nums) {
         int n = nums.length;
         long[] ans = new long[n];
         sum(nums, ans, 0, 1);
