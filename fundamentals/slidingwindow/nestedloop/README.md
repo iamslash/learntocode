@@ -11,12 +11,14 @@
 window 라고 한다.  이때 인덱스 `i, j` 에 대하여 인덱스를 늘리고 로직을
 처리할지 로직을 처리하고 증가할지 유의해야 한다. 
 
-slding window 의 크기를 줄이느냐 혹은 크기를 줄이지 않느냐에 따라 다음과 같은 전략으로 구분할 수 있다.
+slding window 의 크기를 줄이느냐 혹은 크기를 줄이지 않느냐에 따라 다음과 같은
+전략으로 구분할 수 있다.
 
 * sliding window shrinkable
 * sliding window non-shrinkable
 
-sliding window 의 크기를 줄이지 않고 반복하는 것이 시간복잡도가 더욱 좋다. 그러나 사용할 수 없는 경우도 있다.
+sliding window 의 크기를 줄이지 않고 반복하는 것이 시간복잡도가 더욱 좋다.
+그러나 사용할 수 없는 경우도 있다.
 
 # sliding window shrinkable
 

@@ -544,7 +544,7 @@ $ a.exe
 - F | [bitmask set](fundamentals/bitmask/bitmaskset/README.md)
 - F | [hamming weight](/fundamentals/bitmask/hammingweight/README.md)
 - F | [Gray code](/fundamentals/bitmask/graycode/README.md)
-- F | [sieve of eratosthenes](fundamentals/bitmask/sieveoferatosthenes/README.md)
+- F | [sieve of eratosthenes](fundamentals/numbertheory/sieveoferatosthenes/README.md)
 - F | [15 puzzle](fundamentals/bitmask/15puzzle/README.md)
 - F | [priority queue with O(1)](fundamentals/bitmask/priorityqueue/README.md)
 - F | [maximal stable set](fundamentals/bitmask/maximalstableset/README.md)★
