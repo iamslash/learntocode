@@ -13,45 +13,46 @@ import java.util.*;
 //       6
 //       4 6
 
-// // Time Limit Exceeded
-// // backtracking
-// // O(2^N) O(N)
-// class Solution {
-//     private void dfs(int[] nums, int k,
-//                      List<List<Integer>> bestList,
-//                      List<Integer> candList,
-//                      int idx) {
-//         int n = nums.length;
-//         // base
-//         if (idx >= n) {
-//             if (candList.size() > 0) {
-//                 bestList.add(new ArrayList<>(candList));
-//             }
-//             return;
-//         }
-//         // recursion
-//         // include
-//         if (!candList.contains(nums[idx] - k)) {
-//             candList.add(nums[idx]);
-//             dfs(nums, k, bestList, candList, idx + 1);
-//             candList.remove(candList.size() - 1);
-//         }
-//         // exclude
-//         dfs(nums, k, bestList, candList, idx + 1); 
-//     }
+// Time Limit Exceeded
+// backtracking
+// O(2^N) O(N)
+class Solution {
+    private void dfs(int[] nums, int k,
+                     List<List<Integer>> bestList,
+                     List<Integer> candList,
+                     int idx) {
+        int n = nums.length;
+        // base
+        if (idx >= n) {
+            if (candList.size() > 0) {
+                bestList.add(new ArrayList<>(candList));
+            }
+            return;
+        }
+        // recursion
+        // include
+        if (!candList.contains(nums[idx] - k)) {
+            candList.add(nums[idx]);
+            dfs(nums, k, bestList, candList, idx + 1);
+            candList.remove(candList.size() - 1);
+        }
+        // exclude
+        dfs(nums, k, bestList, candList, idx + 1); 
+    }
                      
-//     public long countTheNumOfKFreeSubsets(int[] nums, int k) {
-//         Arrays.sort(nums);
-//         List<List<Integer>> bestList = new ArrayList<>();
-//         List<Integer> candList = new ArrayList<>();
-//         dfs(nums, k, bestList, candList, 0);
-//         return bestList.size() + 1;
-//     }
-// }
+    public long countTheNumOfKFreeSubsets(int[] nums, int k) {
+        Arrays.sort(nums);
+        List<List<Integer>> bestList = new ArrayList<>();
+        List<Integer> candList = new ArrayList<>();
+        dfs(nums, k, bestList, candList, 0);
+        return bestList.size() + 1;
+    }
+}
 
-
-// hash map
+// 6ms 72.46% 43.1MB 18.84%
+// dynamic programming
 // O(N) O(N)
+// difficult
 class Solution {
     public long countTheNumOfKFreeSubsets(int[] nums, int k) {
         Arrays.sort(nums);
