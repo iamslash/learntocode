@@ -24,3 +24,22 @@ class Solution {
         return diffSum;
     }
 }
+
+//          1
+//       5     3
+//     2   3  3  1
+
+// 6ms 100.00% 54.8MB 50.00%
+// dfs
+// O(N) O(1)
+class Solution {
+    public int minIncrements(int n, int[] cost) {
+        int ans = 0;
+        for (int i = n / 2 - 1; i >= 0; --i) {
+            int l = i * 2 + 1, r = i * 2 + 2;
+            ans += Math.abs(cost[l] - cost[r]);
+            cost[i] += Math.max(cost[l], cost[r]);
+        }
+        return ans;
+    }
+}
