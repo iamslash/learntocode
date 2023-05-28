@@ -15,44 +15,29 @@ class TreeNode {
     }
 }
 
-// Idea: double dfs
-//
-//            a
-//          /   \
-//         b     c
-//        / \   / \
-//       d   f g   h
-//
-// Build sum of nodes by level.
-// When we visit node d, update d with
-//   sum of (d,f,g,h) - sum of (d,f).
-// We know sibling sum of (d,f) when visitng b.
-
-// double dfs
+// 37ms 63.70% 81.9MB 38.91%
+// DFS
 // O(N) O(lgN)
 class Solution {
-    private void buildSum(List<Integer> sumList, TreeNode u, int lv) {
+    private List<Integer> sumList = new ArrayList<>();
+    private void levelSum(TreeNode u, int lv) {
         // base
         if (u == null) {
             return;
         }
-        
         if (sumList.size() <= lv) {
             sumList.add(0);
         }
         sumList.set(lv, sumList.get(lv) + u.val);
-
         // recursion
-        buildSum(sumList, u.left, lv + 1);
-        buildSum(sumList, u.right, lv + 1);
+        levelSum(u.left, lv + 1);
+        levelSum(u.right, lv + 1);
     }
-    private void updateNode(List<Integer> sumList, TreeNode u, int sibSum, int lv) {
+    private void updateSum(TreeNode u, int sibSum, int lv) {
         // base
         if (u == null) {
             return;
         }
-
-        // update
         u.val = sumList.get(lv) - sibSum;
         sibSum = 0;
         if (u.left != null) {
@@ -61,15 +46,13 @@ class Solution {
         if (u.right != null) {
             sibSum += u.right.val;
         }
-        
         // recursion
-        updateNode(sumList, u.left, sibSum, lv + 1);
-        updateNode(sumList, u.right, sibSum, lv + 1);
+        updateSum(u.left, sibSum, lv + 1);
+        updateSum(u.right, sibSum, lv + 1);
     }
     public TreeNode replaceValueInTree(TreeNode root) {
-        List<Integer> sumList = new ArrayList<>();
-        buildSum(sumList, root, 0);
-        updateNode(sumList, root, root.val, 0);
+        levelSum(root, 0);
+        updateSum(root, root.val, 0);
         return root;
     }
 }
