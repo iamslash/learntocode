@@ -29,7 +29,7 @@ import java.util.*;
 
 // Idea: greedy
 //
-// Consider from the simple one.
+// Let's think from the simple one.
 //
 // s: 0 0 0
 //    i
@@ -43,6 +43,13 @@ import java.util.*;
 //   min(i, n - i)
 // i means replace s[0..i) with s[i].
 // n - i means replace s[i..n) with s[i-1].
+//
+// The cost is same when we consider forward or backward.
+//
+//            . . .
+// s: 0 0 0 0 1 0 1    3 2 1
+//          . . .
+// s: 0 0 0 0 1 0 1    1 2 3
 
 // 12ms 72.05% 44.7MB 38.76%
 // greedy

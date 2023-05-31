@@ -1,24 +1,25 @@
 // Copyright (C) 2023 by iamslash
 
-// Proxy
+// 452ms 41.67% 71.4MB 66.67%
 type Obj = Array<any> | Record<any, any>;
-const banMethods = ['pop', 'push', 'shift', 'unshift', 'splice', 'sort', 'reverse'];
+const banMethods = new Set(['pop', 'push', 'shift', 'unshift', 'splice', 'sort', 'reverse']);
 function makeImmutable(obj: Obj): Obj {
     return new Proxy(obj, {
-        set(target, prop, value, receiver) {
-            if (Array.isArray(target)) {
-                throw Error(`Error Modifying Index: ${String(prop)}`);                
-            }
-            throw Error(`Error Modifying: ${String(prop)}`);
+        set(target, prop, value): boolean {
+            if (Array.isArray(target)){
+                throw `Error Modifying Index: ${String(prop)}`;
+            }            
+            throw `Error Modifying: ${String(prop)}`;
         },
-        get(target, prop) {
-            if (Array.isArray(target) && prop in banMethods) {
-                throw Error(`Error Calling Method: ${String(prop)}`);
+        get(target, prop, receiver) {
+            if (Array.isArray(target) && banMethods.has(String(prop))){
+                return () => { throw `Error Calling Method: ${String(prop)}`; };
             }
-            if (typeof(obj[prop]) === "object" && obj[prop] !== null) {
-                return makeImmutable(obj[prop]);
+            if (typeof target[prop] === 'object' && target[prop] !== null){
+                // call recursively
+                return makeImmutable(target[prop]);
             }
-            return target[prop];
+            return Reflect.get(target, prop, receiver); // execute default behavior
         }
     });
 };
