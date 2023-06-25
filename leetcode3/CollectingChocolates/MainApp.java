@@ -25,6 +25,10 @@ import java.util.*;
 // O(N^2) O(N)
 class Solution {
     public long minCost(int[] nums, int x) {
-        
+        int n = nums.length;
+        int[] rotatedCosts = new int[n];
+        for (int i = 0; i < n; ++i) {
+            
+        }
     }
 }
