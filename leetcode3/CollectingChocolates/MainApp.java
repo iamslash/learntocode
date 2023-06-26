@@ -2,33 +2,27 @@
 
 import java.util.*;
 
-//    x: 5
-//        
-//              i
-// nums: 20  1 15
-//              j
-//
-//  ans: 36  3  1
-
-// Idea:
-//
-// A[i] will be used for the cost of other types.  When we rotate
-// i-type for k times, min cost is min(A[i-k], ..., A[i-1], A[i]) for
-// i-type.
-//
-//      i: rotated times
-//      j: rotated times
-// ans[i]: min cost rotated i times
-//      
-
+// 64ms 73.70% 43.4MB 99.74%
 // brute force
 // O(N^2) O(N)
 class Solution {
     public long minCost(int[] nums, int x) {
         int n = nums.length;
-        int[] rotatedCosts = new int[n];
+        long[] costs = new long[n];
         for (int i = 0; i < n; ++i) {
-            
+            costs[i] = (long) x * i;
         }
+        for (int i = 0; i < n; ++i) {
+            long minNum = nums[i];
+            for (int j = 0; j < n; ++j) {
+                minNum = Math.min(minNum, nums[(i + j) % n]);
+                costs[j] += minNum;
+            }
+        }
+        long minCost = costs[0];
+        for (int i = 1; i < n; ++i) {
+            minCost = Math.min(minCost, costs[i]);
+        }
+        return minCost;
     }
 }
