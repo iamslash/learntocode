@@ -5,6 +5,7 @@
 - [gcd (Greatest Common Divisor)](#gcd-greatest-common-divisor)
 - [lcm (Least Common Multiple)](#lcm-least-common-multiple)
 - [fast pow](#fast-pow)
+- [Min Pair Plus One](#min-pair-plus-one)
 
 ----
 
@@ -131,4 +132,18 @@ while (n > 0) {
     n >>= 1;
 }
 return (int)((ans - 2 + mod) % mod);
+```
+
+# Min Pair Plus One
+
+> [Construct the Longest New String](/leetcode3/ConstructtheLongestNewString/)
+
+숫자 `x, y` 가 주어진다. 똑같은 수를 `x, y` 에서 뽑는다. 둘중 큰 수가 있다면
+뽑은 수에 `1` 을 더한다.
+
+예를 들어 `2, 7` 이 주어지면 답은 `5 (2 + 2 + 1)` 이다. `2, 2` 가 주어지면 답은
+`4 (2 + 2)` 이다.
+
+```java
+Math.min(x + 1, y) + Math.min(x, y + 1)
 ```
