@@ -21,35 +21,14 @@
 
 ## Idea
 
-`coins` 를 정렬하고 금액이 큰 동전부터 최대한 많이 사용하는 식으로 dfs
-with pruning 전략을 사용해 보자.
-
-다음과 같이 부분문제 `dfs` 를 정의한다.
+다음과 같이 부분문제 `dfs()` 를 정의한다.
 
 ```
-dfs(tgt, idx, cnt)
+dfs(C, avail)
 
-tgt: 바꾸어야할 금액
-idx: index of coins
-cnt: 지금까지 사용된 동전의 수
-```
-
-`dfs` 는 다음과 같이 base condition 을 처리한다.
-
-* idx 가 0 보다 작으면 리턴한다.
-* `coins[idx]` 를 여러개 사용했을 때 tgt 를 교환가능하다면 더이상
-  탐색을 진행할 필요가 없다.
-* `coins[idx]` 를 최대한 사용한 것과 cnt 의 합이 지금까지 구한 BEST
-  보다 같거나 많다면 더이상 탐색을 진행할 필요가 없다.
-
-`dfs` 는 다음과 같이 recursion 을 처리한다.
-
-`i` 를 사용된 동전의 개수라고 해보자. `coins[idx]` 를 최대한 사용한
-개수를 `ccnt` 라고 하자. `i` 를 `ccnt` 부터 `0` 까지 순회하면서 다음을
-재귀호출하자.
-
-```
-dfs(tgt - i * coins[idx], idx - 1, cnt + i)
+return: few count of coins for avail amount
+     C: C[a] is min coins for a avail amount
+ avail: avail amount
 ```
 
 ## Implementation
@@ -59,7 +38,9 @@ dfs(tgt - i * coins[idx], idx - 1, cnt + i)
 ## Time Complexity
 
 ```
-O(N^2) O(1)
+O(AN) O(N)
+A: amount
+N: number of coins
 ```
 
 # Iterative Dynamic Programming

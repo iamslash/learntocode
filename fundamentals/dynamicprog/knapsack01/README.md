@@ -1,9 +1,14 @@
 - [Abstract](#abstract)
 - [Unbounded Knapsack Problem](#unbounded-knapsack-problem)
   - [Problem](#problem)
-  - [Idea](#idea)
-  - [Implementation](#implementation)
-  - [Complexity](#complexity)
+  - [Recursive Dynamic Programming](#recursive-dynamic-programming)
+    - [Idea](#idea)
+    - [Implementation](#implementation)
+    - [Complexities](#complexities)
+  - [Iterative Dynamic Programming](#iterative-dynamic-programming)
+    - [Idea](#idea-1)
+    - [Implementation](#implementation-1)
+    - [Complexities](#complexities-1)
 
 ----
 
@@ -21,14 +26,47 @@ problem](fundamentals/greedy/knapsackfractional/README.md) 이라고 한다.
 
 ## Problem
 
-숫자`capacity` 와 배열 `weights[], values[]` 가 주어진다. 
+숫자 `capacity` 와 배열 `weights[], values[]` 가 주어진다. 
 
-`capacity` 까지 감당할 수 있는 배낭과 `n` 개의 물건들이 있다. 이제
-물건들을 배낭에 담아보자. 단, 물건 `i` 는 `0` 개 이상 담을 수
-있다. 무게는 배낭이 감당할 수 있는 최대가 되어야 하고 담겨진 물건들의
-가치 합도 최대가 되도록 하자. 최대 가치를 구하라.
+`capacity` 까지 감당할 수 있는 배낭과 `n` 개의 물건들이 있다. 이제 물건들을
+배낭에 담아보자. 단, 물건 `i` 는 `0` 개 이상 담을 수 있다. 무게는 배낭이 감당할
+수 있는 최대가 되어야 하고 담겨진 물건들의 가치 합도 최대가 되도록 하자. 최대
+가치를 구하라.
 
-## Idea
+## Recursive Dynamic Programming
+
+### Idea
+
+[동전교환문제](/leetcode/CoinChange/README.md) 와 유사하다. Recursive dynamic
+programming 으로 해결할 만 하다.
+
+다음과 같이 부분문제 `dfs()` 를 정의한다.
+
+```
+dfs(C, avail)
+
+return: max value of packages for avail capacity 
+     C: C[a] means max value for a avail capacity
+ avail: avail capacity
+```
+
+### Implementation
+
+* [c++11](a.cpp)
+* [java11](MainApp.java)
+
+### Complexities
+
+```
+O(CN) O(C)
+
+C: capacity
+N: the number of packages
+```
+
+## Iterative Dynamic Programming
+
+### Idea
 
 [동전교환문제](/leetcode/CoinChange/README.md) 와 유사하다.  Iterative
 dynamic programming 으로 해결할 만 하다.
@@ -44,12 +82,12 @@ dynamic programming 으로 해결할 만 하다.
     `C[w]` 에 저장한다. 즉, `C[w] = max(C[w], values[i] + C[w -
     weights[i]])`
 
-## Implementation
+### Implementation
 
 * [c++11](a.cpp)
 * [java11](MainApp.java)
 
-## Complexity
+### Complexities
 
 ```
 O(CN) O(C)
