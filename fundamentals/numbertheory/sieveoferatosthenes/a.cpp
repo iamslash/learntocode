@@ -33,17 +33,16 @@ void EratosThenes(int n) {
   SetComposite(0);
   SetComposite(1);
 
-  // i is until not n but sqrt(n)
-  // because any composite number is consisted of p and q (p x q)
+  // c = p * q (p <= q)
   // p <= sqrt(n)
-  // q >= sqrt(n)
+  // p * p <= n
   int sqrtn = int(sqrt(n));
-  for (int i = 2; i <= sqrtn; ++i) {
-    if (IsPrime(i)) {
-      // j is not from i * 2 
-      // because it is watched already
-      for (int j = i * i; j <= n; j += i) {
-        SetComposite(j);
+  for (int p = 2; p <= sqrtn; ++p) {
+    if (IsPrime(p)) {
+      // c = p * q (p <= q) 
+      // q >= sqrt(n)
+      for (int c = p * p; c <= n; c += p) {
+        SetComposite(c);
       }
     }
   }
