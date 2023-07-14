@@ -305,7 +305,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 - Programming Languages
   - c++, java, python
-  - kotlin, typescript, go
+  - kotlin, typescript, javascript, go
   - cs, swift, objc, rust
   - haskell, ruby, clojure
 
