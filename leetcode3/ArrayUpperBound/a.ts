@@ -7,5 +7,8 @@ declare global {
 }
 
 Array.prototype.upperBound = function(target: number) {
-    
+    let l = 0, r = this.length - 1;
+    while (l < r) {
+    }
+    return l
 };
