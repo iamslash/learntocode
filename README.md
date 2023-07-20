@@ -525,7 +525,7 @@ $ a.exe
 
 ## Array
 
-* F | [Boyer-Moore Majority Vote algorithm](fundamentals/array/boyermooremajority/README.md)
+* F | [Boyer-Moore Majority Vote algorithm](/fundamentals/array/boyermooremajority/README.md)
 * F | [kadane's algorithm](/fundamentals/array/kadane/README.md)
 * F | [Maximum Subarray No Less Than K](/fundamentals/array/MaximumSubarrayNoLessThanK/README.md)
 * [L](/leetcode/MaximumSubarray/README.md) | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/submissions/)
