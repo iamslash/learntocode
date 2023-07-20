@@ -1,5 +1,6 @@
 // Copyright (C) 2023 by iamslash
 
+// 54ms 85.94% 42.1MB 21.88%
 var promisify = function(fn) {
     return async function(...args) {
         return new Promise((resolve, reject) => {
