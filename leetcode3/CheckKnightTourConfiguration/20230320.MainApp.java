@@ -2,24 +2,32 @@
 
 import java.util.*;
 
-// 1ms 100.00% 43.7MB 19.84%
-// exhaustive search
-// O(N) O(N)
+//  1,2  2,1  2,-1  1,-2
+// -1,2 -2,1 -2,-1 -1,-2
+
+// 2ms 100.00% 42.1MB 100.00%
+// dfs
+// O(HW) O(HW)
 class Solution {
-    private int[][] dirs = {{-2,1},{-1,2},{1,2},{2,1},{2,-1},{1,-2},{-1,-2},{-2,-1}};
+    private int[][] dirs = {{1, 2},
+                            {2, 1},
+                            {2, -1},
+                            {1, -2},
+                            {-1, 2},
+                            {-2, 1},
+                            {-2, -1},
+                            {-1, -2}};
     private boolean dfs(int[][] grid, int y, int x, int seq) {
-        // System.out.printf("y: %d, x: %d, ord: %d\n", y, x, ord);
         int n = grid.length;
         // base
-        if (y < 0 || y >= n || x < 0 || x >= n ||
-            grid[y][x] != seq) {
+        if (y < 0 || x < 0 || y >= n || x >= n || seq != grid[y][x]) {
             return false;
         }
-        if (grid[y][x] == (n * n - 1)) {
+        if (seq == n * n - 1) {
             return true;
         }
         // recursion
-        for (int i = 0; i < dirs.length; ++i) {
+        for (int i = 0; i < 8; ++i) {
             int ny = y + dirs[i][0], nx = x + dirs[i][1];
             if (dfs(grid, ny, nx, seq + 1)) {
                 return true;
