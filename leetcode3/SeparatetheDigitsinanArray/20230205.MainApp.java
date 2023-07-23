@@ -2,12 +2,12 @@
 
 import java.util.*;
 
-// 7ms 47.24% 44.4MB 43.26%
-// deque, list
+// 6ms 100.00% 43.1MB 100.00%
+// brute force
 // O(N) O(N)
 class Solution {
     public int[] separateDigits(int[] nums) {
-        List<Integer> digitList = new ArrayList<>();
+        List<Integer> numList = new ArrayList<>();
         for (int num : nums) {
             Deque<Integer> deq = new ArrayDeque<>();
             while (num > 0) {
@@ -15,12 +15,13 @@ class Solution {
                 num /= 10;
             }
             while (!deq.isEmpty()) {
-                digitList.add(deq.pollLast());
+                numList.add(deq.pollLast());
             }
         }
-        int[] ans = new int[digitList.size()];
-        for (int i = 0; i < ans.length; ++i) {
-            ans[i] = digitList.get(i);
+        int[] ans = new int[numList.size()];
+        int i = 0;
+        for (int num : numList) {
+            ans[i++] = num;
         }
         return ans;
     }
