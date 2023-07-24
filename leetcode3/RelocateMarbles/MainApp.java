@@ -2,15 +2,22 @@
 
 import java.util.*;
 
+// 63ms 97.59% 58.2MB 86.95%
+// sort, hash set
+// O(NlgN) O(N)
 class Solution {
     public List<Integer> relocateMarbles(int[] nums, int[] moveFrom, int[] moveTo) {
-        int n = nums.length;
-        Map<Integer, List<Integer>> numMap = new HashMap<>();
-        for (int i = 0; i < n; ++i) {
-            numMap.putIfAbsent(nums[i], new ArrayList<>());
-            numMap.get(nums[i]).add(i);
+        int n = moveFrom.length;
+        Set<Integer> posSet = new HashSet<>();
+        for (int pos : nums) {
+            posSet.add(pos);
         }
-        List<Integer> ans = new ArrayList<>();
-        return ans;
+        for (int i = 0; i < n; ++i) {
+            posSet.remove(moveFrom[i]);
+            posSet.add(moveTo[i]);
+        }
+        List<Integer> posList = new ArrayList<>(posSet);
+        Collections.sort(posList);        
+        return posList;
     }
 }
