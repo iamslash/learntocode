@@ -62,3 +62,4 @@ return j - i;
 
 * [C++ Maximum Sliding Window Cheatsheet Template! @ leetcode.discussion](https://leetcode.com/problems/frequency-of-the-most-frequent-element/discuss/1175088/C%2B%2B-Maximum-Sliding-Window-Cheatsheet-Template!)
 * [L](/leetcode2/LongestSubarrayof1sAfterDeletingOneElement/a.go) | [Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/)
+* [L](/leetcode3/MaximumBeautyofanArrayAfterApplyingOperation/) | [Maximum Beauty of an Array After Applying Operation](https://leetcode.com/problems/maximum-beauty-of-an-array-after-applying-operation/)
