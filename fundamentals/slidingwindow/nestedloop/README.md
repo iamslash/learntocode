@@ -1,26 +1,26 @@
 - [Abstract](#abstract)
-- [sliding window shrinkable](#sliding-window-shrinkable)
-- [sliding window non-shrinkable](#sliding-window-non-shrinkable)
+- [shrinkable sliding window](#shrinkable-sliding-window)
+- [non-shrinkable sliding window](#non-shrinkable-sliding-window)
 - [References](#references)
 
 ------
 
 # Abstract
 
-보통 두개의 인덱스 `i, j` 를 이용하여 window 를 옮기는 것을 sliding
-window 라고 한다.  이때 인덱스 `i, j` 에 대하여 인덱스를 늘리고 로직을
-처리할지 로직을 처리하고 증가할지 유의해야 한다. 
+보통 두개의 인덱스 `i, j` 를 이용하여 window 를 옮기는 것을 sliding window 라고
+한다.  이때 인덱스 `i, j` 에 대하여 인덱스를 늘리고 로직을 처리할지 로직을
+처리하고 증가할지 유의해야 한다. 
 
 slding window 의 크기를 줄이느냐 혹은 크기를 줄이지 않느냐에 따라 다음과 같은
 전략으로 구분할 수 있다.
 
-* sliding window shrinkable
-* sliding window non-shrinkable
+* shrinkable sliding window 
+* non-shrinkable sliding window 
 
 sliding window 의 크기를 줄이지 않고 반복하는 것이 시간복잡도가 더욱 좋다.
 그러나 사용할 수 없는 경우도 있다.
 
-# sliding window shrinkable
+# shrinkable sliding window 
 
 보통 다음과 같은 code-pattern 을 갖는다. 
 
@@ -39,7 +39,7 @@ return ans;
 
 * [L](/leetcode2/FrequencyoftheMostFrequentElement/README.md) | [Frequency of the Most Frequent Element](https://leetcode.com/problems/frequency-of-the-most-frequent-element/)
 
-# sliding window non-shrinkable
+# non-shrinkable sliding window 
 
 보통 다음과 같은 code-pattern 을 갖는다.
 
@@ -57,6 +57,7 @@ return j - i;
 ```
 
 * [L](/leetcode2/FrequencyoftheMostFrequentElement/README.md) | [Frequency of the Most Frequent Element](https://leetcode.com/problems/frequency-of-the-most-frequent-element/)
+
 # References
 
 * [C++ Maximum Sliding Window Cheatsheet Template! @ leetcode.discussion](https://leetcode.com/problems/frequency-of-the-most-frequent-element/discuss/1175088/C%2B%2B-Maximum-Sliding-Window-Cheatsheet-Template!)
