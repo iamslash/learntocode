@@ -14,8 +14,9 @@ using namespace std;
 //                 j
 // cntMap: 1 2 3
 //         1 2 0
-//    ans: 4
+//    ans: 2
 
+// 34ms 84.60% 36.8MB 84.49%
 // sliding window, hash map, hash set
 // O(N) O(N)
 class Solution {

@@ -3,19 +3,27 @@
 import java.util.*;
 
 
-//      k: 3
-//             i
-//   nums: 1 3 1 2 2
-//                 j
-// cntMap: 
-//         
-//    ans: 4
+// Idea: sliding window
 //
-//         1 3 1 2
-//           3 1 2
-//         1 3 1 2 2
-//           3 1 2 2
+//           i
+// nums: 1 3 1 2 2 3
+//             j
+//       1 3 1 2
+//         3 1 2
+//
+//           i
+// nums: 1 3 1 2 2 3
+//               j
+//       1 3 1 2 2
+//         3 1 2 2
+//
+//           i
+// nums: 1 3 1 2 2 3
+//                 j
+//       1 3 1 2 2
+//         3 1 2 2
 
+// 7ms 90.19% 44MB 34.11%
 // sliding window, hash map
 // O(N) O(N)
 class Solution {
@@ -32,8 +40,8 @@ class Solution {
             }
             cntMap.put(nums[j], cntMap.getOrDefault(nums[j], 0) + 1);
             while (k == 0) {
-                cntMap.put(nums[j], cntMap.get(nums[j]) - 1);
-                if (cntMap.get(nums[j]) == 0) {
+                cntMap.put(nums[i], cntMap.get(nums[i]) - 1);
+                if (cntMap.get(nums[i]) == 0) {
                     k++;
                 }
                 i++;
@@ -43,3 +51,22 @@ class Solution {
         return ans;
     }
 }
+
+//      k: 1
+//               i
+//   nums: 1 3 1 2 2 3
+//                   j
+// cntMap: 1 2 3
+//         0 2 1
+//    ans: 7
+//
+//         1 3 1 2
+//           3 1 2
+//         1 3 1 2 2
+//           3 1 2 2
+//         1 3 1 2 2 3
+//           3 1 2 2 3
+//             1 2 2 3
+
+
+
