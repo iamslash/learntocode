@@ -30,13 +30,17 @@ import java.util.*;
 // Idea: hash map
 //
 // Let's think about 2 dimension graph.
+// y is max defence (maxY[]).
+// x is attack.
+// If we precalculate maxY for attack [0..100001],
+// we can get max defence maxY[x + 1] for x.
+// x + 1 for same x values.
 //
 // |....    
 // |    .
 // |     .
 //  ------
 //
-
 
 // props: 3,6 5,5 6,3
 
