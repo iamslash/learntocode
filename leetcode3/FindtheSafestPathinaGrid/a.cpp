@@ -4,6 +4,7 @@
 #include <queue>
 #include <vector>
 #include <array>
+#include <algorithm>
 
 using namespace std;
 
@@ -22,6 +23,7 @@ using namespace std;
 // 2 3 4 3
 // 1 2 3 4
 
+// 431ms 8805% 110MB 92.48%
 // bfs, dijkstra
 // O(NlgN) O(N)
 // N: number of cells
@@ -44,7 +46,8 @@ public:
       for (int d = 0; d < 4; ++d) {
         int y = i + dir[d], x = j + dir[d + 1];
         if (y >= 0 && y < n && x >= 0 && x < n && grid[y][x] == 0) {
-          grid[y][x] = g[i][j] + 1;
+          grid[y][x] = grid[i][j] + 1;
+          q.push({y, x});
         }
       }
     }
@@ -54,9 +57,9 @@ public:
     while (pq.top()[1] < n - 1 || pq.top()[2] < n - 1) {
       auto [c, i, j] = pq.top(); pq.pop();
       for (int d = 0; d < 4; ++d) {
-        int y = i + dir[d], x = dir[d + 1];
+        int y = i + dir[d], x = j + dir[d + 1];
         if (y >= 0 && y < n && x >= 0 && x < n && grid[y][x] > 0) {
-          pq.push({min(c, grid[y][x], y, x)});
+          pq.push({min(c, grid[y][x]), y, x});
           grid[y][x] *= -1;
         }
       }
@@ -68,3 +71,4 @@ public:
 int main() {
   return 0;
 }
+
