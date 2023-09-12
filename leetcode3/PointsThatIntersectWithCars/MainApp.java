@@ -16,25 +16,25 @@ import java.util.*;
 // nums[i].length == 2
 // 1 <= starti <= endi <= 100
 
-// // 5ms 44.74% 43.2MB 70.99%
-// // sort
-// // O(NlgN) O(1)
-// class Solution {
-//     public int numberOfPoints(List<List<Integer>> nums) {
-//         Collections.sort(nums, (a, b) -> a.get(0) == b.get(0) ? a.get(1) - b.get(1) : a.get(0) - b.get(0)); 
-//         int last = -1, ans = 0;
-//         for (List<Integer> car : nums) {
-//             int start = car.get(0), end = car.get(1);
-//             if (last < start) {
-//                 ans += end - start + 1;
-//             } else if (last < end) {
-//                 ans += end - last;
-//             }
-//             last = Math.max(last, end);
-//         }
-//         return ans;
-//     }
-// }
+// 5ms 44.74% 43.2MB 70.99%
+// sort
+// O(NlgN) O(1)
+class Solution {
+    public int numberOfPoints(List<List<Integer>> nums) {
+        Collections.sort(nums, (a, b) -> a.get(0) == b.get(0) ? a.get(1) - b.get(1) : a.get(0) - b.get(0)); 
+        int last = -1, ans = 0;
+        for (List<Integer> car : nums) {
+            int start = car.get(0), end = car.get(1);
+            if (last < start) {
+                ans += end - start + 1;
+            } else if (last < end) {
+                ans += end - last;
+            }
+            last = Math.max(last, end);
+        }
+        return ans;
+    }
+}
 
 
 //         
