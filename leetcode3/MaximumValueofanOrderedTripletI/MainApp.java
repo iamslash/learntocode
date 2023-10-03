@@ -21,14 +21,14 @@ import java.util.*;
 //     }
 // }
 
-// Idea: math
+// Idea: linear traversal
 //
 //  maxa: max(num)
 // maxab: max(maxa - num)
 //   ans: max(ans, maxab * num)
 //
 // 1ms 100.00% 39.9MB 100.00%
-// math
+// linear traversal
 // O(N) O(1)
 class Solution {
     public long maximumTripletValue(int[] nums) {
