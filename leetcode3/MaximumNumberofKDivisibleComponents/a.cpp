@@ -61,39 +61,40 @@ public:
 // O(N) O(N)
 class Solution {
 private:
-  vector<int> costs;
-  int cnt;
-  int dfs(vector<int>& values, int k, vector<int> graph[], vector<int>& visit, int u) {
-    visit[u] = 1;
-    for (auto v : graph[u]) {
-      if (!visit[v]) {
-        costs[u] += dfs(values, k, graph, visit, v) % k;
-      }
+    int cnt;
+    // Return cost of component
+    int dfs(vector<int>& values, int k, vector<int> graph[], 
+            vector<bool>& visit, int u) {
+        visit[u] = true;
+        // recursion
+        int sum = values[u];
+        for (auto v : graph[u]) {
+            if (!visit[v]) {
+                sum += dfs(values, k, graph, visit, v) % k;
+            }
+        }
+        // Validate sum
+        if (sum % k == 0) {
+            cnt++;
+            return 0;
+        }
+        return sum;
     }
-    if (costs[u] % k == 0) {
-      cnt++;
-      return 0;
-    }
-    return costs[u];
-  }
 public:
-  int maxKDivisibleComponents(int n, vector<vector<int>>& edges,
-                              vector<int>& values, int k) {
-    cnt = 0;
-    costs.resize(n, 0);
-    for (int u = 0; u < n; ++u) {
-      costs[u] = values[u];
+    int maxKDivisibleComponents(int n, vector<vector<int>>& edges, 
+                                vector<int>& values, int k) {
+        cnt = 0;
+        vector<int> graph[n];
+        // Build graph
+        for (const auto& edge : edges) {
+            int u = edge[0], v = edge[1];
+            graph[u].push_back(v);
+            graph[v].push_back(u);
+        }
+        vector<bool> visit(n, false);
+        dfs(values, k, graph, visit, 0);
+        return cnt;
     }
-    vector<int> graph[n];
-    for (const auto& edge : edges) {
-      int u = edge[0], v = edge[1];
-      graph[u].push_back(v);
-      graph[v].push_back(u);
-    }
-    vector<int> visit(n, 0);
-    dfs(values, k, graph, visit, 0);
-    return cnt;
-  }
 };
 
 int main() {
