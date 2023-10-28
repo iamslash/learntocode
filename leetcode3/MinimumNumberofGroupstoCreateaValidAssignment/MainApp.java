@@ -12,75 +12,48 @@ import java.util.*;
 //           i
 //  minFreq: 1
 
-//     nums: 1 1 3 10 10 10
-//           3 4 5
-//           i
-//  minFreq: 3
-
-// Wrong answer for
-// Input:
-// [1,1,3,3,1,1,2,2,3,1,3,2]
-// Output:
-// 4
-// Expected:
-// 5
-//    
+// 33ms 93.13% 61.3MB 24.37%
 // hash map
 // O(N) O(N)
+// difficult to understand
 class Solution {
     public int minGroupsForValidAssignment(int[] nums) {
-        Map<Integer, Integer> cntMap = new HashMap<>();
-        int minFreq = 100_000;
-        for (int num : nums) {
-            int freq = cntMap.getOrDefault(num, 0) + 1;
-            cntMap.put(num, freq);
+        Map<Integer, Integer> freqMap = new HashMap<>();
+        for(int num : nums) {
+            freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
         }
-        for (int freq : cntMap.values()) {
+        
+        int minFreq = nums.length;
+        for(int freq : freqMap.values()) {
             minFreq = Math.min(minFreq, freq);
         }
-        System.out.println(cntMap);
-        System.out.println(minFreq);
-        int groupCnt = 0;
-        for (int freq : cntMap.values()) {
-            if (freq <= minFreq + 1) {
-                groupCnt++;
+
+        for(int freq = minFreq; freq >= 1; --freq) {
+            int numGroups = groupify(freqMap, freq); 
+            if(numGroups > 0) {
+                return numGroups;
+            }
+        }
+        
+        return nums.length;
+    }
+    
+    private int groupify(Map<Integer, Integer> freqMap, int bnd) {
+        int groups = 0;
+        int next = bnd + 1;
+        
+        for(int value : freqMap.values()) {
+            int numGroups = value / next;
+            int remaining = value % next;
+
+            if(remaining == 0) {
+                groups += numGroups;
+            } else if(numGroups >= bnd - remaining) {
+                groups += numGroups + 1;
             } else {
-                groupCnt += ((freq + minFreq) / (minFreq + 1));
+                return 0;
             }
         }
-        return groupCnt;
-    }
-}
-
-
-/// hash map
-// O(N) O(N)
-class Solution {
-    private int getMinGroup(int target, int bnd) {
-        int tarDiv = target / (bnd + 1);
-        int k = target % (bnd + 1) == 0 ? tarDiv : tarDiv + 1;
-        double upper = (double) target / bnd;
-        if (k > upper) {
-            return 1000_000;
-        }
-        return k;
-    }
-    public int minGroupsForValidAssignment(int[] nums) {
-        Map<Integer, Integer> cntMap = new HashMap<>();
-        int minFreq = 100_000;
-        for (int num : nums) {
-            int freq = cntMap.getOrDefault(num, 0) + 1;
-            minFreq = Math.min(minFreq, freq);
-            cntMap.put(num, freq);
-        }
-        int minGroupCnt = 0;
-        for (int g = 1; g <= minFreq; ++g) {
-            int groupCnt = 0;
-            for (int freq : cntMap.values()) {
-                groupCnt += getMinGroup(freq, g);
-            }
-            minGroupCnt = Math.min(groupCnt, minGroupCnt);
-        }
-        return minGroupCnt;
+        return groups;
     }
 }
