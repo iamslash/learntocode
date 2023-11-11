@@ -1,5 +1,10 @@
 // Copyright (C) 2023 by iamslash
 
+// Idea:
+//
+// Debounce is a technique used to limit the frequency
+// at which a particular function can be executed.
+
 // 48ms 92.78% 42.1MB 19.58%
 /**
  * @param {Function} fn
