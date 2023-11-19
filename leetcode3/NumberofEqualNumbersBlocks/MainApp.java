@@ -19,7 +19,7 @@ class Solution {
         for (long i = 0; i < n; ++i, ++cnt) {
             long lo = i, hi = n - 1;
             while (lo <= hi) {
-                long mi = (lo + hi) >>> 1;
+                long mi = (lo + hi) / 2;
                 if (nums.at(mi) == nums.at(i)) {
                     lo = mi + 1;
                 } else {
