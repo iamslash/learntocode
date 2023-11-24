@@ -12,11 +12,13 @@
 
 # Keyword
 
-```cpp
-G[][], dist[], priority_queue<pair<int, int>> pq
+```java
+List<int[]>[] adj
+int distances[]
+PriorityQueue<int[]> pq
 
-     pq: [cost to v, v]
-dist[v]: minimum cost from 0 to v
+     pq: [distance to u, u]
+dist[u]: minimum distance from 0 to v
 ```
 
 # References
@@ -26,39 +28,40 @@ dist[v]: minimum cost from 0 to v
 
 # Idea
 
-출발 정점을 `start` 라고 하자. 우선 순위 큐 `priority_queue<pair<int, int> pq`
-를 정의하자. `pq` 에 `pair<출발 정점에서 목표 정점까지 거리, 목표 정점>` 을
-삽입한다. 거리는 `-1` 을 곱하여 저장한다. 우선순위 큐는 기본적으로 내림차순이다.
-거리가 작은 녀석이 우선순위가 높아야 한다.
+출발 정점을 `start` 라고 하자. 우선 순위 큐 `PriorityQueue<int[]> pq` 를
+정의하자. `pq` 에 `distance to u, u` 을 삽입한다. `pq` 의 꼭대기 값을 
+`distance to u` 가 가장 작은 값으로 정렬한다.  
 
-목표 정점까지의 거리 `vector<int> dist` 를 정의하고 `INT_MAX` 로 초기화한다.
-`dist[i]` 는 출발 정점에서 `i` 정점까지의 거리이다.  `dist` 는 반복문을 수행할
-때마다 같은 목표 정점 일지라도 이전 보다 작은 값으로 업데이트가 된다.  출발
-정점이 `0` 이라면 `dist[0]` 은 `0` 이다.
+목표 정점까지의 거리 `int[] distances` 를 정의하고 `Integer.MAX_VALUE` 로
+초기화한다. `distances[u]` 는 출발 정점에서 `u` 정점까지의 거리이다.
+`distances[]` 는 반복문을 수행할 때마다 같은 목표 정점 일지라도 이전 보다 작은
+값으로 업데이트가 된다. 출발 정점이 `0` 이라면 `distances[0]` 은 `0` 이다.
 
 `pq` 가 비워질 때 까지 다음을 반복한다.
 
-```cpp
-auto item = pq.top(); pq.pop();
-int d2u = -item.first;  // distance to u vertex
-int u   = item.second;
-// update distances
-if (dist[u] < d2u)
-  continue;
-// traverse negithbors of u
-for (int i = 0; i < G[u].size(); ++i) {
-  int v   = G[u][i].first;
-  int d2v = d2u + G[u][i].second;
-  if (dist[v] <= d2v)
-    continue;
-  dist[v] = d2v;
-  pq.push({-d2v, v});
-}
+```java
+            int[] item = pq.poll();
+            int u = item[0], distU = item[1];
+            if (dists[u] < distU) {
+                continue;
+            }
+            if (u == dst) {
+                return distU;
+            }
+            for (int[] next : adj[u]) {
+                int v = next[0], costV = next[1];
+                int distV = distU + costV;
+                if (distV < dists[v]) {
+                    dists[v] = distV;
+                    pq.offer(new int[] { v, distV });
+                }
+            }
 ```
 
 # Implementation
 
 * [c++11](a.cpp)
+* [java8](MainApp.java)
 
 # Complexity
 
