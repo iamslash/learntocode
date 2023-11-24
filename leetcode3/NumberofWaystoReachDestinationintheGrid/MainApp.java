@@ -3,8 +3,8 @@
 import java.util.*;
 
 
-// Idea:
-
+// Idea: iterative dynamic programming
+//
 // Can move when just same y, just same x case.
 //
 // a: same row
@@ -24,8 +24,10 @@ import java.util.*;
 // o: same row of o can move to o. w - 2 (except o, b)
 //    same col of o can move to o. h - 2 (except o, a)
 // a, b can move to src.
-
-// greedy
+//
+// 17ms 89.19% 44.2MB 35.14%
+// iterative dynamic programming
+// O(K) O(1)
 class Solution {
     public int numberOfWays(int h, int w, int k,
                             int[] src, int[] dst) {
@@ -49,14 +51,14 @@ class Solution {
                            prevSameRow + prevSameCol) % mod;
         }
         if (src[0] == dst[0] && src[1] == dst[1]) {
-            return center;
+            return (int)center;
         }
         if (src[0] == dst[0]) {
-            return sameRow;
+            return (int)sameRow;
         }
         if (src[1] == dst[1]) {
-            return sameCol;
+            return (int)sameCol;
         }
-        return otherRowCol;
+        return (int)otherRowCol;
     }
 }
