@@ -5,21 +5,35 @@ import java.util.*;
 // nums: 2 6 5 8
 //    k: 2
 //
-//       10
-//      110
-//      101
-//     1000
+//           1 0    2
+//         1 1 0    6
+//         1 0 1    5
+//       1 0 0 0    8
+//
+// cnts: 1 2 2 1
 
 // Idea: bit manipulation
 //
+// Consider the simple pair of numbers.
 // (1, 1) -> (1 & 1, 1 | 1) -> (1, 1)
 // (0, 0) -> (0 & 0, 0 | 0) -> (0, 0)
 // (0, 1) -> (0 & 1, 0 | 1) -> (0, 1)
 // (1, 0) -> (1 & 0, 1 | 0) -> (0, 1)
-//
+// The first three cases do not change.
 // The last case move the bit from A[i] to A[j]
-
-
+//
+// For example,
+// 10101110
+// 10111001
+// After operation
+// 10101000
+// 10111111
+//
+// The count of bits does not change.
+//
+// 69ms 67.27% 59.3MB 40.33%
+// bit manipulation, greedy
+// O(N) O(K)
 class Solution {
     public int maxSum(List<Integer> nums, int k) {
         int cnts[] = new int[32];
