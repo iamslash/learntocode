@@ -2,6 +2,27 @@
 
 import java.util.*;
 
+// Idea:
+//
+// The answer is the shortest subarray of the array infinite nums.
+// Let's focus on subarray.
+//
+// Let's say there is a nums[] [a, b, c], target is b + c. ps is an
+// incremental sum of nums[i].  `i - index of (ps - target)` is a
+// candidate.
+//
+// a
+// a b
+// a b c          ps - target = a
+// a b c a
+// a b c a b      
+// a b c a b c    ps - target = a b c a  
+//
+// Let's use psIdxMap for partial sum, index.
+// At first, consider the target is multiple of sum.
+// The target should be less than sum.
+// target = target % sum.
+//
 // 48ms 22.98% 73MB 13.35% 
 // partial sum, iterative dynamic programming
 // O(N) O(N)
@@ -36,35 +57,23 @@ class Solution {
     }
 }
 
-//  tgt: 4
-// nums: 1 1 1 2 3
-//  sum: 8
-//   ps: 16
-//                           i
-//       1 1 1 2 3 1 1 1 2 3
-//  map: 0 1 2 3 5 8 9 10 11 13 16
-//       - 0 1 2 3 4 5  6  7  8  9
-//  ans: 2
+//  tgt: 5
+// nums: 1 2 3
+//  sum: 6
+//   ps: 0
+//       i
+// nums: 1 2 3 1 2 3
+//  map: 0 
+//       - 
+//  ans: 0
 
-//  tgt: 3
-// nums: 2 4 6 8
-//  sum: 20
-//   ps: 40
-//                       i
-//       2 4 6 8 2 4 6 8
-//  map: 0 2 6 12 20 22 26 32 40
-//       - 0 1  2  3  4  5  6  7
-//  ans: 4
+//  tgt: 8
+// nums: 1 2 3
+//  sum: 6
+//   ps: 0
+//       i
+// nums: 1 2 3 1 2 3
+//  map: 0 
+//       - 
+//  ans: 0
 
-
-// sliding window
-// O(N) O(1)
-class Solution {
-    public int minSizeSubarray(int[] nums, int target) {
-        long sum = 0;
-        for (int num : nums) {
-            sum += num;
-        }
-        int n = nums.length, ans = Integer.MAX_VALUE, 
-    }
-}
