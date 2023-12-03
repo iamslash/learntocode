@@ -23,4 +23,23 @@ class Solution:
             elif nums1[i] < nums2[i]:
                 dn += quo
         return up if up == dn else -1
-        
+
+
+# 607ms 70.79% 32.9MB 20.79%
+# greedy
+# O(N) O(1)
+class Solution:
+    def minOperations(self, nums1: List[int], nums2: List[int], k: int) -> int:
+        if k == 0:
+            return 0 if nums1 == nums2 else -1
+        global_diff, cnt, n = 0, 0, len(nums1)
+        for i in range(n):
+            diff = nums1[i] - nums2[i]
+            if diff % k:
+                return -1
+            global_diff += diff
+            cnt += abs(diff // k)
+        if global_diff != 0:
+            return -1
+        return cnt // 2
+    
