@@ -1,31 +1,30 @@
-// Copyright (C) 2021 by iamslash
+// Copyright (C) 2023 by iamslash
 
-// a b c d e ... a b c d e
+// 24 25  0  1  2
+//  y  z  a  b  c
 
+//  2  3  4  5  6
+//  c  d  e  f  g
+
+// 0ms 100.00% 40.3MB 77.33%
 // math
 // O(N) O(1)
 class Solution {
-    private int minDist(char from, char to) {
-        if (from > to) {
-            char tmp = from;
-            from = to;
-            to = tmp;
+    private int minDist(char a, char b) {
+        if (a > b) {
+            char t = a;
+            a = b;
+            b = t;
         }
-        return Math.min(Math.abs(to-from ), Math.abs(from+26-to));
+        return Math.min(b - a, (a - 'a') + 26 - (b - 'a'));
     }
     public int minTimeToType(String word) {
-        int ans = 0;
+        int cnt = 0;
         char from = 'a';
-        for (char to : word.toCharArray()) {
-            ans += minDist(from, to) + 1; 
-            // System.out.printf("from:%c, to:%c, ans: %d\n", from, to, ans);
-            from = to;
+        for (char next : word.toCharArray()) {
+            cnt += minDist(from, next) + 1;
+            from = next;
         }
-        return ans;
+        return cnt;
     }
-}
-
-public class MainApp {
-  public static void main(String[] args) {
-  }
 }
