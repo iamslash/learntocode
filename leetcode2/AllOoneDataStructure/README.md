@@ -27,9 +27,9 @@ unordered_map<string, list<Bucket>::iterator> bucketByKey;
 
 * `getMinKey()`
 
-`getMinKey()` 와 같다. 
+`buckets.begin()` 와 같다. 
 
-* ``getMaxKey()`
+* `getMaxKey()`
 
 `buckets.rbegin()` 와 같다. 
 
@@ -61,6 +61,7 @@ unordered_map<string, list<Bucket>::iterator> bucketByKey;
 # Implementation
 
 * [c++11](a.cpp)
+* [java17](MainApp.java)
 
 # Complexity
 
