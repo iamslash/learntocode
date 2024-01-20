@@ -17,7 +17,9 @@
 ```
 
 이웃한 숫자의 차이를 나열하고 그 연속된 합이 최고일 때를 구하면 그것이
-답이다. 이것은 [Kadane’s
+답이다.
+
+연속된 합이 최고일 때를 구하는 것은 [Kadane’s
 Algorithm](/fundamentals/array/kadane/README.md) 과 같다.
 
 따라서 `i` 를 `1` 부터 끝까지 순회하면서 `P[i] - P[i-1]` 를
