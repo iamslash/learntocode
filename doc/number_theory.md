@@ -119,19 +119,21 @@ lcm = a * b * gcd = A * B / gcd
 
 # fast pow
 
-숫자 `n` 이 주어지면 `2 ^ n` 를 빠르게 구해보자. `n` 은 어차피 `1` 이 되기
-마련이다.
+숫자 `a, b, m` 이 주어지면 `a ^ b % m` 을 빠르게 구해보자. `a` 를 
+exponential 하게 증가한다.
 
 ```java
-long ans = 1, base = 2, mod = 1_000_000_007L;
-while (n > 0) {
-    if (n % 2 == 1) {
-        ans = ans * base % mod;
+private int pow(int a, int b, int m) {
+    int rst = 1;
+    while (b > 0) {
+        if ((b & 1) != 0) {
+            rst = (rst * a) % m;
+        }
+        b >>= 1;
+        a = (a * a) % m;
     }
-    base = base * base % mod;
-    n >>= 1;
+    return rst;
 }
-return (int)((ans - 2 + mod) % mod);
 ```
 
 # Min Pair Plus One
