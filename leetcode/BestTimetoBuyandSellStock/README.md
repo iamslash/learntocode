@@ -40,7 +40,7 @@ gmax: 0 0 4 4 5 5
 # Implementation
 
 * [go](a.go)
-* [java8](Solution.java)
+* [java8](MainApp.java)
 
 # Complexity
 
