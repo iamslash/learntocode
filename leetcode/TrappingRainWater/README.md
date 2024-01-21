@@ -1,49 +1,32 @@
 # Problem
 
-* [Trapping Rain Water
- @ leetcode](https://leetcode.com/explore/interview/card/top-interview-questions-hard/124/others/875/)
+* [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 
 # Idea
 
-다음과 같은 변수들을 선언하여 알고리즘을 구상해 보자.
+첫번째 방법은 `maxIdx` 를 이용하는 방법이다.
 
-* `int i` : 시작하는 인덱스
-* `int locMax` : 지금까지 발견한 최고높이 값
-* `int maxIdx` : 가장 최고 높이의 인덱스 값
-* `int ans` : 담을 수 있는 모든 물의 값
+- 가장 높은 높이의 인덱스를 찾아 `maxIdx` 에 저장한다.  
+- `[0, maxIdx]` 동안 순회하면서 모을 수 있는 물을 답에 더한다.
+- `[maxIdx, n-1]` 을 오른쪽에서 왼쪽으로 순회하면서 모을 수 있는 물을
+  답에 더한다.
 
-예를 들어 `height = [1,0,2]` 의 경우를 살펴보자. 인덱스 `i` 를 이용해 최고 높이 `maxIdx` 까지 순회한다.   
+두번째 방법은 `leftMax, rightMax` 를 이용하는 방법이다. `maxIdx` 를
+찾을 필요가 없어서 더 빠르다.
 
-```
-            i
-height: 1 0 2
-locMax: 1 1 2
-   ans: 0 1 1
-```
-
-따라서 답은 `1` 이다.
-
-`maxIdx` 를 향해 `locMax` 값을 이용하여 물의 양을 답에 더했다. `maxIdx` 를 찾고 왼쪽 그리고 오른쪽으로 부터 순회한다면 답을 구할 수 있다. 
-
-한편, [two pointers](/doc/two_pointers.md) 를 이용하면 Loop Invariant 를 더욱 간단히 구현할 수 있다.
-
-다음과 같은 변수들을 선언하여 알고리즘을 구상해 보자.
-
-* `int l` : 왼쪽에서 시작하는 인덱스
-* `int r` : 오른쪽에서 시작하는 인덱스
-* `int lMax` : `height[i]` 의 최대값
-* `int rMax`: `height[j]` 의 최대값
-* `int ans` : 담을 수 있는 모든 물의 값
-
-인덱스 `l, r` 를 각각 왼쪽 혹은 오른쪽에서 한 칸씩 전진한다. 각각 최대
-높이를 기억한다. 최대 높이와 현재 높이의 차이를 답에 더한다. 최대
-높이와 현재 높이의 차이를 더하는 방식을 쓰기 때문에 `l, r` 중 더
-작거나 같은 높이의 인덱스를 움직여야 한다.
+- 양 끝 인덱스를 `l, r` 에 저장한다.
+- `l < r` 동안 다음을 반복한다.
+  - `heights[l] <= heights[r]` 이면 오른쪽에 더 높은 벽이 있다고
+    생각하고 `l` 을 전진한다.
+    - 모을 수 있는 물이 있다면 답에 더한다.
+  - `heights[l] > heights[r]` 이면 왼쪽에 더 높은 벽이 있다고 생각하고
+    `r` 을 왼쪽으로 전진한다.
+    - 모을 수 있는 물이 있다면 답에 더한다.
 
 # Implementation
 
 * [c++11](a.cpp)
-* [java8](MainApp.java)
+* [java17](MainApp.java)
 
 # Complexity
 
