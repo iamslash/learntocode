@@ -20,6 +20,7 @@ SELECT emp_name AS manager_name,
 ```
 
 ```sql
+-- 583ms 52.63% 0B 100.00%
 WITH Employee_Count AS (
   SELECT dep_id,
          COUNT(*) AS c
@@ -27,7 +28,7 @@ WITH Employee_Count AS (
    GROUP BY dep_id)
 SELECT a.emp_name AS manager_name,
        a.dep_id 
-  FROM Employee a, Employee_Count b
+  FROM Employees a, Employee_Count b
  WHERE a.dep_id = b.dep_id AND
        a.position = 'Manager' AND
        b.c = (SELECT MAX(c) FROM Employee_Count)
