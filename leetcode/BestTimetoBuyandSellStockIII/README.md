@@ -2,9 +2,9 @@
 
 [Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/)
 
-# Idea
-
 주식의 일별 가격 `P[]` 가 주어진다. 한번의 거래는 사고 팔고를 의미한다. 최대 두번 거래할 수 있을 때 최고 이익을 구하는 문제이다.
+
+# Idea
 
 `int s1, b1, s2, b2` 를 선언하여 첫번째 사는 경우, 첫번째 파는 경우, 두번째 사는 경우, 두번째 파는 경우의 이익을 각각 저장하자.
 
