@@ -10,6 +10,14 @@ import java.util.*;
 //  map: 1 2 3  4
 //       0 1 3  6
 
+//    k: 1
+//               i
+// nums: 1 5 -5 -5 5 6
+// psum: 1 6  1
+// MSum: m
+//  map: -5 1 5
+//        1 0 1
+
 // Idea: prefix sum, hash map
 //
 // Return the maximum sum of a subarray.
