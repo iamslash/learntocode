@@ -5,11 +5,16 @@ import java.util.*;
 // Idea: greedy, hash map
 //
 // We have number of characters like this.
-// - The number of even characters pairs: 4 (ex, aa aa bb bb)
-// - The number of odd characters: 0 
+// - (evn) The number of even characters pairs: 4 (ex, aa aa bb bb)
+// - (odd) The number of odd characters: 0 
 // We have lengths of words descendingly to make palindrome.
-// - 4 2 2
-// We calculate maximum number of palindrome.
+// - (lens) 4 2 2
+// We can maximum number of palindrome.
+//   - odd -= lens[i] % 2
+//     - if odd < 0, evn--; odd += 2
+//   - evn -= lens[i] / 2
+//     - if evn < 0, return i
+// ex)
 // - 4 (aa aa)
 // - 2 (bb)
 // - 2 (bb)
