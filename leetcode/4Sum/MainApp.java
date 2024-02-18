@@ -31,25 +31,30 @@ import java.util.*;
 // It's ok same numbers.
 // The quadruplets are distinct.
 
-// 19ms 45.70% 45MB 27.50%
+// 3ms 99.71% 43.9MB 65.62%
 // two pointers, sort
 // O(N^3) O(N)
 class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
-        Set<List<Integer>> ans = new HashSet<>();        
+        List<List<Integer>> ans = new ArrayList<>();        
         int n = nums.length;
         Arrays.sort(nums);
 
         for (int i = 0; i < n - 3; ++i) {
+            // Pruning: 
+            if (i > 0 && nums[i] == nums[i - 1]) { continue; } 
+            if ((long)nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] > target) { break; }
+            if ((long)nums[i] + nums[n - 3] + nums[n - 2] + nums[n - 1] < target) { continue; }
+            
             for (int j = i + 1; j < n - 2; ++j) {
-                // Skip same nums[j]
-                if (i + 1 < j && nums[j - 1] == nums[j]) {
-                    continue;
-                }
+                // Pruning: 
+                if (j > i + 1 && nums[j] == nums[j - 1]) { continue; } 
+                if ((long)nums[i] + nums[j] + nums[j + 1] + nums[j + 2] > target) { break; }
+                if ((long)nums[i] + nums[j] + nums[n - 2] + nums[n - 1] < target) { continue; }
+                
                 int l = j + 1, r = n - 1;
-                long sum = 0;
                 while (l < r) {
-                    sum = nums[i]; sum += nums[j];
+                    long sum = nums[i]; sum += nums[j];
                     sum += nums[l]; sum += nums[r];
                     if (sum == target) {
                         ans.add(Arrays.asList(nums[i], nums[j], nums[l], nums[r]));
@@ -72,6 +77,6 @@ class Solution {
             }
         }
         
-        return new ArrayList<List<Integer>>(ans);
+        return ans;
     }
 }
