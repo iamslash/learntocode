@@ -52,6 +52,18 @@ public:
   }
 };
 
+
+
+// words: foo bar
+//        i
+//     s: barfoothefoobarman
+//                 l
+//                 j
+//  word:       ...
+//  seen: bar foo
+//          0   0
+//   cnt: 0
+
 // 27ms 93.25% 21.7MB 84.7%
 // sliding window, hash map
 // O(LMN) O(N + L/M)
