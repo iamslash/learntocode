@@ -33,7 +33,7 @@ import java.util.*;
 
 // 19ms 45.70% 45MB 27.50%
 // two pointers, sort
-// O(N^3) O(1)
+// O(N^3) O(N)
 class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
         Set<List<Integer>> ans = new HashSet<>();        
@@ -54,10 +54,12 @@ class Solution {
                     if (sum == target) {
                         ans.add(Arrays.asList(nums[i], nums[j], nums[l], nums[r]));
                         l++;
+                        // Skip same nums[l]
                         while (l < r && nums[l - 1] == nums[l]) {
                             l++;
                         }
                         r--;
+                        // Skip same nums[r]
                         while (l < r && nums[r] == nums[r + 1]) {
                             r--;
                         }                        
