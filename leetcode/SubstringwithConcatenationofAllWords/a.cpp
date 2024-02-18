@@ -1,92 +1,112 @@
-/* Copyright (C) 2019 by iamslash */
+/* Copyright (C) 2024 by iamslash */
 
 #include <cstdio>
 #include <vector>
+#include <unordered_map>
 #include <string>
-#include <map>
-#include <functional>
 
-// // 844ms 11.69%
-// // O(SN) O(N)
-// class Solution {
-//  public:
-//   std::vector<int> findSubstring(std::string s,
-//                                  std::vector<std::string>& W) {
-//     std::vector<int> rslt;
-//     if (s.empty() || W.empty())
-//       return rslt;
-//     int n = W.size();
-//     int k = W[0].size();
-//     for (int i = 0; i + n * k <= s.size(); ++i) {
-//       std::map<std::string, int> mp;
-//       for (const auto& ss : W)
-//         mp[ss] = mp.count(ss) ? mp[ss] + 1 : 1;
-      
-//       for (int j = 0; j < n; ++j) {
-//         // if (i == 13) {
-//         //   printf("j: %d, cnt: %d\n", j, mp.size());
-//         // }
-//         std::string ss = s.substr(i + j * k, k);
-//         if (mp.count(ss) == 0)
-//           break;
-//         if (mp[ss] > 0)
-//           mp[ss] -= 1;
-//         if (mp[ss] == 0)
-//           mp.erase(ss);
-//       }
-//       if (mp.empty())
-//         rslt.push_back(i);
-//     }
-//     return rslt;
-//   }
-// };
+using namespace std;
 
-// 112ms 69.32%
+// Time Limit Exceed
+// sliding window, hash map
+// O(LMN) O(N + L/M)
+// - L: len of s
+// - N: num of words
+// - M: len of words[i]
 class Solution {
- public:
-  std::vector<int> findSubstring(const std::string& s,
-                                 const std::vector<std::string>& W) {
-    std::vector<int> rslt;
-    if (s.empty() || W.empty())
-      return rslt;
-    int n = W.size();
-    int k = W[0].size();
-    int sumhash = 0;
-    std::hash<std::string> hashfn;
-    for (const auto& ss : W)
-      sumhash += hashfn(ss);
+public:
+  vector<int> findSubstring(string s, vector<string>& words) {
+    vector<int> ans;
+    int n = words.size(), m = words[0].size();
+    int wndLen = n * m;
+    unordered_map<string, int> wordCntMap;
 
-    for (int i = 0; i + n * k <= s.size(); ++i) {
-      int sum = sumhash;
-      for (int j = 0; j < n; ++j) {
-        sum -= hashfn(s.substr(i + j * k, k));
-      }
-      if (sum == 0)
-        rslt.push_back(i);
+    for (const auto& word : words) {
+      wordCntMap[word] += 1;        
     }
-    return rslt;
+
+    for (int i = 0; i + wndLen <= s.size(); ++i) {
+      unordered_map<string, int> seenCntMap;
+      int j = 0;
+      // printf("i: %d\n", i);
+      while (j < n) {
+        string word = s.substr(i + j * m, m);
+
+        if (wordCntMap.count(word) > 0) {
+          seenCntMap[word] += 1;
+          // printf("\t%s %d %d\n", word.c_str(), seenCntMap.count(word), wordCntMap.count(word));
+          if (seenCntMap[word] > wordCntMap[word]) {
+            break;
+          }
+        } else {
+          break;
+        }
+        j++;
+      }
+
+      if (j == n) {
+        ans.push_back(i);
+      }
+    }
+    return ans;
+  }
+};
+
+// 27ms 93.25% 21.7MB 84.7%
+// sliding window, hash map
+// O(LMN) O(N + L/M)
+// - L: len of s
+// - N: num of words
+// - M: len of words[i]
+class Solution {
+public:
+  vector<int> findSubstring(string s, vector<string>& words) {
+    vector<int> ans;
+ 
+    int n = words.size(), m = words[0].size(), wndLen = n * m;
+    if (s.size() < wndLen) {
+      return ans;
+    }
+
+    unordered_map<string, int> wordCntMap;
+    for (const auto& word : words) {
+      wordCntMap[word] += 1;
+    }
+
+    for (int i = 0; i < m; ++i) {
+      int left = i, count = 0;
+      unordered_map<string, int> seenCntMap;
+
+      for (int j = i; j + m <= s.size(); j += m) {
+        string word = s.substr(j, m);
+        if (wordCntMap.find(word) != wordCntMap.end()) {
+          seenCntMap[word]++;
+          count++;
+
+          while (seenCntMap[word] > wordCntMap[word]) {
+            string leftWord = s.substr(left, m);
+            seenCntMap[leftWord]--;
+            left += m;
+            count--;
+          }
+
+          if (count == n) {
+            ans.push_back(left);
+            seenCntMap[s.substr(left, m)]--;
+            left += m;
+            count--;
+          }
+        } else {
+          seenCntMap.clear();
+          count = 0;
+          left = j + m;
+        }
+      }
+    }
+    return ans;
   }
 };
 
 int main() {
-  // std::string s = "barfoothefoobarman";
-  // std::vector<std::string> W = {
-  //   "foo",
-  //   "bar"
-  // };
-
-  // std::string s = "wordgoodgoodgoodbestword"  ;
-  // std::vector<std::string> W = {"word","good","best","good"};
-
-
-  std::string s = "lingmindraboofooowingdingbarrwingmonkeypoundcake";
-  std::vector<std::string> W = {"fooo","barr","wing","ding","wing"};
-
-  Solution sln;
-  auto rslt = sln.findSubstring(s, W);
-  for (int a : rslt)
-    printf("%d ", a);
-  printf("\n");
-  
   return 0;
 }
