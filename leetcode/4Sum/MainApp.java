@@ -2,7 +2,6 @@
 
 import java.util.*;
 
-
 //             l
 //       i
 // nums: 2 2 3 3 4 4 5 7 7
@@ -80,3 +79,54 @@ class Solution {
         return ans;
     }
 }
+
+// 4ms 96.00% 44.7MB 35.09%
+// two pointers, sort
+// O(N^3) O(N)
+public class Solution {
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        Arrays.sort(nums);
+        List<List<Integer>> ans = new ArrayList<>();
+        findNSum(nums, 0, nums.length - 1, (long) target, 4, new ArrayList<>(), ans); 
+        return ans;
+    }
+
+    private void findNSum(int[] nums, int left, int right,
+                          long target, int N, List<Integer> path,
+                          List<List<Integer>> result) {
+        // Use long for sum comparisons to avoid integer overflow
+        if (right - left + 1 < N || N < 2 ||
+            target < (long) nums[left] * N ||
+            target > (long) nums[right] * N) {
+            return;
+        }
+
+        // base
+        if (N == 2) {
+            while (left < right) {
+                long sum = (long) nums[left] + (long) nums[right]; 
+                if (sum == target) {
+                    List<Integer> temp = new ArrayList<>(path);
+                    temp.add(nums[left]);
+                    temp.add(nums[right]);
+                    result.add(temp);
+                    left++;
+                    while (left < right && nums[left] == nums[left - 1]) left++;
+                } else if (sum < target) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+            return;
+        }
+        for (int i = left; i <= right; i++) {
+            if (i == left || (i > left && nums[i - 1] != nums[i])) {
+                List<Integer> newPath = new ArrayList<>(path);
+                newPath.add(nums[i]);
+                findNSum(nums, i + 1, right, target - (long) nums[i], N - 1, newPath, result);               
+            }
+        }
+    }
+}
+
