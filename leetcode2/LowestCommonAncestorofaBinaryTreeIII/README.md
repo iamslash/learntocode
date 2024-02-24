@@ -17,7 +17,7 @@ class Node {
 
 # Idea
 
-예를 들어 `p = 5, q = 1` 인 경우를 살펴보자.
+예를 들어 `p = 2, q = 1` 인 경우를 살펴보자.
 
 ```
          3
@@ -29,16 +29,22 @@ class Node {
       7   4 
 ```
 
-`Node *s = p, *t = q` 를 선언한다. `s, t` 는 부모로 이동한다. 만약 `s
-== NULL` 이면 `s = q` 를 수행한다. `t == NULL` 이면 `t = p` 를
-수행한다. `s == t` 이면 `lca` 를 찾게된다.
+다음의 두 값은 같다. 따라서 `src, dst` 는 결국 만나게 된다.
 
-`s` 에서 `lca` 까지 이동한 거리는 `t` 에서 `lca` 까지 이동한 거리가
-같다.
+- `p` 에서 `lca` 까지 탐색하고 `q` 에서 `lca` 까지 탐색한 거리의 합
+- `q` 에서 `lca` 까지 탐색하고 `p` 에서 `lca` 까지 탐색한 거리의 합
+
+- `src = p, dst = q` 를 선언한다. 
+- `src != dst` 동안 다음을 반복한다.
+  - `src == NULL` 이면 `src = q` 
+  - `src != NULL` 이면 `src = src.parent`
+  - `dst == NULL` 이면 `dst = p`
+  - `dst != NULL` 이면 `dst = dst.parent`
 
 # Implementation
 
-* [c++11](a.cpp)
+- [c++11](a.cpp)
+- [java17](MainApp.java)
 
 # Complexity
 
