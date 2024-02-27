@@ -56,9 +56,18 @@ public:
 //     
 // l: 0
 
+// Idea: back and forward
+//
+// `leftCnt` is the count of left parentheses.
+// Traverse forward and update unmatched right parentheses with '_'.
+// Traverse backward and update unmatched left parentheses with '_'.
+//
+// Do not need stack because the order of parentheses 
+// is not imortant.
+//
 // 21ms 67.25% 12.2MB 66.80%
-// stack
-// O(N) O(N)
+// back and forth
+// O(N) O(1)
 class Solution {
 public:
   string minRemoveToMakeValid(string s) {

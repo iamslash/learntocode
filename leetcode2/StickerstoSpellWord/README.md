@@ -15,7 +15,7 @@
 
 다음과 같이 부분문제 `dfs` 를 정의하여 재귀적으로 해결해보자.
 
-```
+```cpp
 int dfs(unordered_map<string, int>& C, vector<vector<int>>& stickerFreqs, string& target)
 
       return: minimum count of stickers to make target
