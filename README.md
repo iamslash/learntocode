@@ -584,6 +584,7 @@ $ a.exe
 
 * F | [dynamic array](/fundamentals/list/dynamicarray/README.md)
 * F | [singly linked list](/fundamentals/list/singlylinkedlist/README.md)
+* F | [find second half of sinly linked list](/fundamentals/list/half/README.md)
 * F | [reverse singly linked list](/fundamentals/list/reverse/README.md)
 * F | [merge two sinly linked list](/fundamentals/list/merge/README.md)
 * F | [doubly linked list](/fundamentals/list/doublylinkedlist/README.md)
