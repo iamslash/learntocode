@@ -1,6 +1,7 @@
 # Problem
 
-singly linked list `a, b` 가 주어진다. `len(a) == len(b) or len(a) == len(b) + 1` 이다. `a, b` 를 merge 하자.
+singly linked list 가 주어진다. `len(a) == len(b) or len(a) == len(b) + 1` 
+를 만족하는 두개의 리스트로 분리하자. 두번째 리스트를 리턴하라.
 
 ```
 Input:
@@ -16,7 +17,8 @@ Output:
 
 # Idea
 
-다음과 같이 `p = head, q = head` 를 선언한다. `q.next.next != null` 동안 다음을 반복한다.
+다음과 같이 `p = head, q = head` 를 선언한다. 
+`q.next != null && q.next.next != null` 동안 다음을 반복한다.
 
 - `p = p.next`
 - `q = q.next.next`
