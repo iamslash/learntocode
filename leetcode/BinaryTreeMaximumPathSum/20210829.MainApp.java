@@ -1,7 +1,4 @@
-// Copyright (C) 2024 by iamslash
-
-import java.util.*;
-
+// Copyright (C) 2021 by iamslash
 
 class TreeNode {
     int val;
@@ -21,56 +18,39 @@ class TreeNode {
 // 9        20
 //        /    \
 //      15       7
-// ans: 42
 
 //       2
 //     /
 //  -1
-// ans: 1
 
 //      1
 //    /  \
 //  -2    3
-// ans: 4
 
-
-//      -1
-//    /  \
-//  -2    -3
-// ans: -1
-
-//    10
-//   /    \
-// 9        -20
-//        /    \
-//      15       7
-// ans: 19
-
-// Idea: dfs
-//
-// The path is a sequence between two nodes.
-//
-// 1ms 17.92% 43.4MB 99.91%
-// dfs
-// O(N) O(NlgN)
+// 0ms 100.00% 40.9MB 61.32%
+// DFS
+// O(N) O(lgN)
 class Solution {
-    private int maxSum = Integer.MIN_VALUE;
-
+    private int maxSum = 0;
     private int dfs(TreeNode u) {
         // base
         if (u == null) {
             return 0;
         }
-
         // recursion
-        int leftMaxSum = Math.max(0, dfs(u.left));
-        int rightMaxSum = Math.max(0, dfs(u.right));
-        maxSum = Math.max(maxSum, leftMaxSum + rightMaxSum + u.val);
-        return Math.max(leftMaxSum, rightMaxSum) + u.val;
+        int l = Math.max(0, dfs(u.left));
+        int r = Math.max(0, dfs(u.right));
+        maxSum = Math.max(maxSum, l + r + u.val);
+        return Math.max(l, r) + u.val;
     }
-    
     public int maxPathSum(TreeNode root) {
+        maxSum = Integer.MIN_VALUE;
         dfs(root);
         return maxSum;
     }
+}
+
+public class MainApp {
+  public static void main(String[] args) {
+  }
 }
