@@ -23,6 +23,19 @@ nums:  1  2 3 4
 왼쪽 수들의 곱을 `leftProd[]` 에 저장한다. 오른쪽 수들의 곱을
 `rightProd[]` 에 저장한다. `ans[i] = leftProd[i] * rightProd[i]` 이다.
 
+`int cumPrd = 1` 를 이용하여 space complextiy 를 `O(1)` 로 해결할 수도
+있다. 
+
+- `ans[]` 를 모두 `1` 로 채운다.
+- 인덱스 `i` 를 `[0..n)` 동안 순회하면서 다음을 반복한다.
+  - `ans[i] *= cumPrd`
+  - `cumPrd *= nums[i]`
+- `cumPrd = 1` 로 한다.
+- 인덱스 `i` 를 `(n..0]` 동안 순회하면서 다음을 반복한다.
+  - `ans[i] *= cumPrd`
+  - `cumPrd *= nums[i]`
+- 모든 반복을 마치면 `ans` 가 곧 답이다.
+
 # Implementation
 
 * [c++11](a.cpp)
