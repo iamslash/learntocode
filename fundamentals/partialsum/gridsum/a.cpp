@@ -4,15 +4,30 @@
 #include <cstdint>
 #include <vector>
 
+// 
+// 1 1 1
+// 1 1 1
+// 1 1 1
+//
+// gsum:
+// 1 2 3
+// 2 4 6
+// 3 6 9
+
 std::vector<std::vector<int> > PartialSum(const std::vector<std::vector<int> >& a) {
   std::vector<std::vector<int> > r(a);
     
   for (int y = 0; y < a.size(); ++y) {
     for (int x = 0; x < a[y].size(); ++x) {
-      if (x > 0)
+      if (x > 0) {
         r[y][x] += r[y][x-1];
-      if (y > 0)
-        r[y][x] += r[y-1][x];        
+      }
+      if (y > 0) {
+        r[y][x] += r[y-1][x];
+      }
+      if (x > 0 && y > 0) {
+        r[y][x] -= r[y-1][x-1];
+      }
     }
   }
 
@@ -50,7 +65,7 @@ int main()
                                       {1,1,1,1,1},
                                       {1,1,1,1,1}};
 
-  std::vector<std::vector<int> > pasum;
+  std::vector<std::vector<int> > psum;
   // PrintPartialSum(PartialSum(a));  
   printf("%d\n", GridSum(PartialSum(a), 2, 4, 2, 4));
 
