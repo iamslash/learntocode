@@ -7,7 +7,7 @@
 
 # Idea
 
-[CoinChange @ learntocode](/leetcode/CoinChange/README.md) 와
+[CoinChange](/leetcode/CoinChange/README.md) 와
 비슷하다. `s` 가 총 금액이고 `W[]` 가 동전의 모음이라고 생각하고
 접근하자.
 

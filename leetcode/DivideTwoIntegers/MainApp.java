@@ -1,70 +1,55 @@
-// Copyright (C) 2021 by iamslash
+// Copyright (C) 2024 by iamslash
 
 import java.util.*;
 
-// dividend: 10
-//  divisor: 3
+// Idea:
+//
+// Handling Edge Cases: First, we need to handle the edge cases, such
+// as when the output exceeds the bounds of a 32-bit signed integer.
+//
+// Optimizing Division: To optimize the division, we increment the
+// divisor exponentially until it surpasses the dividend and then
+// subtract the largest possible multiple of the divisor from the
+// dividend. We repeat this process until the dividend is smaller than
+// the original divisor.
+//
+// Maintaining Sign: We need to carefully manage the sign of the
+// result, as either the dividend or divisor (or both) can be
+// negative.
+//
 
-// // 1ms 99.96%
-// // O(lgN) O(1)
-// class Solution {
-//     public int divide(int dividend, int divisor) {
-//         if (divisor == 1) {
-//             return dividend;
-//         }
-//         if (divisor == -1 && dividend == Integer.MIN_VALUE) {
-//             return Integer.MAX_VALUE;
-//         }
-//         int ans = 0;
-//         boolean ansSign = (dividend < 0) ^ (divisor < 0);
-//         long dividendLong = dividend;
-//         long divisorLong = divisor;
-//         dividendLong = dividendLong < 0 ? -dividendLong : dividendLong;
-//         divisorLong = divisorLong < 0 ? -divisorLong : divisorLong;
-//         while (dividendLong >= divisorLong) {
-//             long delta = divisorLong;
-//             long quo = 1;
-//             while (dividendLong >= delta) {
-//                 dividendLong -= delta;
-//                 ans += quo;
-//                 delta <<= 1;
-//                 quo <<= 1;                
-//             }
-//         }
-//         return ansSign ? -ans : ans;
-//     }
-// }
-
-// 1ms 99.96% 36.4MB 28.83%
-// just use Integer
+// math
 // O(lgN) O(1)
 class Solution {
     public int divide(int dividend, int divisor) {
+        // Handling overflow: if dividend is Integer.MIN_VALUE and divisor is -1, the result overflows.
         if (dividend == Integer.MIN_VALUE && divisor == -1) {
             return Integer.MAX_VALUE;
         }
-        int a = Math.abs(dividend), b = Math.abs(divisor), ans = 0, x = 0;
-        // a >= b occurs TLE
-        while (a - b >= 0) {
-            x = 0;
-            // a >= (b << x << 1) occurs TLE
-            // why (a - (b << x) > 0) occurs Wrong Answer
-            //   2147483647
-            //   2
-            while (a - (b << x << 1) >= 0) {
-                ++x;
+        
+        // Determine the sign of the result based on the signs of dividend and divisor
+        boolean negative = (dividend < 0) ^ (divisor < 0);
+        
+        // Convert both numbers to negative for easier handling of edge cases (overflow can only happen with Integer.MIN_VALUE)
+        dividend = dividend > 0 ? -dividend : dividend;
+        divisor = divisor > 0 ? -divisor : divisor;
+        
+        int result = 0;
+        while (dividend <= divisor) {
+            int tempDivisor = divisor;
+            int multiple = 1;
+            // Check if doubling the current divisor and multiple is possible without going beyond the dividend
+            while (dividend - tempDivisor <= tempDivisor) {
+                tempDivisor <<= 1; // Equivalent to tempDivisor = tempDivisor * 2;
+                multiple <<= 1; // Equivalent to multiple = multiple * 2;
             }
-            ans += (1 << x);
-            a -= (b << x);
+            // Subtract the largest found divisor multiple from the dividend
+            dividend -= tempDivisor;
+            // Add the corresponding multiple to the result
+            result += multiple;
         }
-        return (dividend > 0) == (divisor > 0) ? ans : -ans;
+        
+        // If the result should be negative, convert it; otherwise, return the positive value
+        return negative ? result : -result;
     }
-}
-
-
-public class MainApp {
-  public static void main(String[] args) {
-      System.out.println(Integer.MAX_VALUE == ((1 << 31)-1));
-      System.out.println(Integer.MIN_VALUE == (1 << 31));
-  }
 }
