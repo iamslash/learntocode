@@ -938,6 +938,9 @@ $ a.exe
 * F | [chinese remainder theorem](fundamentals/numbertheory/chineseremaindertheorem/README.md)
 * F | [lucas' theorem](fundamentals/numbertheory/lucas/README.md)
 * F | [permutation, combination, binomial coefficient](/doc/dynamic_binomial_coefficient.md)
+* F | [fast pow](/doc/number_theory.md#fast-pow)
+* F | fast division
+  * [L](/leetcode/DivideTwoIntegers/README.md) | [Divide Two Integers](https://leetcode.com/problems/divide-two-integers/description/)
 * [L](/leetcode/UglyNumberIII/README.md) | [Ugly Number III](https://leetcode.com/problems/ugly-number-iii/)
 * [알](/algospot/PASS486/) | [PASS486](https://algospot.com/judge/problem/read/PASS486)
 * [알](/algospot/POTION/) | [POTION](https://algospot.com/judge/problem/read/POTION)

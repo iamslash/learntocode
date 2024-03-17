@@ -4,7 +4,7 @@
 - [int floor, int ceil](#int-floor-int-ceil)
 - [gcd (Greatest Common Divisor)](#gcd-greatest-common-divisor)
 - [lcm (Least Common Multiple)](#lcm-least-common-multiple)
-- [fast pow](#fast-pow)
+- [Fast POW](#fast-pow)
 - [Min Pair Plus One](#min-pair-plus-one)
 
 ----
@@ -117,7 +117,7 @@ $ jshell
 lcm = a * b * gcd = A * B / gcd
 ```
 
-# fast pow
+# Fast POW
 
 숫자 `a, b, m` 이 주어지면 `a ^ b % m` 을 빠르게 구해보자. `a` 를
 exponential 하게 증가한다.
