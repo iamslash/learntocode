@@ -1,8 +1,24 @@
-// 0ms 100.00% 38.5MB 61.54%
-// DFS
-// O(N) O(lgN)
+// Copyright (C) 2024 by iamslash
+
+import java.util.*;
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+
+// 0ms 100.00% 42.1MB 37.65%
+// pre-order
+// O(N) O(N)
 class Solution {
-    // Return right terminal node
     private TreeNode dfs(TreeNode u) {
         // base
         if (u.left == null && u.right == null) {
@@ -13,15 +29,17 @@ class Solution {
             u.right = u.left;
             u.left = t;
         }
+
         // recursion
-        TreeNode leftTerm = dfs(u.right);
-        if (u.left != null && leftTerm != null) {
-            TreeNode rightTerm = dfs(u.left);
-            leftTerm.right = u.left;
+        TreeNode leftLeaf = dfs(u.right);
+        if (u.left != null && leftLeaf != null) {
+            TreeNode rightLeaf = dfs(u.left);
+            leftLeaf.right = u.left;
             u.left = null;
-            leftTerm = rightTerm;
+            leftLeaf = rightLeaf;
         }
-        return leftTerm;
+
+        return leftLeaf;
     }
     public void flatten(TreeNode root) {
         if (root == null) {
