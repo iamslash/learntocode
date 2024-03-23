@@ -1087,10 +1087,11 @@ $ a.exe
 
 ## Backtracking
 
-* F | [backtracking](/doc/backtracking.md)
-* [L](/leetcode/Subsets/) | [Subsets](https://leetcode.com/problems/subsets)
-* [L](/leetcode/GenerateParentheses/) | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
-* [L](/leetcode2/ConstructtheLexicographicallyLargestValidSequence/README.md) | [Construct the Lexicographically Largest Valid Sequence](https://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence/)
+- F | [backtracking](/doc/backtracking.md)
+- F | [permutation](/fundamentals/combinatorialsearch/permutation/README.md)
+- [L](/leetcode/Subsets/) | [Subsets](https://leetcode.com/problems/subsets)
+- [L](/leetcode/GenerateParentheses/) | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
+- [L](/leetcode2/ConstructtheLexicographicallyLargestValidSequence/README.md) | [Construct the Lexicographically Largest Valid Sequence](https://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence/)
 
 ## Shortest Path
 
