@@ -49,10 +49,10 @@ class Solution {
 // 43ms 76.86% 55.9MB 58.99%
 // trie
 // O(NM) O(NM)
-// N represents the total number of elements in arr1 (for space
+// N: the total number of elements in arr1 (for space
 // complexity, it's relevant to the trie's construction) and the
 // analysis of arr2 elements (for time complexity during the queries).
-// M represents the maximum number of digits in the largest number
+// M: the maximum number of digits in the largest number
 // found in either of the arrays, dictating both the depth of the trie
 // (affecting space complexity) and the length of the longest query
 // operation (affecting time complexity).
@@ -98,7 +98,9 @@ class Solution {
         Node node = root;
         int maxCommonLen = 0;
         for (int i = m - 1; i >= 0; i--) {
-            if (node.children[list.get(i)] == null) break;
+            if (node.children[list.get(i)] == null) {
+                break;
+            }
             node = node.children[list.get(i)];
             maxCommonLen++;
         }
