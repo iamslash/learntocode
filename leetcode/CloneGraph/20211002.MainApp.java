@@ -1,4 +1,4 @@
-// Copyright (C) 2024 by iamslash
+// Copyright (C) 2021 by iamslash
 
 import java.util.*;
 
@@ -20,11 +20,11 @@ class Node {
     }
 }
 
-// 27ms 39.28% 42.1MB 97.40%
-// hash map, dfs
+// 25ms 90.34% 39.1MB 79.18%
+// DFS
 // O(N) O(N)
 class Solution {
-    private Node dfs(Map<Node, Node> visitMap, Node src) {
+    private Node dfs(Map<Node, Node> visitMap, Node src) {        
         // base
         if (src == null) {
             return null;
@@ -37,16 +37,20 @@ class Solution {
         if (src.neighbors == null) {
             return dst;
         }
-
+        dst.neighbors = new ArrayList<Node>();
         // recursion
-        for (Node u : src.neighbors) {
-            dst.neighbors.add(dfs(visitMap, u));
+        for (Node nsrc : src.neighbors) {
+            dst.neighbors.add(dfs(visitMap, nsrc));
         }
         return dst;
     }
-    
-    public Node cloneGraph(Node node) {
+    public Node cloneGraph(Node src) {
         Map<Node, Node> visitMap = new HashMap<>();
-        return dfs(visitMap, node);
+        return dfs(visitMap, src);
     }
+}
+
+public class MainApp {
+  public static void main(String[] args) {
+  }
 }
