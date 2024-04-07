@@ -1,4 +1,4 @@
-// Copyright (C) 2024 by iamslash
+// Copyright (C) 2021 by iamslash
 
 import java.util.*;
 
@@ -15,25 +15,29 @@ class TreeNode {
     }
 }
 
-
-// 0ms 100.00% 44.9MB 9.65%
-// dfs
+// 0ms 100.00% 39.2MB 40.95%
+// DFS
 // O(N) O(lgN)
 class Solution {
     private int maxLen = 0;
-    public int dfs(TreeNode root) {
+    private int dfs(TreeNode u) {
         // base
-        if (root == null) {
+        if (u == null) {
             return 0;
         }
         // recursion
-        int maxLeftLen = dfs(root.left);
-        int maxRightLen = dfs(root.right);
-        maxLen = Math.max(maxLen, maxLeftLen + maxRightLen);
-        return Math.max(maxLeftLen, maxRightLen) + 1;
+        int l = dfs(u.left);
+        int r = dfs(u.right);
+        maxLen = Math.max(maxLen, l + r);
+        return Math.max(l, r) + 1;
     }
-    public int diameterOfBinaryTree(TreeNode root) {
-        dfs(root);
+    public int diameterOfBinaryTree(TreeNode u) {
+        dfs(u);
         return maxLen;
     }
+}
+
+public class MainApp {
+  public static void main(String[] args) {
+  }
 }
