@@ -1,3 +1,15 @@
+- [Problem](#problem)
+- [Bit Manipulation](#bit-manipulation)
+  - [Idea](#idea)
+  - [Implementation](#implementation)
+  - [Complexity](#complexity)
+- [Backtracking](#backtracking)
+  - [Idea](#idea-1)
+  - [Implementation](#implementation-1)
+  - [Complexity](#complexity-1)
+
+-----
+
 # Problem
 
 [Subsets](https://leetcode.com/problems/subsets/)
@@ -16,12 +28,9 @@
 후보들을 저장한다.
 
 인덱스 `i` 를 `[0..n)` 동안 순회하면서 다음을 반복한다.
-* `List<Integer> subset = new ArrayList<>()` 를 선언하여 부분집합을
-  저장한다.
+* `List<Integer> subset = new ArrayList<>()` 를 선언하여 부분집합을 저장한다.
 * 인덱스 `j` 를 `[0..nums.length)` 동안 순회하면서 다음을 반복한다.
-  * `i` 의 bit field 중에 `j` 가 존재하면 `subset` 에 `nums[j]` 를
-    추가한다. 즉, `(i & (1 << j)) > 0` 이면 `subset.add(nums[j])` 를
-    수행한다.
+  * `i` 의 bit field 중에 `j` 가 존재하면 `subset` 에 `nums[j]` 를 추가한다. 즉, `(i & (1 << j)) > 0` 이면 `subset.add(nums[j])` 를 수행한다.
 * `ans` 에 `subset` 를 삽입한다.
     
 모든 반복을 마치면 `ans` 가 곧 답이다.
@@ -30,6 +39,12 @@
 
 * [c++11](a.cpp)
 * [java8](Solution.java)
+
+## Complexity
+
+```
+O(2^N) O(2^N)
+```
 
 # Backtracking
 
@@ -52,13 +67,12 @@ subset: current subset
 
 ![](recursion_tree.png)
 
-
 ## Implementation
 
 * [c++11](a.cpp)
 * [java8](Solution.java)
 
-# Complexity
+## Complexity
 
 ```
 O(2^N) O(2^N)
