@@ -4,43 +4,39 @@
 
 # Idea
 
-`nums` 를 처음부터 끝까지 순회하면서 다음을 반복하자.
-
-`Majority Element` 의 후보가 되는 숫자를 `majNum` 에 저장하고 `majCnt` 를 하나 증가한다. `majCnt` 는 `majNum` 의 출현 횟수를 의미한다. 만약 `majNum` 과 다른 숫자가 출현하면 `majCnt` 를 하나 감소하고 `majCnt` 가 `0` 이 되면 `majNum` 을 새로운 숫자로 교체한다.
-
-후보자 `majNum` 의 출현 횟수는 반드시 `n/2` 보다 크기 때문에 마지막 까지 순회했을 때 `majCnt` 는 `0` 보다 크거나 같다.
-
-...
-
-다음은 `n` 이 `3` 인 예이다.
+다음과 같이 두가지 변수를 기억하자. 
 
 ```
-        i
-  nums:   1 1 2
-majNum: - 
-majCnt: 0
+majNum: majority number candidate
+majCnt: majority number count
+```
+
+`nums` 를 처음부터 끝까지 순회하면서 다음을 반복하자.
+
+- 만약 `majNum` 과 다른 숫자가 출현하면 `majCnt` 를 하나 감소하고 `majCnt` 가 `0` 이 되면 `majNum` 을 새로운 숫자로 교체한다.
+
+`majNum` 의 출현 횟수는 반드시 `n/2` 보다 크기 때문에 마지막 까지 순회했을 때 `majCnt` 는 `0` 보다 크거나 같다.
+
+예를 들어 `nums: 1 1 2` 의 경우를 살펴보자. 길이가 3 인 예이다. `2` 의 위치를 옮겨가며 모든 경우를 따져보자.
+
+```
+                i
+  nums:   2 1 1
+majNum: - 2 2 1
+majCnt: 0 1 0 1
+                i
+  nums:   1 2 1
+majNum: - 1 1 1
+majCnt: 0 1 0 1
                 i
   nums:   1 1 2
 majNum: - 1 1 1
 majCnt: 0 1 2 1
-
+                
 The answer is 1
 ```
 
-다음은 `n` 이 `5` 인 예이다.
-
-```
-          i
-  nums:   1 1 2 2 1
-majNum: - 
-majCnt: 0 
-                  i
-  nums:   1 1 2 2 1
-majNum: - 1 1 1 1 1
-majCnt: 0 1 2 1 0 1
-
-The answer is 1
-```
+예를 들어 `nums: 1 1 2 3` 의 경우를 살펴보자. 길이가 4 인 예이다. 그러나 `1` 의 개수가 `2` 이다. `4 / 2 == 2` 보다 커야 한다. 따라서 조건에 해당하는 예가 아니다. 
 
 # Implementation
 
