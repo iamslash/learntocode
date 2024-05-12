@@ -1,39 +1,41 @@
-// Copyright (C) 2022 by iamslash
+// Copyright (C) 2024 by iamslash
 
 import java.util.*;
 
-// intervals: 0,30 5,10 15,20
-//                     i
-//     start:  0  5 15
-//       end: 10 20 30
-//                j
+// intervals:
+//        i
+// begs:  0  5 15
+// ends: 10 20 30
+//        j
+//
+//  ans:  2
 
-// intervals: 7,10 2,4
-//                i
-//      begs: 2 7
-//      ends: 4 10
-//               j
-
-// 4ms 95.90% 44.9MB 63.22%
-// sort, two pointers
-// O(NlgN) O(1)
+// 3ms 99.80% 45.8Mb 75.18%
+// sort
+// O(NlgN) O(N)
 class Solution {
     public int minMeetingRooms(int[][] intervals) {
-        int n = intervals.length, ans = 0;
+        int n = intervals.length;
         int[] begs = new int[n];
         int[] ends = new int[n];
+
         for (int i = 0; i < n; ++i) {
             begs[i] = intervals[i][0];
             ends[i] = intervals[i][1];
         }
+
         Arrays.sort(begs);
         Arrays.sort(ends);
-        for (int i = 0, j = 0; i < n; ++j) {
-            while (i < n && begs[i] < ends[j]) {
-                i++;
-                ans = Math.max(ans, i - j);
+
+        int cnt = 0;
+        for (int i = 0, j = 0; i < n; ++i) {
+            if (begs[i] < ends[j]) {
+                cnt++;
+            } else {
+                j++;
             }
         }
-        return ans;
+
+        return cnt;
     }
 }
