@@ -14,17 +14,21 @@
 
 ```java
 List<int[]>[] adj
-int distances[]
+int dists[]
 PriorityQueue<int[]> pq
 
      pq: [distance to u, u]
-dist[u]: minimum distance from 0 to v
+dist[u]: minimum distance from 0 to u
+
+dists[0] = 0;
+pq.offer(new int[]{0, 0});
 ```
 
 # References
 
 * [dijkstra in 2 minutes at youtube](https://www.youtube.com/watch?v=_lHSawdgXpI)
 * [dijkstra video in geeksforgeeks](https://www.youtube.com/embed/gdmfOwyQlcI)
+* [Network Delay Time](/leetcode/NetworkDelayTime/)
 
 # Idea
 
@@ -32,10 +36,10 @@ dist[u]: minimum distance from 0 to v
 정의하자. `pq` 에 `distance to u, u` 을 삽입한다. `pq` 의 꼭대기 값을 
 `distance to u` 가 가장 작은 값으로 정렬한다.  
 
-목표 정점까지의 거리 `int[] distances` 를 정의하고 `Integer.MAX_VALUE` 로
-초기화한다. `distances[u]` 는 출발 정점에서 `u` 정점까지의 거리이다.
-`distances[]` 는 반복문을 수행할 때마다 같은 목표 정점 일지라도 이전 보다 작은
-값으로 업데이트가 된다. 출발 정점이 `0` 이라면 `distances[0]` 은 `0` 이다.
+목표 정점까지의 거리 `int[] dists` 를 정의하고 `Integer.MAX_VALUE` 로
+초기화한다. `dists[u]` 는 출발 정점에서 `u` 정점까지의 거리이다.
+`dists[]` 는 반복문을 수행할 때마다 같은 목표 정점 일지라도 이전 보다 작은
+값으로 업데이트가 된다. 출발 정점이 `0` 이라면 `dists[0]` 은 `0` 이다.
 
 `pq` 가 비워질 때 까지 다음을 반복한다.
 
