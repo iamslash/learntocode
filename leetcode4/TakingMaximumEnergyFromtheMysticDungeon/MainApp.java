@@ -22,3 +22,26 @@ class Solution {
         return maxEnergy;
     }
 }
+
+//      k: 3
+// energy: 5 2 -10 -5 1
+//                  i
+
+// 2ms 97.83% 59.9MB 72.69%
+// O(N) O(1)
+class Solution {
+    public int maximumEnergy(int[] energy, int k) {
+        int maxE = Integer.MIN_VALUE, n = energy.length;
+
+        for (int i = n - 1; i >= n - k; --i) {
+
+            int curE = 0;
+            for (int j = i; j >= 0; j = j - k) {
+                curE = curE + energy[j];
+                maxE = Math.max(maxE, curE);
+            }
+        }
+
+        return maxE;
+    }
+}
