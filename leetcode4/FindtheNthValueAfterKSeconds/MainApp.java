@@ -9,6 +9,7 @@ import java.util.*;
 // 1 5 15 35
 // 1 6 21 56
 
+// 197ms 81.57% 41.3MB 65.05%
 // brute force
 // O(NK) O(N)
 class Solution {
