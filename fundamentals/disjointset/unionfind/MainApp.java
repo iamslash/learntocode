@@ -1,20 +1,24 @@
 class DisjointSet {
-    private int[] prnts;
-    public DisjointSet(int n) {
-        prnts = new int[n];
+    int[] prnt;
+
+    DisjointSet(int n) {
+        this.prnt = new int[n];
         for (int i = 0; i < n; ++i) {
-            prnts[i] = i;
+            prnt[i] = i;
         }
     }
-    public void merge(int u, int v) {
-        prnts[find(v)] = find(u);
+
+    public void merge(int a, int b) {
+        prnt[find(a)] = prnt[find(b)];
     }
+
     public int find(int u) {
-        return prnts[u] == u ? u : (prnts[u] = find(prnts[u]));
+        if (prnt[u] != u) {
+            prnt[u] = find(prnt[u]);
+        }
+        return prnt[u];
     }
-    public void reset(int u) {
-        prnts[u] = u;
-    }
+    
 }
 
 class MainApp {
