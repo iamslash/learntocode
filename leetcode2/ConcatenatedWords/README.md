@@ -31,7 +31,9 @@
 # Complexity
 
 ```
-O(N*S^3) O(NS)
-  N: count of words
-  S: avg length of each word
+// O(NlgN) + (NM^2)
+// O(NK) + O(M)
+// - N: number of words
+// - M: the maximum word length
+// K: the average length of the words.
 ```
