@@ -34,7 +34,7 @@
 # Implementation
 
 * [c++11](a.cpp)
-* [java8](MainApp.java)
+* [java17](MainApp.java)
 
 # Complexity
 
