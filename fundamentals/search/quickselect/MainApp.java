@@ -43,8 +43,3 @@ class Solution {
         return quickSelect(nums, 0, n-1, n-k);
     }
 }
-
-public class MainApp {
-  public static void main(String[] args) {
-  }
-}

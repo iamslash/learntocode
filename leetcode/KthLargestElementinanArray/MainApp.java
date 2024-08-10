@@ -1,61 +1,110 @@
-// Copyright (C) 2022 by iamslash
+// Copyright (C) 2024 by iamslash
 
 import java.util.*;
 
-// 4ms 79.16% 44.3MB 54.18%
+// 22ms 94.59% 57.5MB 61.16%
 // sort
 // O(NlgN) O(1)
 class Solution {
     public int findKthLargest(int[] nums, int k) {
         int n = nums.length;
         Arrays.sort(nums);
-        return nums[n-k];
+        return nums[n - k];
     }
 }
 
-// 1ms 99.52% 42.4MB 79.11%
-// quick select
-// O(NlgN) O(lgN)
+// 61ms 45.84% 62MB 5.37%
+// heap
+// O(NlgK) O(K)
 class Solution {
-  private void swap(int[] nums, int i, int j) {
-      int tmp = nums[i];
-      nums[i] = nums[j];
-      nums[j] = tmp;        
-  }
-  private int partition(int[] nums, int left, int right, int pivotIdx) {
-      int pivotVal = nums[pivotIdx];
-      swap(nums, pivotIdx, right);
-      int newPivotIdx = left;
-      for (int i = left; i <= right; ++i) {
-          if (nums[i] < pivotVal) {
-              swap(nums, newPivotIdx, i);
-              newPivotIdx++;
-          }
-      }
-      swap(nums, newPivotIdx, right);
-      return newPivotIdx;        
-  }
-  private int quickSelect(int[] nums, int left, int right, int kthIdx) {
-      if (left == right) {
-          return nums[left];
-      }
-      Random rand = new Random();
-      int pivotIdx = left + rand.nextInt(right - left);
-      pivotIdx = partition(nums, left, right, pivotIdx);
-      if (kthIdx == pivotIdx) {
-          return nums[kthIdx];
-      } else if (kthIdx < pivotIdx) {
-          return quickSelect(nums, left, pivotIdx-1, kthIdx);
-      }
-      return quickSelect(nums, pivotIdx + 1, right, kthIdx);
-  }
-  public int findKthLargest(int[] nums, int k) {
-      int n = nums.length;
-      return quickSelect(nums, 0, n-1, n-k);
-  }
+    public int findKthLargest(int[] nums, int k) {
+        Queue<Integer> pq = new PriorityQueue<>();
+
+        for (int num : nums) {
+            pq.offer(num);
+            if (pq.size() > k) {
+                pq.poll();
+            }
+        }
+
+        return pq.poll();
+    }
 }
 
-public class MainApp {
-  public static void main(String[] args) {
-  }
+
+//    k: 2
+// nums: 3 2 1 5 6 4
+//
+//   left: 0
+//  right: 5
+// ascIdx: 4
+// pvtIdx: 1
+// pvtVal: 2
+//           .
+//           b
+//   nums: 1 2 3 5 6 4
+//                     i
+//
+//   left: 2
+//  right: 5
+// ascIdx: 4
+// pvtIdx: 1
+// pvtVal: 5
+//               .
+//                 b
+//   nums:     3 4 5 6
+//                     i
+//
+// qs(0, 5, 4)
+//   qa(2, 5, 4)
+
+// 2184ms 5.12% 61MB 26.82%
+// quick select
+// O(N) O(lgN)
+class Solution {
+
+    private Random rnd = new Random();
+
+    private void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
+    }
+
+    private int partition(int[] nums, int left, int right, int pvtIdx) {
+        int pvtVal = nums[pvtIdx];
+        swap(nums, pvtIdx, right);
+
+        int pos = left;
+        for (int i = left; i <= right; ++i) {
+            if (nums[i] < pvtVal) {
+                swap(nums, i, pos++);
+            }
+        }
+
+        swap(nums, pos, right);
+        return pos;
+    }
+
+    private int quickSelect(int[] nums, int left, int right, int ascIdx) {
+        // base
+        if (left == right) {
+            return nums[left];
+        }
+
+        // recursion
+        int pvtIdx = left + rnd.nextInt(right - left);
+        int bndIdx = partition(nums, left, right, pvtIdx);
+        if (ascIdx == bndIdx) {
+            return nums[ascIdx];
+        } else if (ascIdx < bndIdx) {
+            return quickSelect(nums, left, bndIdx - 1, ascIdx);
+        }
+        return quickSelect(nums, bndIdx + 1, right, ascIdx);
+    }
+    
+    public int findKthLargest(int[] nums, int k) {
+        int n = nums.length;
+        return quickSelect(nums, 0, n-1, n-k);
+    }
 }

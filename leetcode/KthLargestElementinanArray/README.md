@@ -18,8 +18,7 @@
 
 [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 
-수열 `nums[]`, 숫자 `k` 가 주어진다. `nums[]` 의 숫자들중 `k` 번째로
-큰 숫자를 구하라.
+수열 `nums[]`, 숫자 `k` 가 주어진다. `nums[]` 의 숫자들중 `k` 번째로 큰 숫자를 구하라.
 
 # Sort
 
@@ -45,11 +44,7 @@ O(NlgN) O(1)
 
 ## Idea
 
-정렬의 대상을 줄이면 시간 복잡도를 개선할 수 있다.
-`PriorityQueue<Integer> pq = new PriorityQueue<Integer>((a, b) -> a -
-b)` 를 선언한다. 이제 `pq.peek()` 는 가장 작은 수가 저장된다. 모든
-숫자들을 `pq` 에 하나씩 삽입한다. 이때 `pq` 가 `k` 보다 크다면 `pq`
-에서 제거해도 된다.
+정렬의 대상을 줄이면 시간 복잡도를 개선할 수 있다. `PriorityQueue<Integer> pq = new PriorityQueue<Integer>((a, b) -> a - b)` 를 선언한다. 이제 `pq.peek()` 는 가장 작은 수가 저장된다. 모든 숫자들을 `pq` 에 하나씩 삽입한다. 이때 `pq.size()` 가 `k` 보다 크다면 `pq` 에서 하나 제거해도 된다.
 
 모든 반복을 마치면 `pq.poll()` 이 답이다. 
 
@@ -67,10 +62,9 @@ O(NlgK) O(1)
 
 ## Idea
 
-역시 정렬의 대상을 줄이면서 답을 찾는 방식이다. 정렬의 대상을 절반씩 줄여가면서
-n-k 번째 작은 수를 찾는다.
+역시 정렬의 대상을 줄이면서 답을 찾는 방식이다. 정렬의 대상을 절반씩 줄여가면서 `n - k` 번째 작은 수를 찾는다.
 
-위와 같은 방법을 [quick select](https://en.wikipedia.org/wiki/Quickselect) 이라고 한다.
+[Quick Select](/fundamentals/search/quickselect/README.md) 를 참고하자.
 
 ## Implementation
 
