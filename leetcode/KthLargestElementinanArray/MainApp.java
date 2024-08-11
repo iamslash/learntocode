@@ -31,32 +31,31 @@ class Solution {
     }
 }
 
-
-//    k: 2
+// k: 2
 // nums: 3 2 1 5 6 4
 //
-//   left: 0
-//  right: 5
+// left: 0
+// right: 5
 // ascIdx: 4
 // pvtIdx: 1
 // pvtVal: 2
-//           .
-//           b
-//   nums: 1 2 3 5 6 4
-//                     i
+// .
+// b
+// nums: 1 2 3 5 6 4
+// i
 //
-//   left: 2
-//  right: 5
+// left: 2
+// right: 5
 // ascIdx: 4
 // pvtIdx: 1
 // pvtVal: 5
-//               .
-//                 b
-//   nums:     3 4 5 6
-//                     i
+// .
+// b
+// nums: 3 4 5 6
+// i
 //
 // qs(0, 5, 4)
-//   qa(2, 5, 4)
+// qa(2, 5, 4)
 
 // 2184ms 5.12% 61MB 26.82%
 // quick select
@@ -102,15 +101,15 @@ class Solution {
         }
         return quickSelect(nums, bndIdx + 1, right, ascIdx);
     }
-    
+
     public int findKthLargest(int[] nums, int k) {
         int n = nums.length;
-        return quickSelect(nums, 0, n-1, n-k);
+        return quickSelect(nums, 0, n - 1, n - k);
     }
 }
 
 // 3ms 99.58% 55.1MB 98.79%
-// bucket sort
+// counting sort
 // O(N) O(N)
 class Solution {
     public int findKthLargest(int[] nums, int k) {
