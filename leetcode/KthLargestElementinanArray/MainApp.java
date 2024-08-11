@@ -108,3 +108,28 @@ class Solution {
         return quickSelect(nums, 0, n-1, n-k);
     }
 }
+
+// 3ms 99.58% 55.1MB 98.79%
+// bucket sort
+// O(N) O(N)
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        // range -10,000 to 10,000
+        int[] count = new int[20001];
+        int offset = 10000; // to handle negative values
+
+        for (int num : nums) {
+            count[num + offset]++;
+        }
+
+        int countSum = 0;
+        for (int i = 20000; i >= 0; --i) {
+            countSum += count[i];
+            if (countSum >= k) {
+                return i - offset;
+            }
+        }
+
+        return -1;
+    }
+}
