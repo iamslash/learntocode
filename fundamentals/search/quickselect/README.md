@@ -5,7 +5,10 @@
 # Keyword
 
 ```c
-- quickSelect(nums, 0, n-1, n-k)
+- quickSelect(nums, left, right, ascIdx)
+  - ascIdx: ascending idx
+- partition(nums, left, right): bndIdx
+  - bndIdx: bouding idx, idx of pivot value
 ```
 
 # Idea
