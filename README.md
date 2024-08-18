@@ -550,7 +550,8 @@ $ a.exe
 
 ## Bit Manipulation
 
-- F | [bitmask set](fundamentals/bitmask/bitmaskset/README.md)
+- F | [bitmask set](/fundamentals/bitmask/bitmaskset/README.md)
+- F | [bitwise arithmetic](/fundamentals/bitmask/arithmetic/README.md)
 - F | [hamming weight](/fundamentals/bitmask/hammingweight/README.md)
 - F | [Gray code](/fundamentals/bitmask/graycode/README.md)
 - F | [sieve of eratosthenes](fundamentals/numbertheory/sieveoferatosthenes/README.md)
