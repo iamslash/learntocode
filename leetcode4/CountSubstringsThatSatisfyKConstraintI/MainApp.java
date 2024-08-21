@@ -38,7 +38,7 @@ class Solution {
 }
 
 // 1ms 100.00% 42.6MB 18.79%
-// two pointers
+// sliding window
 // O(N) O(1)
 class Solution {
 

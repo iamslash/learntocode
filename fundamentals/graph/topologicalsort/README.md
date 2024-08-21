@@ -1,6 +1,6 @@
 - [Problem](#problem)
-- [Rerences](#rerences)
 - [DFS](#dfs)
+  - [Rerences](#rerences)
   - [Keyword](#keyword)
   - [Idea](#idea)
   - [Complexity](#complexity)
@@ -18,11 +18,38 @@
 
 어떤 작업을 수행하는데 선행해야 하는 작업이 존재할 때 선행작업을 먼저 수행하는 식으로 정렬하는 방법이다. 사이클이 있다면 위상정렬은 불가능 하다. 정렬의 결과는 여러개일 수 있다.
 
-# Rerences
+다음은 임의의 directed graph 이다.
 
-- [Topological Sorting | geeksforgeeks](https://www.geeksforgeeks.org/topological-sorting/)
+![](img/2024-08-22-07-22-56.png)
+
+```mermaid
+graph TD
+    5 --> 0
+    4 --> 0
+    5 --> 2
+    4 --> 1
+    2 --> 3
+    1 --> 3
+```
+
+다음은 가능한 모든 위상정렬의 결과들이다.
+
+```
+4, 5, 0, 2, 3, 1
+4, 5, 2, 0, 3, 1
+4, 5, 2, 3, 0, 1
+4, 5, 2, 3, 1, 0
+5, 4, 0, 2, 3, 1
+5, 4, 2, 0, 3, 1
+5, 4, 2, 3, 0, 1
+5, 4, 2, 3, 1, 0
+```
 
 # DFS
+
+## Rerences
+
+- [Topological Sorting | geeksforgeeks](https://www.geeksforgeeks.org/topological-sorting/)
 
 ## Keyword
 
@@ -70,9 +97,9 @@ O(V+E) O(V)
 ## Keyword
 
 ```cpp
-graph[][], indegMap, q, order, BFS
+graph[][], indegrees[], q, order[], BFS
 // Build graph
-// Build inegMap
+// Build indegrees
 // Build q
 // BFS with building order
 ```
