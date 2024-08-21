@@ -16,13 +16,14 @@
 // b: 0 0 0
 
 // Idea: bitwise summation
-//
+// 
+// Keyword: xor, and 
 // a: sum without carry of a, b
 // b: shifted carry to be added next
 // [bitwise arithmetic](/fundamentals/bitmask/arithmetic/README.md)
 
 // 0ms 100.00% 40.6MB 15.21%
-// iterative bit manipulation
+// iterative bitwise summation
 // O(N) O(1)
 class Solution {
     public int getSum(int a, int b) {
@@ -44,7 +45,7 @@ class Solution {
 }
 
 // 0ms 100.00% 40.3MB 33.27%
-// recursive bit manipulation
+// recursive bitwise summation
 // O(N) O(N)
 class Solution {
     public int getSum(int a, int b) {
