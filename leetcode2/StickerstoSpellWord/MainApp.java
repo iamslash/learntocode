@@ -27,6 +27,7 @@ class Solution {
         }
         int minCnt = Integer.MAX_VALUE;
         for (int[] stickerFreq : stickerFreqs) {
+            // Inf loops without this block 
             if (stickerFreq[target.charAt(0) - 'a'] == 0) {
                 continue;
             }

@@ -27,6 +27,7 @@ stickerFreqs: frequencies of sticker
 
 - [c++11](a.cpp)
 - [java17](MainApp.java)
+- [python3](a.py)
 
 # Complexity
 
