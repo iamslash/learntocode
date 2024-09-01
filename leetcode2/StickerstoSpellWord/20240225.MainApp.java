@@ -2,14 +2,49 @@
 
 import java.util.*;
 
-// 16ms 86.61% 45.2MB 62.29%
-// recursive dynamic programming
-// O(N * 2^M) O(2^M + N)
-// N: stickers number
-// M: target length
-class Solution {
 
-    private int dfs(Map<String, Integer> C, int[][] stickerFreqs, String target) {
+// Idea: dfs
+// 
+//                        i
+//   stickers: with example science
+//     target: thehat
+//
+// stickeFreq: i h t w
+//             1 1 1 1
+//             a e l m p x
+//             1 2 1 1 1 1
+//             c e i n s
+//             2 2 1 1 1
+//
+// targetFreq: a e h t
+//             1 1 2 2
+//             a e h t
+//             1 1 1 1
+//             a e
+//             1 1
+//             h t
+//             2 2
+//             a h t
+//             1 2 2
+//             
+// dfs(thehat): 3
+//   dfs(aeht): 2
+//     dfs(ae): 1
+//       dfs(): 0
+//   dfs(hhtt): 2
+//     dfs(ht): 1
+//   dfs(ahhtt): 3
+//     dfs(hhtt)
+//     
+
+// 16ms 86.49% 44.8MB 87.64%
+// recursive dyanamic programming
+// O(N * T * 2^T) O(2^T + T)
+// N: The number of stickers.
+// T: The length of the target string. 
+class Solution {
+    private int dfs(Map<String, Integer> C, int[][] stickerFreqs,
+                    String target) {
         // base
         if (target.isEmpty()) {
             return 0;
@@ -19,13 +54,13 @@ class Solution {
         if (C.containsKey(target)) {
             return C.get(target);
         }
-        
+
         // recursion
         int[] targetFreq = new int[26];
         for (char c : target.toCharArray()) {
-            targetFreq[c -'a']++;
+            targetFreq[c - 'a']++;
         }
-        int minCnt = Integer.MAX_VALUE;
+        int rst = Integer.MAX_VALUE;
         for (int[] stickerFreq : stickerFreqs) {
             if (stickerFreq[target.charAt(0) - 'a'] == 0) {
                 continue;
@@ -43,15 +78,13 @@ class Solution {
 
             int cnt = dfs(C, stickerFreqs, sb.toString());
             if (cnt != -1) {
-                minCnt = Math.min(minCnt, cnt + 1);
+                rst = Math.min(rst, cnt + 1);
             }
         }
 
-        C.put(target, minCnt == Integer.MAX_VALUE ? -1 : minCnt);
-        return C.get(target);
+        C.put(target, rst == Integer.MAX_VALUE ? -1 : rst);
+        return C.get(target);        
     }
-
-    
     public int minStickers(String[] stickers, String target) {
         int n = stickers.length;
         Map<String, Integer> C = new HashMap<>();
