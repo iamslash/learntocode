@@ -10,7 +10,7 @@
 
 * [c++11](a.cpp)
 * [go](a.go)
-* [java8](MainApp.java)
+* [java17](MainApp.java)
 
 # Complexity
 

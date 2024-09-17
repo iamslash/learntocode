@@ -1,54 +1,51 @@
-// Copyright (C) 2021 by iamslash
+// Copyright (C) 2024 by iamslash
 
 import java.util.*;
 
-// 3 0 1 4 2     3  3  4  8 10
-// 5 6 3 2 1     8 14 18 24
-// 1 2 0 1 5     9
-// 4 1 0 1 7    13
-// 1 0 3 0 5    14
-
-// 201ms 26.98% 130.1MB 22.71%
+// 102ms 47.89% 71.1MB 26.84%
 // grid sum
-// O(HW) O(1)
+// O(N) O(N)
 class NumMatrix {
-	
-	private int[][] gs;
-	public NumMatrix(int[][] matrix) {
-		int h = matrix.length, w = matrix[0].length;		
-		gs = matrix;
-		for (int y = 0; y < h; ++y) {
-			for (int x = 0; x < w; ++x) {				
-				if (y > 0) {
-					gs[y][x] += gs[y-1][x];
-				}
-				if (x > 0) {
-					gs[y][x] += gs[y][x-1];
-				}
-				if (y > 0 && x > 0) {
-					gs[y][x] -= gs[y-1][x-1];
-				}
-			}
-		}
-	}
-  
-	public int sumRegion(int y, int x, int z, int w) {
-		int sum = gs[z][w];
-		if (x > 0) {
-			sum -= gs[z][x-1];
-		}
-		if (y > 0) {
-			sum -= gs[y-1][w];
-		}
-		if (y > 0 && x > 0) {
-			sum += gs[y-1][x-1];
-		}
-		return sum;
-	}
-}
+    private int[][] gsum = null;
 
+    public NumMatrix(int[][] matrix) {
+        int h = matrix.length, w = matrix[0].length;
+        gsum = new int[h][w];
 
-public class MainApp {
-  public static void main(String[] args) {
-  }
+        for (int y = 0; y < h; ++y) {
+            for (int x = 0; x < w; ++x) {
+                gsum[y][x] = matrix[y][x];
+
+                if (y > 0) {
+                    gsum[y][x] += gsum[y-1][x];
+                }
+
+                if (x > 0) {
+                    gsum[y][x] += gsum[y][x-1];
+                }
+
+                if (y > 0 && x > 0) {
+                    gsum[y][x] -= gsum[y-1][x-1];
+                }
+            }
+        }
+    }
+    
+    public int sumRegion(int y1, int x1, int y2, int x2) {
+        int sum = gsum[y2][x2];
+
+        if (y1 > 0) {
+            sum -= gsum[y1-1][x2];
+        }
+
+        if (x1 > 0) {
+            sum -= gsum[y2][x1-1];
+        }
+
+        if (y1 > 0 && x1 > 0) {
+            sum += gsum[y1-1][x1-1];
+        }        
+
+        return sum;
+    }
 }
