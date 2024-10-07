@@ -14,8 +14,7 @@
 
 [Coin Change | leetcode](https://leetcode.com/problems/coin-change/description/)
 
-숫자 `amount`, 배열 `coins[]` 가 주어진다. `amount` 금액에 맞는 동전을 선택해
-보자. 동전의 최소 개수를 구하라.
+숫자 `amount`, 배열 `coins[]` 가 주어진다. `amount` 금액에 맞는 동전을 선택해 보자. 동전의 최소 개수를 구하라.
 
 # Recursive Dynamic Programming
 

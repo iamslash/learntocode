@@ -1004,47 +1004,68 @@ $ a.exe
 ## Dynamic Programming
 
 - F | [dynamic programming](/doc/dynamic_programming.md)
-- F | [binomial coefficient, combination](/doc/dynamic_binomial_coefficient.md)
-- F | [0/1 knapsack problem](/fundamentals/dynamicprog/knapsack01/README.md)
-- F | Hidden Markov Model, HMM
-  - Viterbi algorithm
-- F | [memoization with non-integer parameters](/doc/dynamic_memoization_with_non_integer.md)
-- F | [combinatorial game](/doc/dynamic_combinatorial_game.md)
-- F | [iterative vs recursive](/doc/dynamic_iterative_vs_recursive.md)
-- F | [levenshtein distance](/leetcode/EditDistance/README.md)
-- F | [LCS (Longest Common Substring)](/fundamentals/dynamicprog/lcsubstring/README.md)
-- F | [LCS (Longest Common Subsequence)](/fundamentals/dynamicprog/lcsubsequence/README.md)
-- [L](/leetcode3/MaximumAlternatingSubarraySum/) | [Maximum Alternating Subarray Sum](https://leetcode.com/problems/maximum-alternating-subarray-sum/)
-- [L](/leetcode/LongestIncreasingSubsequence/README.md) | [LIS (Longest Increasing Subsequence)](https://leetcode.com/problems/longest-increasing-subsequence/description/)
-- [L](/leetcode/CoinChange/README.md) | [Coin Change](https://leetcode.com/problems/coin-change/description/)
-- [L](/leetcode/CoinChange2/README.md) | [Coin Change 2](https://leetcode.com/problems/coin-change-2/)
-- [L](/leetcode2/FindtheShortestSuperstring/README.md) | [Find the Shortest Superstring (TSP)](https://leetcode.com/problems/find-the-shortest-superstring/)
-- [알](/algospot/JUMPGAME/) | [JUMPGAME](https://algospot.com/judge/problem/read/JUMPGAME)
-- [알](/algospot/WILDCARD/) | [WILDCARD](https://algospot.com/judge/problem/read/WILDCARD)
-- [알](/algospot/TRIANGLEPATH/) | [TRIANGLEPATH](https://algospot.com/judge/problem/read/TRIANGLEPATH)
-- [알](algospot/LIS/) | [LIS](https://algospot.com/judge/problem/read/LIS)
-- [알](algospot/JLIS/) | [JLIS](https://algospot.com/judge/problem/read/JLIS)
-- [알](/algospot/PI/) | [PI](https://algospot.com/judge/problem/read/PI)
-- [알](/algospot/QUANTIZE/) | [QUANTIZE](https://algospot.com/judge/problem/read/QUANTIZE)
-- [알](/algospot/TILING2/) | [TILING2](https://algospot.com/judge/problem/read/TILING2)
-- [알](/algospot/TRIPATHCNT/) | [TRIPATHCNT](https://algospot.com/judge/problem/read/TRIPATHCNT)
-- [알](/algospot/SNAIL/) | [SNAIL](https://algospot.com/judge/problem/read/SNAIL)
-- [알](/algospot/ASYMTILING/) | [ASYMTILING](https://algospot.com/judge/problem/read/ASYMTILING)
-- [알](/algospot/POLY/) | [POLY](https://algospot.com/judge/problem/read/POLY)
-- [알](/algospot/NUMB3RS/) | [NUMB3RS](https://algospot.com/judge/problem/read/NUMB3RS)★
-- [알](/algospot/PACKING/) | [PACKING](https://algospot.com/judge/problem/read/PACKING)
-- [알](/algospot/OCR/) | [OCR](https://algospot.com/judge/problem/read/OCR)★
-- [알](/algospot/MORSE/) | [MORSE](https://algospot.com/judge/problem/read/MORSE)
-- [알](/algospot/KLIS/) | [KLIS](https://algospot.com/judge/problem/read/KLIS)★
-- [알](/algospot/DRAGON/) | [DRAGON](https://algospot.com/judge/problem/read/DRAGON)
-- [알](/algospot/TSP/) | [TSP](https://algospot.com/judge/problem/read/TSP1)
-- [알](/algospot/ZIMBABWE/) | [ZIMBABWE](https://algospot.com/judge/problem/read/ZIMBABWE)★
-- [알](/algospot/RESTORE/) | [RESTORE](https://algospot.com/judge/problem/read/RESTORE)
-- [알](/algospot/TICTACTOE/) | [TICTACTOE](https://algospot.com/judge/problem/read/TICTACTOE)
-- [알](algospot/NUMBERGAME/) | [NUMBERGAME](https://algospot.com/judge/problem/read/NUMBERGAME)
-- [알](algospot/BLOCKGAME/) | [BLOCKGAME](https://algospot.com/judge/problem/read/BLOCKGAME)
-- [알](algospot/SUSHI/) | [SUSHI](https://algospot.com/judge/problem/read/SUSHI)
-- [알](algospot/GENIUS/) | [GENIUS](https://algospot.com/judge/problem/read/GENIUS)
+- Knapsack-Like Problems:
+  - F | [0/1 knapsack problem](/fundamentals/dynamicprog/knapsack01/README.md)
+  - F | [unbounded knapsack problem](/fundamentals/greedy/knapsackfractional/README.md) (similar to 0/1 knapsack but you can use an item multiple times)
+  - F | [Subset Sum Problem](/fundamentals/dynamicprog/subsetsum/README.md) (checking if a subset of numbers sums to a particular value)
+- Coin Change Variants:
+  - [L](/leetcode/CoinChange/README.md) | [Coin Change](https://leetcode.com/problems/coin-change/description/) (find the minimum number of coins that sum up to a given amount)
+  - [L](/leetcode/CoinChange2/README.md) | [Coin Change 2](https://leetcode.com/problems/coin-change-2/) (find the number of ways to make a given amount using coins)
+- Partitioning Problems:
+  - [L](/leetcode/PartitionEqualSubsetSum/README.md) | [Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/) (determine if you can partition a set into two subsets with equal sum)
+  - [L](/leetcode/PalindromePartitioning/) | [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/description/) (find the minimum number of cuts to partition a string into palindromes)
+- Sequence Alignment/Matching:
+  - F | [LCS (Longest Common Substring)](/fundamentals/dynamicprog/lcsubstring/README.md)
+  - F | [LCS (Longest Common Subsequence)](/fundamentals/dynamicprog/lcsubsequence/README.md) (find the longest subsequence common to two sequences)
+  - [L](/leetcode/EditDistance/README.md) | [Edit Distance](https://leetcode.com/problems/edit-distance/) (find the minimum number of operations required to convert one string into another)
+  - [L](/leetcode/LongestIncreasingSubsequence/README.md) | [LIS (Longest Increasing Subsequence)](https://leetcode.com/problems/longest-increasing-subsequence/description/) (find the longest increasing subsequence in an array)
+- Counting Paths and Ways:
+  - [L](/leetcode/UniquePaths/README.md) | [Unique Paths](https://leetcode.com/problems/unique-paths/) (find the number of ways to reach the bottom-right corner of a grid from the top-left)
+  - F | [Staircase Problem](/fundamentals/dynamicprog/staircase/README.md) (count how many ways you can climb a staircase with n steps if you can take 1 or 2 steps at a time)
+- Interval Scheduling and Profit Maximization:
+  - F | [Weighted Interval Scheduling](/fundamentals/dynamicprog/weightedintervalscheduling/README.md) (find the maximum profit subset of non-overlapping intervals)
+  - F | [Rod Cutting](/fundamentals/dynamicprog/rodcutting/README.md) (maximize profit by cutting a rod into pieces of different lengths)
+- String Problems:
+  - [L](/leetcode/LongestPalindromicSubsequence/README.md) | [Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/) (find the longest subsequence in a string that is also a palindrome)
+  - [L](/leetcode/LongestPalindromicSubstring/README.md) | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) (find the longest contiguous substring that is a palindrome)
+- Grid Problems:
+  - F | [Maximum Path Sum in a Grid](/fundamentals/dynamicprog/maxpathsuminagrid/README.md) (find the path from top-left to bottom-right that has the maximum sum of numbers)
+  - F | [Minimum Path Sum in a Grid](/fundamentals/dynamicprog/minpathsuminagrid/README.md) (find the path with the minimum sum of numbers)
+- ETC
+  - F | [binomial coefficient, combination](/doc/dynamic_binomial_coefficient.md)
+  - F | Hidden Markov Model, HMM (Viterbi algorithm)
+  - F | [memoization with non-integer parameters](/doc/dynamic_memoization_with_non_integer.md)
+  - F | [combinatorial game](/doc/dynamic_combinatorial_game.md)
+  - F | [iterative vs recursive](/doc/dynamic_iterative_vs_recursive.md)
+  - F | [levenshtein distance](/leetcode/EditDistance/README.md)
+  - [L](/leetcode3/MaximumAlternatingSubarraySum/) | [Maximum Alternating Subarray Sum](https://leetcode.com/problems/maximum-alternating-subarray-sum/)
+  - [L](/leetcode2/FindtheShortestSuperstring/README.md) | [Find the Shortest Superstring (TSP)](https://leetcode.com/problems/find-the-shortest-superstring/)
+  - [알](/algospot/JUMPGAME/) | [JUMPGAME](https://algospot.com/judge/problem/read/JUMPGAME)
+  - [알](/algospot/WILDCARD/) | [WILDCARD](https://algospot.com/judge/problem/read/WILDCARD)
+  - [알](/algospot/TRIANGLEPATH/) | [TRIANGLEPATH](https://algospot.com/judge/problem/read/TRIANGLEPATH)
+  - [알](algospot/LIS/) | [LIS](https://algospot.com/judge/problem/read/LIS)
+  - [알](algospot/JLIS/) | [JLIS](https://algospot.com/judge/problem/read/JLIS)
+  - [알](/algospot/PI/) | [PI](https://algospot.com/judge/problem/read/PI)
+  - [알](/algospot/QUANTIZE/) | [QUANTIZE](https://algospot.com/judge/problem/read/QUANTIZE)
+  - [알](/algospot/TILING2/) | [TILING2](https://algospot.com/judge/problem/read/TILING2)
+  - [알](/algospot/TRIPATHCNT/) | [TRIPATHCNT](https://algospot.com/judge/problem/read/TRIPATHCNT)
+  - [알](/algospot/SNAIL/) | [SNAIL](https://algospot.com/judge/problem/read/SNAIL)
+  - [알](/algospot/ASYMTILING/) | [ASYMTILING](https://algospot.com/judge/problem/read/ASYMTILING)
+  - [알](/algospot/POLY/) | [POLY](https://algospot.com/judge/problem/read/POLY)
+  - [알](/algospot/NUMB3RS/) | [NUMB3RS](https://algospot.com/judge/problem/read/NUMB3RS)★
+  - [알](/algospot/PACKING/) | [PACKING](https://algospot.com/judge/problem/read/PACKING)
+  - [알](/algospot/OCR/) | [OCR](https://algospot.com/judge/problem/read/OCR)★
+  - [알](/algospot/MORSE/) | [MORSE](https://algospot.com/judge/problem/read/MORSE)
+  - [알](/algospot/KLIS/) | [KLIS](https://algospot.com/judge/problem/read/KLIS)★
+  - [알](/algospot/DRAGON/) | [DRAGON](https://algospot.com/judge/problem/read/DRAGON)
+  - [알](/algospot/TSP/) | [TSP](https://algospot.com/judge/problem/read/TSP1)
+  - [알](/algospot/ZIMBABWE/) | [ZIMBABWE](https://algospot.com/judge/problem/read/ZIMBABWE)★
+  - [알](/algospot/RESTORE/) | [RESTORE](https://algospot.com/judge/problem/read/RESTORE)
+  - [알](/algospot/TICTACTOE/) | [TICTACTOE](https://algospot.com/judge/problem/read/TICTACTOE)
+  - [알](algospot/NUMBERGAME/) | [NUMBERGAME](https://algospot.com/judge/problem/read/NUMBERGAME)
+  - [알](algospot/BLOCKGAME/) | [BLOCKGAME](https://algospot.com/judge/problem/read/BLOCKGAME)
+  - [알](algospot/SUSHI/) | [SUSHI](https://algospot.com/judge/problem/read/SUSHI)
+  - [알](algospot/GENIUS/) | [GENIUS](https://algospot.com/judge/problem/read/GENIUS)
 
 ## Memoization
 
@@ -1052,9 +1073,9 @@ $ a.exe
   
 ## Greedy
 
-- F | [fractional knapsack problem](/fundamentals/greedy/knapsackfractional/README.md)
 - F | [greedy algorithm proof](doc/greedy_proof.md)
 - F | [optimization problem](doc/greedy_optimization_problem.md)
+- F | [fractional/unbounded knapsack problem](/fundamentals/greedy/knapsackfractional/README.md)
 - F | [activity selection problem](fundamentals/greedy/activityselection/README.md)
 - F | [huffman code](doc/greedy_huffman_code.md)
 - [알](/algospot/MATCHORDER/) | [MATCHORDER](https://algospot.com/judge/problem/read/MATCHORDER)

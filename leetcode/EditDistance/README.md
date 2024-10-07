@@ -1,6 +1,6 @@
 # Problem
 
-* [Edit Distance @ leetcode](https://leetcode.com/problems/edit-distance/)
+* [Edit Distance](https://leetcode.com/problems/edit-distance/)
 
 # Idea
 

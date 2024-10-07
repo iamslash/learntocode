@@ -1,6 +1,6 @@
 # Problem
 
-[https://leetcode.com/problems/unique-paths/](https://leetcode.com/problems/unique-paths/)
+[Unique Paths](https://leetcode.com/problems/unique-paths/)
 
 숫자 `h, w` 가 주어진다. 높이와 넓이가 각각 `h, w` 인 보드를 `G[][]` 라고 하자. `G[0][0]` 에서 출발하여 `G[h-1][w-1]` 까지 오른쪽 혹은 아내쪽으로 이동할 수 있다. 모든 경로의 수를 구하라.
 

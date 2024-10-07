@@ -2,8 +2,7 @@
 
 [Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)
 
-수열 `A` 가 주어진다. `A[]` 를 합이 같은 두개의 subsequence
-로 나눌 수 있는 검증하라.
+수열 `A` 가 주어진다. `A[]` 를 합이 같은 두개의 subsequence 로 나눌 수 있는 검증하라.
 
 # Idea 
 

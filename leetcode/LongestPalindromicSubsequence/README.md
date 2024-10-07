@@ -6,8 +6,7 @@ Given a string `s`. Find the longest palindrome subsequence's length.
 
 # Idea
 
-Let's Define a cache `int C[len][start_idx]` which means the longest
-palindrome subsequences's length.
+Let's Define a cache `int C[len][start_idx]` which means the longest palindrome subsequences's length.
 
 * `len`: the length of sub palindrome.
 * `start_idx`: the started index of sub palindrome whose length is `len`.
