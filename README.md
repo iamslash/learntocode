@@ -18,6 +18,8 @@
 - [Basic](#basic)
   - [Loop](#loop)
   - [Recursion](#recursion)
+  - [Subarray](#subarray)
+  - [Subsequence](#subsequence)
 - [Data Structures](#data-structures)
   - [Array](#array)
   - [Matrix](#matrix)
@@ -84,8 +86,6 @@
   - [Palindrome](#palindrome)
   - [Simulated Annealing](#simulated-annealing)
 - [Famous Problems](#famous-problems)
-  - [Subarray](#subarray)
-  - [Subsequence](#subsequence)
   - [Design](#design-1)
   - [Find Peak Element](#find-peak-element)
   - [Egg Drop](#egg-drop)
@@ -528,6 +528,15 @@ $ a.exe
 * F | [pick k numbers from n numbers](/fundamentals/recursion/pickKnumbers/README.md)
 * F | [tower of hanoi](/fundamentals/recursion/towerofhanoi/README.md)
 * [L](/leetcode/MergeTwoSortedLists/README.md) | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+
+## Subarray
+
+* F | [subarray](/doc/subarray.md)
+* [L](/leetcode3/SumofTotalStrengthofWizards/) | [Sum of Total Strength of Wizards](https://leetcode.com/problems/sum-of-total-strength-of-wizards/)
+
+## Subsequence
+
+* F | [subsequence](/doc/subsequence.md)
 
 # Data Structures
 
@@ -1199,15 +1208,6 @@ $ a.exe
 * [L](/leetcode2/BestPositionforaServiceCentre) | [Best Position for a Service Centre](https://leetcode.com/problems/best-position-for-a-service-centre/)
 
 # Famous Problems
-
-## Subarray
-
-* F | [subarray](/doc/subarray.md)
-* [L](/leetcode3/SumofTotalStrengthofWizards/) | [Sum of Total Strength of Wizards](https://leetcode.com/problems/sum-of-total-strength-of-wizards/)
-
-## Subsequence
-
-* F | [subsequence](/doc/subsequence.md)
 
 ## Design
 
