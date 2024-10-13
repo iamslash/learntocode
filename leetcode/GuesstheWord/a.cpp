@@ -17,32 +17,32 @@ class Master {
   }
 };
 
-// // 4ms 100.00%
-// // O(N) O(N)
-// class Solution {
-//  private:
-//   int match(std::string a, std::string b) {
-//     int r = 0;
-//     for (int i = 0; i < a.size(); ++i)
-//       if (a[i] == b[i])
-//         r++;
-//     return r;
-//   }
-//  public:
-//   void findSecretWord(std::vector<std::string>& W, Master& M) {
-//     for (int i = 0; i < 10; ++i) {
-//       int n = W.size();
-//       std::string s = W[rand() % n];
-//       int r = M.guess(s);
-//       std::vector<std::string> W2;
-//       for (auto& w : W) {
-//         if (match(s, w) == r)
-//           W2.push_back(w);
-//       }
-//       W = W2;
-//     }
-//   }
-// };
+// 4ms 100.00%
+// O(N) O(N)
+class Solution {
+ private:
+  int match(std::string a, std::string b) {
+    int r = 0;
+    for (int i = 0; i < a.size(); ++i)
+      if (a[i] == b[i])
+        r++;
+    return r;
+  }
+ public:
+  void findSecretWord(std::vector<std::string>& W, Master& M) {
+    for (int i = 0; i < 10; ++i) {
+      int n = W.size();
+      std::string s = W[rand() % n];
+      int r = M.guess(s);
+      std::vector<std::string> W2;
+      for (auto& w : W) {
+        if (match(s, w) == r)
+          W2.push_back(w);
+      }
+      W = W2;
+    }
+  }
+};
 
 // 12ms 31.45% 8.9MB 51.61%
 // O(N^2) O(N)
