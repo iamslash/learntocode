@@ -1,41 +1,57 @@
 # Problem
 
-> [Guess the Word](https://leetcode.com/problems/guess-the-word/)
+[Guess the Word](https://leetcode.com/problems/guess-the-word/)
 
-단어들의 리스트 `W` 가 주어졌다. 이들 중 하나의 단어가 정답 `s` 라고 하자. `master.guess(string a)` 는 `a` 와 `s` 가 얼만큼 같은지 리턴한다. 즉 위치를 순회하면서 같은 음절의 개수를 리턴한다. `master.guess()` 가 10 번 호출될 때 반드시 6 을 리턴하도록 `findSecretWord` 를 구현하는 문제이다.
+배열 `words[]`, 문자열 `secret`, 숫자 `allowedGuesses`, 객체 `master` 가 주어진다. `master.guess(word)` 는 `word` 가 `secret` 과 얼마나 같은지 그 숫자를 리턴한다. `allowedGuesses` 는 `master.guess()` 를 호출할 수 있는 숫자이다. `master.guess()` 가 `6` 을 리턴하면 답을 찾은 것이다. `allowedGuesses` 보다 작거나 같도록 `master.guess()` 를 호출하여 답을 찾도록 `findSecretWord()` 를 구현하라.
 
 # Idea
 
-`master.guess(a)` 를 10 번 수행해야 한다. 그때 인자로 넘겨지는 `a` 가 `s` 와 유사하도록 `a` 를 잘 고르자. 
+우리는 주어진 단어 목록에서 비밀 단어 `secret`을 찾아야 합니다. 각 단어는 6글자이며, `master.guess(word)` 함수는 우리가 추측한 단어와 비밀 단어인 `secret`이 얼마나 일치하는지 숫자로 알려줍니다. 이때 중요한 것은 단순히 무작위로 단어를 추측하는 것이 아니라, 점진적으로 후보 단어들을 줄여가며 `secret`에 가까운 단어를 선택하는 방법입니다.
 
-예를 들어 `a` 를 랜덤하게 `W` 에서 하나 고른다. 그리고 `r = master.guess(a)` 를 수행한다. `W` 에서 `a` 와 `r` 만큼 똑같은 문자열들을 추출한다.  그리고 이것을 `W2` 에 삽입한다. `W = W2` 하고 나서 처음부터 다시 반복한다. `W` 는 점점 줄어들 것이다.
+먼저, 단어 목록에서 임의의 단어를 선택하고, `master.guess(word)`를 호출하여 `secret`과 얼마나 일치하는지 확인합니다. `master.guess()`가 반환한 숫자(`matchCnt`)는 선택한 단어와 `secret`이 같은 위치에 같은 문자가 몇 개인지를 나타냅니다. 우리는 이 정보를 바탕으로, 추측한 단어와 `matchCnt`만큼 일치하는 단어들만 남겨서 새로운 후보군을 형성합니다. 그리고 이 과정을 반복해 나가면서 단어 목록을 점차 줄여 나갑니다.
 
-랜덤을 사용하지 않고 해결해보자. `W[]` 의 각 단어들간에 서로 유사한 정도가 가장 높은 것 `a` 를 고른다. `a` 는 답의 후보중 하나이다. `a` 을 고르는 요령은 다음과 같다. 
+하지만 무작위로 단어를 선택하는 전략은 실패할 위험이 있습니다. 예를 들어, 다음과 같은 경우를 생각해봅시다.
 
-- 먼저 `freqlist = []` 를 선언한다. `freqlist[i][c]` 는 `i-th` 번째 자리에 존재하는 문자 `c` 의 출연횟수이다.
-  - 예를 들어 `wordlist = ["acckzz","ccbazz","eiowzz","abcczz"]` 의 경우 `freqlist[]` 는 다음과 같다.
+```c
+secret: "zzzzzz"
+words:["aaaaaa", "bbbbbb", "cccccc", "dddddd", "eeeeee", "ffffff", "gggggg", "hhhhhh", "iiiiii", "jjjjjj", "kkkkkk", "llllll", "mmmmmm", "nnnnnn", "oooooo", "pppppp", "qqqqqq", "rrrrrr", "ssssss", "tttttt", "uuuuuu", "vvvvvv", "wwwwww", "xxxxxx", "yyyyyy", "zzzzzz"]
+allowedGuesses: 10
+```
 
-    ```py
-    >>> freqlist = [Counter(w[i] for w in W) for i in range(6)]
-    >>> pprint.pprint(freqlist)
-    [Counter({'a': 2, 'c': 1, 'e': 1}),
+이 경우에는 단순히 무작위로 단어를 선택하면 제한된 `allowedGuesses` 안에 `secret`을 찾지 못할 가능성이 큽니다. 따라서 `secret`에 가까운 단어를 점진적으로 찾는 것이 훨씬 효과적입니다.
+
+이를 위해 각 자리의 문자 빈도를 계산하는 방법을 사용할 수 있습니다. 먼저, 각 자리의 문자가 얼마나 자주 등장하는지를 기록하는 빈도 테이블을 만듭니다. 예를 들어, `words = ["acckzz","ccbazz","eiowzz","abcczz"]` 라는 단어 목록이 주어진 경우, 각 자리의 문자 빈도는 다음과 같이 계산할 수 있습니다.
+
+```py
+>>> from collections import Counter
+>>> from pprint import pprint
+>>> freqList = [Counter(word[i] for word in words) for i in range(6)]
+>>> pprint(freqList)
+[Counter({'a': 2, 'c': 1, 'e': 1}),
     Counter({'c': 2, 'i': 1, 'b': 1}),
     Counter({'c': 2, 'b': 1, 'o': 1}),
     Counter({'k': 1, 'a': 1, 'w': 1, 'c': 1}),
     Counter({'z': 4}),
     Counter({'z': 4})]
-    ```
+```
 
-`a` 가 꼭 답이라는 보장은 없다. 단지 `i-th` 자리에 오는 문자열의 개수가 클 수록 답의 후보가 될 확률이 높은 것이다. `a` 를 고르는 것은 `W` 를 줄이기 위해 필요한 기준을 정하는 과정이다. 무엇을 골라도 상관없다. 어차피 다음에 수행하는 과정을 통해 `W[]` 가 줄어든다.
+이 빈도 테이블을 통해 각 자리마다 자주 등장하는 문자가 무엇인지 알 수 있습니다. 예를 들어, 첫 번째 자리에서는 'a'가 가장 많이 등장했기 때문에, 이 정보를 바탕으로 `secret`에 가까운 단어를 선택할 수 있습니다.
 
-그리고 `r = master.guess(a)` 를 수행한다.  `W[]` 에서 `a` 와 `r` 의 개수만큼 똑같은 문자열들이 답의 후보들이다. 그것들을 다시 `W[]` 에 삽입한다. 그리고 처음부터 다시 반복한다. `W[]` 는 점점 줄어들 것이다.
+빈도 테이블을 계산한 후, 각 단어의 '점수'를 계산합니다. 점수는 해당 단어가 `secret`과 얼마나 일치할 가능성이 높은지를 나타냅니다. 각 자리에서 자주 등장한 문자가 포함될수록 점수가 높아지며, 가장 높은 점수를 얻은 단어를 추측합니다.
 
-`r == 6` 이면 반복을 종료한다. 답을 찾은 것이다.
+이렇게 선택된 단어를 master.guess로 호출하여 그 결과를 바탕으로 다시 후보군을 필터링합니다. 필터링할 때는, 추측한 단어와 `matchCnt`만큼 일치하는 단어들만 남겨서 새로운 후보군을 형성합니다. 이 과정을 반복하면 후보군이 점차 줄어들면서도 `secret`이 포함된 후보를 유지할 수 있습니다.
+
+마지막으로, master.guess에서 일치하는 문자가 6개라는 결과가 나오면 `secret`을 찾은 것이며, 이때 알고리즘은 종료됩니다.
+
+빈도수를 참고하여 선택한 단어가 꼭 `secret`에 가장 가깝다는 보장은 없습니다. 다만, 빈도수가 높은 문자를 기준으로 단어를 선택하는 것은 단어 목록을 점차적으로 줄이는 데 효과적입니다.
+
+이 전략의 핵심은 빈도수가 높은 문자를 가진 단어를 선택함으로써 `secret`과 정확히 일치하지 않더라도, 비슷한 단어들을 필터링하여 남은 후보군을 점점 좁히는 것입니다. 결국, `master.guess()`에서 반환된 일치한 문자의 개수(`matchCnt`)를 바탕으로 후보군을 필터링하면, 남은 후보군 내에서 `secret`이 반드시 포함되어 있게 됩니다.
 
 # Implementation
 
-* [c++11](a.cpp)
-* [python3](a.py)
+- [c++11](a.cpp)
+- [python3](a.py)
+- [java17](MainApp.java)
 
 # Complextiy
 
