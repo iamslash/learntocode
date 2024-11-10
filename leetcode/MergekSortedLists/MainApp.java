@@ -53,10 +53,10 @@ class Solution {
 //   dfs(2): 2 6
 
 // 1ms 99.86% 44.2MB 79.93%
-// divide and conquor
-// O(NlgL) O(lgL)
+// recursive divide and conquor
+// O(NlgK) O(lgK)
 // N: num of items
-// L: num of lists
+// K: num of lists
 class Solution {
 
     private ListNode merge(ListNode left, ListNode right) {
@@ -105,6 +105,55 @@ class Solution {
             return null;
         }
         return dfs(lists, 0, lists.length - 1);
+    }
+}
+
+// 1ms 99.86% 44.7MB 22.00%
+// iterative divide and conquor
+// O(NlgK) O(1)
+// N: num of items
+// K: num of lists
+class Solution {
+
+    private ListNode merge(ListNode left, ListNode right) {
+        ListNode head = new ListNode();
+        ListNode p = head;
+
+        while (left != null && right != null) {
+            if (left.val <= right.val) {
+                p.next = left;
+                left = left.next;
+            } else {
+                p.next = right;
+                right = right.next;
+            }
+            p = p.next;
+        }
+
+        if (left != null) {
+            p.next = left;
+        } else {
+            p.next = right;
+        }        
+
+        return head.next;
+    }
+
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists.length == 0) {
+            return null;
+        }
+
+        int n = lists.length, step = 1;
+
+        while (step < n) {
+            for (int i = 0; i < n - step; i += step * 2) {
+                lists[i] = merge(lists[i], lists[i + step]);
+            }
+            step *= 2;
+        }
+                         
+        return lists[0];
     }
 }
 
