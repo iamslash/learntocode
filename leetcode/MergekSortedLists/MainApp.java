@@ -1,7 +1,9 @@
-// Copyright (C) 2022 by iamslash
+// Copyright (C) 2024 by iamslash
 
 import java.util.*;
 
+
+// Definition for singly-linked list.
 class ListNode {
     int val;
     ListNode next;
@@ -10,61 +12,59 @@ class ListNode {
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
 
-// // 11ms 33.90% 47MB 12.03%
-// // heap
-// // O(NlgN) O(N)
-// //   N: count of nodes
-// class Solution {
-//     public ListNode mergeKLists(ListNode[] lists) {
-//         ListNode head = new ListNode();
-//         ListNode p = head;
-//         Queue<ListNode> pq = new PriorityQueue<ListNode>((a, b) -> a.val - b.val);
-//         for (ListNode u : lists) {
-//             if (u != null) {
-//                 pq.offer(u);
-//             }
-//         }
-//         while (pq.size() > 0) {
-//             ListNode u = pq.poll();
-//             p.next = u;
-//             p = p.next;
-//             if (u.next != null) {
-//                 pq.offer(u.next);
-//             }
-//         }
-//         return head.next;
-//     }
-// }
-
-// 1ms 100.00% 44.1MB 56.05%
-// divide and conquor
-// O(NlgN) O(lgN)
+// 4ms 76.26% 44.6MB 30.33%
+// heap
+// O(NlgL) O(L)
+// N: num of items
+// L: num of lists
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        if (lists.length == 0 || lists == null) {
-            return null;
-        }
-        return mergeParts(lists, 0, lists.length - 1);
-    }
-    private ListNode mergeParts(ListNode[] lists, int beg, int end) {
-        // base
-        if (beg > end) {
-            return null;
-        }
-        if (beg == end) {
-            return lists[beg];
-        }
-        // recursion
-        int mid = beg + (end - beg) / 2;
-        ListNode left = mergeParts(lists, beg, mid);
-        ListNode right = mergeParts(lists, mid + 1, end);
-        return merge(left, right);
-    }
-    private ListNode merge(ListNode left, ListNode right) {
         ListNode head = new ListNode();
         ListNode p = head;
+        Queue<ListNode> pq = new PriorityQueue<ListNode>((a, b) -> a.val - b.val);
+
+        for (ListNode u : lists) {
+            if (u != null) {
+                pq.offer(u);
+            }
+        }
+
+        while (!pq.isEmpty()) {
+            ListNode u = pq.poll();
+            p.next = u;
+            p = u;
+            if (u.next != null) {
+                pq.offer(u.next);
+            }            
+        }
+
+        return head.next;
+    }
+}
+
+// lists: 1 4 5
+//        1 3 4
+//        2 6
+//
+// dfs(0, 2): 1 2 3 4 4 5 6
+//   dfs(0,1): 1 3 4 4 5
+//     dfs(0,0): 1 4 5
+//     dfs(1,1): 1 3 4
+//   dfs(2): 2 6
+
+// 1ms 99.86% 44.2MB 79.93%
+// divide and conquor
+// O(NlgL) O(lgL)
+// N: num of items
+// L: num of lists
+class Solution {
+
+    private ListNode merge(ListNode left, ListNode right) {
+        ListNode ans = new ListNode();
+        ListNode p = ans;
+
         while (left != null && right != null) {
-            if (left.val < right.val) {
+            if (left.val <= right.val) {
                 p.next = left;
                 left = left.next;
             } else {
@@ -73,17 +73,39 @@ class Solution {
             }
             p = p.next;
         }
+
         if (left != null) {
             p.next = left;
         }
         if (right != null) {
             p.next = right;
+        }        
+
+        return ans.next;
+    }
+
+    private ListNode dfs(ListNode[] lists, int beg, int end) {
+        // base
+        if (beg > end) {
+            return null;
         }
-        return head.next;
+        if (beg == end) {
+            return lists[beg];
+        }
+
+        // recursion
+        int m = beg + (end - beg) / 2;
+        ListNode left = dfs(lists, beg, m);
+        ListNode right = dfs(lists, m + 1, end);
+        return merge(left, right);
+    }
+    
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists.length == 0) {
+            return null;
+        }
+        return dfs(lists, 0, lists.length - 1);
     }
 }
 
-public class MainApp {
-  public static void main(String[] args) {
-  }
-}
+
