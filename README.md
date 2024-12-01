@@ -41,7 +41,7 @@
   - [String](#string)
   - [Suffix Array](#suffix-array)
   - [Tree](#tree)
-  - [Balance Tree](#balance-tree)
+  - [Balanced Tree](#balanced-tree)
   - [Binary Search Tree](#binary-search-tree)
   - [Binary Indexed Tree](#binary-indexed-tree)
   - [Segment Tree](#segment-tree)
@@ -73,7 +73,7 @@
   - [Backtracking](#backtracking)
   - [Shortest Path](#shortest-path)
   - [Optimization Problems To Decision Problems](#optimization-problems-to-decision-problems)
-  - [Combinatorial game theory](#combinatorial-game-theory)
+  - [Combinatorial Game Theory](#combinatorial-game-theory)
   - [Minimax](#minimax)
   - [Two Pointers](#two-pointers)
   - [Sliding Window](#sliding-window)
@@ -742,7 +742,7 @@ $ a.exe
 - [알](/algospot.com/SOLONG/) | [SOLONG](http://algospot.com/judge/problem/read/SOLONG)
 - [알](/algospot.com/NH/) | [NH](http://algospot.com/judge/problem/read/NH)
 
-## Balance Tree
+## Balanced Tree
 
 * F | [B Tree](/fundamentals/tree/b-tree/README.md)
 * F | [B+Tree](/fundamentals/tree/b+tree/README.md)
@@ -1142,9 +1142,9 @@ $ a.exe
 - [알](/algospot/CANADATRIP/) | [CANADATRIP](https://algospot.com/judge/problem/read/CANADATRIP)
 - [알](/algospot/WITHDRAWAL/) | [WITHDRAWAL](https://algospot.com/judge/problem/read/WITHDRAWAL)
 
-## Combinatorial game theory
+## Combinatorial Game Theory
 
-* F | [cobinatorial game theory](doc/algorithm_game.md)
+* F | [combinatorial game theory](doc/algorithm_game.md)
 * Sprague-Grundy theorem. Nim
   * [L](/leetcode2/GameofNim/README.md) | [Game of Nim](https://leetcode.com/problems/game-of-nim/)
 
