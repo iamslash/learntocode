@@ -1,5 +1,11 @@
-- [Materials](#materials)
 - [References](#references)
+  - [**Online Judges**](#online-judges)
+  - [**Algorithm References**](#algorithm-references)
+  - [**Books**](#books)
+  - [**Interactive Resources**](#interactive-resources)
+  - [**Videos**](#videos)
+  - [**Dynamic Programming**](#dynamic-programming)
+  - [**Visualization Tools**](#visualization-tools)
 - [Datatype Ranges](#datatype-ranges)
 - [Algorithm Proof](#algorithm-proof)
 - [Algorithm Analysis](#algorithm-analysis)
@@ -100,7 +106,7 @@
 - [Line Sweep](#line-sweep)
 - [Exhaustive Search](#exhaustive-search)
 - [Divide And Conquer](#divide-and-conquer)
-- [Dynamic Programming](#dynamic-programming)
+- [Dynamic Programming](#dynamic-programming-1)
   - [Basic Concepts](#basic-concepts)
   - [Knapsack-Like Problems](#knapsack-like-problems)
   - [Coin Change Variants:](#coin-change-variants)
@@ -186,15 +192,68 @@
     - [Hard](#hard)
   - [백준온라인](#백준온라인)
 
-----
-
-# Materials
-
-- [leetcode](https://leetcode.com/)
+---------
 
 # References
 
-- [cracking the coding interview](http://www.crackingthecodinginterview.com/)
+## **Online Judges**
+- L | [LeetCode](https://leetcode.com/)
+- H | [HackerRank](https://www.hackerrank.com/)
+- N | [NeetCode](https://neetcode.io/)
+- 알 | [알고스팟](https://algospot.com/)
+- 백 | [백준 온라인](https://www.acmicpc.net/)
+- G | [GeeksforGeeks](https://www.geeksforgeeks.org/)
+- A | [Codeforces](http://codeforces.com/)
+- T | [TopCoder](https://arena.topcoder.com/)
+- [Codility](https://app.codility.com/)
+- [UVa Online Judge](https://uva.onlinejudge.org/)
+- [SPOJ](http://www.spoj.com/)
+- [Programming Challenges](http://www.programming-challenges.com/)
+
+## **Algorithm References**
+- [cp-algorithms](https://cp-algorithms.com/)
+- [Competitive Programmer's Handbook](https://cses.fi/book.html)
+- [50 Coding Questions @ ByteByByte](https://www.byte-by-byte.com/wp-content/uploads/2019/12/50-Coding-Interview-Questions-V2.pdf)
+- [Top 10 Algorithms in Interview Questions @ GeeksforGeeks](http://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
+
+## **Books**
+- C | [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/)
+  - [Source Code](https://github.com/careercup/CtCI-6th-Edition)
+- [알고리즘 문제 해결 전략](http://book.algospot.com/)
+- [Algorithms, 4th Edition by Robert Sedgewick & Kevin Wayne](http://algs4.cs.princeton.edu/home/)
+  - [Source Code](https://algs4.cs.princeton.edu/code/)
+- [Introduction to Algorithms (CLRS)](http://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844/)
+  - [Solutions](http://sites.math.rutgers.edu/~ajl213/CLRS/CLRS.html)
+- [The Algorithm Design Manual by Steven Skiena](http://www.amazon.com/Algorithm-Design-Manual-Steven-Skiena/dp/1848000693/)
+- [The Art of Computer Programming (TAOCP) by Donald Knuth](http://www-cs-faculty.stanford.edu/~knuth/taocp.html)
+- [Dynamic Programming for Coding Interviews](https://www.amazon.com/Dynamic-Programming-Coding-Interviews-Bottom-Up-ebook/dp/B01N4P93O7/)
+- [Elements of Programming Interviews in C++](https://www.amazon.com/Elements-Programming-Interviews-Insiders-Guide/dp/1479274836/)
+- [Programming Pearls](https://www.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880/)
+- [Programming Challenges](https://www.amazon.com/Programming-Challenges-Contest-Training-Computer-ebook/dp/B008AFF2ZU/)
+
+## **Interactive Resources**
+- [Interactive Coding Challenges](https://github.com/donnemartin/interactive-coding-challenges)
+- [Codesignal](https://codesignal.com/)
+- [HackerRank Interview](https://www.hackerrank.com/)
+- [Pramp](https://www.pramp.com/)
+- [Interviewing.io](https://interviewing.io)
+
+## **Videos**
+- [Back To Back SWE @ YouTube](https://www.youtube.com/channel/UCmJz2DV1a3yfgrR7GqRtUUA/videos)
+- [엔지니어 대한민국 @ YouTube](https://www.youtube.com/channel/UCWMAh9cSkEn8v42YRO90BHA)
+- [Sedgewick Algorithms I & II @ Coursera](https://www.coursera.org/learn/algorithms-part1)
+- [Michael Sambol Short Videos](https://www.youtube.com/channel/UCzDJwLWoYCUQowF_nG3m5OQ)
+- [MyCodeSchool @ YouTube](https://www.youtube.com/user/mycodeschool/featured)
+
+## **Dynamic Programming**
+- [Dynamic Programming @ LeetCode Discussions](https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns)
+- [Dynamic Programming (Beginner to Advanced) @ YouTube](https://www.youtube.com/playlist?list=PLb3g_Z8nEv1h1w6MI8vNMuL_wrI0FtqE7)
+- [DP with Bitmasks @ YouTube](https://www.youtube.com/playlist?list=PLb3g_Z8nEv1icFNrtZqByO1CrWVHLlO5g)
+- [DP on Trees @ YouTube](https://www.youtube.com/playlist?list=PLb3g_Z8nEv1j_BC-fmZWHFe6jmU_zv-8s)
+
+## **Visualization Tools**
+- [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+- [VisuAlgo](https://visualgo.net/en)
 
 # Datatype Ranges
 
