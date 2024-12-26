@@ -14,8 +14,9 @@
 - [Commandline By Programming Languages](#commandline-by-programming-languages)
 - [Collections By Programming Languages](#collections-by-programming-languages)
 - [How to practise](#how-to-practise)
-- [Problems By Categories](#problems-by-categories)
+- [Problems By Tags](#problems-by-tags)
 - [Problem Solvings](#problem-solvings)
+- [Problem Types](#problem-types)
 - [Basic](#basic)
   - [Loop](#loop)
   - [Recursion](#recursion)
@@ -505,7 +506,7 @@ $ a.exe
 * If it exceeded 50 mins, watch the solution and write a description
   and try again.
 
-# Problems By Categories
+# Problems By Tags
 
 - Array
 - String
@@ -582,7 +583,7 @@ $ a.exe
 # Problem Solvings
 
 ```
-문제 해결 (Problem Solving)
+문제 해결 전략 (Problem-Solving Strategies)
   ├── 탐색 (Search)
   │       ├── 체계적 탐색 (Systematic Search)
   │       │       ├── Exhaustive Search (완전 탐색)
@@ -604,42 +605,61 @@ $ a.exe
   │               └── Reservoir Sampling
   ├── 최적화 (Optimization)
   │       ├── Dynamic Programming (DP)
-  │       │       ├── Memoization
-  │       │       ├── Tabulation
-  │       │       └── Knapsack Problem
+  │       │       ├── Memoization (Top-Down, Recursive Dynamic Programming)
+  │       │       ├── Tabulation (Bottom-Up, Iterative Dynamic Programming)
+  │       │       └── State Transition Representation
   │       ├── Divide and Conquer
   │       ├── Greedy Algorithms
-  │       ├── Scheduling Algorithms
-  │       ├── Weighted Interval Scheduling
-  │       ├── Rod Cutting
   │       ├── Linear Programming
-  │       └── Maximum Flow (Ford-Fulkerson, Dinic)
-  ├── 정렬 (Sorting)
+  │       └── Maximum Flow Algorithms
+  │               ├── Ford-Fulkerson Algorithm
+  │               └── Dinic Algorithm
+  ├── 정렬 및 검색 (Sorting and Searching)
   │       ├── Comparison-Based Sorting
-  │       │       ├── Bubble Sort
   │       │       ├── Insertion Sort
   │       │       ├── Selection Sort
   │       │       ├── Merge Sort
-  │       │       └── Quick Sort
-  │       ├── Non-Comparison Sorting
+  │       │       ├── Quick Sort
+  │       │       └── Heap Sort
+  │       ├── Non-Comparison-Based Sorting
   │       │       ├── Counting Sort
   │       │       ├── Radix Sort
   │       │       └── Bucket Sort
+  │       └── Advanced Searching Techniques
+  │               ├── Binary Search Variants
+  │               └── Exponential Search
   ├── 문자열 알고리즘 (String Algorithms)
   │       ├── KMP (Knuth-Morris-Pratt)
   │       ├── Rabin-Karp
   │       ├── Boyer-Moore Algorithm
-  │       ├── Aho–Corasick Algorithm
-  │       ├── Suffix Arrays
-  │       └── LCS (Longest Common Subsequence)
+  │       ├── Aho-Corasick Algorithm
+  │       ├── Suffix Array
+  │       └── Z Algorithm
+  ├── 고급 데이터 구조 기반 전략 (Data Structure-Based Strategies)
+  │       ├── Fenwick Tree (Binary Indexed Tree)
+  │       ├── Segment Tree
+  │       ├── AVL Tree
+  │       ├── Red-Black Tree
+  │       ├── Trie
+  │       │       ├── Suffix Trie
+  │       │       └── Radix Tree
+  │       └── Union-Find (Disjoint Set)
+  ├── 기하 알고리즘 (Geometric Algorithms)
+  │       ├── Convex Hull
+  │       ├── Rotating Calipers
+  │       ├── Closest Pair of Points
+  │       └── Line Segment Intersection
   ├── 그래프 알고리즘 (Graph Algorithms)
+  │       ├── Shortest Path
+  │       │       ├── Dijkstra
+  │       │       ├── Bellman-Ford
+  │       │       └── Floyd-Warshall
+  │       ├── Minimum Spanning Tree
+  │       │       ├── Kruskal
+  │       │       └── Prim
   │       ├── Topological Sort
-  │       ├── Shortest Path (Dijkstra, Bellman-Ford, Floyd)
-  │       ├── Minimum Spanning Tree (Prim, Kruskal)
   │       ├── Strongly Connected Components (SCC)
-  │       ├── Eulerian Circuit and Path
-  │       ├── Bipartite Matching
-  │       └── Graph Coloring
+  │       └── Bipartite Matching
   ├── 수학 및 조합론 (Mathematics and Combinatorics)
   │       ├── Number Theory
   │       │       ├── Euclidean Algorithm
@@ -647,42 +667,105 @@ $ a.exe
   │       │       ├── Fast Exponentiation
   │       │       └── Chinese Remainder Theorem
   │       ├── Combinatorics
+  │       │       ├── Generating Functions
+  │       │       ├── Inclusion-Exclusion Principle
+  │       │       └── Pigeonhole Principle
   │       └── Permutation and Combination
-  ├── 고급 데이터 구조 (Advanced Data Structures)
-  │       ├── Fenwick Tree (Binary Indexed Tree)
-  │       ├── Segment Tree
-  │       ├── AVL Tree
-  │       ├── Red-Black Tree
-  │       ├── Union-Find (Disjoint Set)
-  │       ├── Trie and Variants
-  │       │       ├── Suffix Trie
-  │       │       └── Radix Tree
-  │       └── B-Trees and Variants
-  ├── 기하 알고리즘 (Geometric Algorithms)
-  │       ├── Convex Hull (Jarvis, Graham, Monotone Chain)
-  │       ├── Rotating Calipers
-  │       ├── Closest Pair of Points
-  │       ├── Polygon Operations
-  │       └── Line Segment Intersection
   ├── 확률 및 랜덤 알고리즘 (Randomized Algorithms)
-  │       ├── Randomized Algorithms
-  │       │       ├── Quickselect
-  │       │       └── Randomized Quicksort
+  │       ├── Randomized Quicksort
+  │       ├── Quickselect
   │       ├── Monte Carlo Methods
   │       └── Las Vegas Methods
-  ├── 고급 정렬 및 검색 기법 (Advanced Sorting and Searching)
-  │       ├── External Sorting
-  │       ├── Multithreaded Sorting
-  │       └── Parallel Algorithms
-  ├── 조합 게임 이론 (Combinatorial Game Theory)
-  │       ├── Minimax
-  │       ├── Nim and Grundy Numbers
+  └── 조합 게임 이론 (Combinatorial Game Theory)
+          ├── Minimax
+          ├── Alpha-Beta Pruning
+          └── Grundy Numbers
+```
+
+# Problem Types
+
+```
+문제 유형 (Problem Types)
+  ├── 수열 및 배열 (Sequences and Arrays)
+  │       ├── Maximum Subarray (Kadane's Algorithm)
+  │       ├── Longest Increasing Subsequence (LIS)
+  │       ├── Two Sum Problem
+  │       ├── Sliding Window Maximum
+  │       └── Majority Element
+  ├── 문자열 (Strings)
+  │       ├── 문자열 검색 (String Search)
+  │       │       ├── KMP (Knuth-Morris-Pratt)
+  │       │       ├── Rabin-Karp
+  │       │       ├── Boyer-Moore Algorithm
+  │       │       └── Aho-Corasick Algorithm
+  │       ├── 문자열 비교
+  │       │       ├── Longest Common Subsequence (LCS)
+  │       │       └── Edit Distance
+  │       ├── 문자열 변환
+  │       │       └── Edit Distance
+  │       ├── 문자열 압축
+  │       │       └── Run-Length Encoding (RLE)
+  │       └── Suffix Array
+  ├── 그래프 (Graphs)
+  │       ├── Shortest Path
+  │       │       ├── Dijkstra
+  │       │       ├── Bellman-Ford
+  │       │       └── Floyd-Warshall
+  │       ├── Minimum Spanning Tree
+  │       │       ├── Kruskal
+  │       │       └── Prim
+  │       ├── Maximum Flow
+  │       │       ├── Ford-Fulkerson Algorithm
+  │       │       └── Dinic Algorithm
+  │       ├── Topological Sort
+  │       ├── Strongly Connected Components (SCC)
+  │       └── Bipartite Matching
+  ├── 조합 및 집합 (Combinatorics and Sets)
+  │       ├── Knapsack Problem
+  │       ├── Subset Sum
+  │       ├── Permutation and Combination
+  │       ├── Generating Functions
+  │       └── Partition Problems
+  ├── 수학 문제 (Mathematics)
+  │       ├── Number Theory
+  │       │       ├── Euclidean Algorithm
+  │       │       ├── Modular Arithmetic
+  │       │       ├── Fast Exponentiation
+  │       │       └── Chinese Remainder Theorem
+  │       ├── Counting Problems
+  │       │       ├── Inclusion-Exclusion Principle
+  │       │       └── Pigeonhole Principle
+  │       ├── 기하 문제 (Geometric Problems)
+  │       │       ├── Convex Hull
+  │       │       ├── Closest Pair of Points
+  │       │       ├── Line Segment Intersection
+  │       │       └── Polygon Area Calculation
+  │       └── Probability and Statistics
+  │               ├── Monte Carlo Methods
+  │               └── Reservoir Sampling
+  ├── 정렬 문제 (Sorting Problems)
+  │       ├── Comparison-Based Sorting
+  │       │       ├── Insertion Sort
+  │       │       ├── Selection Sort
+  │       │       ├── Merge Sort
+  │       │       ├── Quick Sort
+  │       │       └── Heap Sort
+  │       ├── Non-Comparison-Based Sorting
+  │       │       ├── Counting Sort
+  │       │       ├── Radix Sort
+  │       │       └── Bucket Sort
+  ├── 최적화 문제 (Optimization Problems)
+  │       ├── Linear Programming
+  │       ├── Maximum Flow
+  │       │       ├── Ford-Fulkerson Algorithm
+  │       │       └── Dinic Algorithm
+  │       ├── Weighted Interval Scheduling
+  │       └── Job Scheduling
+  ├── 게임 이론 문제 (Game Theory Problems)
+  │       ├── Nim Game
+  │       ├── Grundy Numbers
+  │       ├── Minimax Algorithm
   │       └── Alpha-Beta Pruning
-  └── 기타 (Miscellaneous)
-          ├── FFT (Fast Fourier Transform)
-          ├── Data Compression
-          ├── Optimization Problems to Decision Problems
-          └── Brain Teasers
 ```
 
 # Basic
