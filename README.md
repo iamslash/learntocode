@@ -838,7 +838,7 @@ $ a.exe
 
 # Matrix
 
-- [rotating matrix](/doc/matrix.md)
+- F | [rotating matrix](/doc/matrix.md)
   - [L](/leetcode2/DetermineWhetherMatrixCanBeObtainedByRotation/) | [Determine Whether Matrix Can Be Obtained By Rotation](https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/)
 - F | [diagonal, spiral traversal of matrix](/fundamentals/matrix/traversal/README.md)  
 - F | [2D loop descencing, decreasing](/fundamentals/matrix/loopdescdec/README.md) 
@@ -849,10 +849,10 @@ $ a.exe
 - F | [bitwise arithmetic](/fundamentals/bitmask/arithmetic/README.md)
 - F | [hamming weight](/fundamentals/bitmask/hammingweight/README.md)
 - F | [Gray code](/fundamentals/bitmask/graycode/README.md)
-- F | [sieve of eratosthenes](fundamentals/numbertheory/sieveoferatosthenes/README.md)
-- F | [15 puzzle](fundamentals/bitmask/15puzzle/README.md)
-- F | [priority queue with O(1)](fundamentals/bitmask/priorityqueue/README.md)
-- F | [maximal stable set](fundamentals/bitmask/maximalstableset/README.md)★
+- F | [sieve of eratosthenes](/fundamentals/numbertheory/sieveoferatosthenes/README.md)
+- F | [15 puzzle](/fundamentals/bitmask/15puzzle/README.md)
+- F | [priority queue with O(1)](/fundamentals/bitmask/priorityqueue/README.md)
+- F | [maximal stable set](/fundamentals/bitmask/maximalstableset/README.md)★
 - F | [Bit Twiddling Hacks](http://graphics.stanford.edu/~seander/bithacks.html)
 - [L](/leetcode/Subsets/) | [Subsets](https://leetcode.com/problems/subsets)
 - [L](/leetcode2/DecodeXORedPermutation/README.md) | [Decode XORed Permutation](https://leetcode.com/problems/decode-xored-permutation/)
@@ -874,7 +874,7 @@ $ a.exe
 
 # Partial Min (Prefix Min)
 
-- F | [partial min](doc/partial_min.md)
+- F | [partial min](/doc/partial_min.md)
 
 # List
 
@@ -1014,8 +1014,8 @@ $ a.exe
 # Suffix Array
 
 - F | [suffix array search](fundamentals/string/suffixarraysearch/README.md)
-- F | [make suffix array with naive algorithm](fundamentals/string/suffixarraynaive/README.md)
-- F | [make suffix array with manber myers algorithm](fundamentals/string/suffixarraymanber/README.md)★
+- F | [make suffix array with naive algorithm](/fundamentals/string/suffixarraynaive/README.md)
+- F | [make suffix array with manber myers algorithm](/fundamentals/string/suffixarraymanber/README.md)★
 
 # Tree
 
