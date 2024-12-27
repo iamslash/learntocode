@@ -35,14 +35,14 @@ return - u 노드를 root 로 하는 서브트리의 lca
 
 지금까지 생각한 것을 중심으로 여러가지 상황을 고려해보자.
 
-* `u == NULL || u == p || u == q` 이면 `u` 를 리턴한다.
-* `l = lca(u.left, l, r), r = lca(u.right, l, r)` 를 수행한다. `l != NULL && r != NULL` 이면 `p, q` 를 찾은 것이다. `u` 가 곧 `lca` 이다. `u` 를 리턴한다. 
-* `l != NULL` 이면 `l` 이 lca 이다. `l` 을 리턴한다.
-* 이제 `l == NULL` 이다. `r` 은 lca 혹은 NULL 이다. `r` 을 리턴한다.
+- `u == NULL || u == p || u == q` 이면 `u` 를 리턴한다.
+- `l = lca(u.left, l, r), r = lca(u.right, l, r)` 를 수행한다. `l != NULL && r != NULL` 이면 `p, q` 를 찾은 것이다. `u` 가 곧 `lca` 이다. `u` 를 리턴한다. 
+- `l != NULL` 이면 `l` 이 lca 이다. `l` 을 리턴한다.
+- 이제 `l == NULL` 이다. `r` 은 lca 혹은 NULL 이다. `r` 을 리턴한다.
 
 지금까지 언급한 알고리즘을 참고 하여 `lca(①, 4, 5)`를 구해보자. 원숫자는 숫자의 값을 보유한 노드를 의미하고 `:` 뒤는 해당 부분문제의 리턴값을 의미한다.
 
-```
+```c
 lca(①, ④, ⑤) : ②
 -lca(②, ④, ⑤) : ②
 --lca(④, ④, ⑤) : ④
@@ -62,7 +62,7 @@ lca(①, ④, ⑤) : ②
 
 ## Complexity
 
-```
+```c
 O(N) O(lgN)
 ```
 
@@ -96,7 +96,7 @@ S = (1,2,4,2,5,2,1,3,6,3,7,3,1)
 대응하는 `a` 가 있고 `a` 에 대응하는 `s` 가 있다. `S` 와 `A` 의 관계를
 다음과 같이 두가지 배열에 저장하자.
 
-```
+```c
 vector<int> seq2num;
 vector<int> num2seq;
 ```
@@ -106,7 +106,7 @@ vector<int> num2seq;
 
 ## Implementation
 
-[c++11](a.cpp)
+- [c++11](a.cpp)
 
 ## Time Complexity
 

@@ -1,3 +1,12 @@
+- [Abstract](#abstract)
+- [Problem](#problem)
+- [Keyword](#keyword)
+- [Idea](#idea)
+- [Implementation](#implementation)
+- [Complexity](#complexity)
+
+-----
+
 # Abstract
 
 그래프를 [DFS](/fundamentals/graph/dfs/README.md) 로 순회했을때 만들어지는 트리를 spanning tree 라고 한다. 트리를 구성하는 트리 간선을 포함해서 다음과 같은 4 가지 종류의 간선을 발견할 수 있다.
@@ -23,8 +32,7 @@
 
 # Problem
 
-그래프 `adj` 가 주어지면 dfs spanning tree 를 만들고 각 간선의 종류를
-출력하는 문제이다.
+그래프 `adj` 가 주어지면 dfs spanning tree 를 만들고 각 간선의 종류를 출력하는 문제이다.
 
 # Keyword
 

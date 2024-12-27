@@ -130,6 +130,7 @@
   - [Advanced Algorithms](#advanced-algorithms)
   - [Miscellaneous Combinatorial Search Problems](#miscellaneous-combinatorial-search-problems)
 - [Backtracking](#backtracking)
+- [Branch and Bound](#branch-and-bound)
 - [Shortest Path](#shortest-path)
 - [Optimization Problems To Decision Problems](#optimization-problems-to-decision-problems)
 - [Combinatorial Game Theory](#combinatorial-game-theory)
@@ -837,7 +838,7 @@ $ a.exe
 
 # Matrix
 
-- [rotate matrix](/doc/matrix.md)
+- [rotating matrix](/doc/matrix.md)
   - [L](/leetcode2/DetermineWhetherMatrixCanBeObtainedByRotation/) | [Determine Whether Matrix Can Be Obtained By Rotation](https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/)
 - F | [diagonal, spiral traversal of matrix](/fundamentals/matrix/traversal/README.md)  
 - F | [2D loop descencing, decreasing](/fundamentals/matrix/loopdescdec/README.md) 
@@ -860,7 +861,7 @@ $ a.exe
 
 # Partial Sum (Prefix Sum)
 
-- F | [partial sum](/doc/partial_sum_overview.md)
+- F | [partial sum](/doc/partial_sum.md)
 - F | [partial sum, range sum](/fundamentals/partialsum/partialsum/README.md)
 - F | [grid sum](/fundamentals/partialsum/gridsum/README.md)
 - F | [range caching](/fundamentals/rangecaching/README.md)
@@ -873,7 +874,7 @@ $ a.exe
 
 # Partial Min (Prefix Min)
 
-- F | [partial min](doc/partial_min_overview.md)
+- F | [partial min](doc/partial_min.md)
 
 # List
 
@@ -915,14 +916,14 @@ $ a.exe
 
 # Mono Stack
 
-* F | [mono stack](/doc/stack_overview.md#mono_stack)
+* F | [mono stack](/doc/stack.md#mono_stack)
 * [L](/leetcode2/MaximumSubarrayMin-Product/README.md) | [Maximum Subarray Min-Product](https://leetcode.com/problems/maximum-subarray-min-product/)
 * [L](/leetcode2/MaximumofMinimumValuesinAllSubarrays/README.md) | [Maximum of Minimum Values in All Subarrays](https://leetcode.com/problems/maximum-of-minimum-values-in-all-subarrays/)
 * [L](/leetcode3/NumberofPeopleThatCanBeSeeninaGrid/) | [Number of People That Can Be Seen in a Grid](https://leetcode.com/problems/number-of-people-that-can-be-seen-in-a-grid/)
 
 # Double Stack
 
-* F | [double stack](/doc/stack_overview.md#double-stack)
+* F | [double stack](/doc/stack.md#double-stack)
 * [L](/leetcode2/BuildBinaryExpressionTreeFromInfixExpression/Solution.java) | [Build Binary Expression Tree From Infix Expression](https://leetcode.com/problems/build-binary-expression-tree-from-infix-expression/)
 
 # Queue
@@ -958,7 +959,7 @@ $ a.exe
 - F | [separate chaining](/fundamentals/hash/separatechaining/README.md)
 - F | [linear probing](/fundamentals/hash/linearprobing/README.md)
 - F | [double hashing](/fundamentals/hash/doublehashing/README.md)
-- F | [consistent hashing @ TIL](https://github.com/iamslash/TIL/blob/master/consistenthasing/README.md)
+- F | [consistent hashing | TIL](https://github.com/iamslash/TIL/blob/master/consistenthasing/README.md)
 - F | [rolling hash](/fundamentals/hash/rollinghash/README.md)
 - F | [last index](/fundamentals/hash/lastidx/README.md)
 - [L](/leetcode/DesignHashSet/MyHashSet.java) | [Design HashSet](https://leetcode.com/problems/design-hashset/)
@@ -1089,14 +1090,14 @@ $ a.exe
 
 # Segment Tree
 
-- F | [segment tree](fundamentals/tree/segmenttree/README.md)★
+- F | [segment tree](/fundamentals/tree/segmenttree/README.md)★
 - F | [RMQ (range minimum query)](fundamentals/tree/rmq/README.md)★
 - F | [get two smallest in a range](fundamentals/tree/gettwosmallest/README.md)★
 - F | [get the maximum frequency of occurrence in the range of ordered sequences](fundamentals/tree/getthemaxfreq/README.md)★
 
 # Disjoint Set, Union Find, Merge Find
 
-* F | [disjoint set (union-find, merge-find)](fundamentals/disjointset/unionfind/README.md)
+* F | [disjoint set (union-find, merge-find)](/fundamentals/disjointset/unionfind/README.md)
 * F | [check the connectivity of a graph](/fundamentals/disjointset/checkconnectivity/README.md)
 * F | [track the largest set](/fundamentals/disjointset/traclargestset/README.md)  
 * [L](/leetcode/MostStonesRemovedwithSameRoworColumn/README.md) | [Most Stones Removed with Same Row or Column](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/)
@@ -1186,17 +1187,17 @@ $ a.exe
   - Sort and stable
 
 ## Comparison-Based Sorting Algorithms
-- F | [insertion sort](fundamentals/sort/insertionsort/README.md)
+- F | [insertion sort](/fundamentals/sort/insertionsort/README.md)
 - F | [shell sort](/fundamentals/sort/shellsort/README.md)
 - F | [bubble sort](/fundamentals/sort/bubblesort/README.md)
-- F | [selection sort](fundamentals/sort/selectionsort/README.md)
-- F | [merge sort](fundamentals/sort/mergesort/README.md)
-- F | [quick sort](fundamentals/sort/quicksort/README.md)
+- F | [selection sort](/fundamentals/sort/selectionsort/README.md)
+- F | [merge sort](/fundamentals/sort/mergesort/README.md)
+- F | [quick sort](/fundamentals/sort/quicksort/README.md)
 - F | [heap sort](/fundamentals/sort/heapsort/README.md)
 
 ## Non-Comparison-Based Sorting Algorithms
-- F | [bucket sort](fundamentals/sort/bucketsort/README.md)
-- F | [counting sort](fundamentals/sort/countingsort/README.md)
+- F | [bucket sort](/fundamentals/sort/bucketsort/README.md)
+- F | [counting sort](/fundamentals/sort/countingsort/README.md)
 - F | [radix sort](/fundamentals/sort/radixsort/README.md)
 
 # Double Sort
@@ -1241,7 +1242,7 @@ $ a.exe
 # Number Theory and Math
 
 ## Basic Number Theory
-- F | [number theory](doc/number_theory.md)
+- F | [number theory](/doc/number_theory.md)
 - F | [math functions](/fundamentals/numbertheory/mathfunction/README.md)
 
 ## Prime Numbers and Factorization
@@ -1330,7 +1331,7 @@ $ a.exe
 
 # Exhaustive Search
 
-- F | [exhaustive search](doc/exhaustive_search.md)
+- F | [exhaustive search](/doc/exhaustive_search.md)
 - [알](/algospot/BOGGLE/) | [BOGGLE](https://algospot.com/judge/problem/read/BOGGLE)
 - [알](/algospot/PICNIC/) | [PICNIC](https://algospot.com/judge/problem/read/PICNIC)
 - [알](/algospot/BOARDCOVER/) | [BOARDCOVER](https://algospot.com/judge/problem/read/BOARDCOVER)
@@ -1433,8 +1434,8 @@ $ a.exe
 
 ## Classic Problems
 - F | [fractional/unbounded knapsack problem](/fundamentals/greedy/knapsackfractional/README.md)
-- F | [activity selection problem](fundamentals/greedy/activityselection/README.md)
-- F | [huffman code](doc/greedy_huffman_code.md)
+- F | [activity selection problem](/fundamentals/greedy/activityselection/README.md)
+- F | [huffman code](/doc/greedy_huffman_code.md)
 
 ## Miscellaneous Greedy Problems
 - [알](/algospot/MATCHORDER/) | [MATCHORDER](https://algospot.com/judge/problem/read/MATCHORDER)
@@ -1485,6 +1486,10 @@ $ a.exe
 - [L](/leetcode/GenerateParentheses/) | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
 - [L](/leetcode2/ConstructtheLexicographicallyLargestValidSequence/README.md) | [Construct the Lexicographically Largest Valid Sequence](https://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence/)
 
+# Branch and Bound
+
+- F | [branch and bound](/doc/combinatorial_search.md#branch-and-bound으로-해결)
+
 # Shortest Path
 
 * F | [path finding, shorest path](/fundamentals/combinatorialsearch/pathfinding/README.md)
@@ -1497,7 +1502,7 @@ $ a.exe
   
 # Optimization Problems To Decision Problems
 
-- F | [optimization problems to descision problems](doc/optimization_to_decision.md)
+- F | [optimization problems to descision problems](/doc/optimization_to_decision.md)
 - [알](/algospot/DARKPA/) | [DARPA](https://algospot.com/judge/problem/read/DARPA)
 - [알](/algospot/ARCTIC/) | [ARCTIC](https://algospot.com/judge/problem/read/ARCTIC)
 - [알](/algospot/CANADATRIP/) | [CANADATRIP](https://algospot.com/judge/problem/read/CANADATRIP)
@@ -1505,7 +1510,7 @@ $ a.exe
 
 # Combinatorial Game Theory
 
-* F | [combinatorial game theory](doc/algorithm_game.md)
+* F | [combinatorial game theory](/doc/algorithm_game.md)
 * Sprague-Grundy theorem. Nim
   * [L](/leetcode2/GameofNim/README.md) | [Game of Nim](https://leetcode.com/problems/game-of-nim/)
 
@@ -1534,16 +1539,16 @@ $ a.exe
 
 # DFS (Depth First Search)
 
-- F | [DFS (depth first search)](fundamentals/graph/dfs/README.md)
-- F | [dfs spanning tree](fundamentals/graph/dfsspanningtree/README.md)
+- F | [DFS (depth first search)](/fundamentals/graph/dfs/README.md)
+- F | [dfs spanning tree](/fundamentals/graph/dfsspanningtree/README.md)
 - [L](/leetcode/RobotRoomCleaner/README.md) | [Robot Room Cleaner](https://leetcode.com/problems/robot-room-cleaner/)
 - [L](/leetcode3/ChooseEdgestoMaximizeScoreinaTree/) | [Choose Edges to Maximize Scorein a Tree](https://leetcode.com/problems/choose-edges-to-maximize-score-in-a-tree/)
   - with or without node
 
 # BFS (Breadth First Search)
 
-- F | [BFS (breadth first search)](fundamentals/graph/bfs/README.md)
-- F | [BFS shortest path](fundamentals/graph/bfsshortestpath/README.md)
+- F | [BFS (breadth first search)](/fundamentals/graph/bfs/README.md)
+- F | [BFS shortest path](/fundamentals/graph/bfsshortestpath/README.md)
 - [L](/leetcode2/MapofHighestPeak/README.md) | [Map of Highest Peak](https://leetcode.com/problems/map-of-highest-peak/)
 - [L](/leetcode/valuateDivision/README.md) | [valuate Division](https://leetcode.com/problems/evaluate-division/)
 
@@ -1569,7 +1574,7 @@ $ a.exe
 
 # Network Flow
 
-- F | [network flow](doc/network_flow.md)
+- F | [network flow](/doc/network_flow.md)
 
 # Finding 1st, 2nd
 

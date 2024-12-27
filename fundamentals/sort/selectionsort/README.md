@@ -1,17 +1,14 @@
 # Problem
 
-수열 `V` 가 주어지면 selection sort 를 
-이용하여 정렬하자.
+수열 `V` 가 주어지면 selection sort 를 이용하여 정렬하자.
 
 # References
 
-* [Selection Sort @ geeksforgeeks](https://www.geeksforgeeks.org/selection-sort/)
+* [Selection Sort | geeksforgeeks](https://www.geeksforgeeks.org/selection-sort/)
 
 # Idea
 
-`V` 의 최소값 `mi` 를 찾는다.
-그 값을 맨 앞에 위치한 값과 교체한다.
-맨 처음 위치를 뺀 나머지 리스트를 같은 방법으로 교체한다.
+`V` 의 최소값 `mi` 를 찾는다. 그 값을 맨 앞에 위치한 값과 교체한다. 맨 처음 위치를 뺀 나머지 리스트를 같은 방법으로 교체한다.
 
 다음은 수열 `V = 1 5 4 3 2` 를 selection sort 하는 과정이다.
 

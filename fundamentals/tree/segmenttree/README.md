@@ -1,3 +1,18 @@
+- [Abstract](#abstract)
+- [Data Structure Segment Tree](#data-structure-segment-tree)
+- [Algorithm Init](#algorithm-init)
+  - [Idea](#idea)
+  - [Complexity](#complexity)
+- [Algorithm Query](#algorithm-query)
+  - [Idea](#idea-1)
+  - [Complexity](#complexity-1)
+- [Algorithm Update](#algorithm-update)
+  - [Idea](#idea-2)
+  - [Complexity](#complexity-2)
+- [Implementation](#implementation)
+
+-----
+
 # Abstract
 
 `segment tree` 는 일정한 범위에 대한 연산을 빠르게 하기 위한 자료구조이다.

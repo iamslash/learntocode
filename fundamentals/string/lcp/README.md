@@ -20,5 +20,4 @@ suffix array 를 이용하여 longest common prefix array 를 만들어 두면 �
 | 4 | 4       | na           | 2        |
 | 5 | 2       | nana         | 0        |
 
-lcp array 는 suffix array 와 함께 여러가지 문제들에 활용될 수 있다. [the number of differenct substring](/fundamentals/string/thenumberofdifferenctsubstring/README.md) 는
-대표적인 예이다.
+lcp array 는 suffix array 와 함께 여러가지 문제들에 활용될 수 있다. [the number of differenct substring](/fundamentals/string/thenumberofdifferenctsubstring/README.md) 는 대표적인 예이다.

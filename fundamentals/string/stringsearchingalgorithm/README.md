@@ -9,4 +9,3 @@
 # Materials
 
 * [Longest Duplicate Substring Solution @ leetcode](https://leetcode.com/problems/longest-duplicate-substring/solution/)
-

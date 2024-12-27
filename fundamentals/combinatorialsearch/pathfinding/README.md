@@ -12,20 +12,20 @@
 
 # one src to one dst
 
-* [Dijkstra algorithm @ learntocode](/fundamentals/graph/dijkstra/README.md) (non-negative weighted graphs)
+* [Dijkstra algorithm | learntocode](/fundamentals/graph/dijkstra/README.md) (non-negative weighted graphs)
   * `dist[]` 를 보관할 필요는 없다. `src` 에서 `dst` 까지의 거리만 필요하다.
   * [Minimum Path Cost in a Hidden Grid](/leetcode2/MinimumPathCostinaHiddenGrid/README.md)
 * [A* @ learntocode](/fundamentals/combinatorialsearch/astar/README.md)
   
 # one src to all dst
 
-* [bfs shortest path @ learntocode](/fundamentals/graph/bfsshortestpath/README.md) (unweighted graphs)
-* [Dijkstra algorithm @ learntocode](/fundamentals/graph/dijkstra/README.md) (non-negative weighted graphs)
-* [Bellman-Ford algorithm @ learntocode](/fundamentals/graph/bellmanford/README.md) (negative weighted graphs)
+* [bfs shortest path | learntocode](/fundamentals/graph/bfsshortestpath/README.md) (unweighted graphs)
+* [Dijkstra algorithm | learntocode](/fundamentals/graph/dijkstra/README.md) (non-negative weighted graphs)
+* [Bellman-Ford algorithm | learntocode](/fundamentals/graph/bellmanford/README.md) (negative weighted graphs)
 
 # all src to all dst
 
-* [Floyd algorithm @ learntocode](/fundamentals/graph/floyd/README.md)
+* [Floyd algorithm | learntocode](/fundamentals/graph/floyd/README.md)
 * Johnson’s algorithm
 
 # Shortest Path Cost
