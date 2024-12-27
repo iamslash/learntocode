@@ -23,4 +23,3 @@ var containsPattern = function(A, m, k) {
   }
   return false;
 }
-  

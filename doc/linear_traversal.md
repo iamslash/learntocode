@@ -72,4 +72,4 @@ linear traversal 할 때 전진할 수 있는지 검사해보고 전진하는 �
 
 # subarray
 
-* [how to loop subarray](doc/../subarray.md#how-to-loop)
+* [how to loop subarray](/doc/subarray.md#how-to-loop-subarray)

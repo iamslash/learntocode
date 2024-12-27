@@ -774,39 +774,40 @@ $ a.exe
 
 ## Loop
 
-* [subarray](doc/subarray.md#how-to-loop-subarray)
-* [move one by one shortly](doc/linear_traversal.md#move-one-by-one-shortly)
-  * [Minimum Cost Homecoming of a Robot in a Grid](https://leetcode.com/problems/minimum-cost-homecoming-of-a-robot-in-a-grid/)
-* [up and down](/doc/linear_traversal.md#up-and-down)
-  * [L](/leetcode/BullsandCows/README.md) | [Bulls and Cows](https://leetcode.com/problems/bulls-and-cows/)
-* [reverse order](/doc/linear_traversal.md#reverse-order)
-  * [L](/leetcode2/BackspaceStringCompare/README.md) | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
-  * [L](/leetcode/NextPermutation/README.md) | [Next Permutation](https://leetcode.com/problems/next-permutation/)
-* [multi control flow in loop](/doc/linear_traversal.md#multi-control-flow-in-loop)
-  * [L](/leetcode2/DistinctNumbersinEachSubarray/) | [Distinct Numbers in Each Subarray](https://leetcode.com/problems/distinct-numbers-in-each-subarray/)
-* [number out loop](/doc/linear_traversal.md#number-out-loop)
-  * [L](/leetcode/MissingRanges/README.md) | [Missing Ranges](https://leetcode.com/problems/missing-ranges/)
-* longest non-decreasing substring
-  * [L](/leetcode2/LongestSubstringOfAllVowelsinOrder/README.md) | [Longest Substring Of All Vowels in Order](https://leetcode.com/problems/longest-substring-of-all-vowels-in-order/)
-* group count, member count
-  * [L](/leetcode2/MinimumNumberofDaystoMakemBouquets/a.go) | [Minimum Number of Days to Make m Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/)
-* covered count   
-  * [L](/leetcode2/MinimumNumberofTapstoOpentoWateraGarden/README.md) | [Minimum Number of Taps to Open to Water a Garden](https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) 
-* continuous count
-  * [L](/leetcode2/BulbSwitcherIV/a.cpp) | [Bulb Switcher IV](https://leetcode.com/problems/bulb-switcher-iv/)
-* win count
-  * [L](/leetcode2/FindtheWinnerofanArrayGame/a.go) | [Find the Winner of an Array Game](https://leetcode.com/problems/find-the-winner-of-an-array-game/)
-* produce, consume, update
-  * [L](/leetcode/ReadNCharactersGivenRead4II/README.md) | [Read N Characters Given Read4 II - Call multiple times](https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/)
-* [forward and backward](/doc/linear_traversal.md#forward-and-backward)
-  * [L](/leetcode/ProductofArrayExceptSelf/README.md) | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
-* [Probe and forward](/doc/linear_traversal.md#probe-and-forward)
-  * [L](/leetcode/TextJustification/README.md) | [Text Justification](https://leetcode.com/problems/text-justification/)
-* [count of subarray sum less equal to k](/doc/linear_traversal.md#)
-  * [L](/leetcode2/KthSmallestSubarraySum/README.md) | [Kth Smallest Subarray Sum](https://leetcode.com/problems/kth-smallest-subarray-sum/)
-* skip index
-  * [L](/leetcode3/MinimumCostofBuyingCandiesWithDiscount/) | [ Minimum Cost of Buying Candies With Discount](https://leetcode.com/problems/minimum-cost-of-buying-candies-with-discount/)
-* [L](/leetcode2/DetectPatternofLengthMRepeatedKorMoreTimes/a.js) | [Detect Pattern of Length M Repeated K or More Times](https://leetcode.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/)
+- [subarray loop](doc/subarray.md#how-to-loop-subarray)
+- [move one by one shortly](doc/linear_traversal.md#move-one-by-one-shortly)
+  - [Minimum Cost Homecoming of a Robot in a Grid](https://leetcode.com/problems/minimum-cost-homecoming-of-a-robot-in-a-grid/)
+- [up and down](/doc/linear_traversal.md#up-and-down)
+  - [L](/leetcode/BullsandCows/README.md) | [Bulls and Cows](https://leetcode.com/problems/bulls-and-cows/)
+- [reverse order](/doc/linear_traversal.md#reverse-order)
+  - [L](/leetcode2/BackspaceStringCompare/README.md) | [Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
+  - [L](/leetcode/NextPermutation/README.md) | [Next Permutation](https://leetcode.com/problems/next-permutation/)
+- [multi control flow in loop](/doc/linear_traversal.md#multi-control-flow-in-loop)
+  - [L](/leetcode2/DistinctNumbersinEachSubarray/) | [Distinct Numbers in Each Subarray](https://leetcode.com/problems/distinct-numbers-in-each-subarray/)
+- [number out loop](/doc/linear_traversal.md#number-out-loop)
+  - [L](/leetcode/MissingRanges/README.md) | [Missing Ranges](https://leetcode.com/problems/missing-ranges/)
+- longest non-decreasing substring
+  - [L](/leetcode2/LongestSubstringOfAllVowelsinOrder/README.md) | [Longest Substring Of All Vowels in Order](https://leetcode.com/problems/longest-substring-of-all-vowels-in-order/)
+- group count, member count
+  - [L](/leetcode2/MinimumNumberofDaystoMakemBouquets/a.go) | [Minimum Number of Days to Make m Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/)
+- covered count   
+  - [L](/leetcode2/MinimumNumberofTapstoOpentoWateraGarden/README.md) | [Minimum Number of Taps to Open to Water a Garden](https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) 
+- continuous count
+  - [L](/leetcode2/BulbSwitcherIV/a.cpp) | [Bulb Switcher IV](https://leetcode.com/problems/bulb-switcher-iv/)
+- win count
+  - [L](/leetcode2/FindtheWinnerofanArrayGame/a.go) | [Find the Winner of an Array Game](https://leetcode.com/problems/find-the-winner-of-an-array-game/)
+- produce, consume, update
+  - [L](/leetcode/ReadNCharactersGivenRead4II/README.md) | [Read N Characters Given Read4 II - Call multiple times](https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/)
+- [forward and backward](/doc/linear_traversal.md#forward-and-backward)
+  - [L](/leetcode/ProductofArrayExceptSelf/README.md) | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+- [probe and forward](/doc/linear_traversal.md#probe-and-forward)
+  - [L](/leetcode/TextJustification/README.md) | [Text Justification](https://leetcode.com/problems/text-justification/)
+- [count of subarray sum less equal to k](/doc/linear_traversal.md#)
+  - [L](/leetcode2/KthSmallestSubarraySum/README.md) | [Kth Smallest Subarray Sum](https://leetcode.com/problems/kth-smallest-subarray-sum/)
+- skip index
+  - [L](/leetcode3/MinimumCostofBuyingCandiesWithDiscount/) | [ Minimum Cost of Buying Candies With Discount](https://leetcode.com/problems/minimum-cost-of-buying-candies-with-discount/)
+- detect repeating patterns
+  - [L](/leetcode2/DetectPatternofLengthMRepeatedKorMoreTimes) | [Detect Pattern of Length M Repeated K or More Times](https://leetcode.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/)
 
 ## Recursion
 
