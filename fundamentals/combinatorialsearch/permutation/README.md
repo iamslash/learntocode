@@ -6,6 +6,8 @@
 
 다음은 수열 `1 2 3` 의 순열을 찾는 과정의 recursion tree 이다.
 
+![](recursion_tree.png)
+
 ```c
 Idea: back tracking
 

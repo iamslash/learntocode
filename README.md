@@ -1105,7 +1105,7 @@ $ a.exe
 # Graph
 
 ## Basic Graph Concepts
-- F | [graph](doc/graph.md)
+- F | [graph](/doc/graph.md)
 - F | [finding out two vertices are connected](/fundamentals/graph/findingouttwovertices/README.md)
 - F | [counting the number of components](/fundamentals/graph/countingthenumber/README.md)
 
@@ -1429,8 +1429,8 @@ $ a.exe
 
 ## Basic Concepts
 - F | [greedy algorithm](/doc/greedy_algorithm.md)
-- F | [greedy algorithm proof](doc/greedy_proof.md)  
-- F | [optimization problem](doc/greedy_optimization_problem.md)
+- F | [greedy algorithm proof](/doc/greedy_proof.md)  
+- F | [optimization problem](/doc/greedy_optimization_problem.md)
 
 ## Classic Problems
 - F | [fractional/unbounded knapsack problem](/fundamentals/greedy/knapsackfractional/README.md)

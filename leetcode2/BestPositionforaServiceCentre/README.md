@@ -8,20 +8,11 @@
 
 원점을 시작으로 점의 위치를 이동해 가며 가장 가까운 곳을 찾는다.
 
-주먹구구식으로 해결하는 알고리즘을 [heuristic
-algorithm](/doc/combinatorial_search.md) 이라고 한다.  특히 heuristic
-algorithm 을 찾는 algorithm 을 meta heuristic algorithm 이라고
-한다. simulated annealing 은 meta heurisitic algorithm 중 하나이다. 이
-문제는 원점을 이리 저리 이동하면서 답을 찾는 것이기 때문에 simulated
-annealing 으로 해결할 만 하다.
+주먹 구구식으로 해결하는 알고리즘을 [heuristic algorithm](/doc/combinatorial_search.md#heuristic) 이라고 한다.  특히 heuristic algorithm 을 찾는 algorithm 을 meta heuristic algorithm 이라고 한다. simulated annealing 은 meta heurisitic algorithm 중 하나이다. 이 문제는 원점을 이리 저리 이동하면서 답을 찾는 것이기 때문에 simulated annealing 으로 해결할 만 하다.
 
-`double minCost = DBL_MAX` 를 선언하여 답을 저장한다. `int dirs[5] =
-{-1, 0, 1, 0, 1}` 를 선언하여 기존 원점으로 부터 새로운 원점 4 개를
-구할 때 이용한다. 그리고 새로운 원점에서 모든 점의 거리 합을 구하고
-`minCost` 를 업데이트 한다.
+`double minCost = DBL_MAX` 를 선언하여 답을 저장한다. `int dirs[5] = {-1, 0, 1, 0, 1}` 를 선언하여 기존 원점으로 부터 새로운 원점 4 개를 구할 때 이용한다. 그리고 새로운 원점에서 모든 점의 거리 합을 구하고 `minCost` 를 업데이트 한다.
 
-`double step = 100, epsilon = 1e-6` 을 선언하여 `step > epslion` 인
-동안 다음을 반복한다.
+`double step = 100, epsilon = 1e-6` 을 선언하여 `step > epslion` 인 동안 다음을 반복한다.
 
 * `bool found = false` 를 선언하여 loop 을 탈출할 조건으로 이용한다.
 * 인덱스 `i` 를 선언하여 `[0..4)` 인 동안 다음을 반복한다.

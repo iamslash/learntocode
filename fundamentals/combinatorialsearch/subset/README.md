@@ -1,6 +1,18 @@
+- [Problem](#problem)
+- [Bit Manipulation](#bit-manipulation)
+  - [idea](#idea)
+  - [Implementation](#implementation)
+  - [Complexity](#complexity)
+- [BackTracking](#backtracking)
+  - [Idea](#idea-1)
+  - [Implementation](#implementation-1)
+  - [Complexity](#complexity-1)
+
+------
+
 # Problem
 
-> [Backtracking to find all subsets @ geeksforgeeks](https://www.geeksforgeeks.org/backtracking-to-find-all-subsets/)
+[Backtracking to find all subsets @ geeksforgeeks](https://www.geeksforgeeks.org/backtracking-to-find-all-subsets/)
 
 양의 정수 `n` 이 주어졌을 때 `[1..n]` 의 숫자들로 구성된 부분집합을 만들어 보자.
 
@@ -8,8 +20,7 @@
 
 ## idea
 
-예를 들어 `n = 3` 일때를 생각해 보자. 숫자 `subset` 를 이용하여 `[1..2^3)` 만큼
-순회하면서 모든 `subset` 을 이진수로 나타내보자.
+예를 들어 `n = 3` 일때를 생각해 보자. 숫자 `subset` 를 이용하여 `[1..2^3)` 만큼 순회하면서 모든 `subset` 을 이진수로 나타내보자.
 
 ```
 subset: 1  001
@@ -21,13 +32,11 @@ subset: 1  001
         7  111
 ```
 
-이진수 subset 를 구성하는 숫자는  `1, 2, 3` 숫자의 존재여부를 표현한다. 결국
-발생된 subset 의 개수 즉, `2^n-1` 은 만들어야할 부분집합의 개수와 같다. 공집합
-까지 포함하면 부분집합의 개수는 `2^n` 이다. backtracking 보다 이해하기 쉽다.
+이진수 subset 를 구성하는 숫자는  `1, 2, 3` 숫자의 존재여부를 표현한다. 결국 발생된 subset 의 개수 즉, `2^n-1` 은 만들어야할 부분집합의 개수와 같다. 공집합까지 포함하면 부분집합의 개수는 `2^n` 이다. backtracking 보다 이해하기 쉽다.
 
 ## Implementation
 
-* [c++11](a.cpp)
+- [c++11](a.cpp)
 
 ## Complexity
 
@@ -44,7 +53,7 @@ O(2^N) O(N)
 
 다음과 같이 부분문제 `dfs` 를 구상한다.
 
-```
+```c
 void dfs(int pos)
 
 pos: the position to visit at this time
