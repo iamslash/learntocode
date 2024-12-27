@@ -12,8 +12,7 @@ subsequence 의 특징들을 몇가지 정리해 본다.
 
 # Generate Subsequences
 
-예를 들어 `s = "abc"` 의 subsequence 를 만들어 보자. 인덱스
-`i` 를 `[0..n)` 동안 순회하면서 다음을 반복한다. 
+예를 들어 `s = "abc"` 의 subsequence 를 만들어 보자. 인덱스 `i` 를 `[0..n)` 동안 순회하면서 다음을 반복한다. 
 
 * 이번문자를 포함한다.
 * 이번문자를 포함하지 않는다.

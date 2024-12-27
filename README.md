@@ -14,8 +14,8 @@
 - [Commandline By Programming Languages](#commandline-by-programming-languages)
 - [Collections By Programming Languages](#collections-by-programming-languages)
 - [How to practise](#how-to-practise)
-- [Problems By Tags](#problems-by-tags)
-- [Problem Solvings](#problem-solvings)
+- [Problem Tags](#problem-tags)
+- [Problem Solving Strategies](#problem-solving-strategies)
 - [Problem Types](#problem-types)
 - [Basic](#basic)
   - [Loop](#loop)
@@ -111,7 +111,7 @@
 - [Dynamic Programming](#dynamic-programming-1)
   - [Basic Concepts](#basic-concepts)
   - [Knapsack-Like Problems](#knapsack-like-problems)
-  - [Coin Change Variants:](#coin-change-variants)
+  - [Coin Change Variants](#coin-change-variants)
   - [Partitioning Problems](#partitioning-problems)
   - [Sequence Alignment/Matching](#sequence-alignmentmatching)
   - [Counting Paths and Ways](#counting-paths-and-ways)
@@ -123,6 +123,7 @@
   - [Basic Concepts](#basic-concepts-1)
   - [Classic Problems](#classic-problems)
   - [Miscellaneous Greedy Problems](#miscellaneous-greedy-problems)
+- [Linear Programming](#linear-programming)
 - [Combinatorial Search](#combinatorial-search)
   - [Basic Concepts](#basic-concepts-2)
   - [Classic Problems](#classic-problems-1)
@@ -154,7 +155,6 @@
 - [Database](#database)
 - [Bash](#bash)
 - [Problem Series](#problem-series)
-  - [Design](#design-1)
   - [Find Peak Element](#find-peak-element)
   - [Egg Drop](#egg-drop)
   - [Parentheses](#parentheses)
@@ -173,6 +173,7 @@
   - [Course Schedule](#course-schedule)
   - [Decode Ways](#decode-ways)
 - [Additional Challenges](#additional-challenges)
+  - [Coding Interview Patterns by Alex Xu](#coding-interview-patterns-by-alex-xu)
   - [Leetcode Top Interview Questions](#leetcode-top-interview-questions)
   - [Cracking The Coding Intervew 6 th](#cracking-the-coding-intervew-6-th)
     - [Arrays And Strings](#arrays-and-strings)
@@ -310,8 +311,7 @@ double 의 경우 소수점 이하 유효자리수는 이진수로 52 자리이�
 
 # Master Theorem
 
-![](_img/master_theorem.png)
-
+[master theorem](/doc/master_theorem.md)
 
 # Computation Complexity
 
@@ -506,7 +506,7 @@ $ a.exe
 * If it exceeded 50 mins, watch the solution and write a description
   and try again.
 
-# Problems By Tags
+# Problem Tags
 
 - Array
 - String
@@ -580,7 +580,7 @@ $ a.exe
 - Rejection Sampling
 - Biconnected Component
 
-# Problem Solvings
+# Problem Solving Strategies
 
 ```
 문제 해결 전략 (Problem-Solving Strategies)
@@ -588,14 +588,15 @@ $ a.exe
   │       ├── 체계적 탐색 (Systematic Search)
   │       │       ├── Exhaustive Search (완전 탐색)
   │       │       ├── Combinatorial Search (조합 탐색)
-  │       │       ├── Branch and Bound
+  │       │       │       ├── Backtracking (조건 기반 탐색)
+  │       │       │       │       └── Pruning (효율성을 위한 기법)
+  │       │       │       └── Branch and Bound
+  │       │       │               └── Pruning (효율성을 위한 기법)
   │       │       ├── Depth-First Search (DFS)
   │       │       ├── Breadth-First Search (BFS)
   │       │       ├── Binary Search
   │       │       ├── Two Pointers
   │       │       ├── Sliding Window
-  │       │       ├── Backtracking (조건 기반 탐색)
-  │       │       │       └── Pruning (효율성을 위한 기법)
   │       │       └── Line Sweep
   │       ├── 휴리스틱 탐색 (Heuristic Search)
   │       │       ├── A* Algorithm
@@ -607,6 +608,7 @@ $ a.exe
   │       ├── Dynamic Programming (DP)
   │       │       ├── Memoization (Top-Down, Recursive Dynamic Programming)
   │       │       ├── Tabulation (Bottom-Up, Iterative Dynamic Programming)
+  │       │       ├── Space-Optimized DP (Kadane's Algorithm)
   │       │       └── State Transition Representation
   │       ├── Divide and Conquer
   │       ├── Greedy Algorithms
@@ -750,10 +752,10 @@ $ a.exe
   │       │       ├── Merge Sort
   │       │       ├── Quick Sort
   │       │       └── Heap Sort
-  │       ├── Non-Comparison-Based Sorting
-  │       │       ├── Counting Sort
-  │       │       ├── Radix Sort
-  │       │       └── Bucket Sort
+  │       └── Non-Comparison-Based Sorting
+  │               ├── Counting Sort
+  │               ├── Radix Sort
+  │               └── Bucket Sort
   ├── 최적화 문제 (Optimization Problems)
   │       ├── Linear Programming
   │       ├── Maximum Flow
@@ -761,18 +763,18 @@ $ a.exe
   │       │       └── Dinic Algorithm
   │       ├── Weighted Interval Scheduling
   │       └── Job Scheduling
-  ├── 게임 이론 문제 (Game Theory Problems)
-  │       ├── Nim Game
-  │       ├── Grundy Numbers
-  │       ├── Minimax Algorithm
-  │       └── Alpha-Beta Pruning
+  └── 게임 이론 문제 (Game Theory Problems)
+          ├── Nim Game
+          ├── Grundy Numbers
+          ├── Minimax Algorithm
+          └── Alpha-Beta Pruning
 ```
 
 # Basic
 
 ## Loop
 
-* [subarray](doc/linear_traversal.md#subarray)
+* [subarray](doc/subarray.md#how-to-loop-subarray)
 * [move one by one shortly](doc/linear_traversal.md#move-one-by-one-shortly)
   * [Minimum Cost Homecoming of a Robot in a Grid](https://leetcode.com/problems/minimum-cost-homecoming-of-a-robot-in-a-grid/)
 * [up and down](/doc/linear_traversal.md#up-and-down)
@@ -1335,6 +1337,7 @@ $ a.exe
 
 # Divide And Conquer
 
+- F | [divide and conquer](/doc/divide_and_conquer.md)
 - F | The fast sum of a sequence
 - F | the fast square of a matrix
 - F | Karatsuba  
@@ -1354,7 +1357,7 @@ $ a.exe
   - F | [unbounded knapsack problem](/fundamentals/greedy/knapsackfractional/README.md) (similar to 0/1 knapsack but you can use an item multiple times)
   - F | [Subset Sum Problem](/fundamentals/dynamicprog/subsetsum/README.md) (checking if a subset of numbers sums to a particular value)
 
-## Coin Change Variants:
+## Coin Change Variants
   - [L](/leetcode/CoinChange/README.md) | [Coin Change](https://leetcode.com/problems/coin-change/description/) (find the minimum number of coins that sum up to a given amount)
   - [L](/leetcode/CoinChange2/README.md) | [Coin Change 2](https://leetcode.com/problems/coin-change-2/) (find the number of ways to make a given amount using coins)
 
@@ -1423,6 +1426,7 @@ $ a.exe
 # Greedy
 
 ## Basic Concepts
+- F | [greedy algorithm](/doc/greedy_algorithm.md)
 - F | [greedy algorithm proof](doc/greedy_proof.md)  
 - F | [optimization problem](doc/greedy_optimization_problem.md)
 
@@ -1437,10 +1441,14 @@ $ a.exe
 - [알](/algospot/STRJOIN/) | [STRJOIN](https://algospot.com/judge/problem/read/STRJOIN)
 - [알](/algospot/MINASTIRITH/) | [MINASTIRITH](https://algospot.com/judge/problem/read/MINASTIRITH)★
 
+# Linear Programming
+
+- F | [linear programming](/doc/linear_programming.md)
+
 # Combinatorial Search
 
 ## Basic Concepts
-- F | [combinatorial search](doc/combinatorial_search.md)
+- F | [combinatorial search](/doc/combinatorial_search.md)
 
 ## Classic Problems
 - F | [permutation](/fundamentals/combinatorialsearch/permutation/README.md)
@@ -1574,6 +1582,9 @@ $ a.exe
 # Design
 
 * [L](/leetcode/LRUCache/) | [LRU Cache](https://leetcode.com/problems/lru-cache)
+* [L](/leetcode/LRUCache/README.md) | [LRU Cache](https://leetcode.com/problems/lru-cache)
+* [L](/leetcode2/LFUCache/README.md) | [LFU Cache](https://leetcode.com/problems/lfu-cache/)
+* [L](/leetcode/InsertDeleteGetRandom/) | [Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) 
 * [L](/leetcode/DesignIn-MemoryFileSystem/README.md) | [Design In-Memory File System](https://leetcode.com/problems/design-in-memory-file-system/) 
 
 # Reservoir Sampling
@@ -1614,12 +1625,6 @@ $ a.exe
 - L | [Word Frequency](https://leetcode.com/problems/transpose-file)
 
 # Problem Series
-
-## Design
-
-* [L](/leetcode/LRUCache/README.md) | [LRU Cache](https://leetcode.com/problems/lru-cache)
-* [L](/leetcode2/LFUCache/README.md) | [LFU Cache](https://leetcode.com/problems/lfu-cache/)
-* [L](/leetcode/InsertDeleteGetRandom/) | [Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) 
 
 ## Find Peak Element
 
@@ -1735,9 +1740,13 @@ $ a.exe
 
 # Additional Challenges
 
+## Coding Interview Patterns by Alex Xu 
+
+WIP...
+
 ## Leetcode Top Interview Questions
 
-* [Top Interview Questions @ leetcode](https://leetcode.com/problemset/top-interview-questions/)
+* [Top Interview Questions | leetcode](https://leetcode.com/problemset/top-interview-questions/)
 
 ## Cracking The Coding Intervew 6 th
 

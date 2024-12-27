@@ -1,7 +1,7 @@
 # Abstract
 
-- 모든 경우를 다 시도해 보는 알고리즘이다. combinatorial search
-  problem 을 만나면 첫번째로 시도해 볼 만하다.
+- 모든 경우를 다 시도해 보는 알고리즘이다. combinatorial search problem 을 만나면 첫번째로 시도해 볼 만하다. 
+- [exhaustive search vs combinatorial search](/doc/combinatorial_search.md#combinatorial-search-vs-다른-탐색-기법) 참고
 
 # 유용한 문제의 유형들
 

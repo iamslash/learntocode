@@ -1,6 +1,10 @@
 - [**Dynamic Programming (DP): 창시와 역사**](#dynamic-programming-dp-창시와-역사)
 - [**Dynamic Programming (DP)의 개념**](#dynamic-programming-dp의-개념)
   - [**DP의 두 가지 핵심 조건**](#dp의-두-가지-핵심-조건)
+- [**State Transition Representation**](#state-transition-representation)
+  - [**State Transition Representation의 핵심 요소**](#state-transition-representation의-핵심-요소)
+  - [**예제: 피보나치 수열**](#예제-피보나치-수열)
+  - [**예제: Longest Common Subsequence (LCS)**](#예제-longest-common-subsequence-lcs)
 - [**Dynamic Programming의 구현 방식**](#dynamic-programming의-구현-방식)
   - [**1. Memoization (Top-Down Approach)**](#1-memoization-top-down-approach)
   - [**2. Tabulation (Bottom-Up Approach)**](#2-tabulation-bottom-up-approach)
@@ -50,12 +54,52 @@ Bellman의 DP 아이디어는 **최적 부분 구조**와 **중복 부분 문제
 
 ## **DP의 두 가지 핵심 조건**
 1. **Optimal Substructure (최적 부분 구조)**:
-   - 문제의 최적 해가 하위 문제의 최적 해로 구성될 수 있음.
-   - 예: 피보나치 수열, 최단 경로 문제.
+   - 문제의 최적 해가 하위 문제의 최적 해로 구성될 수 있습니다.  
+     예: 피보나치 수열, 최단 경로 문제.
 
 2. **Overlapping Subproblems (중복 부분 문제)**:
-   - 동일한 하위 문제가 여러 번 계산됨.
-   - 예: 피보나치 수열에서 `F(3)`은 `F(4)`와 `F(5)` 계산 시 반복적으로 등장.
+   - 동일한 하위 문제가 여러 번 계산됩니다.  
+     예: 피보나치 수열에서 F(3)은 F(4)와 F(5) 계산 시 반복적으로 등장.
+
+---
+
+# **State Transition Representation**
+
+**State Transition Representation**은 Dynamic Programming 문제를 체계적으로 해결하기 위해 사용하는 **문제 모델링 기법**입니다. DP 문제는 상태와 상태 간 전이를 정의하여 점화식을 도출하며, 이 점화식을 기반으로 해결됩니다.
+
+## **State Transition Representation의 핵심 요소**
+1. **상태 (State)**:
+   - 문제를 표현하는 변수 또는 변수들의 조합.
+   - 예: `dp[i][w]`는 첫 번째부터 i번째 물건까지 고려했을 때, 배낭의 용량이 w일 때 얻을 수 있는 최대 가치를 나타냄.
+
+2. **상태 전이 (Transition)**:
+   - 상태 간의 관계를 정의하는 점화식.
+   - 예: Knapsack Problem에서,  
+     dp[i][w] = max(dp[i-1][w], dp[i-1][w-wt[i]] + val[i])  
+     여기서:
+     - dp[i-1][w]: i번째 물건을 포함하지 않는 경우  
+     - dp[i-1][w-wt[i]] + val[i]: i번째 물건을 포함하는 경우
+
+3. **기저 조건 (Base Case)**:
+   - DP 테이블 초기화를 위한 기본 상태 정의.
+   - 예: dp[i][0] = 0 (배낭의 용량이 0인 경우), dp[0][w] = 0 (0개의 물건을 고려하는 경우)
+
+## **예제: 피보나치 수열**
+- **상태 정의**:  
+  dp[n]은 n번째 피보나치 수.
+- **상태 전이**:  
+  dp[n] = dp[n-1] + dp[n-2]
+- **기저 조건**:  
+  dp[0] = 0, dp[1] = 1
+
+## **예제: Longest Common Subsequence (LCS)**
+- **상태 정의**:  
+  dp[i][j]는 문자열 X[0..i-1]와 Y[0..j-1]의 가장 긴 공통 부분 수열의 길이.
+- **상태 전이**:  
+  - 두 문자가 같을 경우: dp[i][j] = dp[i-1][j-1] + 1  
+  - 두 문자가 다를 경우: dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+- **기저 조건**:  
+  dp[i][0] = 0, dp[0][j] = 0
 
 ---
 
@@ -68,8 +112,8 @@ Dynamic Programming은 하위 문제의 결과를 저장하는 방식에 따라 
 **Memoization**은 재귀 호출을 기반으로 하위 문제를 해결하며, 그 결과를 **캐싱**하여 중복 계산을 방지하는 방식입니다.
 
 - **특징**:
-  - Top-Down 방식: 문제를 큰 문제에서 시작하여 필요한 하위 문제만 해결.
-  - Lazy Evaluation (필요할 때만 계산).
+  - **Top-Down 방식**: 문제를 큰 문제에서 시작하여 필요한 하위 문제만 해결.
+  - Lazy Evaluation: 필요한 시점에만 계산.
   - 재귀 호출로 인해 **스택 메모리**를 사용.
 
 - **장점**:
@@ -102,13 +146,15 @@ public class FibonacciMemoization {
 }
 ```
 
+---
+
 ## **2. Tabulation (Bottom-Up Approach)**
 
 **Tabulation**은 반복문을 사용하여 작은 하위 문제부터 순차적으로 계산하고, 결과를 **테이블**에 저장하는 방식입니다.
 
 - **특징**:
-  - Bottom-Up 방식: 작은 하위 문제를 먼저 계산한 후, 이를 이용해 상위 문제 해결.
-  - Eager Evaluation (모든 하위 문제를 미리 계산).
+  - **Bottom-Up 방식**: 작은 하위 문제를 먼저 계산한 후, 이를 이용해 상위 문제 해결.
+  - Eager Evaluation: 모든 하위 문제를 미리 계산.
   - 재귀 호출 없이 테이블만 사용하므로 메모리 사용이 효율적.
 
 - **장점**:
@@ -119,6 +165,7 @@ public class FibonacciMemoization {
   - 모든 하위 문제를 계산하므로 불필요한 계산이 있을 수 있음.
 
 - **예제: 피보나치 수열 (Tabulation)**
+
 
 ```java
 public class FibonacciTabulation {
@@ -142,6 +189,8 @@ public class FibonacciTabulation {
 }
 ```
 
+---
+
 # **Memoization vs. Tabulation**
 
 | **특징**              | **Memoization**                           | **Tabulation**                           |
@@ -153,7 +202,6 @@ public class FibonacciTabulation {
 | **성능**              | 필요할 때만 계산하므로 효율적일 수 있음    | 모든 하위 문제를 계산하므로 균일한 속도    |
 | **스택 오버플로우 위험**| 있음                                     | 없음                                     |
 
-
 # **Markov Chain과 Dynamic Programming**
 
 **Markov Chain**은 확률적 시스템에서 상태가 시간에 따라 전환되는 과정을 모델링하는 수학적 구조입니다. **Dynamic Programming (DP)**과 직접적인 관계는 없지만, **Markov Decision Processes (MDPs)**를 통해 연결됩니다. MDP는 Markov Chain의 특성을 활용하여 최적의 의사결정 전략을 설계하는 데 Dynamic Programming 기법을 사용합니다.
@@ -164,61 +212,61 @@ public class FibonacciTabulation {
 - Markov Chain은 **Markov Property**를 만족하는 상태 전이 모델입니다.  
   즉, **현재 상태가 미래 상태를 결정하는 데 필요한 모든 정보를 제공**하며, 과거 상태는 영향을 미치지 않습니다.
 - **Markov Property**:  
-  \[
-  P(S_{t+1} \mid S_t, S_{t-1}, ..., S_0) = P(S_{t+1} \mid S_t)
-  \]
+  특정 시간 \(t\)에서의 상태 \(S_{t+1}\)는 오직 현재 상태 \(S_t\)에만 의존하며, 과거 상태들과는 독립적입니다.  
+  이를 간단히 표현하면:  
+  P(S_{t+1} | S_t, S_{t-1}, ..., S_0) = P(S_{t+1} | S_t)
 
 ---
 
 ## **Markov Chain의 특징**
-1. **유한 상태 공간**: 가능한 상태의 집합이 유한하거나 가산 무한함.
-2. **상태 전이 확률**: 상태 \(a\)에서 상태 \(b\)로 이동할 확률은 현재 상태 \(a\)에만 의존.
-3. **상태 전이 행렬**: 모든 상태 전이 확률을 행렬로 표현.
+1. **유한 상태 공간**: 가능한 상태들의 집합이 유한하거나 가산 무한한 집합.
+2. **상태 전이 확률**: 특정 상태 \(a\)에서 다른 상태 \(b\)로 전이할 확률은 현재 상태 \(a\)에만 의존.
+3. **상태 전이 행렬**: 상태 전이 확률들을 행렬 형태로 나타낼 수 있습니다.
 
 ### **Markov Chain의 간단한 예**
-담배를 피우는 습관에 대한 간단한 모델을 고려하자:
+담배를 피우는 습관을 모델링해 보겠습니다:
 - 오늘 담배를 피우면:
-  - 내일 담배를 필 확률: \(0.8\)
-  - 내일 담배를 안 필 확률: \(0.2\)
+  - 내일 담배를 필 확률은 0.8
+  - 내일 담배를 안 필 확률은 0.2
 - 오늘 담배를 안 피우면:
-  - 내일 담배를 필 확률: \(0.5\)
-  - 내일 담배를 안 필 확률: \(0.5\)
+  - 내일 담배를 필 확률은 0.5
+  - 내일 담배를 안 필 확률은 0.5
 
 이와 같이 **현재 상태(오늘의 행동)**가 **미래 상태(내일의 행동)**에만 영향을 미치는 시스템이 Markov Chain에 해당합니다.
 
 ---
 
 ## **Markov Decision Processes (MDPs)와 Dynamic Programming**
-Markov Chain이 확률적 상태 전이 모델이라면, **Markov Decision Processes (MDPs)**는 상태에서 **결정 가능한 행동**을 추가한 모델입니다. MDP는 최적의 정책(policy)을 찾는 문제를 해결하며, 이 과정에서 **Dynamic Programming** 기법을 활용합니다.
+Markov Chain이 확률적 상태 전이 모델이라면, **Markov Decision Processes (MDPs)**는 상태에서 **결정 가능한 행동**을 추가한 모델입니다.  
+MDPs의 목표는 **최적의 정책(policy)**을 찾아 **누적 보상(expected reward)**을 최대화하는 것입니다. 이를 해결하기 위해 **Dynamic Programming** 기법이 사용됩니다.
 
 ### **MDPs의 구성 요소**
 1. **상태 (States)**: 시스템이 가질 수 있는 모든 상태의 집합.
 2. **행동 (Actions)**: 각 상태에서 선택 가능한 행동.
-3. **전이 확률 (Transition Probabilities)**: 행동에 따른 상태 전이 확률.
-4. **보상 함수 (Reward Function)**: 특정 상태와 행동 조합에 대해 주어지는 보상.
-5. **정책 (Policy)**: 각 상태에서 어떤 행동을 선택할지 정의하는 전략.
+3. **전이 확률 (Transition Probabilities)**: 특정 상태와 행동에 따라 다음 상태로 전이할 확률.
+4. **보상 함수 (Reward Function)**: 특정 상태와 행동에 대해 주어지는 보상.
+5. **정책 (Policy)**: 각 상태에서 어떤 행동을 선택할지 결정하는 전략.
 
 ---
 
 ## **Dynamic Programming 기법이 활용되는 이유**
-MDPs의 목표는 **누적 보상(expected return)을 최대화하는 최적의 정책**을 찾는 것입니다. 이를 위해 DP의 핵심 기법이 사용됩니다:
+MDPs에서 최적의 정책을 찾기 위해 Dynamic Programming의 기법들이 사용됩니다:
 
 1. **벨만 방정식 (Bellman Equation)**:
-   - 현재 상태의 가치는 보상과 미래 가치의 합으로 표현됩니다.
-   - \[
-     V(s) = \max_a \left[ R(s, a) + \gamma \sum_{s'} P(s' \mid s, a) V(s') \right]
-     \]
+   - 현재 상태의 가치는 해당 상태에서 얻는 보상과 미래 상태의 가치의 합으로 표현됩니다.
+   - 점화식으로 표현하면:  
+     V(s) = max_a [R(s, a) + γ Σ P(s' | s, a) * V(s')]  
      여기서:
-     - \(V(s)\): 상태 \(s\)의 가치(value).
-     - \(R(s, a)\): 상태 \(s\)에서 행동 \(a\)를 선택할 때 얻는 보상.
-     - \(\gamma\): 할인율(discount factor).
-     - \(P(s' \mid s, a)\): 상태 \(s\)에서 \(a\)를 선택했을 때 \(s'\)로 전이할 확률.
+     - V(s): 상태 \(s\)의 가치(value)
+     - R(s, a): 상태 \(s\)에서 행동 \(a\)를 선택했을 때의 즉각적인 보상
+     - γ (감가율): 미래 보상의 중요도를 결정하는 값 (0 ≤ γ ≤ 1)
+     - P(s' | s, a): 상태 \(s\)에서 행동 \(a\)를 선택했을 때 \(s'\)로 전이할 확률
 
 2. **정책 반복 (Policy Iteration)**:
-   - 정책을 평가하고 개선하는 과정을 반복하여 최적 정책을 찾음.
+   - 정책 평가와 정책 개선을 반복하여 최적의 정책을 찾는 방법.
 
 3. **값 반복 (Value Iteration)**:
-   - 벨만 방정식을 반복적으로 계산하여 최적의 가치 함수를 도출.
+   - 벨만 방정식을 반복적으로 계산하여 상태의 최적 가치를 도출.
 
 ---
 
@@ -230,9 +278,9 @@ MDPs의 목표는 **누적 보상(expected return)을 최대화하는 최적의 
 ---
 
 ## **Markov Chain과 Dynamic Programming의 관계 정리**
-1. Markov Chain은 **확률적 상태 전이 모델**이며, 현재 상태가 미래 상태를 결정합니다.
-2. Dynamic Programming은 Markov Decision Processes(MDPs)의 최적 정책을 찾는 데 사용됩니다.
-3. MDP는 Markov Chain에 행동과 보상을 추가한 모델로, Bellman 방정식, 정책 반복, 값 반복 같은 DP 기법을 활용하여 최적화 문제를 해결합니다.
+1. **Markov Chain**은 확률적 상태 전이 모델이며, 현재 상태가 미래 상태를 결정합니다.
+2. **Dynamic Programming**은 Markov Decision Processes(MDPs)의 최적 정책을 찾는 데 사용됩니다.
+3. **MDPs**는 Markov Chain에 행동과 보상을 추가한 모델로, Bellman 방정식, 정책 반복, 값 반복 같은 DP 기법을 활용하여 최적화 문제를 해결합니다.
 
 이러한 관계를 통해 Markov Chain과 Dynamic Programming은 확률적 최적화 및 의사결정 문제에서 긴밀히 연결됩니다.
 
@@ -295,3 +343,8 @@ MDPs의 목표는 **누적 보상(expected return)을 최대화하는 최적의 
   - Binary Tree Maximum Path Sum (find the maximum path sum in a binary tree)
   - Diameter of a Binary Tree (find the length of the longest path between any two nodes in the tree)
   - Unique Binary Search Trees (count the number of unique BSTs that can be formed with n nodes)
+
+
+
+
+
