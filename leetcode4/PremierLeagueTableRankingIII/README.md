@@ -5,7 +5,7 @@
 # Implementation
 
 ```sql
--- 
+-- 990ms 5.18% 
 WITH cte AS (SELECT season_id,
                     team_id,
                     team_name,
