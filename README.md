@@ -1252,11 +1252,12 @@ $ a.exe
 - F | [prime factorization with sieve of eratosthenes](fundamentals/numbertheory/primefactorizationwithsieveoferatosthenes/README.md)
 
 ## Modular Arithmetic and Advanced Algorithms
-- F | [Euclidean algorithm, GCD](fundamentals/numbertheory/euclideanalgorithm/README.md)
-- F | [modular arithmetic](fundamentals/numbertheory/modulararithmatic/README.md)
-- F | [extended euclidean algorithm](fundamentals/numbertheory/exeuclideanalgorithm/README.md)
-- F | [chinese remainder theorem](fundamentals/numbertheory/chineseremaindertheorem/README.md)
-- F | [lucas' theorem](fundamentals/numbertheory/lucas/README.md)
+- F | [Euclidean algorithm, GCD](/fundamentals/numbertheory/euclideanalgorithm/README.md)
+- F | [LCM](/doc/number_theory.md#lcm-least-common-multiple)
+- F | [modular arithmetic](/fundamentals/numbertheory/modulararithmatic/README.md)
+- F | [extended euclidean algorithm](/fundamentals/numbertheory/exeuclideanalgorithm/README.md)
+- F | [chinese remainder theorem](/fundamentals/numbertheory/chineseremaindertheorem/README.md)
+- F | [lucas' theorem](/fundamentals/numbertheory/lucas/README.md)
 
 ## Permutations, Combinations, and Coefficients
 - F | [permutation, combination, binomial coefficient](/doc/dynamic_binomial_coefficient.md)
