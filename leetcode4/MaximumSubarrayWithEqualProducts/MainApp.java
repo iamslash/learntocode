@@ -1,5 +1,19 @@
 // Copyright (C) 2025 by iamslash
 
+
+// Idea: math
+//
+// A = a * gcd
+// B = b * gcd
+// A * B = a * b * gcd * gcd
+//       = lcm * gcd
+// lcm = A * B / gcd
+//
+// C = c * gcd
+// A * B * C = (A * B) * C
+//           = lcm(A * B, C) * gcd(A * B, C)
+//
+
 // 3ms 90.62% 42.43MB 80.63%
 // brute force
 // O(N^2) O(1)
