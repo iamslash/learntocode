@@ -6,7 +6,7 @@
 
 ```sql
 
-
+-- Use FIRST_VALUE instead of LAST_VALUE() which is too complicated to use.
 -- 583ms 100.00%
 WITH ctx AS (
   SELECT student_id,
