@@ -9,8 +9,8 @@ import java.util.*;
 //    . . . . . _ _
 //
 
-// 169ms ?% 63.87MB 50.00%
-// iterative dynamic programming
+// 169ms ??% 63.87MB 50.00%
+// recursive dynamic programming
 // O(NK) O(NK)
 class Solution {
     private int mod = 1_000_000_007;
