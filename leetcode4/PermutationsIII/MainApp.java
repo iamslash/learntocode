@@ -6,6 +6,7 @@ import java.util.*;
 //
 // 1 <= n <= 10
 
+// 20ms 42.86% 52.76MB 5.71%
 // backtracking, bit manipulation
 // O(2^N * N) O(N)
 class Solution {
