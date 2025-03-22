@@ -77,31 +77,31 @@ class Solution {
 
 // 60ms 97.80% 55.50MB 35.16%
 // iterative dyanmic programming
-// O(NK) O(NK)
+// O(N^2K) O(NK)
 class Solution {
 
     public int maxScore(int n, int k, int[][] stayScore,
                         int[][] travelScore) {
-        int[] curr = new int[n];
-        int[] prev = new int[n];
+        int[] curMaxScores = new int[n];
+        int[] prvMaxScores = new int[n];
 
         for (int day = k - 1; day >= 0; --day) {
-            for (int city = 0; city < n; ++city) {
+            for (int src = 0; src < n; ++src) {
                 int move = 0;
-                for (int i = 0; i < n; ++i) {
-                    move = Math.max(move, prev[i] + travelScore[city][i]);
+                for (int dst = 0; dst < n; ++dst) {
+                    move = Math.max(move, prvMaxScores[dst] + travelScore[src][dst]);
                 }
-                int stay = Math.max(curr[city], prev[city] +
-                                    stayScore[day][city]);
-                curr[city] = Math.max(move, stay);
+                int stay = Math.max(curMaxScores[src], prvMaxScores[src] +
+                                    stayScore[day][src]);
+                curMaxScores[src] = Math.max(move, stay);
             }
-            int[] temp = prev;
-            prev = curr;
-            curr = temp;
+            int[] temp = prvMaxScores;
+            prvMaxScores = curMaxScores;
+            curMaxScores = temp;
         }
 
         int maxScore = 0;
-        for (int score : prev) {
+        for (int score : prvMaxScores) {
             maxScore = Math.max(maxScore, score);
         }
 
