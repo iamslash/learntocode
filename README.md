@@ -942,7 +942,8 @@ $ a.exe
 - [L](/leetcode2/MaximumAveragePassRatio/README.md) | [Maximum Average Pass Ratio](https://leetcode.com/problems/maximum-average-pass-ratio/)
 
 # Double Heap
-  
+
+- F | [Double Heap](/doc/double-heap.md)
 * [L](/leetcode2/SlidingWindowMedian/README.md) | [Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
 * [L](/leetcode/FindMedianfromDataStream/) | [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) 
 * [L](/leetcode2/ProcessTasksUsingServers/) | [Process Tasks Using Servers](https://leetcode.com/problems/process-tasks-using-servers/)
