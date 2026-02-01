@@ -63,3 +63,7 @@ package.json
 a
 .DS_Store
 .metals
+
+# Claude Code configuration directories
+.omc
+.claude
