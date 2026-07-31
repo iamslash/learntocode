@@ -17,4 +17,7 @@ function concatWithReverse(nums: number[]): number[] {
 
 function main() {
     console.log("Hello World");
+    console.log(concatWithReverse([1, 2, 3]));
 }
+
+main();
